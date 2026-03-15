@@ -4,64 +4,83 @@ This is the working backlog for the next few implementation slices.
 
 Keep it short. Only list tasks that are still worth doing soon.
 
+## Done
+
+### ✅ Add deck validation
+
+Implemented in `src/data/validateDeck.ts`.
+
+- validates unique card ids, exactly six entries, all canonical categories present, non-empty questions and answers
+- `assertValidDeck` runs in development mode and throws with clear error messages
+- wired into `src/data/deck.ts` at module load time
+
+### ✅ Expand the starter deck
+
+Deck expanded from 5 to 15 cards in `src/data/deck.ts`.
+
+- mixed easy/medium/hard difficulty
+- all cards follow canonical category order
+- no duplicate questions
+
+### ✅ Add lightweight tests for `useDeck`
+
+Test suite added using Vitest in `src/test/`.
+
+- 24 tests across `useDeck.test.ts` (15 tests) and `validateDeck.test.ts` (9 tests)
+- covers `startGame`, non-repeating draws, `selectCategory`, `revealAnswer`, `resetSession`, `restartGame`, and localStorage persistence
+- run with `npm test`
+
+### ✅ Add subtle card transitions
+
+CSS animations added in `CardView.module.css` and `QuestionView.module.css`.
+
+- card entrance animation plays on each new card draw (via `key={card.id}` on `CardView`)
+- question panel re-animates when a new category is selected (via `key={selectedCategory}` on `QuestionView`)
+- answer block has its own fade-in when revealed
+- all animations respect `prefers-reduced-motion` (existing global rule in `index.css`)
+
 ## Now
 
-### 1. Add deck validation
+### 1. Add a shuffle moment on game start
 
 Goal:
-Make invalid deck content fail loudly during development.
+Reinforce the deck metaphor at the start of each game session.
 
 Acceptance criteria:
 
-- validate that each card has a unique `id`
-- validate that each card has exactly six entries
-- validate that each canonical category appears exactly once
-- validate that every question and answer is non-empty
-- surface clear error messages during development
+- briefly display a "Shuffling…" message or animation when `startGame` or `restartGame` is triggered
+- the transition takes no more than 500ms so it doesn't delay play
+- `prefers-reduced-motion` skips the animation entirely
+- no new dependencies
 
-### 2. Expand the starter deck
+### 2. Add swipe-to-next as a progressive enhancement
 
 Goal:
-Make the app feel more representative during development without changing architecture.
+Let players swipe the card away to draw the next one on touch devices.
 
 Acceptance criteria:
 
-- add more cards to `src/data/deck.ts`
-- preserve canonical category order on every card
-- avoid obvious duplicates
-- follow `docs/CONTENT_GUIDE.md`
+- swipe left or right on the active card triggers `drawNextCard`
+- requires answer to have been revealed first (same constraint as the Next Card button)
+- falls back gracefully to buttons on non-touch devices
+- implemented with native pointer events, no swipe library needed
 
-### 3. Add lightweight tests for `useDeck`
+### 3. Move deck content to local JSON
 
 Goal:
-Lock down the core gameplay flow before more features are added.
+Separate card authoring from TypeScript compilation so content can be edited without a build step.
 
 Acceptance criteria:
 
-- cover `startGame`
-- cover non-repeating draws across a full session
-- cover `selectCategory` resetting answer reveal state
-- cover `resetSession`
-- cover `restartGame`
-
-### 4. Add subtle card transitions
-
-Goal:
-Improve the deck feel without turning the app into an animation-heavy interface.
-
-Acceptance criteria:
-
-- next-card flow feels intentional
-- transitions remain fast and readable
-- reduced-motion preferences are respected
-- buttons remain available for all actions
+- cards live in `src/data/deck.json`
+- `src/data/deck.ts` imports and re-exports the JSON through validation
+- existing TypeScript types still apply via a type assertion or Zod-like check
+- no change to the component layer
 
 ## Later
 
-- move deck content from TypeScript to local JSON if it improves authoring
 - add richer source metadata for disputed questions
-- add a shuffle moment on game start
-- add swipe-to-next as a progressive enhancement
+- add difficulty filter or mode selection before drawing
 
 ## Not now
 

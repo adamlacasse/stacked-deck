@@ -66,14 +66,23 @@ A change is ready when it:
 
 ## Available checks
 
-Run these after code changes:
+Before running checks, ensure your Node.js version is **20.19+**, **22.13+**, or **24+**. Vite 8 and the test dependencies require this.
+
+After pulling new changes, run:
+
+```bash
+npm install
+```
+
+Then run checks:
 
 ```bash
 npm run lint
 npm run build
+npm test
 ```
 
-There is no test suite yet. If you add tests or validation scripts, update this file and `README.md`.
+The test suite lives in `src/test/` and uses Vitest with jsdom. Tests cover `useDeck` hook behavior and `validateDeck` utility logic. Add new tests in `src/test/` when adding new hooks or data utilities. All `act()` calls in hook tests must be `await`ed (React 19 requirement).
 
 ## Documentation update rules
 
@@ -101,9 +110,8 @@ If the answer is not strongly favorable, do not add it.
 
 Known gaps that are fair game for future work:
 
-- deck validation is documented but not implemented
-- the starter deck is intentionally small
-- the app has no automated tests yet
-- card transitions are still minimal
+- no shuffle moment on game start
+- no swipe-to-next gesture
+- deck content lives in TypeScript rather than JSON
 
 Keep work aimed at those gaps before expanding scope.

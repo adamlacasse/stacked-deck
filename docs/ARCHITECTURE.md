@@ -29,13 +29,18 @@ src/
   types.ts                   domain types and canonical category order
   data/
     categories.ts            UI metadata for category labels and colors
-    deck.ts                  local starter deck content
+    deck.ts                  local starter deck (15 cards), validated at load time
+    validateDeck.ts          deck validation utility and dev-mode assertion
   hooks/
     useDeck.ts               game session state and draw logic
   components/
     CardView.tsx             active card container
     CategoryList.tsx         category chooser
     QuestionView.tsx         question and answer reveal panel
+  test/
+    setup.ts                 Vitest global setup (@testing-library/jest-dom)
+    useDeck.test.ts          hook behavior tests (15 tests)
+    validateDeck.test.ts     validation utility tests (9 tests)
 ```
 
 `src/assets/*` currently contains leftover Vite scaffold assets and is not part of the active app flow.
@@ -171,11 +176,11 @@ Do not add them without an explicit product reason.
 
 ## Known technical gaps
 
-The current implementation still needs:
+The current implementation has addressed all initial gaps:
 
-- executable validation for deck content
-- automated tests for hook behavior
-- larger local content sets
-- subtle transition polish between cards
+- ✅ deck validation implemented in `src/data/validateDeck.ts`
+- ✅ automated tests in `src/test/` (24 tests, run with `npm test`)
+- ✅ starter deck expanded to 15 cards
+- ✅ card and question panel transitions added via CSS animations
 
-Those are the highest-value next improvements.
+Next areas to improve: shuffle moment on game start, swipe-to-next gesture, move deck content to JSON.

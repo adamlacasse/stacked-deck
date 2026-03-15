@@ -45,6 +45,7 @@ export function CardView({
           </div>
 
           <QuestionView
+            key={selectedCategory ?? 'none'}
             entry={selectedEntry}
             answerRevealed={answerRevealed}
             remainingCount={remainingCount}

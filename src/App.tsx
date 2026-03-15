@@ -53,6 +53,7 @@ function App() {
           {phase === 'active' && currentCard ? (
             <>
               <CardView
+                key={currentCard.id}
                 card={currentCard}
                 selectedCategory={selectedCategory}
                 selectedEntry={selectedEntry}
