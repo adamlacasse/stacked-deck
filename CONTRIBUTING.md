@@ -66,7 +66,15 @@ A change is ready when it:
 
 ## Available checks
 
-Run these after code changes:
+Before running checks, ensure your Node.js version is **20.19+**, **22.13+**, or **24+**. Vite 8 and the test dependencies require this.
+
+After pulling new changes, run:
+
+```bash
+npm install
+```
+
+Then run checks:
 
 ```bash
 npm run lint
@@ -74,7 +82,7 @@ npm run build
 npm test
 ```
 
-The test suite lives in `src/test/` and uses Vitest. Tests cover `useDeck` hook behavior and `validateDeck` utility logic. Add new tests in `src/test/` when adding new hooks or data utilities.
+The test suite lives in `src/test/` and uses Vitest with jsdom. Tests cover `useDeck` hook behavior and `validateDeck` utility logic. Add new tests in `src/test/` when adding new hooks or data utilities. All `act()` calls in hook tests must be `await`ed (React 19 requirement).
 
 ## Documentation update rules
 

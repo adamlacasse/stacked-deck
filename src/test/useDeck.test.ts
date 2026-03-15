@@ -55,105 +55,105 @@ describe('useDeck – initial state', () => {
 })
 
 describe('useDeck – startGame', () => {
-  it('transitions to active phase and draws a card', () => {
+  it('transitions to active phase and draws a card', async () => {
     const { result } = renderHook(() => useDeck(singleCardDeck))
-    act(() => result.current.startGame())
+    await act(async () => result.current.startGame())
     expect(result.current.phase).toBe('active')
     expect(result.current.currentCard).not.toBeNull()
   })
 
-  it('does not draw a new card if one is already active', () => {
+  it('does not draw a new card if one is already active', async () => {
     const { result } = renderHook(() => useDeck(singleCardDeck))
-    act(() => result.current.startGame())
+    await act(async () => result.current.startGame())
     const firstCardId = result.current.currentCard?.id
-    act(() => result.current.startGame())
+    await act(async () => result.current.startGame())
     expect(result.current.currentCard?.id).toBe(firstCardId)
   })
 
-  it('decrements remainingCount after drawing a card', () => {
+  it('decrements remainingCount after drawing a card', async () => {
     const { result } = renderHook(() => useDeck(multiCardDeck))
-    act(() => result.current.startGame())
+    await act(async () => result.current.startGame())
     expect(result.current.remainingCount).toBe(2)
     expect(result.current.usedCount).toBe(1)
   })
 })
 
 describe('useDeck – drawNextCard (non-repeating draws)', () => {
-  it('never repeats a card within a session', () => {
+  it('never repeats a card within a session', async () => {
     const { result } = renderHook(() => useDeck(multiCardDeck))
     const seen = new Set<string>()
 
-    act(() => result.current.startGame())
+    await act(async () => result.current.startGame())
     seen.add(result.current.currentCard!.id)
 
-    act(() => result.current.drawNextCard())
+    await act(async () => result.current.drawNextCard())
     seen.add(result.current.currentCard!.id)
 
-    act(() => result.current.drawNextCard())
+    await act(async () => result.current.drawNextCard())
     seen.add(result.current.currentCard!.id)
 
     expect(seen.size).toBe(3)
   })
 
-  it('enters finished phase when all cards are used', () => {
+  it('enters finished phase when all cards are used', async () => {
     const { result } = renderHook(() => useDeck(singleCardDeck))
-    act(() => result.current.startGame())
-    act(() => result.current.drawNextCard())
+    await act(async () => result.current.startGame())
+    await act(async () => result.current.drawNextCard())
     expect(result.current.phase).toBe('finished')
     expect(result.current.currentCard).toBeNull()
   })
 })
 
 describe('useDeck – selectCategory', () => {
-  it('sets selectedCategory', () => {
+  it('sets selectedCategory', async () => {
     const { result } = renderHook(() => useDeck(singleCardDeck))
-    act(() => result.current.startGame())
-    act(() => result.current.selectCategory('science'))
+    await act(async () => result.current.startGame())
+    await act(async () => result.current.selectCategory('science'))
     expect(result.current.selectedCategory).toBe('science')
   })
 
-  it('resets answerRevealed when a new category is selected', () => {
+  it('resets answerRevealed when a new category is selected', async () => {
     const { result } = renderHook(() => useDeck(singleCardDeck))
-    act(() => result.current.startGame())
-    act(() => result.current.selectCategory('science'))
-    act(() => result.current.revealAnswer())
+    await act(async () => result.current.startGame())
+    await act(async () => result.current.selectCategory('science'))
+    await act(async () => result.current.revealAnswer())
     expect(result.current.answerRevealed).toBe(true)
-    act(() => result.current.selectCategory('history'))
+    await act(async () => result.current.selectCategory('history'))
     expect(result.current.answerRevealed).toBe(false)
   })
 
-  it('provides the correct selectedEntry', () => {
+  it('provides the correct selectedEntry', async () => {
     const { result } = renderHook(() => useDeck(singleCardDeck))
-    act(() => result.current.startGame())
-    act(() => result.current.selectCategory('geography'))
+    await act(async () => result.current.startGame())
+    await act(async () => result.current.selectCategory('geography'))
     expect(result.current.selectedEntry?.category).toBe('geography')
   })
 })
 
 describe('useDeck – revealAnswer', () => {
-  it('sets answerRevealed to true', () => {
+  it('sets answerRevealed to true', async () => {
     const { result } = renderHook(() => useDeck(singleCardDeck))
-    act(() => result.current.startGame())
-    act(() => result.current.selectCategory('arts'))
-    act(() => result.current.revealAnswer())
+    await act(async () => result.current.startGame())
+    await act(async () => result.current.selectCategory('arts'))
+    await act(async () => result.current.revealAnswer())
     expect(result.current.answerRevealed).toBe(true)
   })
 })
 
 describe('useDeck – resetSession', () => {
-  it('clears the session and returns to idle phase', () => {
+  it('clears the session and returns to idle phase', async () => {
     const { result } = renderHook(() => useDeck(singleCardDeck))
-    act(() => result.current.startGame())
-    act(() => result.current.resetSession())
+    await act(async () => result.current.startGame())
+    await act(async () => result.current.resetSession())
     expect(result.current.phase).toBe('idle')
     expect(result.current.currentCard).toBeNull()
     expect(result.current.usedCount).toBe(0)
   })
 
-  it('clears localStorage', () => {
+  it('clears localStorage', async () => {
     const { result } = renderHook(() => useDeck(singleCardDeck))
-    act(() => result.current.startGame())
-    act(() => result.current.resetSession())
+    await act(async () => result.current.startGame())
+    await act(async () => result.current.resetSession())
     const stored = window.localStorage.getItem('stacked-deck-session')
     const parsed = JSON.parse(stored!)
     expect(parsed.usedCardIds).toEqual([])
@@ -162,13 +162,13 @@ describe('useDeck – resetSession', () => {
 })
 
 describe('useDeck – restartGame', () => {
-  it('clears used cards and draws a fresh card', () => {
+  it('clears used cards and draws a fresh card', async () => {
     const { result } = renderHook(() => useDeck(singleCardDeck))
-    act(() => result.current.startGame())
-    act(() => result.current.drawNextCard())
+    await act(async () => result.current.startGame())
+    await act(async () => result.current.drawNextCard())
     expect(result.current.phase).toBe('finished')
 
-    act(() => result.current.restartGame())
+    await act(async () => result.current.restartGame())
     expect(result.current.phase).toBe('active')
     expect(result.current.currentCard).not.toBeNull()
     expect(result.current.usedCount).toBe(1)
@@ -192,3 +192,4 @@ describe('useDeck – localStorage persistence', () => {
     expect(result.current.usedCount).toBe(2)
   })
 })
+

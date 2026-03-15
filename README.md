@@ -149,10 +149,12 @@ Model around cards, not loose standalone questions.
 
 ### Requirements
 
-- Node.js 20+ recommended
+- Node.js **20.19+**, **22.13+**, or **24+** (required by Vite 8, Vitest 4, and jsdom 29)
 - npm
 
 ### Install
+
+After cloning or pulling new changes, always run:
 
 ```bash
 npm install

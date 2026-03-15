@@ -2,8 +2,14 @@ import { describe, it, expect } from 'vitest'
 import { validateDeck } from '../data/validateDeck'
 import type { TriviaDeck } from '../types'
 
-function makeEntry(category: string) {
+type MutableEntry = { category: string; question: string; answer: string }
+
+function makeEntry(category: string): MutableEntry {
   return { category, question: 'Q?', answer: 'A' }
+}
+
+function mutableEntries(card: ReturnType<typeof makeCard>): MutableEntry[] {
+  return card.entries as unknown as MutableEntry[]
 }
 
 function makeCard(id: string) {
@@ -83,8 +89,7 @@ describe('validateDeck – card-level errors', () => {
   it('reports a missing category', () => {
     const card = makeCard('c1')
     // Replace sports with a duplicate geography
-    ;(card.entries as unknown as Array<{ category: string; question: string; answer: string }>)[5] =
-      makeEntry('geography')
+    mutableEntries(card)[5] = makeEntry('geography')
     const deck = { ...validDeck, cards: [card] }
     const result = validateDeck(deck)
     expect(result.valid).toBe(false)
@@ -96,7 +101,7 @@ describe('validateDeck – card-level errors', () => {
 
   it('reports an empty question', () => {
     const card = makeCard('c1')
-    ;(card.entries as unknown as Array<{ category: string; question: string; answer: string }>)[0].question = ''
+    mutableEntries(card)[0].question = ''
     const deck = { ...validDeck, cards: [card] }
     const result = validateDeck(deck)
     expect(result.valid).toBe(false)
@@ -106,7 +111,7 @@ describe('validateDeck – card-level errors', () => {
 
   it('reports an empty answer', () => {
     const card = makeCard('c1')
-    ;(card.entries as unknown as Array<{ category: string; question: string; answer: string }>)[0].answer = ''
+    mutableEntries(card)[0].answer = ''
     const deck = { ...validDeck, cards: [card] }
     const result = validateDeck(deck)
     expect(result.valid).toBe(false)
