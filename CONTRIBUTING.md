@@ -71,9 +71,10 @@ Run these after code changes:
 ```bash
 npm run lint
 npm run build
+npm test
 ```
 
-There is no test suite yet. If you add tests or validation scripts, update this file and `README.md`.
+The test suite lives in `src/test/` and uses Vitest. Tests cover `useDeck` hook behavior and `validateDeck` utility logic. Add new tests in `src/test/` when adding new hooks or data utilities.
 
 ## Documentation update rules
 
@@ -101,9 +102,8 @@ If the answer is not strongly favorable, do not add it.
 
 Known gaps that are fair game for future work:
 
-- deck validation is documented but not implemented
-- the starter deck is intentionally small
-- the app has no automated tests yet
-- card transitions are still minimal
+- no shuffle moment on game start
+- no swipe-to-next gesture
+- deck content lives in TypeScript rather than JSON
 
 Keep work aimed at those gaps before expanding scope.

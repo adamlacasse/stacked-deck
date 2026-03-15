@@ -6,24 +6,24 @@ The app is a deck replacement, not a full trivia platform. The board, wedges, an
 
 ## Current status
 
-This repository now has a first playable MVP slice:
+This repository now has a solid playable MVP:
 
 - Vite + React + TypeScript app scaffold is in place
 - product and data model direction are documented
 - the starter screen has been replaced with a deck-style game shell
-- a local starter deck exists in `src/data/deck.ts`
+- a local starter deck of 15 cards exists in `src/data/deck.ts`
+- deck validation runs in development mode and throws loudly for malformed content (`src/data/validateDeck.ts`)
 - session state is handled locally with React state + `localStorage`
 - cards are drawn without repeats within a session
 - the app currently supports category selection, question reveal, answer reveal, next card, and session reset
+- card entrance and question panel transitions add a subtle deck feel
+- 24 automated tests in `src/test/` cover hook behavior and validation logic
 
 Still intentionally missing:
 
-- deck content validation
-- larger card content sets
-- card draw/reveal transitions
-- swipe interaction
-- tests
-
+- shuffle moment on game start
+- swipe-to-next gesture
+- deck content as JSON instead of TypeScript
 ## Canonical docs
 
 Read these before making code changes:
@@ -169,6 +169,7 @@ npm run dev
 ```bash
 npm run lint
 npm run build
+npm test
 ```
 
 ## Agent-first workflow
@@ -181,7 +182,7 @@ This repository is intended to work well with coding agents. The fastest way to 
 2. Keep changes local and avoid touching unrelated files.
 3. Preserve the six-category card model.
 4. Prefer static data, local state, and small components.
-5. Validate changes with `npm run lint` and `npm run build` when relevant.
+5. Validate changes with `npm run lint`, `npm run build`, and `npm test` when relevant.
 6. If a code change shifts product direction, update the docs in the same pass.
 
 ### Current implementation snapshot
@@ -190,22 +191,22 @@ The main app flow currently lives in:
 
 - `src/App.tsx`
 - `src/hooks/useDeck.ts`
-- `src/data/deck.ts`
+- `src/data/deck.ts` (15-card starter deck)
+- `src/data/validateDeck.ts` (deck validation, wired in at load time)
 - `src/components/CardView.tsx`
 - `src/components/CategoryList.tsx`
 - `src/components/QuestionView.tsx`
+- `src/test/useDeck.test.ts` and `src/test/validateDeck.test.ts`
 
-This is enough to play through a small local deck on a single screen while preserving the spoiler-resistant category flow.
+This is enough to play through a full local deck on a single screen while preserving the spoiler-resistant category flow.
 
 ### Good next implementation slices
 
 Build in this order:
 
-1. Add deck validation so malformed card data fails loudly in development.
-2. Expand the local deck and separate content authoring from UI work.
-3. Add subtle card transitions for draw/reveal states without increasing UI noise.
-4. Introduce lightweight tests for the deck hook and content rules.
-5. Add import-friendly deck loading so the content source can later move from local TS to local JSON cleanly.
+1. Add a shuffle moment or brief animation on `startGame` / `restartGame`.
+2. Add swipe-to-next as a progressive enhancement using pointer events.
+3. Move deck content from TypeScript to local JSON to separate authoring from compilation.
 
 ### Near-term file shape
 
@@ -213,10 +214,12 @@ These names align with the current project direction:
 
 - `src/types.ts`
 - `src/data/deck.ts`
+- `src/data/validateDeck.ts`
 - `src/hooks/useDeck.ts`
 - `src/components/CardView.tsx`
 - `src/components/CategoryList.tsx`
 - `src/components/QuestionView.tsx`
+- `src/test/*.test.ts`
 
 Use CSS Modules for new component styling.
 
@@ -235,16 +238,17 @@ An early feature is on track if it:
 
 These are good agent tasks for the current state of the repo:
 
-- "Add deck validation utilities based on `docs/DATA_MODEL.md` and wire them into local deck loading."
-- "Expand the starter deck with more cards while preserving canonical category order."
-- "Add lightweight tests for `useDeck` session behavior and non-repeating draws."
-- "Refine the card transitions so moving to the next card feels more like drawing from a deck."
+- "Add a brief shuffle moment when `startGame` is called so the deck-dealing feel is stronger."
+- "Add swipe-to-next as a progressive enhancement using pointer events."
+- "Move the starter deck content from `src/data/deck.ts` to `src/data/deck.json` and import it through validation."
 
 ## Scripts
 
 - `npm run dev`: start the Vite dev server
 - `npm run build`: type-check and build for production
 - `npm run lint`: run ESLint
+- `npm test`: run all tests with Vitest
+- `npm run test:watch`: run tests in watch mode
 - `npm run preview`: preview the production build locally
 
 ## Immediate next step
