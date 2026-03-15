@@ -5,6 +5,19 @@ This document gives implementation instructions to AI coding agents working on *
 
 Read this before making any code changes.
 
+## Repository Docs
+Use these documents for the rest of the implementation context:
+
+- `README.md` for current project status and commands
+- `CONTRIBUTING.md` for workflow, file boundaries, and definition of done
+- `docs/PROJECT_BRIEF.md` for product direction
+- `docs/DATA_MODEL.md` for canonical card structure
+- `docs/ARCHITECTURE.md` for the current code map and runtime flow
+- `docs/CONTENT_GUIDE.md` when editing trivia content
+- `docs/BACKLOG.md` when choosing the next task
+
+If guidance overlaps, prioritize product and data direction from this file, `docs/PROJECT_BRIEF.md`, and `docs/DATA_MODEL.md`.
+
 ## Project Summary
 Stacked Deck is a responsive web app that replaces the physical trivia card deck while preserving the social feel of playing with a real board game.
 
@@ -176,4 +189,3 @@ If there are two valid paths, prefer the one that:
 - keeps the app static-first
 - keeps the UI calmer
 - preserves portability
-

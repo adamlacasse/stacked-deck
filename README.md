@@ -28,9 +28,25 @@ Still intentionally missing:
 
 Read these before making code changes:
 
+- [`README.md`](./README.md): current project status and commands
 - [`AGENTS.md`](./AGENTS.md): implementation defaults and project guardrails
+- [`CONTRIBUTING.md`](./CONTRIBUTING.md): working agreement, file boundaries, and definition of done
 - [`docs/PROJECT_BRIEF.md`](./docs/PROJECT_BRIEF.md): product intent, MVP scope, and UX direction
 - [`docs/DATA_MODEL.md`](./docs/DATA_MODEL.md): card-centric data model and category rules
+- [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md): current code map and runtime flow
+- [`docs/CONTENT_GUIDE.md`](./docs/CONTENT_GUIDE.md): card authoring rules
+- [`docs/BACKLOG.md`](./docs/BACKLOG.md): near-term implementation priorities
+
+Suggested read order for new agents:
+
+1. `README.md`
+2. `AGENTS.md`
+3. `CONTRIBUTING.md`
+4. `docs/PROJECT_BRIEF.md`
+5. `docs/DATA_MODEL.md`
+6. `docs/ARCHITECTURE.md`
+7. `docs/CONTENT_GUIDE.md` when touching content
+8. `docs/BACKLOG.md` when picking the next task
 
 When in doubt, those documents win over ad hoc implementation ideas.
 
