@@ -1,8 +1,17 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import type { Category, GameSession, TriviaCard, TriviaDeck } from '../types'
 
 const STORAGE_KEY = 'stacked-deck-session'
+const SHUFFLE_DELAY_MS = 400
+
+function prefersReducedMotion(): boolean {
+  return (
+    typeof window !== 'undefined' &&
+    typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  )
+}
 
 function createEmptySession(): GameSession {
   return {
@@ -83,10 +92,20 @@ function createSessionForNextCard(
 
 export function useDeck(deck: TriviaDeck) {
   const [session, setSession] = useState<GameSession>(() => loadSession())
+  const [isShuffling, setIsShuffling] = useState(false)
+  const shuffleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(session))
   }, [session])
+
+  useEffect(() => {
+    return () => {
+      if (shuffleTimerRef.current !== null) {
+        clearTimeout(shuffleTimerRef.current)
+      }
+    }
+  }, [])
 
   const currentCard =
     deck.cards.find((card) => card.id === session.currentCardId) ?? null
@@ -101,13 +120,28 @@ export function useDeck(deck: TriviaDeck) {
       ? 'finished'
       : 'idle'
 
-  function startGame() {
-    setSession((currentSession) => {
-      if (currentSession.currentCardId) {
-        return currentSession
-      }
+  function triggerShuffle(drawSession: () => void) {
+    if (prefersReducedMotion()) {
+      drawSession()
+      return
+    }
 
-      return createSessionForNextCard(deck.cards, currentSession.usedCardIds)
+    if (shuffleTimerRef.current !== null) {
+      clearTimeout(shuffleTimerRef.current)
+    }
+
+    setIsShuffling(true)
+    shuffleTimerRef.current = setTimeout(() => {
+      setIsShuffling(false)
+      drawSession()
+    }, SHUFFLE_DELAY_MS)
+  }
+
+  function startGame() {
+    if (session.currentCardId || isShuffling) return
+
+    triggerShuffle(() => {
+      setSession((currentSession) => createSessionForNextCard(deck.cards, currentSession.usedCardIds))
     })
   }
 
@@ -137,7 +171,11 @@ export function useDeck(deck: TriviaDeck) {
   }
 
   function restartGame() {
-    setSession(createSessionForNextCard(deck.cards, []))
+    if (isShuffling) return
+
+    triggerShuffle(() => {
+      setSession(createSessionForNextCard(deck.cards, []))
+    })
   }
 
   return {
@@ -156,5 +194,6 @@ export function useDeck(deck: TriviaDeck) {
     drawNextCard,
     resetSession,
     restartGame,
+    isShuffling,
   }
 }

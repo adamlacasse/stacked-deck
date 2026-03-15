@@ -20,6 +20,7 @@ function App() {
     drawNextCard,
     resetSession,
     restartGame,
+    isShuffling,
   } = useDeck(starterDeck)
 
   return (
@@ -73,6 +74,15 @@ function App() {
                 </button>
               </div>
             </>
+          ) : isShuffling ? (
+            <section className={styles.heroPanel}>
+              <div className={styles.heroBody}>
+                <h2 className={`${styles.heroTitle} ${styles.shufflingTitle}`}>
+                  Shuffling…
+                </h2>
+                <p className={styles.heroText}>Getting the deck ready.</p>
+              </div>
+            </section>
           ) : (
             <section className={styles.heroPanel}>
               <div className={styles.heroBody}>

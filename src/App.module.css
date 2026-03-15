@@ -160,6 +160,15 @@
   font-size: 0.92rem;
 }
 
+@keyframes shufflePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.shufflingTitle {
+  animation: shufflePulse 600ms ease-in-out infinite;
+}
+
 @media (max-width: 52rem) {
   .masthead {
     flex-direction: column;
