@@ -1,0 +1,87 @@
+.cardShell {
+  position: relative;
+}
+
+.cardShell::before,
+.cardShell::after {
+  content: '';
+  position: absolute;
+  inset: 0.9rem 1rem -0.9rem;
+  border-radius: calc(var(--radius-card) + 0.3rem);
+  background: rgba(132, 101, 58, 0.12);
+  z-index: 0;
+}
+
+.cardShell::after {
+  inset: 1.8rem 2rem -1.8rem;
+  background: rgba(132, 101, 58, 0.07);
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.95), transparent 34%),
+    linear-gradient(160deg, rgba(255, 250, 241, 0.98), rgba(249, 242, 228, 0.96));
+  border: 1px solid rgba(121, 95, 60, 0.22);
+  border-radius: var(--radius-card);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  box-shadow: var(--shadow-card);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+  color: var(--color-muted);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 0.98;
+  color: var(--color-ink);
+  max-width: 12ch;
+}
+
+.cardId {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  border: 1px solid rgba(121, 95, 60, 0.18);
+  border-radius: 999px;
+  padding: 0.5rem 0.8rem;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.layout {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.categories {
+  min-width: 0;
+}
+
+@media (min-width: 60rem) {
+  .layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(20rem, 0.85fr);
+    align-items: start;
+  }
+}
+
+@media (max-width: 40rem) {
+  .header {
+    flex-direction: column;
+  }
+}

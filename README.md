@@ -6,14 +6,23 @@ The app is a deck replacement, not a full trivia platform. The board, wedges, an
 
 ## Current status
 
-This repository is at day-zero:
+This repository now has a first playable MVP slice:
 
-- Vite + React + TypeScript scaffold is installed
-- core product direction is documented
-- data model direction is documented
-- app UI is still the starter scaffold and has not been adapted yet
+- Vite + React + TypeScript app scaffold is in place
+- product and data model direction are documented
+- the starter screen has been replaced with a deck-style game shell
+- a local starter deck exists in `src/data/deck.ts`
+- session state is handled locally with React state + `localStorage`
+- cards are drawn without repeats within a session
+- the app currently supports category selection, question reveal, answer reveal, next card, and session reset
 
-The next useful work is replacing the demo UI with a minimal game shell and building the first playable card flow.
+Still intentionally missing:
+
+- deck content validation
+- larger card content sets
+- card draw/reveal transitions
+- swipe interaction
+- tests
 
 ## Canonical docs
 
@@ -159,29 +168,39 @@ This repository is intended to work well with coding agents. The fastest way to 
 5. Validate changes with `npm run lint` and `npm run build` when relevant.
 6. If a code change shifts product direction, update the docs in the same pass.
 
-### Good first implementation slices
+### Current implementation snapshot
+
+The main app flow currently lives in:
+
+- `src/App.tsx`
+- `src/hooks/useDeck.ts`
+- `src/data/deck.ts`
+- `src/components/CardView.tsx`
+- `src/components/CategoryList.tsx`
+- `src/components/QuestionView.tsx`
+
+This is enough to play through a small local deck on a single screen while preserving the spoiler-resistant category flow.
+
+### Good next implementation slices
 
 Build in this order:
 
-1. Remove the Vite starter content and replace it with a basic app shell.
-2. Add `types.ts` for the card model and a small local starter deck.
-3. Build a minimal deck/session hook that can draw cards without repeats.
-4. Render the six categories first and keep all questions hidden initially.
-5. Add question reveal and answer reveal for only the selected category.
-6. Add next-card and reset-session actions.
-7. Persist used card ids locally if it improves the MVP flow.
+1. Add deck validation so malformed card data fails loudly in development.
+2. Expand the local deck and separate content authoring from UI work.
+3. Add subtle card transitions for draw/reveal states without increasing UI noise.
+4. Introduce lightweight tests for the deck hook and content rules.
+5. Add import-friendly deck loading so the content source can later move from local TS to local JSON cleanly.
 
-### Likely near-term file shape
+### Near-term file shape
 
 These names align with the current project direction:
 
 - `src/types.ts`
-- `src/data/deck.ts` or `src/data/coreDeck.json`
+- `src/data/deck.ts`
 - `src/hooks/useDeck.ts`
 - `src/components/CardView.tsx`
 - `src/components/CategoryList.tsx`
 - `src/components/QuestionView.tsx`
-- `src/components/RevealAnswerButton.tsx`
 
 Use CSS Modules for new component styling.
 
@@ -200,10 +219,10 @@ An early feature is on track if it:
 
 These are good agent tasks for the current state of the repo:
 
-- "Replace the Vite starter screen with a minimal Stacked Deck app shell that matches the project brief."
-- "Add the MVP card types and a small local starter deck based on `docs/DATA_MODEL.md`."
-- "Implement a local `useDeck` hook that draws unused cards, supports reset, and keeps the UI spoiler-resistant."
-- "Build the first playable category -> question -> reveal answer -> next card flow using CSS Modules."
+- "Add deck validation utilities based on `docs/DATA_MODEL.md` and wire them into local deck loading."
+- "Expand the starter deck with more cards while preserving canonical category order."
+- "Add lightweight tests for `useDeck` session behavior and non-repeating draws."
+- "Refine the card transitions so moving to the next card feels more like drawing from a deck."
 
 ## Scripts
 
@@ -214,4 +233,4 @@ These are good agent tasks for the current state of the repo:
 
 ## Immediate next step
 
-Replace the starter scaffold in [`src/App.tsx`](./src/App.tsx) with the first playable game shell, keeping the implementation static-first and card-centric.
+Add deck validation and expand the local card set while keeping the implementation static-first and card-centric.

@@ -1,120 +1,126 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import styles from './App.module.css'
+import { CardView } from './components/CardView'
+import { starterDeck } from './data/deck'
+import { useDeck } from './hooks/useDeck'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const {
+    phase,
+    currentCard,
+    selectedCategory,
+    selectedEntry,
+    answerRevealed,
+    usedCount,
+    remainingCount,
+    deckSize,
+    deckName,
+    startGame,
+    selectCategory,
+    revealAnswer,
+    drawNextCard,
+    resetSession,
+    restartGame,
+  } = useDeck(starterDeck)
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <main className={styles.shell}>
+      <div className={styles.frame}>
+        <header className={styles.masthead}>
+          <div>
+            <p className={styles.kicker}>Stacked Deck</p>
+            <h1 className={styles.headline}>Deck replacement for game night.</h1>
+            <p className={styles.intro}>
+              Draw one card, pick one category, reveal one answer, and keep the
+              table moving. No dashboard clutter and no spoiler dump.
+            </p>
+          </div>
 
-      <div className="ticks"></div>
+          <div className={styles.stats} aria-label="Deck stats">
+            <div className={styles.statCard}>
+              <span className={styles.statLabel}>Cards drawn</span>
+              <span className={styles.statValue}>
+                {usedCount}/{deckSize}
+              </span>
+            </div>
+            <div className={styles.statCard}>
+              <span className={styles.statLabel}>Remaining</span>
+              <span className={styles.statValue}>{remainingCount}</span>
+            </div>
+          </div>
+        </header>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
+        <section className={styles.playArea}>
+          {phase === 'active' && currentCard ? (
+            <>
+              <CardView
+                card={currentCard}
+                selectedCategory={selectedCategory}
+                selectedEntry={selectedEntry}
+                answerRevealed={answerRevealed}
+                onSelectCategory={selectCategory}
+                onRevealAnswer={revealAnswer}
+                onNextCard={drawNextCard}
+                remainingCount={remainingCount}
+              />
+              <div className={styles.actionRow}>
+                <button
+                  type="button"
+                  className={styles.secondaryButton}
+                  onClick={resetSession}
                 >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+                  Reset session
+                </button>
+              </div>
+            </>
+          ) : (
+            <section className={styles.heroPanel}>
+              <div className={styles.heroBody}>
+                <div className={styles.deckMeta}>
+                  <span className={styles.metaPill}>{deckName}</span>
+                  <span className={styles.metaPill}>{deckSize} starter cards</span>
+                  <span className={styles.metaPill}>Single screen flow</span>
+                </div>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+                <h2 className={styles.heroTitle}>
+                  {phase === 'finished'
+                    ? 'That was the whole deck.'
+                    : 'Shuffle up and hand the phone to the reader.'}
+                </h2>
+
+                <p className={styles.heroText}>
+                  {phase === 'finished'
+                    ? 'All cards have been used once in this session. Shuffle the deck again to restart, or clear the local session and begin fresh.'
+                    : 'The MVP keeps the ritual simple: categories first, one question at a time, and one answer reveal when the table is ready.'}
+                </p>
+              </div>
+
+              <div className={styles.actionRow}>
+                <button
+                  type="button"
+                  onClick={phase === 'finished' ? restartGame : startGame}
+                >
+                  {phase === 'finished' ? 'Shuffle and play again' : 'Start game'}
+                </button>
+                {usedCount > 0 ? (
+                  <button
+                    type="button"
+                    className={styles.secondaryButton}
+                    onClick={resetSession}
+                  >
+                    Clear session
+                  </button>
+                ) : null}
+              </div>
+
+              <p className={styles.footerNote}>
+                Session state is stored locally so a refresh can continue the same
+                deck.
+              </p>
+            </section>
+          )}
+        </section>
+      </div>
+    </main>
   )
 }
 
