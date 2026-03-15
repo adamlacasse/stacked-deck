@@ -9,38 +9,44 @@
   }
 }
 
+/* ── Question panel: cream card-stock look ─── */
 .panel {
-  background:
-    linear-gradient(180deg, rgba(255, 251, 241, 0.94), rgba(255, 255, 255, 0.98));
-  border: 1px solid rgba(121, 95, 60, 0.18);
-  border-radius: calc(var(--radius-card) - 0.5rem);
+  background: var(--color-card); /* #fdfcf7 cream */
+  border: 1.5px solid rgba(200, 151, 48, 0.4); /* gold border */
+  border-radius: calc(var(--radius-card) - 0.1rem);
   padding: 1.4rem;
   min-height: 18rem;
   display: grid;
   align-content: start;
   gap: 1rem;
   animation: panelFadeIn 200ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  /* Subtle inner border — mirrors the TP question card frame */
+  outline: 1px solid rgba(200, 151, 48, 0.15);
+  outline-offset: -5px;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.12);
 }
 
+/* Gold uppercase label — like the category letter in an oval on a TP card */
 .eyebrow {
   margin: 0;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--color-muted);
+  letter-spacing: 0.2em;
+  color: #c89730; /* gold */
 }
 
+/* Question text in elegant serif — deep navy on cream */
 .title {
   margin: 0;
   font-family: var(--font-display);
   font-size: clamp(1.75rem, 3.2vw, 2.45rem);
-  line-height: 1.1;
-  color: var(--color-ink);
+  line-height: 1.12;
+  color: var(--color-ink); /* deep navy */
 }
 
 .supporting {
   margin: 0;
-  color: var(--color-muted);
+  color: #5a7090; /* medium muted navy */
   max-width: 32ch;
 }
 
@@ -59,17 +65,18 @@
 
 .answerLabel {
   margin: 0;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--color-muted);
+  letter-spacing: 0.2em;
+  color: #c89730; /* gold */
 }
 
+/* Answer text: bold navy — stands out on the cream background */
 .answer {
   margin: 0;
   font-size: clamp(1.25rem, 2.6vw, 1.75rem);
-  font-weight: 600;
-  color: var(--color-ink);
+  font-weight: 700;
+  color: var(--color-ink); /* deep navy */
 }
 
 .primaryAction {

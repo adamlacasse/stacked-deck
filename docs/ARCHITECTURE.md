@@ -135,10 +135,12 @@ Component-specific styling belongs in colocated CSS Modules.
 
 Current visual direction:
 
-- warm paper-like palette
-- deck/card metaphor
-- strong contrast for reading aloud
-- large touch-friendly actions
+- Trivial Pursuit–inspired navy-and-gold palette (deep navy `#1a3870` background, warm gold `#c89730` accents, cream card-stock `#fdfcf7` surfaces)
+- Playfair Display serif for display typography; system sans-serif for body
+- deck/card metaphor with gold decorative borders echoing the Classic Edition box
+- strong contrast for reading aloud (cream text on navy, navy text on cream cards)
+- large touch-friendly gold action buttons
+- category buttons use a coloured left-edge bar and fill with the category colour when selected
 
 ## Data boundaries
 

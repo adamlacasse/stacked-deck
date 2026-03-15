@@ -99,28 +99,36 @@ Avoid:
 - giant global stylesheet patterns
 
 ### Global Style Tokens
-Define a small set of CSS variables in a global stylesheet.
+Define a small set of CSS variables in a global stylesheet (`src/index.css`).
 
-Example direction:
+Current token palette (Trivial Pursuit–inspired navy + gold):
 
 ```
 :root {
-  --color-bg: #f7f4ee;
-  --color-surface: #fffdf9;
-  --color-text: #1f2937;
-  --color-accent: #7c3aed;
+  --color-bg: #1a3870;            /* deep navy page background */
+  --color-bg-deep: #0f2450;       /* darker navy for gradients */
+  --color-surface: #213f82;       /* lighter navy for surfaces */
+  --color-card: #fdfcf7;          /* cream card-stock for cards/panels */
+  --color-text: #e8dcc4;          /* cream text on dark backgrounds */
+  --color-ink: #0f2450;           /* navy text on light card backgrounds */
+  --color-muted: #8a9dbb;         /* muted blue-gray secondary text */
+  --color-border: rgba(200, 151, 48, 0.45); /* gold border */
+  --color-accent: #c89730;        /* warm gold accent */
+  --color-accent-strong: #a07520; /* deep gold */
 
-  --radius-card: 16px;
-  --shadow-card: 0 8px 24px rgba(0,0,0,0.08);
+  --radius-card: 0.75rem;
+  --shadow-card: 0 1.5rem 4rem rgba(0,0,0,0.45), 0 0 0 1px rgba(200,151,48,0.2);
 
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-6: 1.5rem;
-  --space-8: 2rem;
+  --font-body: 'Avenir Next', 'Segoe UI', sans-serif;
+  --font-display: 'Playfair Display', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
 }
 ```
+
+Key design notes:
+- Playfair Display is loaded via Google Fonts (`@import` in `index.css`).
+- Two text-colour contexts: cream/gold text on dark navy backgrounds, navy text on cream card surfaces. Components override explicitly where needed rather than relying solely on the global token.
+- Gold decorative borders and inner outlines (via CSS `outline` with negative offset) echo the thin gold frame on the Classic Edition box and question cards.
+- Buttons use a gold gradient with navy text.
 
 ## Card Interaction Model
 The digital UI preserves the **six-category card concept** while improving readability and avoiding spoilers.
@@ -208,20 +216,18 @@ Buttons should still exist for accessibility.
 When starting a game, briefly show a shuffle animation or "Shuffling deck" message to reinforce randomness.
 
 ## Category Styling
-Categories should use the classic trivia color palette to evoke the board game feeling.
-
-Suggested mapping:
+Categories use the classic Trivial Pursuit colour palette defined in `src/data/categories.ts`:
 
 ```
-Blue   Geography
-Pink   Entertainment
-Yellow History
-Brown  Arts
-Green  Science
-Orange Sports
+#4d81c5  Blue    Geography
+#c8568f  Pink    Entertainment
+#d6af33  Yellow  History
+#8f5c35  Brown   Arts & Literature
+#4f8c4a  Green   Science & Nature
+#d97732  Orange  Sports & Leisure
 ```
 
-This visual cue immediately communicates the trivia-card concept.
+Each category button has a solid-coloured left-edge bar and a lightly tinted background. When selected, the button fills with the full category colour and switches to white text — echoing the moment of earning a wedge in the board game. Category accent colours are injected at runtime via a `--category-accent` CSS custom property (set in `CategoryList.tsx`).
 
 ## UX Direction
 The app should feel calm, tactile, and game-night friendly.

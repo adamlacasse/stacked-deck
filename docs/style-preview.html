@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stacked Deck – Style Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Design tokens ───────────────────────────────────────── */
+    :root {
+      --color-bg: #1a3870;
+      --color-bg-deep: #0f2450;
+      --color-surface: #213f82;
+      --color-card: #fdfcf7;
+      --color-text: #e8dcc4;
+      --color-ink: #0f2450;
+      --color-muted: #8a9dbb;
+      --color-border: rgba(200, 151, 48, 0.45);
+      --color-accent: #c89730;
+      --color-accent-strong: #a07520;
+
+      --radius-card: 0.75rem;
+      --shadow-card:
+        0 1.5rem 4rem rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(200, 151, 48, 0.2);
+
+      --font-body: 'Avenir Next', 'Segoe UI', sans-serif;
+      --font-display: 'Playfair Display', 'Palatino Linotype', Georgia, serif;
+
+      font-family: var(--font-body);
+      line-height: 1.5;
+      font-weight: 400;
+      color: var(--color-text);
+      background: var(--color-bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    h1, h2, h3, p { margin: 0; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(ellipse at top, #213f82 0%, transparent 65%),
+        linear-gradient(180deg, #1a3870 0%, #0c1e46 100%);
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        repeating-linear-gradient(
+          135deg,
+          rgba(255,255,255,0.014), rgba(255,255,255,0.014) 0.5rem,
+          transparent 0.5rem, transparent 1.6rem
+        );
+    }
+
+    button {
+      appearance: none;
+      border: 1px solid rgba(255,200,80,0.25);
+      border-radius: 0.5rem;
+      padding: 0.95rem 1.4rem;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      color: #0f2450;
+      background: linear-gradient(180deg, #d4a840 0%, #b88520 100%);
+      box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,220,110,0.45);
+      letter-spacing: 0.03em;
+      transition: transform 160ms ease, filter 160ms ease;
+    }
+
+    button:hover { transform: translateY(-2px); filter: brightness(1.06); }
+
+    /* ─── Layout shell ────────────────────────────────────────── */
+    .shell {
+      min-height: 100vh;
+      padding: clamp(1rem, 3vw, 2rem);
+      display: grid;
+    }
+
+    .frame {
+      width: min(100%, 78rem);
+      margin: 0 auto;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    /* ─── Masthead ─────────────────────────────────────────────── */
+    .masthead {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .kicker {
+      margin: 0 0 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.76rem;
+      color: #c89730;
+    }
+
+    .headline {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 0.92;
+      color: #fdfcf7;
+    }
+
+    .intro {
+      margin: 0.9rem 0 0;
+      color: rgba(232,220,196,0.72);
+      font-size: 1.05rem;
+    }
+
+    /* ─── Stat cards ───────────────────────────────────────────── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(7rem, 1fr));
+      gap: 0.75rem;
+      min-width: min(100%, 16rem);
+    }
+
+    .statCard {
+      background: rgba(255,252,247,0.07);
+      border: 1px solid rgba(200,151,48,0.38);
+      border-radius: 0.625rem;
+      padding: 1rem;
+      box-shadow: 0 0.75rem 2rem rgba(0,0,0,0.25);
+    }
+
+    .statLabel {
+      display: block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #c89730;
+      margin-bottom: 0.35rem;
+    }
+
+    .statValue {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: #fdfcf7;
+    }
+
+    /* ─── Hero panel ───────────────────────────────────────────── */
+    .heroPanel {
+      background: linear-gradient(145deg, #1e3d80 0%, #142d6a 100%);
+      border: 1px solid rgba(200,151,48,0.55);
+      border-radius: var(--radius-card);
+      padding: clamp(1.5rem, 4vw, 2.4rem);
+      box-shadow: var(--shadow-card), inset 0 0 0 2px rgba(200,151,48,0.12);
+      outline: 1px solid rgba(200,151,48,0.18);
+      outline-offset: -8px;
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    .heroTitle {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(2.1rem, 4.5vw, 3.4rem);
+      line-height: 0.96;
+      color: #c89730;
+    }
+
+    .heroText { color: rgba(232,220,196,0.75); }
+
+    .metaPill {
+      border: 1px solid rgba(200,151,48,0.35);
+      background: rgba(15,36,80,0.55);
+      color: rgba(232,220,196,0.85);
+      border-radius: 999px;
+      padding: 0.65rem 0.95rem;
+      font-size: 0.9rem;
+      display: inline-block;
+    }
+
+    .deckMeta { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .actionRow { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+
+    .secondaryButton {
+      background: rgba(15,36,80,0.55);
+      color: rgba(232,220,196,0.9);
+      border: 1px solid rgba(200,151,48,0.4);
+    }
+
+    /* ─── Card view ────────────────────────────────────────────── */
+    .card {
+      background: var(--color-card);
+      border: 1.5px solid rgba(200,151,48,0.45);
+      border-radius: var(--radius-card);
+      padding: clamp(1.25rem, 3vw, 2rem);
+      box-shadow: var(--shadow-card), inset 0 0 0 0.25rem rgba(200,151,48,0.07);
+      outline: 1px solid rgba(200,151,48,0.18);
+      outline-offset: -6px;
+    }
+
+    .cardHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.76rem;
+      color: #c89730;
+    }
+
+    .cardTitle {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 0.98;
+      color: var(--color-ink);
+    }
+
+    .cardId {
+      font-size: 0.83rem;
+      color: var(--color-ink);
+      border: 1px solid rgba(15,36,80,0.2);
+      border-radius: 999px;
+      padding: 0.5rem 0.8rem;
+      background: rgba(255,255,255,0.7);
+      white-space: nowrap;
+    }
+
+    .cardLayout {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    @media (min-width: 60rem) {
+      .cardLayout { grid-template-columns: minmax(0,1.2fr) minmax(20rem,0.85fr); }
+    }
+
+    /* ─── Category buttons ─────────────────────────────────────── */
+    .categoryList { display: grid; gap: 0.875rem; }
+
+    @media (min-width: 48rem) {
+      .categoryList { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+
+    .categoryButton {
+      display: grid;
+      gap: 0.2rem;
+      text-align: left;
+      border: 1.5px solid #c8bcaa;
+      background: linear-gradient(135deg, #f5f2ee, #fdfcf7);
+      color: #0f2450;
+      min-height: 5.25rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0.5rem 1.25rem rgba(0,0,0,0.08);
+      border-radius: 0.5rem;
+      padding: 1rem 1rem 1rem 1.3rem;
+    }
+
+    /* Left coloured edge */
+    .categoryButton::before {
+      content: '';
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 0.3rem;
+      border-radius: 0.5rem 0 0 0.5rem;
+    }
+
+    .cat-geo { border-color: color-mix(in srgb, #4d81c5 35%, #c8bcaa 65%); background: linear-gradient(135deg, color-mix(in srgb, #4d81c5 16%, #fdfcf7 84%), #fdfcf7); }
+    .cat-geo::before { background: #4d81c5; }
+    .cat-ent { border-color: color-mix(in srgb, #c8568f 35%, #c8bcaa 65%); background: linear-gradient(135deg, color-mix(in srgb, #c8568f 16%, #fdfcf7 84%), #fdfcf7); }
+    .cat-ent::before { background: #c8568f; }
+    .cat-his { border-color: color-mix(in srgb, #d6af33 35%, #c8bcaa 65%); background: linear-gradient(135deg, color-mix(in srgb, #d6af33 16%, #fdfcf7 84%), #fdfcf7); }
+    .cat-his::before { background: #d6af33; }
+    .cat-art { border-color: color-mix(in srgb, #8f5c35 35%, #c8bcaa 65%); background: linear-gradient(135deg, color-mix(in srgb, #8f5c35 16%, #fdfcf7 84%), #fdfcf7); }
+    .cat-art::before { background: #8f5c35; }
+    .cat-sci { border-color: color-mix(in srgb, #4f8c4a 35%, #c8bcaa 65%); background: linear-gradient(135deg, color-mix(in srgb, #4f8c4a 16%, #fdfcf7 84%), #fdfcf7); }
+    .cat-sci::before { background: #4f8c4a; }
+    .cat-spo { border-color: color-mix(in srgb, #d97732 35%, #c8bcaa 65%); background: linear-gradient(135deg, color-mix(in srgb, #d97732 16%, #fdfcf7 84%), #fdfcf7); }
+    .cat-spo::before { background: #d97732; }
+
+    .catBadge { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.16em; }
+    .catLabel { font-family: var(--font-display); font-size: 1.35rem; color: #0f2450; }
+    .catPrompt { color: #5a7090; font-size: 0.92rem; }
+
+    /* ─── Question panel ───────────────────────────────────────── */
+    .questionPanel {
+      background: var(--color-card);
+      border: 1.5px solid rgba(200,151,48,0.4);
+      border-radius: calc(var(--radius-card) - 0.1rem);
+      padding: 1.4rem;
+      min-height: 18rem;
+      display: grid;
+      align-content: start;
+      gap: 1rem;
+      outline: 1px solid rgba(200,151,48,0.15);
+      outline-offset: -5px;
+      box-shadow: 0 0.5rem 2rem rgba(0,0,0,0.12);
+    }
+
+    .qEyebrow { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.2em; color: #c89730; }
+    .qTitle { font-family: var(--font-display); font-size: clamp(1.75rem, 3.2vw, 2.45rem); line-height: 1.12; color: var(--color-ink); }
+    .qAnswer { font-size: clamp(1.25rem, 2.6vw, 1.75rem); font-weight: 700; color: var(--color-ink); margin-top: 0.5rem; }
+    .qAnswerLabel { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.2em; color: #c89730; }
+
+    /* ─── Responsive ───────────────────────────────────────────── */
+    @media (max-width: 52rem) {
+      .masthead { flex-direction: column; }
+      .stats { width: 100%; }
+    }
+    @media (max-width: 40rem) {
+      .cardHeader { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="frame">
+
+      <!-- Masthead -->
+      <div class="masthead">
+        <div>
+          <p class="kicker">Your personal trivia deck</p>
+          <h1 class="headline">Stacked Deck</h1>
+          <p class="intro">Browse, drill, and master every question in your collection.</p>
+        </div>
+        <div class="stats">
+          <div class="statCard">
+            <span class="statLabel">Cards</span>
+            <span class="statValue">148</span>
+          </div>
+          <div class="statCard">
+            <span class="statLabel">Decks</span>
+            <span class="statValue">3</span>
+          </div>
+          <div class="statCard">
+            <span class="statLabel">Categories</span>
+            <span class="statValue">6</span>
+          </div>
+          <div class="statCard">
+            <span class="statLabel">Mastered</span>
+            <span class="statValue">62%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero panel -->
+      <div class="heroPanel">
+        <div>
+          <h2 class="heroTitle">Classic Genus</h2>
+          <p class="heroText">The original 1981 Trivial Pursuit question set — 2,400 cards across six categories.</p>
+        </div>
+        <div class="deckMeta">
+          <span class="metaPill">400 cards</span>
+          <span class="metaPill">6 categories</span>
+          <span class="metaPill">Classic Edition</span>
+        </div>
+        <div class="actionRow">
+          <button>Draw a Card</button>
+          <button class="secondaryButton">Browse All</button>
+        </div>
+      </div>
+
+      <!-- Play area: card + question panel -->
+      <div class="card">
+        <div class="cardHeader">
+          <div>
+            <p class="eyebrow">Card #727</p>
+            <h2 class="cardTitle">Genus</h2>
+          </div>
+          <span class="cardId">Classic · 1981</span>
+        </div>
+        <div class="cardLayout">
+          <!-- Category buttons -->
+          <div class="categoryList">
+            <button class="categoryButton cat-geo">
+              <span class="catBadge" style="color:#4d81c5">Geography</span>
+              <span class="catLabel">Oregon's</span>
+              <span class="catPrompt">Tap to reveal answer</span>
+            </button>
+            <button class="categoryButton cat-ent">
+              <span class="catBadge" style="color:#c8568f">Entertainment</span>
+              <span class="catLabel">Scott Joplin</span>
+              <span class="catPrompt">Tap to reveal answer</span>
+            </button>
+            <button class="categoryButton cat-his">
+              <span class="catBadge" style="color:#b8922a">History</span>
+              <span class="catLabel">Deep Throat</span>
+              <span class="catPrompt">Tap to reveal answer</span>
+            </button>
+            <button class="categoryButton cat-art">
+              <span class="catBadge" style="color:#8f5c35">Arts &amp; Lit.</span>
+              <span class="catLabel">A French poodle</span>
+              <span class="catPrompt">Tap to reveal answer</span>
+            </button>
+            <button class="categoryButton cat-sci">
+              <span class="catBadge" style="color:#4f8c4a">Science</span>
+              <span class="catLabel">The ostrich</span>
+              <span class="catPrompt">Tap to reveal answer</span>
+            </button>
+            <button class="categoryButton cat-spo">
+              <span class="catBadge" style="color:#d97732">Sports &amp; Leisure</span>
+              <span class="catLabel">Single, double, triple, homer</span>
+              <span class="catPrompt">Tap to reveal answer</span>
+            </button>
+          </div>
+
+          <!-- Active question panel -->
+          <div class="questionPanel">
+            <p class="qEyebrow">Geography · Question</p>
+            <h3 class="qTitle">What ocean surrounds the Madeira Islands?</h3>
+            <div style="display:grid;gap:1rem;margin-top:auto;padding-top:1.5rem">
+              <button>Reveal Answer</button>
+              <div>
+                <p class="qAnswerLabel">Answer</p>
+                <p class="qAnswer">The Atlantic Ocean</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

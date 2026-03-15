@@ -1,21 +1,26 @@
-:root {
-  --color-bg: #eadfc9;
-  --color-bg-deep: #d7c2a0;
-  --color-surface: #fff8ec;
-  --color-card: #fffdf7;
-  --color-text: #4d4335;
-  --color-ink: #241b12;
-  --color-muted: #6c604d;
-  --color-border: rgba(121, 95, 60, 0.18);
-  --color-accent: #8f3c24;
-  --color-accent-strong: #6e2411;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap');
 
-  --radius-card: 1.75rem;
-  --shadow-card: 0 1.3rem 3rem rgba(49, 36, 22, 0.14);
+:root {
+  /* ── Trivial Pursuit: Navy + Gold ─────────────────────────── */
+  --color-bg: #1a3870;
+  --color-bg-deep: #0f2450;
+  --color-surface: #213f82;
+  --color-card: #fdfcf7;
+  --color-text: #e8dcc4;        /* cream – for text on dark navy */
+  --color-ink: #0f2450;         /* deep navy – for text on light card stock */
+  --color-muted: #8a9dbb;       /* muted blue-gray */
+  --color-border: rgba(200, 151, 48, 0.45);  /* gold border */
+  --color-accent: #c89730;      /* warm gold */
+  --color-accent-strong: #a07520; /* deep gold */
+
+  --radius-card: 0.75rem;
+  --shadow-card:
+    0 1.5rem 4rem rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(200, 151, 48, 0.2);
 
   --font-body: 'Avenir Next', 'Segoe UI', sans-serif;
-  --font-display: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia,
-    serif;
+  --font-display: 'Playfair Display', 'Iowan Old Style', 'Palatino Linotype',
+    'Book Antiqua', Georgia, serif;
 
   font-family: var(--font-body);
   line-height: 1.5;
@@ -40,60 +45,68 @@ body {
   margin: 0;
   min-height: 100svh;
   background:
-    radial-gradient(circle at top, rgba(255, 249, 237, 0.95), transparent 30%),
-    linear-gradient(180deg, var(--color-bg), var(--color-bg-deep));
+    radial-gradient(ellipse at top, #213f82 0%, transparent 65%),
+    linear-gradient(180deg, #1a3870 0%, #0c1e46 100%);
 }
 
+/* Subtle diagonal fabric-like texture — echoes the TP box finish */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.09), transparent 30%),
     repeating-linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.02),
-      rgba(255, 255, 255, 0.02) 0.45rem,
-      transparent 0.45rem,
-      transparent 1.1rem
+      rgba(255, 255, 255, 0.014),
+      rgba(255, 255, 255, 0.014) 0.5rem,
+      transparent 0.5rem,
+      transparent 1.6rem
     );
-  opacity: 0.35;
+  opacity: 1;
 }
 
 #root {
   min-height: 100svh;
 }
 
+/* Gold buttons with deep navy text — classic TP colour-way */
 button {
   appearance: none;
-  border: 0;
-  border-radius: 1rem;
-  padding: 0.95rem 1.2rem;
+  border: 1px solid rgba(255, 200, 80, 0.25);
+  border-radius: 0.5rem;
+  padding: 0.95rem 1.4rem;
   font: inherit;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  color: #fffaf2;
-  background: linear-gradient(180deg, var(--color-accent), var(--color-accent-strong));
-  box-shadow: 0 0.8rem 1.6rem rgba(74, 32, 18, 0.24);
+  color: #0f2450;
+  background: linear-gradient(180deg, #d4a840 0%, #b88520 100%);
+  box-shadow:
+    0 0.5rem 1.5rem rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 220, 110, 0.45);
   transition:
     transform 160ms ease,
     box-shadow 160ms ease,
     filter 160ms ease;
+  letter-spacing: 0.03em;
 }
 
 button:hover {
   transform: translateY(-0.0625rem);
-  box-shadow: 0 1rem 1.8rem rgba(74, 32, 18, 0.28);
+  box-shadow:
+    0 0.75rem 2rem rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 220, 110, 0.45);
+  filter: brightness(1.06);
 }
 
 button:focus-visible {
-  outline: 3px solid rgba(79, 140, 74, 0.45);
+  outline: 3px solid rgba(200, 151, 48, 0.65);
   outline-offset: 3px;
 }
 
 button:active {
   transform: translateY(0);
+  filter: brightness(0.96);
 }
 
 h1,
