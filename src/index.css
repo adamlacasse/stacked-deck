@@ -49,23 +49,6 @@ body {
     linear-gradient(180deg, #1a3870 0%, #0c1e46 100%);
 }
 
-/* Subtle diagonal fabric-like texture — echoes the TP box finish */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background:
-    repeating-linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.014),
-      rgba(255, 255, 255, 0.014) 0.5rem,
-      transparent 0.5rem,
-      transparent 1.6rem
-    );
-  opacity: 1;
-}
-
 #root {
   min-height: 100svh;
 }
