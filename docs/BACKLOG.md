@@ -68,10 +68,21 @@ Cards moved from `src/data/deck.ts` to `src/data/deck.json`.
 - `resolveJsonModule: true` added to `tsconfig.app.json`
 - no change to the component layer
 
+### ✅ Add difficulty filter before drawing
+
+Difficulty filter added to `useDeck` and `App.tsx`.
+
+- `difficultyFilter` state (`'all' | 'easy' | 'medium' | 'hard'`) exposed from `useDeck`
+- `setDifficultyFilter` guards against changes during active play
+- `filteredCards` derived via `useMemo`; `deckSize` and `remainingCount` reflect the active filter
+- difficulty selector shown on the start and finished screens in `App.tsx`
+- filter resets to `'all'` on page load; not persisted to `localStorage`
+- 5 new tests in `useDeck.test.ts` cover filter defaults, deckSize, draw behavior, and phase guard
+
 ## Later
 
 - add richer source metadata for disputed questions
-- add difficulty filter or mode selection before drawing
+- expand the deck with more cards across all difficulty levels
 
 ## Not now
 

@@ -11,19 +11,16 @@ This repository now has a solid playable MVP:
 - Vite + React + TypeScript app scaffold is in place
 - product and data model direction are documented
 - the starter screen has been replaced with a deck-style game shell
-- a local starter deck of 15 cards exists in `src/data/deck.ts`
+- a local starter deck of 15 cards exists in `src/data/deck.json`
 - deck validation runs in development mode and throws loudly for malformed content (`src/data/validateDeck.ts`)
 - session state is handled locally with React state + `localStorage`
 - cards are drawn without repeats within a session
 - the app currently supports category selection, question reveal, answer reveal, next card, and session reset
 - card entrance and question panel transitions add a subtle deck feel
-- 24 automated tests in `src/test/` cover hook behavior and validation logic
-
-Still intentionally missing:
-
-- shuffle moment on game start
-- swipe-to-next gesture
-- deck content as JSON instead of TypeScript
+- a brief "Shuffling…" state plays on `startGame` and `restartGame`
+- swipe-to-next (left or right) advances the card once an answer is revealed
+- difficulty filter lets you limit draws to easy, medium, or hard cards before starting
+- 31 automated tests in `src/test/` cover hook behavior and validation logic
 ## Canonical docs
 
 Read these before making code changes:
@@ -206,9 +203,8 @@ This is enough to play through a full local deck on a single screen while preser
 
 Build in this order:
 
-1. Add a shuffle moment or brief animation on `startGame` / `restartGame`.
-2. Add swipe-to-next as a progressive enhancement using pointer events.
-3. Move deck content from TypeScript to local JSON to separate authoring from compilation.
+1. Add richer source metadata for individual entries where the answer is disputed or has useful context.
+2. Expand the deck with more cards across all difficulty levels.
 
 ### Near-term file shape
 
@@ -255,4 +251,4 @@ These are good agent tasks for the current state of the repo:
 
 ## Immediate next step
 
-Add deck validation and expand the local card set while keeping the implementation static-first and card-centric.
+Expand the deck with more cards and add richer source metadata for entries where the answer may be disputed or has useful historical context.
