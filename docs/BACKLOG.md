@@ -26,7 +26,7 @@ Deck expanded from 5 to 15 cards in `src/data/deck.ts`.
 
 Test suite added using Vitest in `src/test/`.
 
-- 24 tests across `useDeck.test.ts` (15 tests) and `validateDeck.test.ts` (9 tests)
+- 26 tests across `useDeck.test.ts` (17 tests) and `validateDeck.test.ts` (9 tests)
 - covers `startGame`, non-repeating draws, `selectCategory`, `revealAnswer`, `resetSession`, `restartGame`, and localStorage persistence
 - run with `npm test`
 
@@ -39,42 +39,33 @@ CSS animations added in `CardView.module.css` and `QuestionView.module.css`.
 - answer block has its own fade-in when revealed
 - all animations respect `prefers-reduced-motion` (existing global rule in `index.css`)
 
-## Now
+### ✅ Add a shuffle moment on game start
 
-### 1. Add a shuffle moment on game start
+Brief "Shuffling…" state added to `useDeck` and `App.tsx`.
 
-Goal:
-Reinforce the deck metaphor at the start of each game session.
-
-Acceptance criteria:
-
-- briefly display a "Shuffling…" message or animation when `startGame` or `restartGame` is triggered
-- the transition takes no more than 500ms so it doesn't delay play
-- `prefers-reduced-motion` skips the animation entirely
+- `isShuffling` state exposed from `useDeck`
+- 400ms delay before drawing a card on `startGame` and `restartGame`
+- `prefers-reduced-motion` skips the delay entirely
+- shuffling UI shown in the hero panel during the delay
 - no new dependencies
 
-### 2. Add swipe-to-next as a progressive enhancement
+### ✅ Add swipe-to-next as a progressive enhancement
 
-Goal:
-Let players swipe the card away to draw the next one on touch devices.
+Swipe gesture detection added to `CardView.tsx`.
 
-Acceptance criteria:
+- pointer events (`onPointerDown`, `onPointerUp`, `onPointerCancel`) track horizontal swipes
+- swipe left or right triggers `drawNextCard` when answer has been revealed
+- 60px horizontal threshold with directional guard (only fires if dx > dy)
+- `touch-action: pan-y` on the card shell lets browsers handle vertical scrolling
+- native pointer events, no library
 
-- swipe left or right on the active card triggers `drawNextCard`
-- requires answer to have been revealed first (same constraint as the Next Card button)
-- falls back gracefully to buttons on non-touch devices
-- implemented with native pointer events, no swipe library needed
+### ✅ Move deck content to local JSON
 
-### 3. Move deck content to local JSON
+Cards moved from `src/data/deck.ts` to `src/data/deck.json`.
 
-Goal:
-Separate card authoring from TypeScript compilation so content can be edited without a build step.
-
-Acceptance criteria:
-
-- cards live in `src/data/deck.json`
-- `src/data/deck.ts` imports and re-exports the JSON through validation
-- existing TypeScript types still apply via a type assertion or Zod-like check
+- `src/data/deck.ts` imports the JSON and re-exports through validation
+- type assertion used for JSON import (`as unknown as TriviaDeck`)
+- `resolveJsonModule: true` added to `tsconfig.app.json`
 - no change to the component layer
 
 ## Later
