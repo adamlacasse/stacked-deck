@@ -68,6 +68,14 @@ Cards moved from `src/data/deck.ts` to `src/data/deck.json`.
 - `resolveJsonModule: true` added to `tsconfig.app.json`
 - no change to the component layer
 
+### ✅ Expand the deck with more cards across all difficulty levels
+
+Deck expanded from 15 to 30 cards in `src/data/deck.json`.
+
+- 10 easy, 13 medium, 7 hard cards
+- broad topic variety across all six categories
+- no duplicate questions; all cards pass validation
+
 ### ✅ Add difficulty filter before drawing
 
 Difficulty filter added to `useDeck` and `App.tsx`.
@@ -81,8 +89,8 @@ Difficulty filter added to `useDeck` and `App.tsx`.
 
 ## Later
 
+- continue expanding the deck toward a large card library (currently 30; target: hundreds, then thousands)
 - add richer source metadata for disputed questions
-- expand the deck with more cards across all difficulty levels
 - add component tests for CardView, CategoryList, and QuestionView (rendering and interactions)
 - add an error boundary to handle corrupted localStorage gracefully
 - accessibility audit: ARIA labels, keyboard navigation, color contrast check

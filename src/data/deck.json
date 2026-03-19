@@ -557,6 +557,561 @@
           "answer": "300"
         }
       ]
+    },
+    {
+      "id": "card-0016",
+      "difficulty": "easy",
+      "tags": ["general"],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital city of Japan?",
+          "answer": "Tokyo"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which animated Disney film features the song Let It Go?",
+          "answer": "Frozen"
+        },
+        {
+          "category": "history",
+          "question": "What was the name of the first artificial satellite launched into space?",
+          "answer": "Sputnik"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote the novel Frankenstein?",
+          "answer": "Mary Shelley"
+        },
+        {
+          "category": "science",
+          "question": "At what temperature does water boil, in degrees Celsius?",
+          "answer": "100 degrees Celsius"
+        },
+        {
+          "category": "sports",
+          "question": "In athletics, how many hurdles are in a standard 110-metre hurdles race?",
+          "answer": "Ten"
+        }
+      ]
+    },
+    {
+      "id": "card-0017",
+      "difficulty": "medium",
+      "tags": ["general"],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the name of the world's largest coral reef system?",
+          "answer": "The Great Barrier Reef"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which director made the film Schindler's List?",
+          "answer": "Steven Spielberg"
+        },
+        {
+          "category": "history",
+          "question": "In what year did World War II end?",
+          "answer": "1945"
+        },
+        {
+          "category": "arts",
+          "question": "Who painted The Birth of Venus?",
+          "answer": "Sandro Botticelli"
+        },
+        {
+          "category": "science",
+          "question": "What is the atomic number of carbon?",
+          "answer": "6"
+        },
+        {
+          "category": "sports",
+          "question": "How many rings appear on the Olympic flag?",
+          "answer": "Five"
+        }
+      ]
+    },
+    {
+      "id": "card-0018",
+      "difficulty": "hard",
+      "tags": ["general"],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the smallest country in the world by land area?",
+          "answer": "Vatican City"
+        },
+        {
+          "category": "entertainment",
+          "question": "In which year was the original Star Wars film released?",
+          "answer": "1977"
+        },
+        {
+          "category": "history",
+          "question": "Who was the last ruling pharaoh of ancient Egypt?",
+          "answer": "Cleopatra VII"
+        },
+        {
+          "category": "arts",
+          "question": "Who composed the opera The Magic Flute?",
+          "answer": "Wolfgang Amadeus Mozart"
+        },
+        {
+          "category": "science",
+          "question": "What is the approximate half-life of Carbon-14?",
+          "answer": "5,730 years"
+        },
+        {
+          "category": "sports",
+          "question": "How many Grand Slam tournaments are played in tennis each year?",
+          "answer": "Four"
+        }
+      ]
+    },
+    {
+      "id": "card-0019",
+      "difficulty": "easy",
+      "tags": ["general"],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "On which continent is Brazil located?",
+          "answer": "South America"
+        },
+        {
+          "category": "entertainment",
+          "question": "What is the fictional address of Sherlock Holmes?",
+          "answer": "221B Baker Street"
+        },
+        {
+          "category": "history",
+          "question": "Who was the first woman to win a Nobel Prize?",
+          "answer": "Marie Curie"
+        },
+        {
+          "category": "arts",
+          "question": "Which novel opens with the line \"Call me Ishmael\"?",
+          "answer": "Moby-Dick"
+        },
+        {
+          "category": "science",
+          "question": "What organ pumps blood through the human body?",
+          "answer": "The heart"
+        },
+        {
+          "category": "sports",
+          "question": "What sport is played at Wimbledon?",
+          "answer": "Tennis"
+        }
+      ]
+    },
+    {
+      "id": "card-0020",
+      "difficulty": "medium",
+      "tags": ["general"],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which two countries share the longest international land border?",
+          "answer": "Canada and the United States"
+        },
+        {
+          "category": "entertainment",
+          "question": "Who played James Bond in the 2006 film Casino Royale?",
+          "answer": "Daniel Craig"
+        },
+        {
+          "category": "history",
+          "question": "In what year did the Wright Brothers make their first powered flight?",
+          "answer": "1903"
+        },
+        {
+          "category": "arts",
+          "question": "Which Spanish architect designed the Sagrada Família in Barcelona?",
+          "answer": "Antoni Gaudí"
+        },
+        {
+          "category": "science",
+          "question": "What is the chemical formula for water?",
+          "answer": "H₂O"
+        },
+        {
+          "category": "sports",
+          "question": "How many points is a touchdown worth in American football?",
+          "answer": "Six"
+        }
+      ]
+    },
+    {
+      "id": "card-0021",
+      "difficulty": "hard",
+      "tags": ["general"],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the smallest ocean by surface area?",
+          "answer": "The Arctic Ocean"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which director made the 1954 Japanese film Seven Samurai?",
+          "answer": "Akira Kurosawa"
+        },
+        {
+          "category": "history",
+          "question": "In which year did the Soviet Union formally dissolve?",
+          "answer": "1991"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote the play Death of a Salesman?",
+          "answer": "Arthur Miller"
+        },
+        {
+          "category": "science",
+          "question": "What name is given to the scientific study of heredity and genetic variation?",
+          "answer": "Genetics"
+        },
+        {
+          "category": "sports",
+          "question": "Which country won the first FIFA World Cup in 1930?",
+          "answer": "Uruguay"
+        }
+      ]
+    },
+    {
+      "id": "card-0022",
+      "difficulty": "easy",
+      "tags": ["general"],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which ocean lies between Europe and North America?",
+          "answer": "The Atlantic Ocean"
+        },
+        {
+          "category": "entertainment",
+          "question": "What is the name of Mickey Mouse's pet dog?",
+          "answer": "Pluto"
+        },
+        {
+          "category": "history",
+          "question": "What was the name of the war fought between the North and South of the United States from 1861 to 1865?",
+          "answer": "The American Civil War"
+        },
+        {
+          "category": "arts",
+          "question": "Who composed the opera Carmen?",
+          "answer": "Georges Bizet"
+        },
+        {
+          "category": "science",
+          "question": "What do we call animals that eat only plants?",
+          "answer": "Herbivores"
+        },
+        {
+          "category": "sports",
+          "question": "How many individual events make up a decathlon?",
+          "answer": "Ten"
+        }
+      ]
+    },
+    {
+      "id": "card-0023",
+      "difficulty": "medium",
+      "tags": ["general"],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which country is home to the ancient city of Petra?",
+          "answer": "Jordan"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actress played Clarice Starling in The Silence of the Lambs?",
+          "answer": "Jodie Foster"
+        },
+        {
+          "category": "history",
+          "question": "What was the name of the ancient trade route connecting China to the Mediterranean?",
+          "answer": "The Silk Road"
+        },
+        {
+          "category": "arts",
+          "question": "Which American author wrote The Great Gatsby?",
+          "answer": "F. Scott Fitzgerald"
+        },
+        {
+          "category": "science",
+          "question": "What is the name of the force that opposes motion between two surfaces in contact?",
+          "answer": "Friction"
+        },
+        {
+          "category": "sports",
+          "question": "In which Swiss city are the headquarters of the International Olympic Committee located?",
+          "answer": "Lausanne"
+        }
+      ]
+    },
+    {
+      "id": "card-0024",
+      "difficulty": "hard",
+      "tags": ["general"],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the name of the deepest lake in the world?",
+          "answer": "Lake Baikal"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which Philip K. Dick novel was the basis for the film Blade Runner?",
+          "answer": "Do Androids Dream of Electric Sheep?"
+        },
+        {
+          "category": "history",
+          "question": "Which 1815 battle led to Napoleon Bonaparte's final defeat?",
+          "answer": "The Battle of Waterloo"
+        },
+        {
+          "category": "arts",
+          "question": "Which French impressionist painter created the series of Water Lilies paintings?",
+          "answer": "Claude Monet"
+        },
+        {
+          "category": "science",
+          "question": "What is the term for the splitting of an atomic nucleus that releases a large amount of energy?",
+          "answer": "Nuclear fission"
+        },
+        {
+          "category": "sports",
+          "question": "How many players are on each side in a water polo game?",
+          "answer": "Seven"
+        }
+      ]
+    },
+    {
+      "id": "card-0025",
+      "difficulty": "medium",
+      "tags": ["general"],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "In which US city would you find the Golden Gate Bridge?",
+          "answer": "San Francisco"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which Shakespeare play features the mischievous fairy Puck?",
+          "answer": "A Midsummer Night's Dream"
+        },
+        {
+          "category": "history",
+          "question": "What was the name of the NASA program that first landed humans on the Moon?",
+          "answer": "Apollo"
+        },
+        {
+          "category": "arts",
+          "question": "Which French impressionist painter is known for his depictions of ballet dancers?",
+          "answer": "Edgar Degas"
+        },
+        {
+          "category": "science",
+          "question": "What is the name of the atmospheric layer that absorbs most of the Sun's ultraviolet radiation?",
+          "answer": "The ozone layer"
+        },
+        {
+          "category": "sports",
+          "question": "In cricket, how many balls make up a standard over?",
+          "answer": "Six"
+        }
+      ]
+    },
+    {
+      "id": "card-0026",
+      "difficulty": "easy",
+      "tags": ["general"],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital city of Australia?",
+          "answer": "Canberra"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which video game character is famous for collecting coins and rescuing Princess Peach?",
+          "answer": "Mario"
+        },
+        {
+          "category": "history",
+          "question": "What was the name of the space shuttle that broke apart shortly after launch in January 1986?",
+          "answer": "Challenger"
+        },
+        {
+          "category": "arts",
+          "question": "Which Dickens novel begins with the line \"It was the best of times, it was the worst of times\"?",
+          "answer": "A Tale of Two Cities"
+        },
+        {
+          "category": "science",
+          "question": "What is the name of the scale traditionally used to measure the magnitude of earthquakes?",
+          "answer": "The Richter scale"
+        },
+        {
+          "category": "sports",
+          "question": "In which sport would you use a shuttlecock?",
+          "answer": "Badminton"
+        }
+      ]
+    },
+    {
+      "id": "card-0027",
+      "difficulty": "hard",
+      "tags": ["general"],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the name of the tectonic plate that makes up most of the Pacific Ocean floor?",
+          "answer": "The Pacific Plate"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which novel by Gabriel García Márquez follows the Buendía family over seven generations?",
+          "answer": "One Hundred Years of Solitude"
+        },
+        {
+          "category": "history",
+          "question": "In which year was the Magna Carta signed?",
+          "answer": "1215"
+        },
+        {
+          "category": "arts",
+          "question": "Which American jazz musician is known as the Father of Bebop?",
+          "answer": "Charlie Parker"
+        },
+        {
+          "category": "science",
+          "question": "What is the name of the phenomenon where light bends around massive objects due to gravity?",
+          "answer": "Gravitational lensing"
+        },
+        {
+          "category": "sports",
+          "question": "What is the term for scoring one under par on a single hole in golf?",
+          "answer": "Birdie"
+        }
+      ]
+    },
+    {
+      "id": "card-0028",
+      "difficulty": "medium",
+      "tags": ["general"],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which sea lies between Italy and the countries of the western Balkans?",
+          "answer": "The Adriatic Sea"
+        },
+        {
+          "category": "entertainment",
+          "question": "In the film Forrest Gump, what does Forrest's mother famously compare life to?",
+          "answer": "A box of chocolates"
+        },
+        {
+          "category": "history",
+          "question": "Who commanded the Confederate Army during the American Civil War?",
+          "answer": "Robert E. Lee"
+        },
+        {
+          "category": "arts",
+          "question": "Which Mexican artist is famous for self-portraits and was married to muralist Diego Rivera?",
+          "answer": "Frida Kahlo"
+        },
+        {
+          "category": "science",
+          "question": "What is the name of the process by which liquid water converts into water vapor?",
+          "answer": "Evaporation"
+        },
+        {
+          "category": "sports",
+          "question": "In volleyball, how many players are on each side of the net?",
+          "answer": "Six"
+        }
+      ]
+    },
+    {
+      "id": "card-0029",
+      "difficulty": "hard",
+      "tags": ["general"],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which African country has more ancient pyramids than Egypt?",
+          "answer": "Sudan"
+        },
+        {
+          "category": "entertainment",
+          "question": "Who wrote the science fiction novel Dune?",
+          "answer": "Frank Herbert"
+        },
+        {
+          "category": "history",
+          "question": "What was the name of the South African policy of institutionalized racial segregation?",
+          "answer": "Apartheid"
+        },
+        {
+          "category": "arts",
+          "question": "Which Italian artist painted The Last Supper?",
+          "answer": "Leonardo da Vinci"
+        },
+        {
+          "category": "science",
+          "question": "What is the chemical symbol for iron?",
+          "answer": "Fe"
+        },
+        {
+          "category": "sports",
+          "question": "In which city were the first modern Olympic Games held in 1896?",
+          "answer": "Athens"
+        }
+      ]
+    },
+    {
+      "id": "card-0030",
+      "difficulty": "easy",
+      "tags": ["general"],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the largest country in South America by land area?",
+          "answer": "Brazil"
+        },
+        {
+          "category": "entertainment",
+          "question": "Who voiced Buzz Lightyear in the original Toy Story film?",
+          "answer": "Tim Allen"
+        },
+        {
+          "category": "history",
+          "question": "In which country is the Colosseum located?",
+          "answer": "Italy"
+        },
+        {
+          "category": "arts",
+          "question": "Which musical instrument has 88 keys?",
+          "answer": "The piano"
+        },
+        {
+          "category": "science",
+          "question": "What do we call animals that eat both plants and meat?",
+          "answer": "Omnivores"
+        },
+        {
+          "category": "sports",
+          "question": "How many players make up a standard rugby union team?",
+          "answer": "Fifteen"
+        }
+      ]
     }
   ]
 }
