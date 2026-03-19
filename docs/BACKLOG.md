@@ -115,6 +115,11 @@ Shared constants extracted to `src/constants.ts`; CSS timing variables added to 
 - add richer source metadata for disputed questions
 - add component tests for CardView, CategoryList, and QuestionView (rendering and interactions)
 - accessibility audit: ARIA labels, keyboard navigation, color contrast check
+- deploy the static Vite build to Cloudflare Pages with GitHub integration (`main` -> production, branch/PR preview deploys enabled), with `stacked-deck.adamlcasse.dev` as the intended production URL
+- document the production deploy contract: build command (`npm run build`), output directory (`dist`), Node version, rollback steps, and custom-domain setup for `stacked-deck.adamlcasse.dev`
+- wire the production subdomain `stacked-deck.adamlcasse.dev` to the Pages project via Cloudflare custom-domain setup and DNS; do not add a repo-level `CNAME` file unless the deployment target changes to GitHub Pages
+- add static-hosting polish for deployment: `public/_headers` cache rules for hashed assets and baseline security headers; only add redirects if future routing actually requires them
+- smoke-test the deployed site on phone-sized Safari and Chrome, focusing on first-load speed, localStorage session persistence, and game-night readability on real devices
 
 ## Not now
 
