@@ -14,6 +14,10 @@ export type CardEntry = {
   question: string
   answer: string
   explanation?: string
+  source?: {
+    label: string
+    url?: string
+  }
 }
 
 export type Difficulty = 'easy' | 'medium' | 'hard'

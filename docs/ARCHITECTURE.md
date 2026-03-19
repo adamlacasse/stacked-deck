@@ -182,12 +182,13 @@ Do not add them without an explicit product reason.
 The current implementation has addressed all initial gaps:
 
 - ✅ deck validation implemented in `src/data/validateDeck.ts`
-- ✅ automated tests in `src/test/` (31 tests, run with `npm test`)
-- ✅ starter deck expanded to 15 cards
+- ✅ automated tests in `src/test/` (39 tests, run with `npm test`)
+- ✅ starter deck expanded to 30 cards
 - ✅ card and question panel transitions added via CSS animations
 - ✅ shuffle moment on game start (`isShuffling` state in `useDeck`)
 - ✅ swipe-to-next via pointer events in `CardView`
 - ✅ deck content moved to `src/data/deck.json`
 - ✅ difficulty filter (easy / medium / hard / all) available before starting
+- ✅ post-answer context panel for entries with explanation/source metadata
 
-Next areas to improve: richer source metadata for individual entries, more cards.
+Next areas to improve: more cards and broader component interaction tests.

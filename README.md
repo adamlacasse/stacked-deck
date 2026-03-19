@@ -11,7 +11,7 @@ This repository now has a solid playable MVP:
 - Vite + React + TypeScript app scaffold is in place
 - product and data model direction are documented
 - the starter screen has been replaced with a deck-style game shell
-- a local starter deck of 15 cards exists in `src/data/deck.json`
+- a local starter deck of 30 cards exists in `src/data/deck.json`
 - deck validation runs in development mode and throws loudly for malformed content (`src/data/validateDeck.ts`)
 - session state is handled locally with React state + `localStorage`
 - cards are drawn without repeats within a session
@@ -20,7 +20,8 @@ This repository now has a solid playable MVP:
 - a brief "Shuffling…" state plays on `startGame` and `restartGame`
 - swipe-to-next (left or right) advances the card once an answer is revealed
 - difficulty filter lets you limit draws to easy, medium, or hard cards before starting
-- 31 automated tests in `src/test/` cover hook behavior and validation logic
+- optional post-answer context panel shows explanation/source metadata on selected entries
+- automated tests in `src/test/` cover hook behavior, validation logic, and question-view rendering
 ## Canonical docs
 
 Read these before making code changes:
@@ -204,7 +205,7 @@ This is enough to play through a full local deck on a single screen while preser
 Build in this order:
 
 1. Add richer source metadata for individual entries where the answer is disputed or has useful context.
-2. Expand the deck with more cards across all difficulty levels.
+2. Add component tests for CardView, CategoryList, and QuestionView rendering/interaction behavior.
 
 ### Near-term file shape
 

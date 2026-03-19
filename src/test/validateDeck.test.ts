@@ -2,7 +2,16 @@ import { describe, it, expect } from 'vitest'
 import { validateDeck } from '../data/validateDeck'
 import type { TriviaDeck } from '../types'
 
-type MutableEntry = { category: string; question: string; answer: string }
+type MutableEntry = {
+  category: string
+  question: string
+  answer: string
+  explanation?: string
+  source?: {
+    label: string
+    url?: string
+  }
+}
 
 function makeEntry(category: string): MutableEntry {
   return { category, question: 'Q?', answer: 'A' }
@@ -35,6 +44,18 @@ const validDeck: TriviaDeck = {
 describe('validateDeck – valid deck', () => {
   it('returns valid for a well-formed deck', () => {
     expect(validateDeck(validDeck)).toEqual({ valid: true })
+  })
+
+  it('allows optional explanation and source metadata', () => {
+    const card = makeCard('c1')
+    mutableEntries(card)[0].explanation = 'Some sources disagree on this ranking.'
+    mutableEntries(card)[0].source = {
+      label: 'Example Source',
+      url: 'https://example.com/fact-check',
+    }
+
+    const deck = { ...validDeck, cards: [card, makeCard('c2')] }
+    expect(validateDeck(deck)).toEqual({ valid: true })
   })
 })
 
@@ -117,5 +138,38 @@ describe('validateDeck – card-level errors', () => {
     expect(result.valid).toBe(false)
     if (!result.valid)
       expect(result.errors.some((e) => e.includes('empty answer'))).toBe(true)
+  })
+
+  it('reports an empty explanation', () => {
+    const card = makeCard('c1')
+    mutableEntries(card)[0].explanation = '   '
+    const deck = { ...validDeck, cards: [card] }
+    const result = validateDeck(deck)
+    expect(result.valid).toBe(false)
+    if (!result.valid)
+      expect(result.errors.some((e) => e.includes('empty explanation'))).toBe(true)
+  })
+
+  it('reports source metadata without a label', () => {
+    const card = makeCard('c1')
+    mutableEntries(card)[0].source = { label: '' }
+    const deck = { ...validDeck, cards: [card] }
+    const result = validateDeck(deck)
+    expect(result.valid).toBe(false)
+    if (!result.valid)
+      expect(result.errors.some((e) => e.includes('source must include'))).toBe(true)
+  })
+
+  it('reports invalid source urls', () => {
+    const card = makeCard('c1')
+    mutableEntries(card)[0].source = {
+      label: 'My source',
+      url: 'not-a-url',
+    }
+    const deck = { ...validDeck, cards: [card] }
+    const result = validateDeck(deck)
+    expect(result.valid).toBe(false)
+    if (!result.valid)
+      expect(result.errors.some((e) => e.includes('absolute http(s) URL'))).toBe(true)
   })
 })

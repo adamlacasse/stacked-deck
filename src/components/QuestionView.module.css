@@ -79,6 +79,46 @@
   color: var(--color-ink); /* deep navy */
 }
 
+.contextBlock {
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.55rem;
+  background: color-mix(in srgb, var(--color-accent) 12%, #fdfcf7 88%);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 40%, #fdfcf7 60%);
+}
+
+.contextLabel {
+  margin: 0;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: color-mix(in srgb, var(--color-accent-strong) 78%, #0f2450 22%);
+}
+
+.contextText {
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.45;
+  color: #28456f;
+}
+
+.contextSource {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #1d3761;
+}
+
+.contextLink {
+  color: inherit;
+  font-weight: 600;
+  text-decoration-color: color-mix(in srgb, var(--color-accent-strong) 65%, #0f2450 35%);
+}
+
+.contextLink:hover {
+  text-decoration-color: currentcolor;
+}
+
 .primaryAction {
   justify-self: start;
 }

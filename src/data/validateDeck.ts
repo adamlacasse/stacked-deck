@@ -5,6 +5,19 @@ export type ValidationResult =
   | { valid: true }
   | { valid: false; errors: string[] }
 
+function hasText(value: unknown): value is string {
+  return typeof value === 'string' && value.trim().length > 0
+}
+
+function isValidSourceUrl(value: string): boolean {
+  try {
+    const url = new URL(value)
+    return url.protocol === 'http:' || url.protocol === 'https:'
+  } catch {
+    return false
+  }
+}
+
 export function validateDeck(deck: TriviaDeck): ValidationResult {
   const errors: string[] = []
   const seenCardIds = new Set<string>()
@@ -57,16 +70,48 @@ export function validateDeck(deck: TriviaDeck): ValidationResult {
     }
 
     for (const entry of card.entries) {
-      if (!entry?.question?.trim()) {
+      if (!hasText(entry?.question)) {
         errors.push(
           `${prefix} entry "${entry?.category ?? '(unknown)'}" has an empty question.`,
         )
       }
 
-      if (!entry?.answer?.trim()) {
+      if (!hasText(entry?.answer)) {
         errors.push(
           `${prefix} entry "${entry?.category ?? '(unknown)'}" has an empty answer.`,
         )
+      }
+
+      if (entry?.explanation !== undefined && !hasText(entry.explanation)) {
+        errors.push(
+          `${prefix} entry "${entry?.category ?? '(unknown)'}" has an empty explanation.`,
+        )
+      }
+
+      if (entry?.source !== undefined) {
+        const source = entry.source as Record<string, unknown>
+
+        if (typeof source !== 'object' || source === null) {
+          errors.push(
+            `${prefix} entry "${entry?.category ?? '(unknown)'}" has an invalid source object.`,
+          )
+          continue
+        }
+
+        if (!hasText(source.label)) {
+          errors.push(
+            `${prefix} entry "${entry?.category ?? '(unknown)'}" source must include a non-empty label.`,
+          )
+        }
+
+        if (
+          source.url !== undefined &&
+          (typeof source.url !== 'string' || !isValidSourceUrl(source.url))
+        ) {
+          errors.push(
+            `${prefix} entry "${entry?.category ?? '(unknown)'}" source url must be an absolute http(s) URL.`,
+          )
+        }
       }
     }
   }

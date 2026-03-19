@@ -233,7 +233,12 @@
         {
           "category": "geography",
           "question": "What is the longest river in the world?",
-          "answer": "The Nile"
+          "answer": "The Nile",
+          "explanation": "Some modern measurements argue the Amazon is longer; many trivia sets still accept the Nile.",
+          "source": {
+            "label": "Encyclopaedia Britannica: Nile River",
+            "url": "https://www.britannica.com/place/Nile-River"
+          }
         },
         {
           "category": "entertainment",
@@ -307,7 +312,12 @@
         {
           "category": "geography",
           "question": "Which country contains the most natural freshwater lakes?",
-          "answer": "Canada"
+          "answer": "Canada",
+          "explanation": "Canada is widely cited as having the largest share of the world's lakes by count.",
+          "source": {
+            "label": "Natural Resources Canada: Lakes and Rivers",
+            "url": "https://natural-resources.canada.ca/maps-tools-publications/satellite-elevation-air-photos/lakes-rivers/9245"
+          }
         },
         {
           "category": "entertainment",
@@ -687,7 +697,12 @@
         {
           "category": "history",
           "question": "Who was the first woman to win a Nobel Prize?",
-          "answer": "Marie Curie"
+          "answer": "Marie Curie",
+          "explanation": "Curie won the 1903 Nobel Prize in Physics with Pierre Curie and Henri Becquerel.",
+          "source": {
+            "label": "The Nobel Prize: Marie Curie facts",
+            "url": "https://www.nobelprize.org/prizes/physics/1903/marie-curie/facts/"
+          }
         },
         {
           "category": "arts",

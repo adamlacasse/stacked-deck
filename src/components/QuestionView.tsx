@@ -27,6 +27,10 @@ export function QuestionView({
 
   const meta = CATEGORY_META[entry.category]
   const nextLabel = remainingCount > 0 ? 'Next card' : 'Finish deck'
+  const explanation = entry.explanation?.trim() || null
+  const sourceLabel = entry.source?.label?.trim() || null
+  const source = sourceLabel ? entry.source : null
+  const hasContext = Boolean(explanation || sourceLabel)
 
   return (
     <section className={styles.panel}>
@@ -37,6 +41,31 @@ export function QuestionView({
         <div className={styles.answerBlock}>
           <p className={styles.answerLabel}>Answer</p>
           <p className={styles.answer}>{entry.answer}</p>
+          {hasContext ? (
+            <section className={styles.contextBlock} aria-label="Answer context">
+              <p className={styles.contextLabel}>Context</p>
+              {explanation ? (
+                <p className={styles.contextText}>{explanation}</p>
+              ) : null}
+              {source && sourceLabel ? (
+                <p className={styles.contextSource}>
+                  Source:{' '}
+                  {source.url ? (
+                    <a
+                      className={styles.contextLink}
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {sourceLabel}
+                    </a>
+                  ) : (
+                    <span>{sourceLabel}</span>
+                  )}
+                </p>
+              ) : null}
+            </section>
+          ) : null}
           <button type="button" className={styles.primaryAction} onClick={onNextCard}>
             {nextLabel}
           </button>

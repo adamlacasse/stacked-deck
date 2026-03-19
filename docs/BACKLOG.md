@@ -109,10 +109,19 @@ Shared constants extracted to `src/constants.ts`; CSS timing variables added to 
 - `CardView.module.css`, `QuestionView.module.css`, and `index.css` updated to reference the new custom properties
 - Hardcoded `#c89730` in `QuestionView.module.css` replaced with `var(--color-accent)` (already defined in `:root`)
 
+### ✅ Add post-answer context panel for disputed questions
+
+Context metadata now appears only after the answer is revealed in `QuestionView`.
+
+- `CardEntry` now supports optional `explanation` and structured `source` metadata (`label`, optional `url`)
+- `validateDeck` now validates optional explanation/source fields (non-empty labels, valid absolute `http(s)` URLs)
+- `QuestionView` renders a `Context` block post-reveal with explanation text and a source link when present
+- starter deck entries with commonly disputed facts now include context/source examples (Nile/Amazon, Canada lakes, Marie Curie Nobel)
+- tests expanded for validation coverage and `QuestionView` rendering behavior
+
 ## Later
 
 - continue expanding the deck toward a large card library (currently 30; target: hundreds, then thousands)
-- add richer source metadata for disputed questions
 - add component tests for CardView, CategoryList, and QuestionView (rendering and interactions)
 - accessibility audit: ARIA labels, keyboard navigation, color contrast check
 - deploy the static Vite build to Cloudflare Pages with GitHub integration (`main` -> production, branch/PR preview deploys enabled), with `stacked-deck.adamlcasse.dev` as the intended production URL

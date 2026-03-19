@@ -65,6 +65,10 @@ type CardEntry = {
   question: string;
   answer: string;
   explanation?: string;
+  source?: {
+    label: string;
+    url?: string;
+  };
 };
 
 type TriviaCard = {
@@ -79,7 +83,6 @@ type TriviaCard = {
   ];
   difficulty?: "easy" | "medium" | "hard";
   tags?: string[];
-  source?: string;
   deckId?: string;
 };
 
@@ -219,7 +222,8 @@ These fields are allowed later, but should not drive MVP complexity:
 - `explanation`
 - `difficulty`
 - `tags`
-- `source`
+- `source` (card-level)
+- `entries[].source` (entry-level citation)
 - `deckId`
 - `era`
 - `verifiedAt`
@@ -242,4 +246,3 @@ The MVP data model should remain:
 - simple to validate
 - easy to render
 - easy for AI tools to generate and edit
-
