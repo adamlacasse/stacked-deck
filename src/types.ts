@@ -16,6 +16,8 @@ export type CardEntry = {
   explanation?: string
 }
 
+export type Difficulty = 'easy' | 'medium' | 'hard'
+
 export type TriviaCard = {
   id: string
   entries: [
@@ -26,7 +28,7 @@ export type TriviaCard = {
     CardEntry,
     CardEntry,
   ]
-  difficulty?: 'easy' | 'medium' | 'hard'
+  difficulty?: Difficulty
   tags?: string[]
   source?: string
   deckId?: string

@@ -21,7 +21,16 @@ function App() {
     resetSession,
     restartGame,
     isShuffling,
+    difficultyFilter,
+    setDifficultyFilter,
   } = useDeck(starterDeck)
+
+  const DIFFICULTY_OPTIONS = [
+    { value: 'all', label: 'All' },
+    { value: 'easy', label: 'Easy' },
+    { value: 'medium', label: 'Medium' },
+    { value: 'hard', label: 'Hard' },
+  ] as const
 
   return (
     <main className={styles.shell}>
@@ -88,8 +97,26 @@ function App() {
               <div className={styles.heroBody}>
                 <div className={styles.deckMeta}>
                   <span className={styles.metaPill}>{deckName}</span>
-                  <span className={styles.metaPill}>{deckSize} starter cards</span>
+                  <span className={styles.metaPill}>
+                    {difficultyFilter === 'all'
+                      ? `${deckSize} cards`
+                      : `${deckSize} ${difficultyFilter} cards`}
+                  </span>
                   <span className={styles.metaPill}>Single screen flow</span>
+                </div>
+
+                <div className={styles.filterSection}>
+                  <span className={styles.filterLabel}>Difficulty</span>
+                  {DIFFICULTY_OPTIONS.map(({ value, label }) => (
+                    <button
+                      key={value}
+                      type="button"
+                      className={`${styles.filterButton} ${difficultyFilter === value ? styles.filterButtonActive : ''}`}
+                      onClick={() => setDifficultyFilter(value)}
+                    >
+                      {label}
+                    </button>
+                  ))}
                 </div>
 
                 <h2 className={styles.heroTitle}>

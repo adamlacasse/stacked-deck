@@ -23,6 +23,10 @@ function makeCard(id: string) {
   }
 }
 
+function makeCardWithDifficulty(id: string, difficulty: 'easy' | 'medium' | 'hard') {
+  return { ...makeCard(id), difficulty }
+}
+
 const singleCardDeck: TriviaDeck = {
   id: 'test-deck',
   name: 'Test Deck',
@@ -255,6 +259,70 @@ describe('useDeck – localStorage persistence', () => {
     expect(result.current.currentCard?.id).toBe('c2')
     expect(result.current.selectedCategory).toBe('history')
     expect(result.current.usedCount).toBe(2)
+  })
+})
+
+describe('useDeck – difficultyFilter', () => {
+  const mixedDeck: TriviaDeck = {
+    id: 'test-deck',
+    name: 'Test Deck',
+    cards: [
+      makeCardWithDifficulty('easy1', 'easy'),
+      makeCardWithDifficulty('easy2', 'easy'),
+      makeCardWithDifficulty('hard1', 'hard'),
+    ],
+  }
+
+  it('defaults to all and reports the full deck size', () => {
+    const { result } = renderHook(() => useDeck(mixedDeck))
+    expect(result.current.difficultyFilter).toBe('all')
+    expect(result.current.deckSize).toBe(3)
+  })
+
+  it('filters deckSize when difficulty is set in idle phase', async () => {
+    const { result } = renderHook(() => useDeck(mixedDeck))
+    await act(async () => result.current.setDifficultyFilter('easy'))
+    expect(result.current.difficultyFilter).toBe('easy')
+    expect(result.current.deckSize).toBe(2)
+  })
+
+  it('only draws cards matching the selected difficulty', async () => {
+    const { result } = renderHook(() => useDeck(mixedDeck))
+    await act(async () => result.current.setDifficultyFilter('hard'))
+    await act(async () => {
+      result.current.startGame()
+      vi.runAllTimers()
+    })
+    expect(result.current.currentCard?.id).toBe('hard1')
+    expect(result.current.currentCard?.difficulty).toBe('hard')
+  })
+
+  it('cannot change filter while in active phase', async () => {
+    const { result } = renderHook(() => useDeck(mixedDeck))
+    await act(async () => {
+      result.current.startGame()
+      vi.runAllTimers()
+    })
+    expect(result.current.phase).toBe('active')
+    await act(async () => result.current.setDifficultyFilter('easy'))
+    expect(result.current.difficultyFilter).toBe('all')
+  })
+
+  it('can change filter in finished phase', async () => {
+    const singleEasyDeck: TriviaDeck = {
+      id: 'test-deck',
+      name: 'Test Deck',
+      cards: [makeCardWithDifficulty('easy1', 'easy')],
+    }
+    const { result } = renderHook(() => useDeck(singleEasyDeck))
+    await act(async () => {
+      result.current.startGame()
+      vi.runAllTimers()
+    })
+    await act(async () => result.current.drawNextCard())
+    expect(result.current.phase).toBe('finished')
+    await act(async () => result.current.setDifficultyFilter('hard'))
+    expect(result.current.difficultyFilter).toBe('hard')
   })
 })
 

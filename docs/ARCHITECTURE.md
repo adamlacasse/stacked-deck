@@ -29,17 +29,18 @@ src/
   types.ts                   domain types and canonical category order
   data/
     categories.ts            UI metadata for category labels and colors
-    deck.ts                  local starter deck (15 cards), validated at load time
+    deck.json                local starter deck (15 cards)
+    deck.ts                  imports deck.json, validates at load time
     validateDeck.ts          deck validation utility and dev-mode assertion
   hooks/
-    useDeck.ts               game session state and draw logic
+    useDeck.ts               game session state, draw logic, difficulty filter
   components/
-    CardView.tsx             active card container
+    CardView.tsx             active card container with swipe support
     CategoryList.tsx         category chooser
     QuestionView.tsx         question and answer reveal panel
   test/
     setup.ts                 Vitest global setup (@testing-library/jest-dom)
-    useDeck.test.ts          hook behavior tests (15 tests)
+    useDeck.test.ts          hook behavior tests (22 tests)
     validateDeck.test.ts     validation utility tests (9 tests)
 ```
 
@@ -181,8 +182,12 @@ Do not add them without an explicit product reason.
 The current implementation has addressed all initial gaps:
 
 - ✅ deck validation implemented in `src/data/validateDeck.ts`
-- ✅ automated tests in `src/test/` (24 tests, run with `npm test`)
+- ✅ automated tests in `src/test/` (31 tests, run with `npm test`)
 - ✅ starter deck expanded to 15 cards
 - ✅ card and question panel transitions added via CSS animations
+- ✅ shuffle moment on game start (`isShuffling` state in `useDeck`)
+- ✅ swipe-to-next via pointer events in `CardView`
+- ✅ deck content moved to `src/data/deck.json`
+- ✅ difficulty filter (easy / medium / hard / all) available before starting
 
-Next areas to improve: shuffle moment on game start, swipe-to-next gesture, move deck content to JSON.
+Next areas to improve: richer source metadata for individual entries, more cards.

@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 
-import type { Category, GameSession, TriviaCard, TriviaDeck } from '../types'
+import type { Category, Difficulty, GameSession, TriviaCard, TriviaDeck } from '../types'
 
 const STORAGE_KEY = 'stacked-deck-session'
 const SHUFFLE_DELAY_MS = 400
@@ -93,6 +93,7 @@ function createSessionForNextCard(
 export function useDeck(deck: TriviaDeck) {
   const [session, setSession] = useState<GameSession>(() => loadSession())
   const [isShuffling, setIsShuffling] = useState(false)
+  const [difficultyFilter, setDifficultyFilterState] = useState<Difficulty | 'all'>('all')
   const shuffleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
@@ -107,12 +108,19 @@ export function useDeck(deck: TriviaDeck) {
     }
   }, [])
 
+  const filteredCards = useMemo(() => {
+    if (difficultyFilter === 'all') return deck.cards
+    return deck.cards.filter((card) => card.difficulty === difficultyFilter)
+  }, [deck.cards, difficultyFilter])
+
   const currentCard =
     deck.cards.find((card) => card.id === session.currentCardId) ?? null
   const selectedEntry =
     currentCard?.entries.find((entry) => entry.category === session.selectedCategory) ??
     null
-  const remainingCount = deck.cards.length - session.usedCardIds.length
+  const remainingCount = filteredCards.filter(
+    (card) => !session.usedCardIds.includes(card.id),
+  ).length
 
   const phase = currentCard
     ? 'active'
@@ -140,8 +148,9 @@ export function useDeck(deck: TriviaDeck) {
   function startGame() {
     if (session.currentCardId || isShuffling) return
 
+    const cardsToUse = filteredCards
     triggerShuffle(() => {
-      setSession((currentSession) => createSessionForNextCard(deck.cards, currentSession.usedCardIds))
+      setSession((currentSession) => createSessionForNextCard(cardsToUse, currentSession.usedCardIds))
     })
   }
 
@@ -161,8 +170,9 @@ export function useDeck(deck: TriviaDeck) {
   }
 
   function drawNextCard() {
+    const cardsToUse = filteredCards
     setSession((currentSession) =>
-      createSessionForNextCard(deck.cards, currentSession.usedCardIds),
+      createSessionForNextCard(cardsToUse, currentSession.usedCardIds),
     )
   }
 
@@ -173,9 +183,15 @@ export function useDeck(deck: TriviaDeck) {
   function restartGame() {
     if (isShuffling) return
 
+    const cardsToUse = filteredCards
     triggerShuffle(() => {
-      setSession(createSessionForNextCard(deck.cards, []))
+      setSession(createSessionForNextCard(cardsToUse, []))
     })
+  }
+
+  function setDifficultyFilter(filter: Difficulty | 'all') {
+    if (phase === 'active') return
+    setDifficultyFilterState(filter)
   }
 
   return {
@@ -186,7 +202,7 @@ export function useDeck(deck: TriviaDeck) {
     answerRevealed: session.answerRevealed,
     usedCount: session.usedCardIds.length,
     remainingCount,
-    deckSize: deck.cards.length,
+    deckSize: filteredCards.length,
     deckName: deck.name,
     startGame,
     selectCategory,
@@ -195,5 +211,7 @@ export function useDeck(deck: TriviaDeck) {
     resetSession,
     restartGame,
     isShuffling,
+    difficultyFilter,
+    setDifficultyFilter,
   }
 }
