@@ -1,0 +1,86 @@
+.shell {
+  min-height: 100svh;
+  padding: clamp(1rem, 3vw, 2rem);
+  display: grid;
+  align-items: start;
+}
+
+.frame {
+  width: min(100%, 62rem);
+  margin: 0 auto;
+}
+
+.panel {
+  background: linear-gradient(145deg, #1e3d80 0%, #142d6a 100%);
+  border: 1px solid rgba(200, 151, 48, 0.55);
+  border-radius: var(--radius-card);
+  padding: clamp(1.5rem, 4vw, 2.4rem);
+  box-shadow:
+    var(--shadow-card),
+    inset 0 0 0 2px rgba(200, 151, 48, 0.12);
+  display: grid;
+  gap: 1.4rem;
+  outline: 1px solid rgba(200, 151, 48, 0.18);
+  outline-offset: -8px;
+  min-height: min(70svh, 42rem);
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+}
+
+.body {
+  display: grid;
+  gap: 0.9rem;
+  justify-items: center;
+}
+
+.label {
+  margin: 0;
+  color: rgba(232, 220, 196, 0.5);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(2.1rem, 4.5vw, 3.4rem);
+  line-height: 0.96;
+  color: #c89730;
+}
+
+.text {
+  margin: 0;
+  max-width: 28rem;
+  color: rgba(232, 220, 196, 0.75);
+}
+
+.errorDetail {
+  margin: 0;
+  font-family: ui-monospace, monospace;
+  font-size: 0.78rem;
+  color: rgba(232, 220, 196, 0.4);
+  max-width: 32rem;
+  word-break: break-word;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.secondaryButton {
+  background: rgba(15, 36, 80, 0.55);
+  color: rgba(232, 220, 196, 0.9);
+  border: 1px solid rgba(200, 151, 48, 0.4);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+}
+
+.secondaryButton:hover {
+  background: rgba(15, 36, 80, 0.7);
+  filter: none;
+}

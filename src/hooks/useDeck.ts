@@ -97,7 +97,11 @@ export function useDeck(deck: TriviaDeck) {
   const shuffleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(session))
+    try {
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(session))
+    } catch {
+      // localStorage may be full or unavailable; session won't persist but the game continues
+    }
   }, [session])
 
   useEffect(() => {

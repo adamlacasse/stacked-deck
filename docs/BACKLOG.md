@@ -87,12 +87,22 @@ Difficulty filter added to `useDeck` and `App.tsx`.
 - filter resets to `'all'` on page load; not persisted to `localStorage`
 - 5 new tests in `useDeck.test.ts` cover filter defaults, deckSize, draw behavior, and phase guard
 
+### ✅ Add an error boundary for corrupted localStorage
+
+Error boundary added to `src/components/ErrorBoundary.tsx`, wired in `src/main.tsx`.
+
+- `ErrorBoundary` is a React class component wrapping the entire app
+- catches render errors and shows a styled fallback UI matching the app's navy/gold design
+- "Clear data & restart" button removes the `stacked-deck-session` key from localStorage and reloads
+- "Try again" button resets boundary state without clearing data (for non-storage errors)
+- error message displayed in a muted monospace block for debugging context
+- localStorage write in `useDeck` wrapped in try/catch so a full storage error won't crash the app mid-session
+
 ## Later
 
 - continue expanding the deck toward a large card library (currently 30; target: hundreds, then thousands)
 - add richer source metadata for disputed questions
 - add component tests for CardView, CategoryList, and QuestionView (rendering and interactions)
-- add an error boundary to handle corrupted localStorage gracefully
 - accessibility audit: ARIA labels, keyboard navigation, color contrast check
 - extract magic numbers to named constants (swipe threshold 60px, shuffle delay 400ms)
 
