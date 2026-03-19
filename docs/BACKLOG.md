@@ -130,13 +130,30 @@ Context metadata now appears only after the answer is revealed in `QuestionView`
 - add static-hosting polish for deployment: `public/_headers` cache rules for hashed assets and baseline security headers; only add redirects if future routing actually requires them
 - smoke-test the deployed site on phone-sized Safari and Chrome, focusing on first-load speed, localStorage session persistence, and game-night readability on real devices
 
+### Multi-Device Tabletop Sync (N-Players)
+
+Transition the app from a single-device reader to a synchronized shared deck for multiple players, focusing on zero-friction onboarding and lightweight state sync.
+
+- **Investigate Lightweight Backend:** Evaluate low-cost/serverless real-time state solutions (e.g., PartyKit, Cloudflare Workers with Durable Objects, WebSockets, or WebRTC) to replace the pure `localStorage` approach.
+- **Core Deck Synchronization:** - Sync the "drawn" state globally across all connected devices so no two players draw the same card.
+  - Sync global deck settings (e.g., difficulty filter) and the "Reset Deck" action from the host to all clients.
+- **Low-Friction Joining (Lobby):**
+  - Implement 4-letter Room Codes (e.g., `ABCD`) for quick joining without accounts.
+  - Add a QR Code Quick-Join feature so players can scan the host's screen to instantly connect.
+  - Allow stateless player nicknames (e.g., first name or a color) just to populate a "Players at the table" list.
+  - Ensure graceful auto-reconnection when a player's phone wakes up from sleep during the game.
+- **Tabletop UI Mechanics:**
+  - Implement a "Free Draw" open deck by default, relying on the real-life social contract for turn-taking.
+  - Add a passive "Player X is reading..." state on other devices to keep attention focused on the active reader and prevent accidental draws.
+  - Allow the active reader to cast a disputed card to a "shared view," or let other players view the source metadata of a previously played card on their own screens.
+- **Future Enhancement (Edge Cases):**
+  - Add race-condition handling to resolve conflicts if multiple people tap "Draw Card" at the exact same millisecond.
+
 ## Not now
 
 Do not treat these as backlog items unless product direction changes:
 
 - authentication
-- backend services
-- multiplayer sync
 - routing
 - global state libraries
 - live LLM gameplay features
