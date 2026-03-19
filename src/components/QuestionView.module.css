@@ -19,7 +19,7 @@
   display: grid;
   align-content: start;
   gap: 1rem;
-  animation: panelFadeIn 200ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation: panelFadeIn 200ms var(--ease-card) both;
   /* Subtle inner border — mirrors the TP question card frame */
   outline: 1px solid rgba(200, 151, 48, 0.15);
   outline-offset: -5px;
@@ -32,7 +32,7 @@
   font-size: 0.76rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: #c89730; /* gold */
+  color: var(--color-accent); /* gold */
 }
 
 /* Question text in elegant serif — deep navy on cream */
@@ -60,7 +60,7 @@
 .answerBlock {
   display: grid;
   gap: 0.85rem;
-  animation: panelFadeIn 220ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation: panelFadeIn 220ms var(--ease-card) both;
 }
 
 .answerLabel {
@@ -68,7 +68,7 @@
   font-size: 0.76rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: #c89730; /* gold */
+  color: var(--color-accent); /* gold */
 }
 
 /* Answer text: bold navy — stands out on the cream background */

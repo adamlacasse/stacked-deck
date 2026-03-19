@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { CategoryList } from './CategoryList'
 import { QuestionView } from './QuestionView'
 import styles from './CardView.module.css'
+import { SWIPE_THRESHOLD_PX } from '../constants'
 import type { CardEntry, Category, TriviaCard } from '../types'
 
 type CardViewProps = {
@@ -14,8 +15,6 @@ type CardViewProps = {
   onNextCard: () => void
   remainingCount: number
 }
-
-const SWIPE_THRESHOLD_PX = 60
 
 export function CardView({
   card,

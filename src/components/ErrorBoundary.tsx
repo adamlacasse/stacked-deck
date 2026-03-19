@@ -1,8 +1,7 @@
 import { Component, type ErrorInfo, type ReactNode } from 'react'
 
+import { STORAGE_KEY } from '../constants'
 import styles from './ErrorBoundary.module.css'
-
-const STORAGE_KEY = 'stacked-deck-session'
 
 interface Props {
   children: ReactNode

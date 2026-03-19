@@ -1,9 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 
+import { SHUFFLE_DELAY_MS, STORAGE_KEY } from '../constants'
 import type { Category, Difficulty, GameSession, TriviaCard, TriviaDeck } from '../types'
-
-const STORAGE_KEY = 'stacked-deck-session'
-const SHUFFLE_DELAY_MS = 400
 
 function prefersReducedMotion(): boolean {
   return (

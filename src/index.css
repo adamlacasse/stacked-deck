@@ -22,6 +22,9 @@
   --font-display: 'Playfair Display', 'Iowan Old Style', 'Palatino Linotype',
     'Book Antiqua', Georgia, serif;
 
+  --ease-card: cubic-bezier(0.22, 0.61, 0.36, 1); /* decelerate-in easing for card/panel entrances */
+  --duration-button: 160ms;                        /* transition duration for interactive button states */
+
   font-family: var(--font-body);
   line-height: 1.5;
   font-weight: 400;
@@ -68,9 +71,9 @@ button {
     0 0.5rem 1.5rem rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 220, 110, 0.45);
   transition:
-    transform 160ms ease,
-    box-shadow 160ms ease,
-    filter 160ms ease;
+    transform var(--duration-button) ease,
+    box-shadow var(--duration-button) ease,
+    filter var(--duration-button) ease;
   letter-spacing: 0.03em;
 }
 

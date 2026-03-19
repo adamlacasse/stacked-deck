@@ -98,13 +98,23 @@ Error boundary added to `src/components/ErrorBoundary.tsx`, wired in `src/main.t
 - error message displayed in a muted monospace block for debugging context
 - localStorage write in `useDeck` wrapped in try/catch so a full storage error won't crash the app mid-session
 
+### ✅ Extract magic numbers to named constants
+
+Shared constants extracted to `src/constants.ts`; CSS timing variables added to `index.css`.
+
+- `STORAGE_KEY`, `SWIPE_THRESHOLD_PX`, and `SHUFFLE_DELAY_MS` moved from their local file definitions into `src/constants.ts`
+- `useDeck.ts`, `CardView.tsx`, and `ErrorBoundary.tsx` now import from the shared module — eliminating the `STORAGE_KEY` duplication introduced by the error boundary
+- `--ease-card` CSS custom property added to `:root` for the repeated `cubic-bezier(0.22, 0.61, 0.36, 1)` easing used in card and panel entrance animations
+- `--duration-button` CSS custom property added for the `160ms` button transition duration
+- `CardView.module.css`, `QuestionView.module.css`, and `index.css` updated to reference the new custom properties
+- Hardcoded `#c89730` in `QuestionView.module.css` replaced with `var(--color-accent)` (already defined in `:root`)
+
 ## Later
 
 - continue expanding the deck toward a large card library (currently 30; target: hundreds, then thousands)
 - add richer source metadata for disputed questions
 - add component tests for CardView, CategoryList, and QuestionView (rendering and interactions)
 - accessibility audit: ARIA labels, keyboard navigation, color contrast check
-- extract magic numbers to named constants (swipe threshold 60px, shuffle delay 400ms)
 
 ## Not now
 
