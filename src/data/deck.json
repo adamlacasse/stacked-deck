@@ -1,7 +1,7 @@
 {
-  "id": "core-starter-deck",
-  "name": "Core Starter Deck",
-  "description": "A general-knowledge starter deck for game-night play.",
+  "id": "general-knowledge",
+  "name": "General Knowledge",
+  "description": "A broad general knowledge deck for game-night play.",
   "cards": [
     {
       "id": "card-0001",
