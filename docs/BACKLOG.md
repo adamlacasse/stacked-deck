@@ -119,15 +119,25 @@ Context metadata now appears only after the answer is revealed in `QuestionView`
 - starter deck entries with commonly disputed facts now include context/source examples (Nile/Amazon, Canada lakes, Marie Curie Nobel)
 - tests expanded for validation coverage and `QuestionView` rendering behavior
 
+### ✅ Add static-hosting polish for deployment
+
+`public/_headers` added for Cloudflare Pages.
+
+- `/assets/*` gets `Cache-Control: public, max-age=31536000, immutable` (Vite fingerprints filenames so this is safe)
+- `/` and `/*` get `must-revalidate` so users always receive the latest deploy
+- Security headers on all routes: `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `X-XSS-Protection`, `Referrer-Policy: strict-origin-when-cross-origin`, `Permissions-Policy` restricting camera/mic/geolocation
+
 ## Later
 
 - continue expanding the deck toward a large card library (currently 30; target: hundreds, then thousands)
 - add component tests for CardView, CategoryList, and QuestionView (rendering and interactions)
 - accessibility audit: ARIA labels, keyboard navigation, color contrast check
 - deploy the static Vite build to Cloudflare Pages with GitHub integration (`main` -> production, branch/PR preview deploys enabled), with `stacked-deck.adamlcasse.dev` as the intended production URL
-- document the production deploy contract: build command (`npm run build`), output directory (`dist`), Node version, rollback steps, and custom-domain setup for `stacked-deck.adamlcasse.dev`
+  - **Deploy contract:** build command `npm run build`, output directory `dist`, Node version `22` (matches `engines` field in `package.json`)
+  - In the Cloudflare Pages UI: Workers & Pages → Create → Connect to Git → select `adamlacasse/stacked-deck` → Framework preset: `Vite` → Build command: `npm run build` → Build output directory: `dist`
+  - Rollback: Cloudflare Pages keeps every deployment; use the Deployments tab to re-promote any prior build to production instantly
 - wire the production subdomain `stacked-deck.adamlcasse.dev` to the Pages project via Cloudflare custom-domain setup and DNS; do not add a repo-level `CNAME` file unless the deployment target changes to GitHub Pages
-- add static-hosting polish for deployment: `public/_headers` cache rules for hashed assets and baseline security headers; only add redirects if future routing actually requires them
+  - In the Pages project: Custom Domains → Add domain → `stacked-deck.adamlcasse.dev` → Cloudflare will auto-add a CNAME record in your DNS
 - smoke-test the deployed site on phone-sized Safari and Chrome, focusing on first-load speed, localStorage session persistence, and game-night readability on real devices
 
 ### Multi-Device Tabletop Sync (N-Players)
