@@ -2,84 +2,14 @@
   min-height: 100svh;
   padding: clamp(1rem, 3vw, 2rem);
   display: grid;
+  align-items: start;
 }
 
 .frame {
-  width: min(100%, 78rem);
+  width: min(100%, 62rem);
   margin: 0 auto;
   display: grid;
   gap: 1.5rem;
-}
-
-.masthead {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: flex-start;
-}
-
-/* ── Masthead text: on dark navy background ─── */
-.kicker {
-  margin: 0 0 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 0.76rem;
-  color: #c89730; /* gold */
-}
-
-.headline {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(2.6rem, 6vw, 5rem);
-  line-height: 0.92;
-  color: #fdfcf7; /* bright cream on dark navy */
-  max-width: 10ch;
-}
-
-.intro {
-  margin: 0.9rem 0 0;
-  max-width: 42rem;
-  color: rgba(232, 220, 196, 0.72);
-  font-size: 1.05rem;
-}
-
-/* ── Stat cards: dark-navy panels with gold accents ─── */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(7rem, 1fr));
-  gap: 0.75rem;
-  min-width: min(100%, 16rem);
-}
-
-.statCard {
-  background: rgba(255, 252, 247, 0.07);
-  border: 1px solid rgba(200, 151, 48, 0.38);
-  border-radius: 0.625rem;
-  padding: 1rem;
-  box-shadow:
-    0 0.75rem 2rem rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255, 220, 110, 0.08);
-}
-
-.statLabel {
-  display: block;
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: #c89730; /* gold */
-  margin-bottom: 0.35rem;
-}
-
-.statValue {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  color: #fdfcf7; /* cream */
-}
-
-.playArea {
-  display: grid;
-  gap: 1.25rem;
 }
 
 /* ── Hero panel: navy box with gold border — echoes the TP box cover ─── */
@@ -103,6 +33,16 @@
   gap: 1rem;
 }
 
+.centeredPanel {
+  min-height: min(70svh, 42rem);
+  align-content: center;
+}
+
+.centeredBody {
+  justify-items: center;
+  text-align: center;
+}
+
 /* Gold italic title — echoes the "Trivial Pursuit" script on the box */
 .heroTitle {
   margin: 0;
@@ -112,18 +52,21 @@
   line-height: 0.96;
   color: #c89730; /* gold */
   max-width: 12ch;
+  text-align: center;
 }
 
 .heroText {
   margin: 0;
-  max-width: 42rem;
+  max-width: 28rem;
   color: rgba(232, 220, 196, 0.75);
+  text-align: center;
 }
 
 .deckMeta {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  justify-content: center;
 }
 
 .metaPill {
@@ -139,6 +82,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
+  justify-content: center;
 }
 
 /* Secondary button: outlined navy, softer than the gold primary */
@@ -165,6 +109,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
 }
 
@@ -213,15 +158,4 @@
 
 .shufflingTitle {
   animation: shufflePulse 600ms ease-in-out infinite;
-}
-
-@media (max-width: 52rem) {
-  .masthead {
-    flex-direction: column;
-  }
-
-  .stats {
-    width: 100%;
-    min-width: 0;
-  }
 }

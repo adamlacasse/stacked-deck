@@ -20,12 +20,7 @@ export function QuestionView({
   if (!entry) {
     return (
       <section className={styles.panel}>
-        <p className={styles.eyebrow}>Question</p>
-        <h2 className={styles.title}>Pick a category to reveal one question.</h2>
-        <p className={styles.supporting}>
-          The rest of the card stays hidden so the table only sees one prompt at a
-          time.
-        </p>
+        <h2 className={styles.title}>Pick a category to see the question.</h2>
       </section>
     )
   }
@@ -48,9 +43,6 @@ export function QuestionView({
         </div>
       ) : (
         <div className={styles.actionRow}>
-          <p className={styles.supporting}>
-            Reveal when the group is ready to check the answer.
-          </p>
           <button
             type="button"
             className={styles.primaryAction}

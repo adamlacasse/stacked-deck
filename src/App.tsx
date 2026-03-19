@@ -35,109 +35,83 @@ function App() {
   return (
     <main className={styles.shell}>
       <div className={styles.frame}>
-        <header className={styles.masthead}>
-          <div>
-            <p className={styles.kicker}>Stacked Deck</p>
-            <h1 className={styles.headline}>Deck replacement for game night.</h1>
-            <p className={styles.intro}>
-              Draw one card, pick one category, reveal one answer, and keep the
-              table moving. No dashboard clutter and no spoiler dump.
-            </p>
-          </div>
-
-          <div className={styles.stats} aria-label="Deck stats">
-            <div className={styles.statCard}>
-              <span className={styles.statLabel}>Cards drawn</span>
-              <span className={styles.statValue}>
-                {usedCount}/{deckSize}
-              </span>
+        {phase === 'active' && currentCard ? (
+          <>
+            <CardView
+              key={currentCard.id}
+              card={currentCard}
+              selectedCategory={selectedCategory}
+              selectedEntry={selectedEntry}
+              answerRevealed={answerRevealed}
+              onSelectCategory={selectCategory}
+              onRevealAnswer={revealAnswer}
+              onNextCard={drawNextCard}
+              remainingCount={remainingCount}
+            />
+            <div className={styles.actionRow}>
+              <button
+                type="button"
+                className={styles.secondaryButton}
+                onClick={resetSession}
+              >
+                Reset session
+              </button>
             </div>
-            <div className={styles.statCard}>
-              <span className={styles.statLabel}>Remaining</span>
-              <span className={styles.statValue}>{remainingCount}</span>
-            </div>
-          </div>
-        </header>
+          </>
+        ) : (
+          <section className={`${styles.heroPanel} ${styles.centeredPanel}`}>
+            <div className={`${styles.heroBody} ${styles.centeredBody}`}>
+              {!isShuffling ? (
+                <>
+                  <div className={styles.deckMeta}>
+                    <span className={styles.metaPill}>{deckName}</span>
+                    <span className={styles.metaPill}>
+                      {difficultyFilter === 'all'
+                        ? `${deckSize} cards`
+                        : `${deckSize} ${difficultyFilter} cards`}
+                    </span>
+                  </div>
 
-        <section className={styles.playArea}>
-          {phase === 'active' && currentCard ? (
-            <>
-              <CardView
-                key={currentCard.id}
-                card={currentCard}
-                selectedCategory={selectedCategory}
-                selectedEntry={selectedEntry}
-                answerRevealed={answerRevealed}
-                onSelectCategory={selectCategory}
-                onRevealAnswer={revealAnswer}
-                onNextCard={drawNextCard}
-                remainingCount={remainingCount}
-              />
-              <div className={styles.actionRow}>
-                <button
-                  type="button"
-                  className={styles.secondaryButton}
-                  onClick={resetSession}
-                >
-                  Reset session
-                </button>
-              </div>
-            </>
-          ) : isShuffling ? (
-            <section className={styles.heroPanel}>
-              <div className={styles.heroBody}>
-                <h2 className={`${styles.heroTitle} ${styles.shufflingTitle}`}>
-                  Shuffling…
-                </h2>
-                <p className={styles.heroText}>Getting the deck ready.</p>
-              </div>
-            </section>
-          ) : (
-            <section className={styles.heroPanel}>
-              <div className={styles.heroBody}>
-                <div className={styles.deckMeta}>
-                  <span className={styles.metaPill}>{deckName}</span>
-                  <span className={styles.metaPill}>
-                    {difficultyFilter === 'all'
-                      ? `${deckSize} cards`
-                      : `${deckSize} ${difficultyFilter} cards`}
-                  </span>
-                  <span className={styles.metaPill}>Single screen flow</span>
-                </div>
+                  <div className={styles.filterSection}>
+                    <span className={styles.filterLabel}>Difficulty</span>
+                    {DIFFICULTY_OPTIONS.map(({ value, label }) => (
+                      <button
+                        key={value}
+                        type="button"
+                        className={`${styles.filterButton} ${difficultyFilter === value ? styles.filterButtonActive : ''}`}
+                        onClick={() => setDifficultyFilter(value)}
+                      >
+                        {label}
+                      </button>
+                    ))}
+                  </div>
+                </>
+              ) : null}
 
-                <div className={styles.filterSection}>
-                  <span className={styles.filterLabel}>Difficulty</span>
-                  {DIFFICULTY_OPTIONS.map(({ value, label }) => (
-                    <button
-                      key={value}
-                      type="button"
-                      className={`${styles.filterButton} ${difficultyFilter === value ? styles.filterButtonActive : ''}`}
-                      onClick={() => setDifficultyFilter(value)}
-                    >
-                      {label}
-                    </button>
-                  ))}
-                </div>
+              <h1 className={`${styles.heroTitle} ${isShuffling ? styles.shufflingTitle : ''}`}>
+                {isShuffling
+                  ? 'Shuffling…'
+                  : phase === 'finished'
+                    ? 'Deck complete.'
+                    : 'Stacked Deck'}
+              </h1>
 
-                <h2 className={styles.heroTitle}>
-                  {phase === 'finished'
-                    ? 'That was the whole deck.'
-                    : 'Shuffle up and hand the phone to the reader.'}
-                </h2>
-
+              {!isShuffling ? (
                 <p className={styles.heroText}>
                   {phase === 'finished'
-                    ? 'All cards have been used once in this session. Shuffle the deck again to restart, or clear the local session and begin fresh.'
-                    : 'The MVP keeps the ritual simple: categories first, one question at a time, and one answer reveal when the table is ready.'}
+                    ? 'Every card in this filter has been used once. Shuffle again or clear the session to start fresh.'
+                    : 'One card, one category, one reveal.'}
                 </p>
-              </div>
+              ) : null}
+            </div>
 
+            {!isShuffling ? (
               <div className={styles.actionRow}>
                 <button
                   type="button"
                   onClick={phase === 'finished' ? restartGame : startGame}
                 >
-                  {phase === 'finished' ? 'Shuffle and play again' : 'Start game'}
+                  {phase === 'finished' ? 'Play again' : 'Start game'}
                 </button>
                 {usedCount > 0 ? (
                   <button
@@ -149,14 +123,9 @@ function App() {
                   </button>
                 ) : null}
               </div>
-
-              <p className={styles.footerNote}>
-                Session state is stored locally so a refresh can continue the same
-                deck.
-              </p>
-            </section>
-          )}
-        </section>
+            ) : null}
+          </section>
+        )}
       </div>
     </main>
   )

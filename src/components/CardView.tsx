@@ -62,11 +62,7 @@ export function CardView({
     >
       <div className={styles.card}>
         <header className={styles.header}>
-          <div>
-            <p className={styles.eyebrow}>Active card</p>
-            <h1 className={styles.title}>Choose a category and read it aloud.</h1>
-          </div>
-          <p className={styles.cardId}>{card.id}</p>
+          <h1 className={styles.title}>Pick a category</h1>
         </header>
 
         <div className={styles.layout}>

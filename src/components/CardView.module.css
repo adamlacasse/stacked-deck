@@ -48,19 +48,7 @@
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: flex-start;
-  margin-bottom: 1.5rem;
-}
-
-.eyebrow {
-  margin: 0 0 0.4rem;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.76rem;
-  color: #c89730; /* gold */
+  margin-bottom: 1rem;
 }
 
 /* Card title in italic Playfair — echoes the cursive "Genus" label */
@@ -68,22 +56,9 @@
   margin: 0;
   font-family: var(--font-display);
   font-style: italic;
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  line-height: 0.98;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  line-height: 1;
   color: var(--color-ink); /* deep navy */
-  max-width: 12ch;
-}
-
-/* Card ID pill — navy border on cream background */
-.cardId {
-  margin: 0;
-  font-size: 0.83rem;
-  color: var(--color-ink);
-  border: 1px solid rgba(15, 36, 80, 0.2);
-  border-radius: 999px;
-  padding: 0.5rem 0.8rem;
-  background: rgba(255, 255, 255, 0.7);
-  white-space: nowrap;
 }
 
 .layout {
@@ -102,8 +77,3 @@
   }
 }
 
-@media (max-width: 40rem) {
-  .header {
-    flex-direction: column;
-  }
-}
