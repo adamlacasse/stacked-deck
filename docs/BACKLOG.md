@@ -83,6 +83,10 @@ Difficulty filter added to `useDeck` and `App.tsx`.
 
 - add richer source metadata for disputed questions
 - expand the deck with more cards across all difficulty levels
+- add component tests for CardView, CategoryList, and QuestionView (rendering and interactions)
+- add an error boundary to handle corrupted localStorage gracefully
+- accessibility audit: ARIA labels, keyboard navigation, color contrast check
+- extract magic numbers to named constants (swipe threshold 60px, shuffle delay 400ms)
 
 ## Not now
 
