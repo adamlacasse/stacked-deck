@@ -91,4 +91,35 @@ describe('QuestionView', () => {
     expect(screen.getByText('Game-night reference card')).toBeInTheDocument()
     expect(screen.queryByRole('link', { name: 'Game-night reference card' })).not.toBeInTheDocument()
   })
+
+  it('renders answer inside a modal dialog when revealed', () => {
+    render(
+      <QuestionView
+        entry={makeEntry()}
+        answerRevealed
+        remainingCount={5}
+        onRevealAnswer={vi.fn()}
+        onNextCard={vi.fn()}
+      />,
+    )
+
+    const dialog = screen.getByRole('dialog', { name: 'Answer' })
+    expect(dialog).toBeInTheDocument()
+    expect(dialog).toHaveAttribute('aria-modal', 'true')
+    expect(screen.getByText('The Nile')).toBeInTheDocument()
+  })
+
+  it('does not render a modal dialog before answer reveal', () => {
+    render(
+      <QuestionView
+        entry={makeEntry()}
+        answerRevealed={false}
+        remainingCount={5}
+        onRevealAnswer={vi.fn()}
+        onNextCard={vi.fn()}
+      />,
+    )
+
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+  })
 })
