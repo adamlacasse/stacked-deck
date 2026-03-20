@@ -6,7 +6,10 @@
     {
       "id": "card-0001",
       "difficulty": "easy",
-      "tags": ["starter", "general"],
+      "tags": [
+        "starter",
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -43,7 +46,10 @@
     {
       "id": "card-0002",
       "difficulty": "medium",
-      "tags": ["starter", "general"],
+      "tags": [
+        "starter",
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -80,7 +86,10 @@
     {
       "id": "card-0003",
       "difficulty": "medium",
-      "tags": ["starter", "general"],
+      "tags": [
+        "starter",
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -117,7 +126,10 @@
     {
       "id": "card-0004",
       "difficulty": "easy",
-      "tags": ["starter", "general"],
+      "tags": [
+        "starter",
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -154,7 +166,10 @@
     {
       "id": "card-0005",
       "difficulty": "medium",
-      "tags": ["starter", "general"],
+      "tags": [
+        "starter",
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -191,7 +206,10 @@
     {
       "id": "card-0006",
       "difficulty": "medium",
-      "tags": ["starter", "general"],
+      "tags": [
+        "starter",
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -228,7 +246,10 @@
     {
       "id": "card-0007",
       "difficulty": "easy",
-      "tags": ["starter", "general"],
+      "tags": [
+        "starter",
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -270,7 +291,10 @@
     {
       "id": "card-0008",
       "difficulty": "medium",
-      "tags": ["starter", "general"],
+      "tags": [
+        "starter",
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -307,7 +331,10 @@
     {
       "id": "card-0009",
       "difficulty": "hard",
-      "tags": ["starter", "general"],
+      "tags": [
+        "starter",
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -349,7 +376,10 @@
     {
       "id": "card-0010",
       "difficulty": "easy",
-      "tags": ["starter", "general"],
+      "tags": [
+        "starter",
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -386,7 +416,10 @@
     {
       "id": "card-0011",
       "difficulty": "medium",
-      "tags": ["starter", "general"],
+      "tags": [
+        "starter",
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -423,7 +456,10 @@
     {
       "id": "card-0012",
       "difficulty": "medium",
-      "tags": ["starter", "general"],
+      "tags": [
+        "starter",
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -460,7 +496,10 @@
     {
       "id": "card-0013",
       "difficulty": "hard",
-      "tags": ["starter", "general"],
+      "tags": [
+        "starter",
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -497,7 +536,10 @@
     {
       "id": "card-0014",
       "difficulty": "easy",
-      "tags": ["starter", "general"],
+      "tags": [
+        "starter",
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -534,7 +576,10 @@
     {
       "id": "card-0015",
       "difficulty": "medium",
-      "tags": ["starter", "general"],
+      "tags": [
+        "starter",
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -571,7 +616,9 @@
     {
       "id": "card-0016",
       "difficulty": "easy",
-      "tags": ["general"],
+      "tags": [
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -608,7 +655,9 @@
     {
       "id": "card-0017",
       "difficulty": "medium",
-      "tags": ["general"],
+      "tags": [
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -627,8 +676,8 @@
         },
         {
           "category": "arts",
-          "question": "Who painted The Birth of Venus?",
-          "answer": "Sandro Botticelli"
+          "question": "Who painted The Kiss?",
+          "answer": "Gustav Klimt"
         },
         {
           "category": "science",
@@ -645,7 +694,9 @@
     {
       "id": "card-0018",
       "difficulty": "hard",
-      "tags": ["general"],
+      "tags": [
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -682,7 +733,9 @@
     {
       "id": "card-0019",
       "difficulty": "easy",
-      "tags": ["general"],
+      "tags": [
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -724,7 +777,9 @@
     {
       "id": "card-0020",
       "difficulty": "medium",
-      "tags": ["general"],
+      "tags": [
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -761,7 +816,9 @@
     {
       "id": "card-0021",
       "difficulty": "hard",
-      "tags": ["general"],
+      "tags": [
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -798,7 +855,9 @@
     {
       "id": "card-0022",
       "difficulty": "easy",
-      "tags": ["general"],
+      "tags": [
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -835,7 +894,9 @@
     {
       "id": "card-0023",
       "difficulty": "medium",
-      "tags": ["general"],
+      "tags": [
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -872,7 +933,9 @@
     {
       "id": "card-0024",
       "difficulty": "hard",
-      "tags": ["general"],
+      "tags": [
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -909,7 +972,9 @@
     {
       "id": "card-0025",
       "difficulty": "medium",
-      "tags": ["general"],
+      "tags": [
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -946,7 +1011,9 @@
     {
       "id": "card-0026",
       "difficulty": "easy",
-      "tags": ["general"],
+      "tags": [
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -983,7 +1050,9 @@
     {
       "id": "card-0027",
       "difficulty": "hard",
-      "tags": ["general"],
+      "tags": [
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1020,7 +1089,9 @@
     {
       "id": "card-0028",
       "difficulty": "medium",
-      "tags": ["general"],
+      "tags": [
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1057,7 +1128,9 @@
     {
       "id": "card-0029",
       "difficulty": "hard",
-      "tags": ["general"],
+      "tags": [
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1094,7 +1167,9 @@
     {
       "id": "card-0030",
       "difficulty": "easy",
-      "tags": ["general"],
+      "tags": [
+        "general"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1131,7 +1206,10 @@
     {
       "id": "card-0031",
       "difficulty": "easy",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1168,7 +1246,10 @@
     {
       "id": "card-0032",
       "difficulty": "medium",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1205,7 +1286,10 @@
     {
       "id": "card-0033",
       "difficulty": "hard",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1242,7 +1326,10 @@
     {
       "id": "card-0034",
       "difficulty": "easy",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1279,7 +1366,10 @@
     {
       "id": "card-0035",
       "difficulty": "medium",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1316,7 +1406,10 @@
     {
       "id": "card-0036",
       "difficulty": "medium",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1353,7 +1446,10 @@
     {
       "id": "card-0037",
       "difficulty": "hard",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1390,7 +1486,10 @@
     {
       "id": "card-0038",
       "difficulty": "easy",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1427,12 +1526,15 @@
     {
       "id": "card-0039",
       "difficulty": "medium",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
-          "question": "What is the capital of Kenya?",
-          "answer": "Nairobi"
+          "question": "Which ocean lies to the southeast of Kenya?",
+          "answer": "The Indian Ocean"
         },
         {
           "category": "entertainment",
@@ -1464,7 +1566,10 @@
     {
       "id": "card-0040",
       "difficulty": "easy",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1501,7 +1606,10 @@
     {
       "id": "card-0041",
       "difficulty": "medium",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1538,7 +1646,10 @@
     {
       "id": "card-0042",
       "difficulty": "hard",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1575,7 +1686,10 @@
     {
       "id": "card-0043",
       "difficulty": "easy",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1612,7 +1726,10 @@
     {
       "id": "card-0044",
       "difficulty": "medium",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1626,8 +1743,8 @@
         },
         {
           "category": "history",
-          "question": "Who was the first emperor of Rome?",
-          "answer": "Augustus"
+          "question": "Which monument was built in Paris for the 1889 World's Fair?",
+          "answer": "The Eiffel Tower"
         },
         {
           "category": "arts",
@@ -1649,7 +1766,10 @@
     {
       "id": "card-0045",
       "difficulty": "medium",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1686,7 +1806,10 @@
     {
       "id": "card-0046",
       "difficulty": "hard",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1723,7 +1846,10 @@
     {
       "id": "card-0047",
       "difficulty": "easy",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1760,12 +1886,15 @@
     {
       "id": "card-0048",
       "difficulty": "medium",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
-          "question": "What is the capital of Peru?",
-          "answer": "Lima"
+          "question": "Which country is home to Machu Picchu?",
+          "answer": "Peru"
         },
         {
           "category": "entertainment",
@@ -1797,7 +1926,10 @@
     {
       "id": "card-0049",
       "difficulty": "hard",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1834,7 +1966,10 @@
     {
       "id": "card-0050",
       "difficulty": "easy",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1871,7 +2006,10 @@
     {
       "id": "card-0051",
       "difficulty": "medium",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1908,7 +2046,10 @@
     {
       "id": "card-0052",
       "difficulty": "medium",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1945,7 +2086,10 @@
     {
       "id": "card-0053",
       "difficulty": "hard",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -1982,7 +2126,10 @@
     {
       "id": "card-0054",
       "difficulty": "easy",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2019,7 +2166,10 @@
     {
       "id": "card-0055",
       "difficulty": "medium",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2056,7 +2206,10 @@
     {
       "id": "card-0056",
       "difficulty": "easy",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2093,7 +2246,10 @@
     {
       "id": "card-0057",
       "difficulty": "medium",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2130,7 +2286,10 @@
     {
       "id": "card-0058",
       "difficulty": "hard",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2167,7 +2326,10 @@
     {
       "id": "card-0059",
       "difficulty": "easy",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2204,7 +2366,10 @@
     {
       "id": "card-0060",
       "difficulty": "medium",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2241,7 +2406,10 @@
     {
       "id": "card-0061",
       "difficulty": "medium",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2278,7 +2446,10 @@
     {
       "id": "card-0062",
       "difficulty": "hard",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2315,7 +2486,10 @@
     {
       "id": "card-0063",
       "difficulty": "easy",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2352,7 +2526,10 @@
     {
       "id": "card-0064",
       "difficulty": "medium",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2389,7 +2566,10 @@
     {
       "id": "card-0065",
       "difficulty": "hard",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2426,7 +2606,10 @@
     {
       "id": "card-0066",
       "difficulty": "easy",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2463,7 +2646,10 @@
     {
       "id": "card-0067",
       "difficulty": "medium",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2500,7 +2686,10 @@
     {
       "id": "card-0068",
       "difficulty": "medium",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2537,7 +2726,10 @@
     {
       "id": "card-0069",
       "difficulty": "hard",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2574,7 +2766,10 @@
     {
       "id": "card-0070",
       "difficulty": "easy",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2611,7 +2806,10 @@
     {
       "id": "card-0071",
       "difficulty": "medium",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2648,7 +2846,10 @@
     {
       "id": "card-0072",
       "difficulty": "hard",
-      "tags": ["general", "batch-1"],
+      "tags": [
+        "general",
+        "batch-1"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2690,7 +2891,10 @@
     {
       "id": "card-0073",
       "difficulty": "easy",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2727,7 +2931,10 @@
     {
       "id": "card-0074",
       "difficulty": "medium",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2764,7 +2971,10 @@
     {
       "id": "card-0075",
       "difficulty": "hard",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2806,7 +3016,10 @@
     {
       "id": "card-0076",
       "difficulty": "easy",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2848,7 +3061,10 @@
     {
       "id": "card-0077",
       "difficulty": "medium",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2885,7 +3101,10 @@
     {
       "id": "card-0078",
       "difficulty": "medium",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2922,7 +3141,10 @@
     {
       "id": "card-0079",
       "difficulty": "hard",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2959,7 +3181,10 @@
     {
       "id": "card-0080",
       "difficulty": "easy",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -2996,7 +3221,10 @@
     {
       "id": "card-0081",
       "difficulty": "medium",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3033,7 +3261,10 @@
     {
       "id": "card-0082",
       "difficulty": "hard",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3070,7 +3301,10 @@
     {
       "id": "card-0083",
       "difficulty": "easy",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3107,7 +3341,10 @@
     {
       "id": "card-0084",
       "difficulty": "medium",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3149,7 +3386,10 @@
     {
       "id": "card-0085",
       "difficulty": "medium",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3186,7 +3426,10 @@
     {
       "id": "card-0086",
       "difficulty": "hard",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3223,7 +3466,10 @@
     {
       "id": "card-0087",
       "difficulty": "easy",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3260,7 +3506,10 @@
     {
       "id": "card-0088",
       "difficulty": "medium",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3297,7 +3546,10 @@
     {
       "id": "card-0089",
       "difficulty": "hard",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3334,7 +3586,10 @@
     {
       "id": "card-0090",
       "difficulty": "easy",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3371,7 +3626,10 @@
     {
       "id": "card-0091",
       "difficulty": "medium",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3413,7 +3671,10 @@
     {
       "id": "card-0092",
       "difficulty": "medium",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3450,7 +3711,10 @@
     {
       "id": "card-0093",
       "difficulty": "hard",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3487,7 +3751,10 @@
     {
       "id": "card-0094",
       "difficulty": "easy",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3524,7 +3791,10 @@
     {
       "id": "card-0095",
       "difficulty": "medium",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3561,7 +3831,10 @@
     {
       "id": "card-0096",
       "difficulty": "hard",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3598,7 +3871,10 @@
     {
       "id": "card-0097",
       "difficulty": "easy",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3640,7 +3916,10 @@
     {
       "id": "card-0098",
       "difficulty": "medium",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3677,7 +3956,10 @@
     {
       "id": "card-0099",
       "difficulty": "medium",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3714,7 +3996,10 @@
     {
       "id": "card-0100",
       "difficulty": "hard",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3751,7 +4036,10 @@
     {
       "id": "card-0101",
       "difficulty": "easy",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3788,7 +4076,10 @@
     {
       "id": "card-0102",
       "difficulty": "medium",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3825,7 +4116,10 @@
     {
       "id": "card-0103",
       "difficulty": "hard",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3862,7 +4156,10 @@
     {
       "id": "card-0104",
       "difficulty": "easy",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3899,7 +4196,10 @@
     {
       "id": "card-0105",
       "difficulty": "medium",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3936,7 +4236,10 @@
     {
       "id": "card-0106",
       "difficulty": "medium",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -3973,7 +4276,10 @@
     {
       "id": "card-0107",
       "difficulty": "hard",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -4010,7 +4316,10 @@
     {
       "id": "card-0108",
       "difficulty": "easy",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -4047,7 +4356,10 @@
     {
       "id": "card-0109",
       "difficulty": "medium",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -4084,7 +4396,10 @@
     {
       "id": "card-0110",
       "difficulty": "hard",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -4121,7 +4436,10 @@
     {
       "id": "card-0111",
       "difficulty": "easy",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -4158,12 +4476,20 @@
     {
       "id": "card-0112",
       "difficulty": "medium",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
           "question": "What is the capital of Malaysia?",
-          "answer": "Kuala Lumpur"
+          "answer": "Kuala Lumpur",
+          "explanation": "Kuala Lumpur is Malaysia's capital, while nearby Putrajaya serves as the federal administrative centre.",
+          "source": {
+            "label": "Encyclopaedia Britannica: Malaysia",
+            "url": "https://www.britannica.com/place/Malaysia"
+          }
         },
         {
           "category": "entertainment",
@@ -4195,7 +4521,10 @@
     {
       "id": "card-0113",
       "difficulty": "medium",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -4232,7 +4561,10 @@
     {
       "id": "card-0114",
       "difficulty": "hard",
-      "tags": ["general", "batch-2"],
+      "tags": [
+        "general",
+        "batch-2"
+      ],
       "entries": [
         {
           "category": "geography",
@@ -4263,6 +4595,3386 @@
           "category": "sports",
           "question": "In rowing, what is the term for the left side of the boat when facing forward?",
           "answer": "Port"
+        }
+      ]
+    },
+    {
+      "id": "card-0115",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which US state is nicknamed the Sunshine State?",
+          "answer": "Florida"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which fairy tale girl visits her grandmother in the woods?",
+          "answer": "Little Red Riding Hood"
+        },
+        {
+          "category": "history",
+          "question": "Which British prime minister was known as the Iron Lady?",
+          "answer": "Margaret Thatcher"
+        },
+        {
+          "category": "arts",
+          "question": "Who painted The Birth of Venus?",
+          "answer": "Sandro Botticelli"
+        },
+        {
+          "category": "science",
+          "question": "What is the name of the star at the center of our solar system?",
+          "answer": "The Sun"
+        },
+        {
+          "category": "sports",
+          "question": "How many bases must a baseball runner touch to score a run?",
+          "answer": "Four"
+        }
+      ]
+    },
+    {
+      "id": "card-0116",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Tunisia?",
+          "answer": "Tunis"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which singer released the album Jagged Little Pill?",
+          "answer": "Alanis Morissette"
+        },
+        {
+          "category": "history",
+          "question": "Which US president announced the New Deal programs?",
+          "answer": "Franklin D. Roosevelt"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote The Stranger?",
+          "answer": "Albert Camus"
+        },
+        {
+          "category": "science",
+          "question": "What is the largest species of shark?",
+          "answer": "The whale shark"
+        },
+        {
+          "category": "sports",
+          "question": "In baseball, what is the term for a pitch that is too high or too low to hit and not a strike?",
+          "answer": "A ball"
+        }
+      ]
+    },
+    {
+      "id": "card-0117",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Malawi?",
+          "answer": "Lilongwe"
+        },
+        {
+          "category": "entertainment",
+          "question": "Who wrote the novel Possession: A Romance?",
+          "answer": "A.S. Byatt"
+        },
+        {
+          "category": "history",
+          "question": "Which Athenian statesman is closely associated with the building of the Parthenon?",
+          "answer": "Pericles"
+        },
+        {
+          "category": "arts",
+          "question": "Who composed the opera La Boheme?",
+          "answer": "Giacomo Puccini"
+        },
+        {
+          "category": "science",
+          "question": "What is the name of the point at which a substance cannot exist as a liquid beyond a certain temperature and pressure?",
+          "answer": "The critical point"
+        },
+        {
+          "category": "sports",
+          "question": "In snooker, what color ball is worth five points?",
+          "answer": "Blue"
+        }
+      ]
+    },
+    {
+      "id": "card-0118",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Cuba?",
+          "answer": "Havana"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which superhero is also known as the Man of Steel?",
+          "answer": "Superman"
+        },
+        {
+          "category": "history",
+          "question": "What was the name of the first dog sent into orbit around Earth?",
+          "answer": "Laika"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote Anne of Green Gables?",
+          "answer": "L.M. Montgomery"
+        },
+        {
+          "category": "science",
+          "question": "What is the hard outer layer of a tree trunk called?",
+          "answer": "Bark"
+        },
+        {
+          "category": "sports",
+          "question": "How many players are on the field for one team in American football?",
+          "answer": "Eleven"
+        }
+      ]
+    },
+    {
+      "id": "card-0119",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which city is Sri Lanka's legislative capital?",
+          "answer": "Sri Jayawardenepura Kotte",
+          "explanation": "Sri Lanka splits its capitals: Colombo is the executive and judicial capital, while Sri Jayawardenepura Kotte is the legislative capital.",
+          "source": {
+            "label": "Encyclopaedia Britannica: Sri Lanka",
+            "url": "https://www.britannica.com/place/Sri-Lanka"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played Jack Dawson in Titanic?",
+          "answer": "Leonardo DiCaprio"
+        },
+        {
+          "category": "history",
+          "question": "Which treaty created the European Union in 1993?",
+          "answer": "The Maastricht Treaty"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote The Unbearable Lightness of Being?",
+          "answer": "Milan Kundera"
+        },
+        {
+          "category": "science",
+          "question": "What is the process by which a gas becomes a liquid called?",
+          "answer": "Condensation"
+        },
+        {
+          "category": "sports",
+          "question": "What is the term for a score of one under par on a hole in golf?",
+          "answer": "A birdie"
+        }
+      ]
+    },
+    {
+      "id": "card-0120",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Benin?",
+          "answer": "Porto-Novo",
+          "explanation": "Porto-Novo is Benin's official capital, but Cotonou is the country's largest city and de facto administrative capital.",
+          "source": {
+            "label": "Encyclopaedia Britannica: Benin",
+            "url": "https://www.britannica.com/place/Benin"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "Who wrote the novel Atonement?",
+          "answer": "Ian McEwan"
+        },
+        {
+          "category": "history",
+          "question": "Which 17th-century war in England pitted Cavaliers against Roundheads?",
+          "answer": "The English Civil War"
+        },
+        {
+          "category": "arts",
+          "question": "Who painted The Garden of Earthly Delights?",
+          "answer": "Hieronymus Bosch"
+        },
+        {
+          "category": "science",
+          "question": "What is the term for the amount of matter in an object?",
+          "answer": "Mass"
+        },
+        {
+          "category": "sports",
+          "question": "In tennis, what is the term for a winner that the opponent cannot touch?",
+          "answer": "An ace"
+        }
+      ]
+    },
+    {
+      "id": "card-0121",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which country is home to Mount Fuji?",
+          "answer": "Japan"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which toy cowboy is voiced by Tom Hanks in Toy Story?",
+          "answer": "Woody"
+        },
+        {
+          "category": "history",
+          "question": "Which famous American train route connected the East and West Coasts after 1869?",
+          "answer": "The Transcontinental Railroad"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote The Wind in the Willows?",
+          "answer": "Kenneth Grahame"
+        },
+        {
+          "category": "science",
+          "question": "What type of simple machine is a doorknob an example of?",
+          "answer": "A wheel and axle"
+        },
+        {
+          "category": "sports",
+          "question": "What is the target score in a game of darts called 501?",
+          "answer": "Zero"
+        }
+      ]
+    },
+    {
+      "id": "card-0122",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Jordan?",
+          "answer": "Amman"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played James Bond in Casino Royale?",
+          "answer": "Daniel Craig"
+        },
+        {
+          "category": "history",
+          "question": "Which Soviet leader introduced perestroika?",
+          "answer": "Mikhail Gorbachev"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote The Trial?",
+          "answer": "Franz Kafka"
+        },
+        {
+          "category": "science",
+          "question": "What is the largest planet in our solar system?",
+          "answer": "Jupiter"
+        },
+        {
+          "category": "sports",
+          "question": "Which country hosts the running of the Kentucky Derby?",
+          "answer": "The United States"
+        }
+      ]
+    },
+    {
+      "id": "card-0123",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Uganda?",
+          "answer": "Kampala"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which singer recorded Rehab and Valerie?",
+          "answer": "Amy Winehouse"
+        },
+        {
+          "category": "history",
+          "question": "Which 18th-century document declared that all men are created equal?",
+          "answer": "The Declaration of Independence"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote The Scarlet Letter?",
+          "answer": "Nathaniel Hawthorne"
+        },
+        {
+          "category": "science",
+          "question": "What name is given to animals that maintain a constant internal body temperature?",
+          "answer": "Warm-blooded"
+        },
+        {
+          "category": "sports",
+          "question": "How many lanes are there in an Olympic swimming pool for competition?",
+          "answer": "Eight"
+        }
+      ]
+    },
+    {
+      "id": "card-0124",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Burkina Faso?",
+          "answer": "Ouagadougou"
+        },
+        {
+          "category": "entertainment",
+          "question": "Who wrote the novel The Name of the Rose?",
+          "answer": "Umberto Eco"
+        },
+        {
+          "category": "history",
+          "question": "Which 18th-century empress ruled Russia during its age of Enlightenment expansion?",
+          "answer": "Catherine the Great"
+        },
+        {
+          "category": "arts",
+          "question": "Who composed the opera Aida?",
+          "answer": "Giuseppe Verdi"
+        },
+        {
+          "category": "science",
+          "question": "What is the branch of chemistry concerned with carbon compounds called?",
+          "answer": "Organic chemistry"
+        },
+        {
+          "category": "sports",
+          "question": "In baseball scoring, what abbreviation is used for a home run?",
+          "answer": "HR"
+        }
+      ]
+    },
+    {
+      "id": "card-0125",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Saudi Arabia?",
+          "answer": "Riyadh"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which Disney film features the song Under the Sea?",
+          "answer": "The Little Mermaid"
+        },
+        {
+          "category": "history",
+          "question": "Which explorer is credited with reaching the South Pole first?",
+          "answer": "Roald Amundsen"
+        },
+        {
+          "category": "arts",
+          "question": "Who painted Las Meninas?",
+          "answer": "Diego Velazquez"
+        },
+        {
+          "category": "science",
+          "question": "What do we call water in its solid state?",
+          "answer": "Ice"
+        },
+        {
+          "category": "sports",
+          "question": "In basketball, what is the painted area near the hoop commonly called?",
+          "answer": "The key"
+        }
+      ]
+    },
+    {
+      "id": "card-0126",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Lebanon?",
+          "answer": "Beirut"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played Ron Burgundy in Anchorman?",
+          "answer": "Will Ferrell"
+        },
+        {
+          "category": "history",
+          "question": "Which 18th-century philosopher wrote The Social Contract?",
+          "answer": "Jean-Jacques Rousseau"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote Bel Canto?",
+          "answer": "Ann Patchett"
+        },
+        {
+          "category": "science",
+          "question": "What is the process by which a liquid changes into a gas below its boiling point?",
+          "answer": "Evaporation"
+        },
+        {
+          "category": "sports",
+          "question": "What is the term for a score of one over par on a golf hole?",
+          "answer": "A bogey"
+        }
+      ]
+    },
+    {
+      "id": "card-0127",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Mozambique?",
+          "answer": "Maputo"
+        },
+        {
+          "category": "entertainment",
+          "question": "Who wrote the novel The Brief Wondrous Life of Oscar Wao?",
+          "answer": "Junot Diaz"
+        },
+        {
+          "category": "history",
+          "question": "Which 19th-century conflict in China was led by Hong Xiuquan?",
+          "answer": "The Taiping Rebellion"
+        },
+        {
+          "category": "arts",
+          "question": "Who painted Whistler's Mother?",
+          "answer": "James McNeill Whistler"
+        },
+        {
+          "category": "science",
+          "question": "What is the SI unit for electric current?",
+          "answer": "The ampere"
+        },
+        {
+          "category": "sports",
+          "question": "In soccer, what is the term for a pass that directly leads to a goal?",
+          "answer": "An assist"
+        }
+      ]
+    },
+    {
+      "id": "card-0128",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Kenya?",
+          "answer": "Nairobi"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which animated film features a clownfish searching for his son?",
+          "answer": "Finding Nemo"
+        },
+        {
+          "category": "history",
+          "question": "Who was the first emperor of Rome?",
+          "answer": "Augustus"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote Where the Wild Things Are?",
+          "answer": "Maurice Sendak"
+        },
+        {
+          "category": "science",
+          "question": "What is the name of the process by which the Moon appears to change shape from Earth?",
+          "answer": "Phases"
+        },
+        {
+          "category": "sports",
+          "question": "How many players are there on a standard polo team?",
+          "answer": "Four"
+        }
+      ]
+    },
+    {
+      "id": "card-0129",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which city is Bolivia's constitutional capital?",
+          "answer": "Sucre",
+          "explanation": "Bolivia splits its capitals: Sucre is the constitutional capital, while La Paz is the administrative seat of the executive and legislature.",
+          "source": {
+            "label": "Encyclopaedia Britannica: Bolivia",
+            "url": "https://www.britannica.com/place/Bolivia"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played Don Vito Corleone in The Godfather?",
+          "answer": "Marlon Brando"
+        },
+        {
+          "category": "history",
+          "question": "Which explorer gave his name to the strait at the southern tip of South America?",
+          "answer": "Ferdinand Magellan"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote A Passage to India?",
+          "answer": "E.M. Forster"
+        },
+        {
+          "category": "science",
+          "question": "What are the tiny hairlike structures in the respiratory tract that help clear mucus called?",
+          "answer": "Cilia"
+        },
+        {
+          "category": "sports",
+          "question": "In boxing, what is the name of the area between the ropes and the corner where a fighter sits between rounds?",
+          "answer": "The corner"
+        }
+      ]
+    },
+    {
+      "id": "card-0130",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Nepal?",
+          "answer": "Kathmandu"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played the lead in The Truman Show?",
+          "answer": "Jim Carrey"
+        },
+        {
+          "category": "history",
+          "question": "Which city was the site of the 1986 nuclear disaster in Ukraine?",
+          "answer": "Chernobyl"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote The Sound and the Fury?",
+          "answer": "William Faulkner"
+        },
+        {
+          "category": "science",
+          "question": "What is the name of the layer of gases surrounding Earth?",
+          "answer": "The atmosphere"
+        },
+        {
+          "category": "sports",
+          "question": "How many points is a drop goal worth in rugby union?",
+          "answer": "Three"
+        }
+      ]
+    },
+    {
+      "id": "card-0131",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Guinea-Bissau?",
+          "answer": "Bissau"
+        },
+        {
+          "category": "entertainment",
+          "question": "Who wrote the novel The Shadow of the Wind?",
+          "answer": "Carlos Ruiz Zafon"
+        },
+        {
+          "category": "history",
+          "question": "Which Mughal emperor commissioned the Taj Mahal?",
+          "answer": "Shah Jahan"
+        },
+        {
+          "category": "arts",
+          "question": "Who composed Carmina Burana?",
+          "answer": "Carl Orff"
+        },
+        {
+          "category": "science",
+          "question": "What is the term for a substance that speeds up a chemical reaction without being consumed?",
+          "answer": "A catalyst"
+        },
+        {
+          "category": "sports",
+          "question": "What is the name of the line a curling stone must pass to remain in play?",
+          "answer": "The hog line"
+        }
+      ]
+    },
+    {
+      "id": "card-0132",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Peru?",
+          "answer": "Lima"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which cartoon dog is owned by Shaggy?",
+          "answer": "Scooby-Doo"
+        },
+        {
+          "category": "history",
+          "question": "Which ship carried Charles Darwin on his famous voyage?",
+          "answer": "HMS Beagle"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote Treasure Island?",
+          "answer": "Robert Louis Stevenson"
+        },
+        {
+          "category": "science",
+          "question": "What is the term for animals that eat only plants?",
+          "answer": "Herbivores"
+        },
+        {
+          "category": "sports",
+          "question": "Which sport is played at Augusta National each spring?",
+          "answer": "Golf"
+        }
+      ]
+    },
+    {
+      "id": "card-0133",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Ecuador?",
+          "answer": "Quito"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actress played Vivian Ward in Pretty Woman?",
+          "answer": "Julia Roberts"
+        },
+        {
+          "category": "history",
+          "question": "Which military alliance was created in 1949 as a collective defense pact?",
+          "answer": "NATO"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote The Bluest Eye?",
+          "answer": "Toni Morrison"
+        },
+        {
+          "category": "science",
+          "question": "What is the term for a young frog after it hatches and before it becomes an adult?",
+          "answer": "A tadpole"
+        },
+        {
+          "category": "sports",
+          "question": "In soccer, what is the curved shot that bends around a defensive wall often called?",
+          "answer": "A curling free kick"
+        }
+      ]
+    },
+    {
+      "id": "card-0134",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Mauritania?",
+          "answer": "Nouakchott"
+        },
+        {
+          "category": "entertainment",
+          "question": "Who wrote the novel The Golden Notebook?",
+          "answer": "Doris Lessing"
+        },
+        {
+          "category": "history",
+          "question": "Which 1830s forced relocation of Native nations is often called the Trail of Tears?",
+          "answer": "The removal of the Cherokee and other Southeastern nations"
+        },
+        {
+          "category": "arts",
+          "question": "Who painted Christina's World?",
+          "answer": "Andrew Wyeth"
+        },
+        {
+          "category": "science",
+          "question": "What is the term for the visible surface of the Sun?",
+          "answer": "The photosphere"
+        },
+        {
+          "category": "sports",
+          "question": "In horse racing, what is the area where horses are loaded before the start called?",
+          "answer": "The starting gate"
+        }
+      ]
+    },
+    {
+      "id": "card-0135",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of New Zealand?",
+          "answer": "Wellington"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which princess is accompanied by seven dwarfs?",
+          "answer": "Snow White"
+        },
+        {
+          "category": "history",
+          "question": "What was the name of the first human-made object to reach the Moon's surface?",
+          "answer": "Luna 2"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote The Call of the Wild?",
+          "answer": "Jack London"
+        },
+        {
+          "category": "science",
+          "question": "What type of cloud is often associated with thunderstorms?",
+          "answer": "Cumulonimbus"
+        },
+        {
+          "category": "sports",
+          "question": "How many points is a three-point shot worth in basketball?",
+          "answer": "Three"
+        }
+      ]
+    },
+    {
+      "id": "card-0136",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Oman?",
+          "answer": "Muscat"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played Patrick Bateman in American Psycho?",
+          "answer": "Christian Bale"
+        },
+        {
+          "category": "history",
+          "question": "Which 15th-century ruler united Castile and Aragon with her marriage to Ferdinand?",
+          "answer": "Isabella I"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote Never Let Me Go?",
+          "answer": "Kazuo Ishiguro"
+        },
+        {
+          "category": "science",
+          "question": "What is the name of the opening in the iris that lets light into the eye?",
+          "answer": "The pupil"
+        },
+        {
+          "category": "sports",
+          "question": "In tennis, what is the term for a score tied at 40-40?",
+          "answer": "Deuce"
+        }
+      ]
+    },
+    {
+      "id": "card-0137",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Armenia?",
+          "answer": "Yerevan"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played the title character in Edward Scissorhands?",
+          "answer": "Johnny Depp"
+        },
+        {
+          "category": "history",
+          "question": "Which English navigator helped defeat the Spanish Armada and later circumnavigated the globe?",
+          "answer": "Francis Drake"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote The Road?",
+          "answer": "Cormac McCarthy"
+        },
+        {
+          "category": "science",
+          "question": "What is the name of the process by which plants release oxygen as a by-product of making sugar?",
+          "answer": "Photosynthesis"
+        },
+        {
+          "category": "sports",
+          "question": "What is the term for a score of 180 in darts?",
+          "answer": "A maximum"
+        }
+      ]
+    },
+    {
+      "id": "card-0138",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which city is Eswatini's administrative capital?",
+          "answer": "Mbabane",
+          "explanation": "Eswatini also recognizes Lobamba as its legislative capital and royal seat.",
+          "source": {
+            "label": "Encyclopaedia Britannica: Eswatini",
+            "url": "https://www.britannica.com/place/Eswatini"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "Who wrote the novel Cloud Atlas?",
+          "answer": "David Mitchell"
+        },
+        {
+          "category": "history",
+          "question": "Which rebellion in 1857 challenged British rule in India?",
+          "answer": "The Indian Rebellion of 1857"
+        },
+        {
+          "category": "arts",
+          "question": "Who composed the opera Tosca?",
+          "answer": "Giacomo Puccini"
+        },
+        {
+          "category": "science",
+          "question": "What is the term for the smallest quantity of an element that can exist and still retain that element's properties?",
+          "answer": "An atom"
+        },
+        {
+          "category": "sports",
+          "question": "In cricket, what is the term for a batter dismissed without scoring?",
+          "answer": "A duck"
+        }
+      ]
+    },
+    {
+      "id": "card-0139",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which river flows through Vienna?",
+          "answer": "The Danube"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which yellow sponge works at the Krusty Krab?",
+          "answer": "SpongeBob SquarePants"
+        },
+        {
+          "category": "history",
+          "question": "Which world-famous ocean liner sank in 1912 after hitting an iceberg?",
+          "answer": "The Titanic"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote Peter Pan?",
+          "answer": "J.M. Barrie"
+        },
+        {
+          "category": "science",
+          "question": "What name is given to animals that are active during the day?",
+          "answer": "Diurnal"
+        },
+        {
+          "category": "sports",
+          "question": "How many players are on a standard ice hockey team on the rink including the goalie?",
+          "answer": "Six"
+        }
+      ]
+    },
+    {
+      "id": "card-0140",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Morocco?",
+          "answer": "Rabat"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which singer starred in the film The Bodyguard?",
+          "answer": "Whitney Houston"
+        },
+        {
+          "category": "history",
+          "question": "Which ruler was the first Tudor king of England?",
+          "answer": "Henry VII"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote East of Eden?",
+          "answer": "John Steinbeck"
+        },
+        {
+          "category": "science",
+          "question": "What is the name of the process by which one atomic nucleus splits into smaller nuclei?",
+          "answer": "Nuclear fission"
+        },
+        {
+          "category": "sports",
+          "question": "In cycling, what is the support vehicle following a rider in a race often called?",
+          "answer": "The team car"
+        }
+      ]
+    },
+    {
+      "id": "card-0141",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Botswana?",
+          "answer": "Gaborone"
+        },
+        {
+          "category": "entertainment",
+          "question": "Who wrote the novel The Corrections?",
+          "answer": "Jonathan Franzen"
+        },
+        {
+          "category": "history",
+          "question": "Which Byzantine emperor was in power during the Nika riots?",
+          "answer": "Justinian I"
+        },
+        {
+          "category": "arts",
+          "question": "Who painted A Sunday Afternoon on the Island of La Grande Jatte?",
+          "answer": "Georges Seurat"
+        },
+        {
+          "category": "science",
+          "question": "What is the term for the tendency of an object to resist changes in its motion?",
+          "answer": "Inertia"
+        },
+        {
+          "category": "sports",
+          "question": "What is the term for a race in which competitors start at different times based on prior results and the first across the line wins overall?",
+          "answer": "A pursuit"
+        }
+      ]
+    },
+    {
+      "id": "card-0142",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which mountain range runs along much of western South America?",
+          "answer": "The Andes"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which superhero is Peter Parker?",
+          "answer": "Spider-Man"
+        },
+        {
+          "category": "history",
+          "question": "Which US president is on the one-dollar bill?",
+          "answer": "George Washington"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote The Phantom Tollbooth?",
+          "answer": "Norton Juster"
+        },
+        {
+          "category": "science",
+          "question": "What is the name of the process by which liquid water falls from clouds?",
+          "answer": "Precipitation"
+        },
+        {
+          "category": "sports",
+          "question": "How many points is a standard try worth in rugby league?",
+          "answer": "Four"
+        }
+      ]
+    },
+    {
+      "id": "card-0143",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Cambodia?",
+          "answer": "Phnom Penh"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played the title role in Iron Man?",
+          "answer": "Robert Downey Jr."
+        },
+        {
+          "category": "history",
+          "question": "Which 1803 Supreme Court case established judicial review in the United States?",
+          "answer": "Marbury v. Madison"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote Things Fall Apart?",
+          "answer": "Chinua Achebe"
+        },
+        {
+          "category": "science",
+          "question": "What is the term for the center of a hurricane where conditions are calmest?",
+          "answer": "The eye"
+        },
+        {
+          "category": "sports",
+          "question": "In baseball, what is the term for a batter who reaches base on four pitches outside the strike zone?",
+          "answer": "A walk"
+        }
+      ]
+    },
+    {
+      "id": "card-0144",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Djibouti?",
+          "answer": "Djibouti"
+        },
+        {
+          "category": "entertainment",
+          "question": "Who wrote the novel Americanah?",
+          "answer": "Chimamanda Ngozi Adichie"
+        },
+        {
+          "category": "history",
+          "question": "Which 19th-century Latin American liberator is known as El Libertador?",
+          "answer": "Simon Bolivar"
+        },
+        {
+          "category": "arts",
+          "question": "Who composed the opera Don Giovanni?",
+          "answer": "Wolfgang Amadeus Mozart"
+        },
+        {
+          "category": "science",
+          "question": "What is the term for a beam of light split into its component colors?",
+          "answer": "A spectrum"
+        },
+        {
+          "category": "sports",
+          "question": "In gymnastics, what is the term for a perfect score historically associated with Nadia Comaneci?",
+          "answer": "A 10.0"
+        }
+      ]
+    },
+    {
+      "id": "card-0145",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which desert stretches along northern Chile?",
+          "answer": "The Atacama Desert"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which wizard is the headmaster of Hogwarts for most of the Harry Potter series?",
+          "answer": "Albus Dumbledore"
+        },
+        {
+          "category": "history",
+          "question": "Which famous nurse founded modern nursing practices in the 19th century?",
+          "answer": "Florence Nightingale"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote Black Beauty?",
+          "answer": "Anna Sewell"
+        },
+        {
+          "category": "science",
+          "question": "What is the term for an animal that is active at dawn and dusk?",
+          "answer": "Crepuscular"
+        },
+        {
+          "category": "sports",
+          "question": "What is the highest possible hand in standard poker?",
+          "answer": "A royal flush"
+        }
+      ]
+    },
+    {
+      "id": "card-0146",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Tanzania?",
+          "answer": "Dodoma"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actress played Kat Stratford in 10 Things I Hate About You?",
+          "answer": "Julia Stiles"
+        },
+        {
+          "category": "history",
+          "question": "Which queen ruled England jointly with William III after the Glorious Revolution?",
+          "answer": "Mary II"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote The Maltese Falcon?",
+          "answer": "Dashiell Hammett"
+        },
+        {
+          "category": "science",
+          "question": "What is the largest moon of Jupiter?",
+          "answer": "Ganymede"
+        },
+        {
+          "category": "sports",
+          "question": "In soccer, what is the term for the action of legally taking the ball away from an opponent in play?",
+          "answer": "A tackle"
+        }
+      ]
+    },
+    {
+      "id": "card-0147",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Latvia?",
+          "answer": "Riga"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played Obi-Wan Kenobi in the Star Wars prequel trilogy?",
+          "answer": "Ewan McGregor"
+        },
+        {
+          "category": "history",
+          "question": "Which major gold rush began in California in 1848?",
+          "answer": "The California Gold Rush"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote The House of the Spirits?",
+          "answer": "Isabel Allende"
+        },
+        {
+          "category": "science",
+          "question": "What is the name of the process by which an embryo attaches to the wall of the uterus?",
+          "answer": "Implantation"
+        },
+        {
+          "category": "sports",
+          "question": "In boxing, what is the count a referee gives after a knockdown called?",
+          "answer": "The count"
+        }
+      ]
+    },
+    {
+      "id": "card-0148",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Lesotho?",
+          "answer": "Maseru"
+        },
+        {
+          "category": "entertainment",
+          "question": "Who wrote the novel The Recognitions?",
+          "answer": "William Gaddis"
+        },
+        {
+          "category": "history",
+          "question": "Which Hellenistic dynasty ruled Egypt after Alexander the Great?",
+          "answer": "The Ptolemaic dynasty"
+        },
+        {
+          "category": "arts",
+          "question": "Who composed the opera The Tales of Hoffmann?",
+          "answer": "Jacques Offenbach"
+        },
+        {
+          "category": "science",
+          "question": "What is the term for a species' role within an ecosystem?",
+          "answer": "Its niche"
+        },
+        {
+          "category": "sports",
+          "question": "In golf, what is the term for the area of closely mown grass surrounding a putting green?",
+          "answer": "The fringe"
+        }
+      ]
+    },
+    {
+      "id": "card-0149",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Iraq?",
+          "answer": "Baghdad"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which Disney heroine has a chameleon named Pascal?",
+          "answer": "Rapunzel"
+        },
+        {
+          "category": "history",
+          "question": "Which empire built the Colosseum?",
+          "answer": "The Roman Empire"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote The Tale of Peter Rabbit?",
+          "answer": "Beatrix Potter"
+        },
+        {
+          "category": "science",
+          "question": "What do we call a long period of little or no rainfall?",
+          "answer": "A drought"
+        },
+        {
+          "category": "sports",
+          "question": "How many players are on the field for one baseball team at a time?",
+          "answer": "Nine"
+        }
+      ]
+    },
+    {
+      "id": "card-0150",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Slovakia?",
+          "answer": "Bratislava"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played the title role in Mad Max: Fury Road?",
+          "answer": "Tom Hardy"
+        },
+        {
+          "category": "history",
+          "question": "Which law code is associated with the Babylonian king Hammurabi?",
+          "answer": "The Code of Hammurabi"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote The Left Hand of Darkness?",
+          "answer": "Ursula K. Le Guin"
+        },
+        {
+          "category": "science",
+          "question": "What is the name of the organ that stores bile?",
+          "answer": "The gallbladder"
+        },
+        {
+          "category": "sports",
+          "question": "What is the term for a race in which runners pass a baton from one teammate to another?",
+          "answer": "A relay"
+        }
+      ]
+    },
+    {
+      "id": "card-0151",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Zambia?",
+          "answer": "Lusaka"
+        },
+        {
+          "category": "entertainment",
+          "question": "Who wrote the novel Pale Fire?",
+          "answer": "Vladimir Nabokov"
+        },
+        {
+          "category": "history",
+          "question": "Which Persian king invaded Greece and fought at Thermopylae in 480 BC?",
+          "answer": "Xerxes I"
+        },
+        {
+          "category": "arts",
+          "question": "Who composed the opera Norma?",
+          "answer": "Vincenzo Bellini"
+        },
+        {
+          "category": "science",
+          "question": "What is the name of the process in which cells divide to produce two identical daughter cells?",
+          "answer": "Mitosis"
+        },
+        {
+          "category": "sports",
+          "question": "In baseball, what is the term for the defensive player stationed behind home plate?",
+          "answer": "The catcher"
+        }
+      ]
+    },
+    {
+      "id": "card-0152",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Jamaica?",
+          "answer": "Kingston"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which friendly ghost shares a name with a cartoon character?",
+          "answer": "Casper"
+        },
+        {
+          "category": "history",
+          "question": "What ship brought the Pilgrims to North America in 1620?",
+          "answer": "The Mayflower"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote The Secret Life of Bees?",
+          "answer": "Sue Monk Kidd"
+        },
+        {
+          "category": "science",
+          "question": "What is the term for an animal's seasonal deep sleep?",
+          "answer": "Hibernation"
+        },
+        {
+          "category": "sports",
+          "question": "How many players are on a standard curling team?",
+          "answer": "Four"
+        }
+      ]
+    },
+    {
+      "id": "card-0153",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Uruguay?",
+          "answer": "Montevideo"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actress played Mia Thermopolis in The Princess Diaries?",
+          "answer": "Anne Hathaway"
+        },
+        {
+          "category": "history",
+          "question": "Which empire was ruled by Constantine XI at the time of the fall of Constantinople?",
+          "answer": "The Byzantine Empire"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote The Blind Assassin?",
+          "answer": "Margaret Atwood"
+        },
+        {
+          "category": "science",
+          "question": "What is the term for the waxy protective outer layer of leaves?",
+          "answer": "The cuticle"
+        },
+        {
+          "category": "sports",
+          "question": "In fencing, what is the protective mask worn on the head simply called?",
+          "answer": "A mask"
+        }
+      ]
+    },
+    {
+      "id": "card-0154",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Yemen?",
+          "answer": "Sanaa"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor voiced Simba in the 1994 animated The Lion King?",
+          "answer": "Matthew Broderick"
+        },
+        {
+          "category": "history",
+          "question": "Which 1215 charter limited the power of the English king?",
+          "answer": "Magna Carta"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote The English Patient?",
+          "answer": "Michael Ondaatje"
+        },
+        {
+          "category": "science",
+          "question": "What is the term for the instinctive movement of a plant toward light?",
+          "answer": "Phototropism"
+        },
+        {
+          "category": "sports",
+          "question": "What is the term for a score tied at the end of regulation in hockey when play continues with a sudden-death period?",
+          "answer": "Overtime"
+        }
+      ]
+    },
+    {
+      "id": "card-0155",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Togo?",
+          "answer": "Lome"
+        },
+        {
+          "category": "entertainment",
+          "question": "Who wrote the novel The Year of Magical Thinking?",
+          "answer": "Joan Didion"
+        },
+        {
+          "category": "history",
+          "question": "Which Chinese philosopher is associated with the Analects?",
+          "answer": "Confucius"
+        },
+        {
+          "category": "arts",
+          "question": "Who composed Das Rheingold?",
+          "answer": "Richard Wagner"
+        },
+        {
+          "category": "science",
+          "question": "What is the name of the stage in the water cycle when water vapor cools and forms liquid droplets?",
+          "answer": "Condensation"
+        },
+        {
+          "category": "sports",
+          "question": "In baseball, what is the term for a fly ball caught by a fielder before it touches the ground?",
+          "answer": "A catch"
+        }
+      ]
+    },
+    {
+      "id": "card-0156",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-3"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Sierra Leone?",
+          "answer": "Freetown"
+        },
+        {
+          "category": "entertainment",
+          "question": "Who wrote the novel The Poisonwood Bible?",
+          "answer": "Barbara Kingsolver"
+        },
+        {
+          "category": "history",
+          "question": "Which 14th-century North African traveler wrote about journeys across Africa and Asia?",
+          "answer": "Ibn Battuta"
+        },
+        {
+          "category": "arts",
+          "question": "Who painted Liberty Leading the People?",
+          "answer": "Eugene Delacroix"
+        },
+        {
+          "category": "science",
+          "question": "What is the term for the genetic makeup of an organism?",
+          "answer": "Its genotype"
+        },
+        {
+          "category": "sports",
+          "question": "In cricket, what is the name of the fielding position directly behind the wicketkeeper?",
+          "answer": "Long stop"
+        }
+      ]
+    },
+    {
+      "id": "card-0157",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which continent is Egypt in?",
+          "answer": "Africa"
+        },
+        {
+          "category": "entertainment",
+          "question": "What is the name of Mickey Mouse's dog?",
+          "answer": "Pluto"
+        },
+        {
+          "category": "history",
+          "question": "Which wall came down in Berlin in 1989?",
+          "answer": "The Berlin Wall"
+        },
+        {
+          "category": "arts",
+          "question": "Who painted the ceiling of the Sistine Chapel?",
+          "answer": "Michelangelo"
+        },
+        {
+          "category": "science",
+          "question": "What is the process by which liquid water turns into vapor called?",
+          "answer": "Evaporation"
+        },
+        {
+          "category": "sports",
+          "question": "How many points is a free throw worth in basketball?",
+          "answer": "One"
+        }
+      ]
+    },
+    {
+      "id": "card-0158",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which ocean lies between Africa and Australia?",
+          "answer": "The Indian Ocean"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which wizard school does Harry Potter attend?",
+          "answer": "Hogwarts"
+        },
+        {
+          "category": "history",
+          "question": "Which ship sank on its maiden voyage in 1912?",
+          "answer": "The Titanic"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote Romeo and Juliet?",
+          "answer": "William Shakespeare"
+        },
+        {
+          "category": "science",
+          "question": "What gas do plants absorb from the air?",
+          "answer": "Carbon dioxide"
+        },
+        {
+          "category": "sports",
+          "question": "What sport uses a racket, shuttlecock, and net?",
+          "answer": "Badminton"
+        }
+      ]
+    },
+    {
+      "id": "card-0159",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the largest continent?",
+          "answer": "Asia"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which toy space ranger says To infinity and beyond in Toy Story?",
+          "answer": "Buzz Lightyear"
+        },
+        {
+          "category": "history",
+          "question": "Which explorer is credited with reaching the Americas in 1492?",
+          "answer": "Christopher Columbus"
+        },
+        {
+          "category": "arts",
+          "question": "Who sculpted David?",
+          "answer": "Michelangelo"
+        },
+        {
+          "category": "science",
+          "question": "At sea level, water freezes at what temperature in degrees Celsius?",
+          "answer": "0"
+        },
+        {
+          "category": "sports",
+          "question": "In which sport is the term home run used?",
+          "answer": "Baseball"
+        }
+      ]
+    },
+    {
+      "id": "card-0160",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the longest river in South America?",
+          "answer": "The Amazon River"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which singer is widely called the Queen of Pop?",
+          "answer": "Madonna"
+        },
+        {
+          "category": "history",
+          "question": "Which war was fought between the North and South regions of the United States?",
+          "answer": "The American Civil War"
+        },
+        {
+          "category": "arts",
+          "question": "What instrument has 88 keys on a standard keyboard?",
+          "answer": "The piano"
+        },
+        {
+          "category": "science",
+          "question": "What part of the human body pumps blood?",
+          "answer": "The heart"
+        },
+        {
+          "category": "sports",
+          "question": "How many players are on the court for one team in basketball?",
+          "answer": "Five"
+        }
+      ]
+    },
+    {
+      "id": "card-0161",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What line divides Earth into the Northern and Southern Hemispheres?",
+          "answer": "The Equator"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which princess loses a glass slipper at a ball?",
+          "answer": "Cinderella"
+        },
+        {
+          "category": "history",
+          "question": "Which country gifted the Statue of Liberty to the United States?",
+          "answer": "France"
+        },
+        {
+          "category": "arts",
+          "question": "Who created the Marilyn Diptych?",
+          "answer": "Andy Warhol"
+        },
+        {
+          "category": "science",
+          "question": "What is the nearest star to Earth?",
+          "answer": "The Sun"
+        },
+        {
+          "category": "sports",
+          "question": "In tennis, what do you call a score of zero?",
+          "answer": "Love"
+        }
+      ]
+    },
+    {
+      "id": "card-0162",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which desert stretches across much of Mongolia and northern China?",
+          "answer": "The Gobi Desert"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which Disney character sings Let It Go?",
+          "answer": "Elsa"
+        },
+        {
+          "category": "history",
+          "question": "Which Soviet cosmonaut became the first human in space?",
+          "answer": "Yuri Gagarin"
+        },
+        {
+          "category": "arts",
+          "question": "What type of instrument is a violin?",
+          "answer": "A string instrument"
+        },
+        {
+          "category": "science",
+          "question": "How many legs does an insect have?",
+          "answer": "Six"
+        },
+        {
+          "category": "sports",
+          "question": "In golf, what is one stroke under par called?",
+          "answer": "A birdie"
+        }
+      ]
+    },
+    {
+      "id": "card-0163",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which U.S. state is home to the Grand Canyon?",
+          "answer": "Arizona"
+        },
+        {
+          "category": "entertainment",
+          "question": "What is the name of the snowman in Frozen?",
+          "answer": "Olaf"
+        },
+        {
+          "category": "history",
+          "question": "Which civil rights leader delivered the I Have a Dream speech?",
+          "answer": "Martin Luther King Jr."
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote The Lord of the Rings?",
+          "answer": "J.R.R. Tolkien"
+        },
+        {
+          "category": "science",
+          "question": "What part of a plant absorbs water from the soil?",
+          "answer": "The roots"
+        },
+        {
+          "category": "sports",
+          "question": "Which sport features the Tour de France?",
+          "answer": "Cycling"
+        }
+      ]
+    },
+    {
+      "id": "card-0164",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which country is often described as boot-shaped?",
+          "answer": "Italy"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which superhero is also known as the Dark Knight?",
+          "answer": "Batman"
+        },
+        {
+          "category": "history",
+          "question": "Which famous bell is displayed in Philadelphia?",
+          "answer": "The Liberty Bell"
+        },
+        {
+          "category": "arts",
+          "question": "What are the three primary colors in traditional art?",
+          "answer": "Red, blue, and yellow"
+        },
+        {
+          "category": "science",
+          "question": "What is H2O more commonly called?",
+          "answer": "Water"
+        },
+        {
+          "category": "sports",
+          "question": "What sport uses clubs and a small white ball?",
+          "answer": "Golf"
+        }
+      ]
+    },
+    {
+      "id": "card-0165",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which continent is the Sahara Desert located on?",
+          "answer": "Africa"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which video game plumber wears red overalls?",
+          "answer": "Mario"
+        },
+        {
+          "category": "history",
+          "question": "Which document declared the thirteen American colonies independent from Britain?",
+          "answer": "The Declaration of Independence"
+        },
+        {
+          "category": "arts",
+          "question": "Which painter famously cut off part of his ear?",
+          "answer": "Vincent van Gogh"
+        },
+        {
+          "category": "science",
+          "question": "What do you call an animal that eats only plants?",
+          "answer": "An herbivore"
+        },
+        {
+          "category": "sports",
+          "question": "In soccer, what part of the body can the goalkeeper use to handle the ball inside the penalty area?",
+          "answer": "Hands"
+        }
+      ]
+    },
+    {
+      "id": "card-0166",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Australia?",
+          "answer": "Canberra"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which animated film features a fish named Dory?",
+          "answer": "Finding Nemo"
+        },
+        {
+          "category": "history",
+          "question": "What do we call the period before written records?",
+          "answer": "Prehistory"
+        },
+        {
+          "category": "arts",
+          "question": "Who composed Swan Lake?",
+          "answer": "Pyotr Ilyich Tchaikovsky"
+        },
+        {
+          "category": "science",
+          "question": "What is the smallest unit of an element called?",
+          "answer": "An atom"
+        },
+        {
+          "category": "sports",
+          "question": "How many strikes make an out in baseball?",
+          "answer": "Three"
+        }
+      ]
+    },
+    {
+      "id": "card-0167",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which mountain range traditionally marks part of the boundary between Europe and Asia in Russia?",
+          "answer": "The Ural Mountains"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played Harry Potter in the film series?",
+          "answer": "Daniel Radcliffe"
+        },
+        {
+          "category": "history",
+          "question": "Which ancient civilization built the pyramids at Giza?",
+          "answer": "The ancient Egyptians"
+        },
+        {
+          "category": "arts",
+          "question": "What do you call a painting made on wet plaster?",
+          "answer": "A fresco"
+        },
+        {
+          "category": "science",
+          "question": "What is the chemical symbol for silver?",
+          "answer": "Ag"
+        },
+        {
+          "category": "sports",
+          "question": "Which sport is known as the beautiful game?",
+          "answer": "Soccer"
+        }
+      ]
+    },
+    {
+      "id": "card-0168",
+      "difficulty": "easy",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Senegal?",
+          "answer": "Dakar"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which bear loves honey in the Hundred Acre Wood?",
+          "answer": "Winnie-the-Pooh"
+        },
+        {
+          "category": "history",
+          "question": "Which document begins with the words We the People?",
+          "answer": "The U.S. Constitution"
+        },
+        {
+          "category": "arts",
+          "question": "Who painted The Persistence of Memory?",
+          "answer": "Salvador Dali"
+        },
+        {
+          "category": "science",
+          "question": "What kind of animal is a frog?",
+          "answer": "An amphibian"
+        },
+        {
+          "category": "sports",
+          "question": "What sport uses a pommel horse?",
+          "answer": "Gymnastics"
+        }
+      ]
+    },
+    {
+      "id": "card-0169",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Namibia?",
+          "answer": "Windhoek"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played Jack Twist in Brokeback Mountain?",
+          "answer": "Heath Ledger"
+        },
+        {
+          "category": "history",
+          "question": "Which city was once divided into East and West sectors during the Cold War?",
+          "answer": "Berlin"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote Ariel?",
+          "answer": "Sylvia Plath"
+        },
+        {
+          "category": "science",
+          "question": "What is the name of the boundary around a black hole beyond which nothing can escape?",
+          "answer": "The event horizon"
+        },
+        {
+          "category": "sports",
+          "question": "In volleyball, what is a defensive play that keeps the ball from hitting the floor after a spike called?",
+          "answer": "A dig"
+        }
+      ]
+    },
+    {
+      "id": "card-0170",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Albania?",
+          "answer": "Tirana"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played Commodus in Gladiator?",
+          "answer": "Joaquin Phoenix"
+        },
+        {
+          "category": "history",
+          "question": "Which peace treaty formally ended World War I?",
+          "answer": "The Treaty of Versailles"
+        },
+        {
+          "category": "arts",
+          "question": "Which artist painted Nighthawks?",
+          "answer": "Edward Hopper"
+        },
+        {
+          "category": "science",
+          "question": "What is the process by which rocks are broken down at Earth's surface called?",
+          "answer": "Weathering"
+        },
+        {
+          "category": "sports",
+          "question": "Which country won the first FIFA Women's World Cup in 1991?",
+          "answer": "The United States"
+        }
+      ]
+    },
+    {
+      "id": "card-0171",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Mongolia?",
+          "answer": "Ulaanbaatar"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which director made Pan's Labyrinth?",
+          "answer": "Guillermo del Toro"
+        },
+        {
+          "category": "history",
+          "question": "Which civilization built the city of Petra?",
+          "answer": "The Nabataeans"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote Beloved?",
+          "answer": "Toni Morrison"
+        },
+        {
+          "category": "science",
+          "question": "What is the largest artery in the human body?",
+          "answer": "The aorta"
+        },
+        {
+          "category": "sports",
+          "question": "In tennis, what follows deuce when a player wins the next point?",
+          "answer": "Advantage"
+        }
+      ]
+    },
+    {
+      "id": "card-0172",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Lithuania?",
+          "answer": "Vilnius"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played Atticus Finch in the film To Kill a Mockingbird?",
+          "answer": "Gregory Peck"
+        },
+        {
+          "category": "history",
+          "question": "Which dynasty built much of the Great Wall of China that survives today?",
+          "answer": "The Ming dynasty"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote Love in the Time of Cholera?",
+          "answer": "Gabriel Garcia Marquez"
+        },
+        {
+          "category": "science",
+          "question": "What is the SI unit of electrical resistance?",
+          "answer": "The ohm"
+        },
+        {
+          "category": "sports",
+          "question": "In American football, how many points is a safety worth?",
+          "answer": "Two"
+        }
+      ]
+    },
+    {
+      "id": "card-0173",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Estonia?",
+          "answer": "Tallinn"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played Bruce Wayne in Batman Begins?",
+          "answer": "Christian Bale"
+        },
+        {
+          "category": "history",
+          "question": "Which conflict is commonly called the Great War?",
+          "answer": "World War I"
+        },
+        {
+          "category": "arts",
+          "question": "Which painter is famous for his water lilies series?",
+          "answer": "Claude Monet"
+        },
+        {
+          "category": "science",
+          "question": "What part of the cell produces most of its ATP?",
+          "answer": "The mitochondria"
+        },
+        {
+          "category": "sports",
+          "question": "What is the highest possible break in snooker?",
+          "answer": "147"
+        }
+      ]
+    },
+    {
+      "id": "card-0174",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Cameroon?",
+          "answer": "Yaounde"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which singer wrote and recorded Rolling in the Deep?",
+          "answer": "Adele"
+        },
+        {
+          "category": "history",
+          "question": "Which revolution began with the storming of the Bastille in 1789?",
+          "answer": "The French Revolution"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote A Farewell to Arms?",
+          "answer": "Ernest Hemingway"
+        },
+        {
+          "category": "science",
+          "question": "What is the largest internal organ in the human body?",
+          "answer": "The liver"
+        },
+        {
+          "category": "sports",
+          "question": "In cricket, what is a score of zero by a batter called?",
+          "answer": "A duck"
+        }
+      ]
+    },
+    {
+      "id": "card-0175",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Papua New Guinea?",
+          "answer": "Port Moresby"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played Jack Sparrow in the Pirates of the Caribbean films?",
+          "answer": "Johnny Depp"
+        },
+        {
+          "category": "history",
+          "question": "Which ancient trade route linked China with the Mediterranean world?",
+          "answer": "The Silk Road"
+        },
+        {
+          "category": "arts",
+          "question": "Which artist painted The Birth of Venus?",
+          "answer": "Sandro Botticelli"
+        },
+        {
+          "category": "science",
+          "question": "What is the term for animals active mainly at night?",
+          "answer": "Nocturnal"
+        },
+        {
+          "category": "sports",
+          "question": "Which country hosts cycling's Giro d'Italia?",
+          "answer": "Italy"
+        }
+      ]
+    },
+    {
+      "id": "card-0176",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Rwanda?",
+          "answer": "Kigali"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played Forrest Gump?",
+          "answer": "Tom Hanks"
+        },
+        {
+          "category": "history",
+          "question": "What was the name of the ship Charles Darwin sailed on during his famous voyage?",
+          "answer": "HMS Beagle"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote The Plague?",
+          "answer": "Albert Camus"
+        },
+        {
+          "category": "science",
+          "question": "What do you call an animal that eats both plants and meat?",
+          "answer": "An omnivore"
+        },
+        {
+          "category": "sports",
+          "question": "In swimming, which stroke is also called freestyle?",
+          "answer": "The front crawl"
+        }
+      ]
+    },
+    {
+      "id": "card-0177",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Bahrain?",
+          "answer": "Manama"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played Aragorn in The Lord of the Rings films?",
+          "answer": "Viggo Mortensen"
+        },
+        {
+          "category": "history",
+          "question": "Which queen reigned over the United Kingdom for most of the 19th century?",
+          "answer": "Queen Victoria"
+        },
+        {
+          "category": "arts",
+          "question": "Who composed Daphnis et Chloe?",
+          "answer": "Maurice Ravel"
+        },
+        {
+          "category": "science",
+          "question": "What part of a plant opens and closes to regulate gas exchange?",
+          "answer": "Stomata"
+        },
+        {
+          "category": "sports",
+          "question": "In baseball, how many balls make a walk?",
+          "answer": "Four"
+        }
+      ]
+    },
+    {
+      "id": "card-0178",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Honduras?",
+          "answer": "Tegucigalpa"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which singer starred opposite Lady Gaga in A Star Is Born (2018)?",
+          "answer": "Bradley Cooper"
+        },
+        {
+          "category": "history",
+          "question": "Which ancient Greek city-state was known for its military society?",
+          "answer": "Sparta"
+        },
+        {
+          "category": "arts",
+          "question": "Which playwright wrote Death of a Salesman?",
+          "answer": "Arthur Miller"
+        },
+        {
+          "category": "science",
+          "question": "What is the term for the slow wearing away of rock by water or wind?",
+          "answer": "Erosion"
+        },
+        {
+          "category": "sports",
+          "question": "What is the name of the trophy awarded to the NHL champion?",
+          "answer": "The Stanley Cup"
+        }
+      ]
+    },
+    {
+      "id": "card-0179",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Malta?",
+          "answer": "Valletta"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which band released the album OK Computer?",
+          "answer": "Radiohead"
+        },
+        {
+          "category": "history",
+          "question": "Which U.S. scandal forced Richard Nixon to resign?",
+          "answer": "Watergate"
+        },
+        {
+          "category": "arts",
+          "question": "Who painted Les Demoiselles d'Avignon?",
+          "answer": "Pablo Picasso"
+        },
+        {
+          "category": "science",
+          "question": "Which mineral is sodium chloride better known as?",
+          "answer": "Salt"
+        },
+        {
+          "category": "sports",
+          "question": "In soccer, what card does a referee show to send a player off?",
+          "answer": "A red card"
+        }
+      ]
+    },
+    {
+      "id": "card-0180",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Belize?",
+          "answer": "Belmopan"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actress played Furiosa in Mad Max: Fury Road?",
+          "answer": "Charlize Theron"
+        },
+        {
+          "category": "history",
+          "question": "Which emperor was exiled to Saint Helena after Waterloo?",
+          "answer": "Napoleon Bonaparte"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote Invisible Man?",
+          "answer": "Ralph Ellison"
+        },
+        {
+          "category": "science",
+          "question": "What do you call a scientist who studies fossils?",
+          "answer": "A paleontologist"
+        },
+        {
+          "category": "sports",
+          "question": "In rugby, how many points is a try worth?",
+          "answer": "Five"
+        }
+      ]
+    },
+    {
+      "id": "card-0181",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Fiji?",
+          "answer": "Suva"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actress played Trinity in The Matrix?",
+          "answer": "Carrie-Anne Moss"
+        },
+        {
+          "category": "history",
+          "question": "Which city was the first capital of the United States under the Constitution?",
+          "answer": "New York City"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote Oryx and Crake?",
+          "answer": "Margaret Atwood"
+        },
+        {
+          "category": "science",
+          "question": "What is the main gas found in the air we breathe?",
+          "answer": "Nitrogen"
+        },
+        {
+          "category": "sports",
+          "question": "Which golf tournament awards a green jacket to its champion?",
+          "answer": "The Masters"
+        }
+      ]
+    },
+    {
+      "id": "card-0182",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Kosovo?",
+          "answer": "Pristina"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which singer is known for the hit song Rehab?",
+          "answer": "Amy Winehouse"
+        },
+        {
+          "category": "history",
+          "question": "Which event in 1066 changed the ruling class of England?",
+          "answer": "The Norman Conquest"
+        },
+        {
+          "category": "arts",
+          "question": "Which artist created the mobile as a form of sculpture?",
+          "answer": "Alexander Calder"
+        },
+        {
+          "category": "science",
+          "question": "What does the Richter scale measure?",
+          "answer": "Earthquake magnitude"
+        },
+        {
+          "category": "sports",
+          "question": "In baseball, what is a hit that stays in the infield and still puts the batter on first called?",
+          "answer": "An infield single"
+        }
+      ]
+    },
+    {
+      "id": "card-0183",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Belarus?",
+          "answer": "Minsk"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor voiced Mufasa in the 1994 animated The Lion King?",
+          "answer": "James Earl Jones"
+        },
+        {
+          "category": "history",
+          "question": "Which empire was centered in Cusco before the Spanish conquest?",
+          "answer": "The Inca Empire"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote Metamorphosis?",
+          "answer": "Franz Kafka"
+        },
+        {
+          "category": "science",
+          "question": "What part of the brain is primarily responsible for balance and coordination?",
+          "answer": "The cerebellum"
+        },
+        {
+          "category": "sports",
+          "question": "In tennis, what is the term for a serve that is untouched by the receiver?",
+          "answer": "An ace"
+        }
+      ]
+    },
+    {
+      "id": "card-0184",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Andorra?",
+          "answer": "Andorra la Vella"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which filmmaker directed Jaws?",
+          "answer": "Steven Spielberg"
+        },
+        {
+          "category": "history",
+          "question": "Which 1689 document outlined rights and limited royal power in England?",
+          "answer": "The English Bill of Rights"
+        },
+        {
+          "category": "arts",
+          "question": "Who composed Finlandia?",
+          "answer": "Jean Sibelius"
+        },
+        {
+          "category": "science",
+          "question": "What molecule carries genetic instructions in most living things?",
+          "answer": "DNA"
+        },
+        {
+          "category": "sports",
+          "question": "Which country won the men's FIFA World Cup in 2014?",
+          "answer": "Germany"
+        }
+      ]
+    },
+    {
+      "id": "card-0185",
+      "difficulty": "medium",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Cyprus?",
+          "answer": "Nicosia"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actress played Elle Woods in Legally Blonde?",
+          "answer": "Reese Witherspoon"
+        },
+        {
+          "category": "history",
+          "question": "What do we call the trade route network linking West Africa to the Mediterranean across the Sahara?",
+          "answer": "The Trans-Saharan trade routes"
+        },
+        {
+          "category": "arts",
+          "question": "Which novelist wrote The Brothers Karamazov?",
+          "answer": "Fyodor Dostoevsky"
+        },
+        {
+          "category": "science",
+          "question": "What is the layer of gases surrounding Earth called?",
+          "answer": "The atmosphere"
+        },
+        {
+          "category": "sports",
+          "question": "In Formula 1, what flag signals the end of a session or race?",
+          "answer": "The checkered flag"
+        }
+      ]
+    },
+    {
+      "id": "card-0186",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Brunei?",
+          "answer": "Bandar Seri Begawan"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played Daniel Plainview in There Will Be Blood?",
+          "answer": "Daniel Day-Lewis"
+        },
+        {
+          "category": "history",
+          "question": "Which treaty ended the Thirty Years' War in 1648?",
+          "answer": "The Peace of Westphalia"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote Dead Souls?",
+          "answer": "Nikolai Gogol"
+        },
+        {
+          "category": "science",
+          "question": "What force opposes motion between two surfaces in contact?",
+          "answer": "Friction"
+        },
+        {
+          "category": "sports",
+          "question": "In cricket, what is it called when a bowler takes three wickets with three consecutive balls?",
+          "answer": "A hat trick"
+        }
+      ]
+    },
+    {
+      "id": "card-0187",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Timor-Leste?",
+          "answer": "Dili"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which director made In the Mood for Love?",
+          "answer": "Wong Kar-wai"
+        },
+        {
+          "category": "history",
+          "question": "Which Macedonian king created an empire stretching to India before age 33?",
+          "answer": "Alexander the Great"
+        },
+        {
+          "category": "arts",
+          "question": "Which architect designed the Guggenheim Museum Bilbao?",
+          "answer": "Frank Gehry"
+        },
+        {
+          "category": "science",
+          "question": "What is the term for the bending of light as it passes from one medium to another?",
+          "answer": "Refraction"
+        },
+        {
+          "category": "sports",
+          "question": "What is the only Grand Slam tennis tournament played on clay?",
+          "answer": "The French Open"
+        }
+      ]
+    },
+    {
+      "id": "card-0188",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Montenegro?",
+          "answer": "Podgorica"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which author wrote Never Let Me Go?",
+          "answer": "Kazuo Ishiguro"
+        },
+        {
+          "category": "history",
+          "question": "Which battle in 732 is often associated with Charles Martel halting Muslim expansion into Frankish territory?",
+          "answer": "The Battle of Tours"
+        },
+        {
+          "category": "arts",
+          "question": "Who painted The Third of May 1808?",
+          "answer": "Francisco Goya"
+        },
+        {
+          "category": "science",
+          "question": "What is the name of the process cells use to divide into two identical daughter cells?",
+          "answer": "Mitosis"
+        },
+        {
+          "category": "sports",
+          "question": "In baseball, what do the initials RBI stand for?",
+          "answer": "Runs batted in"
+        }
+      ]
+    },
+    {
+      "id": "card-0189",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Liechtenstein?",
+          "answer": "Vaduz"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played T.E. Lawrence in Lawrence of Arabia?",
+          "answer": "Peter O'Toole"
+        },
+        {
+          "category": "history",
+          "question": "Which 1815 congress redrew the map of Europe after Napoleon's defeat?",
+          "answer": "The Congress of Vienna"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote If on a winter's night a traveler?",
+          "answer": "Italo Calvino"
+        },
+        {
+          "category": "science",
+          "question": "What do you call a solution with a pH below 7?",
+          "answer": "An acid"
+        },
+        {
+          "category": "sports",
+          "question": "What is the name of UEFA's top club competition in European soccer?",
+          "answer": "The UEFA Champions League"
+        }
+      ]
+    },
+    {
+      "id": "card-0190",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Samoa?",
+          "answer": "Apia"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actress played Lydia Tar in Tar?",
+          "answer": "Cate Blanchett"
+        },
+        {
+          "category": "history",
+          "question": "Which English king had six wives?",
+          "answer": "Henry VIII"
+        },
+        {
+          "category": "arts",
+          "question": "Which painter founded the Suprematist movement?",
+          "answer": "Kazimir Malevich"
+        },
+        {
+          "category": "science",
+          "question": "What kind of bond is formed when atoms share electrons?",
+          "answer": "A covalent bond"
+        },
+        {
+          "category": "sports",
+          "question": "In rugby union, how many points is a conversion worth?",
+          "answer": "Two"
+        }
+      ]
+    },
+    {
+      "id": "card-0191",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Guyana?",
+          "answer": "Georgetown"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which composer wrote the film score for Psycho?",
+          "answer": "Bernard Herrmann"
+        },
+        {
+          "category": "history",
+          "question": "Which revolt destroyed much of Roman London in AD 60 or 61?",
+          "answer": "Boudicca's revolt"
+        },
+        {
+          "category": "arts",
+          "question": "Who sculpted Ecstasy of Saint Teresa?",
+          "answer": "Gian Lorenzo Bernini"
+        },
+        {
+          "category": "science",
+          "question": "Which layer of Earth's atmosphere contains the ozone layer?",
+          "answer": "The stratosphere"
+        },
+        {
+          "category": "sports",
+          "question": "In basketball, what is the violation called when a player takes too many steps without dribbling?",
+          "answer": "Traveling"
+        }
+      ]
+    },
+    {
+      "id": "card-0192",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Nicaragua?",
+          "answer": "Managua"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played the title role in Donnie Darko?",
+          "answer": "Jake Gyllenhaal"
+        },
+        {
+          "category": "history",
+          "question": "Which Chinese admiral led Ming treasure voyages across the Indian Ocean?",
+          "answer": "Zheng He"
+        },
+        {
+          "category": "arts",
+          "question": "Which poet wrote Paradise Lost?",
+          "answer": "John Milton"
+        },
+        {
+          "category": "science",
+          "question": "What is the amount of space an object occupies called?",
+          "answer": "Volume"
+        },
+        {
+          "category": "sports",
+          "question": "In baseball, what is a game without allowing any hits called?",
+          "answer": "A no-hitter"
+        }
+      ]
+    },
+    {
+      "id": "card-0193",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Equatorial Guinea?",
+          "answer": "Malabo"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played Han Solo in the original Star Wars trilogy?",
+          "answer": "Harrison Ford"
+        },
+        {
+          "category": "history",
+          "question": "Which peace agreement was signed in 1998 to help end most of the violence in Northern Ireland?",
+          "answer": "The Good Friday Agreement"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote The Aleph?",
+          "answer": "Jorge Luis Borges"
+        },
+        {
+          "category": "science",
+          "question": "What is the term for a solid changing directly into a gas?",
+          "answer": "Sublimation"
+        },
+        {
+          "category": "sports",
+          "question": "What is the third jewel of the American Triple Crown in horse racing?",
+          "answer": "The Belmont Stakes"
+        }
+      ]
+    },
+    {
+      "id": "card-0194",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Mauritius?",
+          "answer": "Port Louis"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which filmmaker directed My Neighbor Totoro?",
+          "answer": "Hayao Miyazaki"
+        },
+        {
+          "category": "history",
+          "question": "Which empire used Constantinople as its capital for over a thousand years?",
+          "answer": "The Byzantine Empire"
+        },
+        {
+          "category": "arts",
+          "question": "Who composed The Firebird?",
+          "answer": "Igor Stravinsky"
+        },
+        {
+          "category": "science",
+          "question": "What is the SI unit of electric current?",
+          "answer": "The ampere"
+        },
+        {
+          "category": "sports",
+          "question": "In soccer, what is a pass that directly leads to a goal called?",
+          "answer": "An assist"
+        }
+      ]
+    },
+    {
+      "id": "card-0195",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Bosnia and Herzegovina?",
+          "answer": "Sarajevo"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played the Dude in The Big Lebowski?",
+          "answer": "Jeff Bridges"
+        },
+        {
+          "category": "history",
+          "question": "Which rebellion in China was led by Hong Xiuquan in the 19th century?",
+          "answer": "The Taiping Rebellion"
+        },
+        {
+          "category": "arts",
+          "question": "Who painted The Son of Man?",
+          "answer": "Rene Magritte"
+        },
+        {
+          "category": "science",
+          "question": "What do you call animals that regulate their body temperature internally?",
+          "answer": "Endotherms"
+        },
+        {
+          "category": "sports",
+          "question": "In American football, what is it called when a defender tackles the quarterback behind the line of scrimmage?",
+          "answer": "A sack"
+        }
+      ]
+    },
+    {
+      "id": "card-0196",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of San Marino?",
+          "answer": "San Marino"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actress played Marianne in Sense and Sensibility (1995)?",
+          "answer": "Kate Winslet"
+        },
+        {
+          "category": "history",
+          "question": "Which treaty in 1494 divided newly discovered lands outside Europe between Spain and Portugal?",
+          "answer": "The Treaty of Tordesillas"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote Pale Fire?",
+          "answer": "Vladimir Nabokov"
+        },
+        {
+          "category": "science",
+          "question": "What positively charged particle resides in an atom's nucleus?",
+          "answer": "A proton"
+        },
+        {
+          "category": "sports",
+          "question": "In boxing, what is a punch thrown upward from below called?",
+          "answer": "An uppercut"
+        }
+      ]
+    },
+    {
+      "id": "card-0197",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of the Maldives?",
+          "answer": "Male"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor played Salieri in Amadeus?",
+          "answer": "F. Murray Abraham"
+        },
+        {
+          "category": "history",
+          "question": "Which city was buried by the eruption of Mount Vesuvius in AD 79?",
+          "answer": "Pompeii"
+        },
+        {
+          "category": "arts",
+          "question": "Who composed The Planets?",
+          "answer": "Gustav Holst"
+        },
+        {
+          "category": "science",
+          "question": "What is the outermost electron shell of an atom called?",
+          "answer": "The valence shell"
+        },
+        {
+          "category": "sports",
+          "question": "In cricket, what do you call a score of 100 runs by one batter in a single innings?",
+          "answer": "A century"
+        }
+      ]
+    },
+    {
+      "id": "card-0198",
+      "difficulty": "hard",
+      "tags": [
+        "general",
+        "batch-4"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the capital of Seychelles?",
+          "answer": "Victoria"
+        },
+        {
+          "category": "entertainment",
+          "question": "Which actor starred as Travis Bickle in Taxi Driver?",
+          "answer": "Robert De Niro"
+        },
+        {
+          "category": "history",
+          "question": "Which Persian king launched the invasion of Greece that ended at the Battle of Salamis?",
+          "answer": "Xerxes I"
+        },
+        {
+          "category": "arts",
+          "question": "Who wrote Klara and the Sun?",
+          "answer": "Kazuo Ishiguro"
+        },
+        {
+          "category": "science",
+          "question": "What is the term for the gradual change of a species over time?",
+          "answer": "Evolution"
+        },
+        {
+          "category": "sports",
+          "question": "Which patterned jersey goes to the mountains classification leader at the Tour de France?",
+          "answer": "The polka-dot jersey"
         }
       ]
     }

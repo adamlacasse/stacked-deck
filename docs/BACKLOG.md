@@ -191,6 +191,33 @@ Targeted `explanation` and `source` metadata was added where game-night disputes
 - tightened and sourced the Andromeda question to "nearest major galaxy"
 - clarified that the Middle Passage refers specifically to the Atlantic crossing leg
 
+### ✅ Expand the deck with batch 3 content growth
+
+`src/data/deck.json` expanded from 114 cards to 156 cards.
+
+- 42 more cards added in a third curated batch (`card-0115` through `card-0156`)
+- another 252 questions added while preserving canonical category order on every card
+- exact duplicate questions checked and removed before validation
+- difficulty mix now stands at 47 easy, 66 medium, and 43 hard cards
+
+### ✅ Add a second metadata quality pass for split-capital geography entries
+
+Targeted `explanation` and `source` metadata was added to the most challenge-prone capital prompts added in batch 3.
+
+- tightened awkward wording for Sri Lanka and Bolivia so the prompt asks for the specific capital type
+- clarified Malaysia's Kuala Lumpur / Putrajaya split
+- clarified Benin's Porto-Novo / Cotonou split
+- clarified Eswatini's Mbabane / Lobamba split
+
+### ✅ Expand the deck with batch 4 content growth
+
+`src/data/deck.json` expanded from 156 cards to 198 cards.
+
+- 42 more cards added in a fourth curated batch (`card-0157` through `card-0198`)
+- another 252 questions added while preserving canonical category order on every card
+- exact duplicate questions checked and removed before validation
+- difficulty mix now stands at 59 easy, 83 medium, and 56 hard cards
+
 ## Later
 
 ### Post-modal production hardening (deferred from this branch)
@@ -200,7 +227,7 @@ Targeted `explanation` and `source` metadata was added where game-night disputes
 - decide whether to self-host the display font instead of loading from Google Fonts in `src/index.css`
 - move deploy/runbook instructions into a stable deployment doc (`README.md` or `docs/DEPLOYMENT.md`) so they are not buried in backlog notes
 
-- continue expanding the deck toward a large card library (currently 114; target: hundreds, then thousands)
+- continue expanding the deck toward a large card library (currently 198; target: hundreds, then thousands)
 - deploy the static Vite build to Cloudflare Pages with GitHub integration (`main` -> production, branch/PR preview deploys enabled), with `stacked-deck.adamlcasse.dev` as the intended production URL
   - **Deploy contract:** build command `npm run build`, output directory `dist`, Node version `22` (matches `engines` field in `package.json`)
   - In the Cloudflare Pages UI: Workers & Pages → Create → Connect to Git → select `adamlacasse/stacked-deck` → Framework preset: `Vite` → Build command: `npm run build` → Build output directory: `dist`

@@ -11,7 +11,7 @@ This repository now has a solid playable MVP:
 - Vite + React + TypeScript app scaffold is in place
 - product and data model direction are documented
 - the starter screen has been replaced with a deck-style game shell
-- a local starter deck of 114 cards exists in `src/data/deck.json`
+- a local starter deck of 198 cards exists in `src/data/deck.json`
 - deck validation runs in development mode and throws loudly for malformed content (`src/data/validateDeck.ts`)
 - session state is handled locally with React state + `localStorage`
 - cards are drawn without repeats within a session
