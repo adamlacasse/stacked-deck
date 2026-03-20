@@ -145,18 +145,6 @@
   justify-self: start;
 }
 
-.secondaryAction {
-  justify-self: start;
-  background: transparent;
-  color: var(--color-ink);
-  border-color: color-mix(in srgb, var(--color-accent) 45%, #fdfcf7 55%);
-  box-shadow: none;
-}
-
-.secondaryAction:hover {
-  box-shadow: none;
-}
-
 /* ── Answer modal overlay ─── */
 .overlay {
   position: fixed;

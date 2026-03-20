@@ -48,6 +48,18 @@ export function QuestionView({
       document.removeEventListener('keydown', handleKeyDown)
     }
   }, [answerRevealed, entry, onCloseQuestion])
+  const nextButtonRef = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    if (!answerRevealed || !entry) return
+
+    document.body.style.overflow = 'hidden'
+    nextButtonRef.current?.focus()
+
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [answerRevealed, entry])
 
   if (!entry) {
     return (
@@ -136,5 +148,78 @@ export function QuestionView({
       </div>
     </div>,
     document.body,
+  return (
+    <>
+      <section className={styles.panel}>
+        <p className={styles.eyebrow}>{meta.label}</p>
+        <h2 className={styles.title}>{entry.question}</h2>
+
+        {!answerRevealed && (
+          <div className={styles.actionRow}>
+            <button
+              type="button"
+              className={styles.primaryAction}
+              onClick={onRevealAnswer}
+            >
+              Reveal answer
+            </button>
+          </div>
+        )}
+      </section>
+
+      {answerRevealed &&
+        createPortal(
+          <div
+            className={styles.overlay}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Answer"
+          >
+            <div className={styles.modalPanel}>
+              <p className={styles.eyebrow}>{meta.label}</p>
+              <h2 className={styles.title}>{entry.question}</h2>
+
+              <div className={styles.answerBlock}>
+                <p className={styles.answerLabel}>Answer</p>
+                <p className={styles.answer}>{entry.answer}</p>
+                {hasContext ? (
+                  <section className={styles.contextBlock} aria-label="Answer context">
+                    <p className={styles.contextLabel}>Context</p>
+                    {explanation ? (
+                      <p className={styles.contextText}>{explanation}</p>
+                    ) : null}
+                    {source && sourceLabel ? (
+                      <p className={styles.contextSource}>
+                        Source:{' '}
+                        {source.url ? (
+                          <a
+                            className={styles.contextLink}
+                            href={source.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {sourceLabel}
+                          </a>
+                        ) : (
+                          <span>{sourceLabel}</span>
+                        )}
+                      </p>
+                    ) : null}
+                  </section>
+                ) : null}
+                <button
+                  ref={nextButtonRef}
+                  type="button"
+                  className={styles.primaryAction}
+                  onClick={onNextCard}
+                >
+                  {nextLabel}
+                </button>
+              </div>
+            </div>
+          </div>,
+          document.body,
+        )}
+    </>
   )
 }
