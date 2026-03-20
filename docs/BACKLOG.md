@@ -162,6 +162,35 @@ Targeted accessibility hardening applied without changing core MVP flow.
 - keyboard coverage expanded in `QuestionView` tests for focus targets and Escape handling
 - contrast improved for small helper/meta text in hero and error-boundary screens
 
+### ✅ Expand the deck with batch 1 content growth
+
+`src/data/deck.json` expanded from 30 cards to 72 cards.
+
+- 42 new cards added in one curated batch (`card-0031` through `card-0072`)
+- 252 new questions added while preserving canonical category order on every card
+- exact duplicate questions checked and removed before validation
+- difficulty mix now stands at 23 easy, 31 medium, and 18 hard cards
+
+### ✅ Expand the deck with batch 2 content growth
+
+`src/data/deck.json` expanded from 72 cards to 114 cards.
+
+- 42 more cards added in a second curated batch (`card-0073` through `card-0114`)
+- another 252 questions added while preserving canonical category order on every card
+- exact duplicate questions checked and removed before validation
+- difficulty mix now stands at 35 easy, 49 medium, and 30 hard cards
+
+### ✅ Add a metadata quality pass for nuanced entries
+
+Targeted `explanation` and `source` metadata was added where game-night disputes or ambiguity were most likely.
+
+- clarified the Netherlands / The Hague capital nuance
+- clarified South Africa's three-capital setup for the legislative-capital prompt
+- clarified the Kazakhstan Astana / Nur-Sultan rename history
+- clarified why Lake Victoria remains the standard White Nile quiz answer
+- tightened and sourced the Andromeda question to "nearest major galaxy"
+- clarified that the Middle Passage refers specifically to the Atlantic crossing leg
+
 ## Later
 
 ### Post-modal production hardening (deferred from this branch)
@@ -171,7 +200,7 @@ Targeted accessibility hardening applied without changing core MVP flow.
 - decide whether to self-host the display font instead of loading from Google Fonts in `src/index.css`
 - move deploy/runbook instructions into a stable deployment doc (`README.md` or `docs/DEPLOYMENT.md`) so they are not buried in backlog notes
 
-- continue expanding the deck toward a large card library (currently 30; target: hundreds, then thousands)
+- continue expanding the deck toward a large card library (currently 114; target: hundreds, then thousands)
 - deploy the static Vite build to Cloudflare Pages with GitHub integration (`main` -> production, branch/PR preview deploys enabled), with `stacked-deck.adamlcasse.dev` as the intended production URL
   - **Deploy contract:** build command `npm run build`, output directory `dist`, Node version `22` (matches `engines` field in `package.json`)
   - In the Cloudflare Pages UI: Workers & Pages → Create → Connect to Git → select `adamlacasse/stacked-deck` → Framework preset: `Vite` → Build command: `npm run build` → Build output directory: `dist`

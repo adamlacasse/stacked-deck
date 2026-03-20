@@ -2,7 +2,7 @@
 
 This document covers how to add or edit trivia cards without breaking the MVP data model or gameplay flow.
 
-Use it whenever you touch `src/data/deck.ts` or any future deck content file.
+Use it whenever you touch `src/data/deck.json` or any future deck content file.
 
 ## Core rule
 
@@ -139,7 +139,7 @@ Before adding a card, confirm:
 
 ## Preferred workflow for content changes
 
-1. Add or edit cards in `src/data/deck.ts`.
+1. Add or edit cards in `src/data/deck.json`.
 2. Keep cards in canonical category order.
 3. Re-read the card as if someone is reading it aloud to a table.
 4. Run `npm run lint` and `npm run build`.

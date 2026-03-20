@@ -29,7 +29,7 @@ src/
   types.ts                   domain types and canonical category order
   data/
     categories.ts            UI metadata for category labels and colors
-    deck.json                local starter deck (30 cards)
+    deck.json                local starter deck (114 cards)
     deck.ts                  imports deck.json, validates at load time
     validateDeck.ts          deck validation utility and dev-mode assertion
   hooks/
@@ -185,7 +185,7 @@ The current implementation has addressed all initial gaps:
 
 - ✅ deck validation implemented in `src/data/validateDeck.ts`
 - ✅ automated tests in `src/test/` cover hook behavior, validation, and question-view rendering
-- ✅ starter deck expanded to 30 cards
+- ✅ starter deck expanded to 114 cards
 - ✅ card and question panel transitions added via CSS animations
 - ✅ shuffle moment on game start (`isShuffling` state in `useDeck`)
 - ✅ swipe-to-next via pointer events in `CardView`
