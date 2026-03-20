@@ -31,7 +31,7 @@ describe('QuestionView', () => {
       />,
     )
 
-    expect(screen.getByText('Pick a category to see the question.')).toBeInTheDocument()
+    expect(screen.getByText('Choose a category to open a question.')).toBeInTheDocument()
   })
 
   it('keeps context hidden before answer reveal', () => {

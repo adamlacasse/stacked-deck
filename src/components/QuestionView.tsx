@@ -52,11 +52,7 @@ export function QuestionView({
   }, [answerRevealed, entry, onCloseQuestion])
 
   if (!entry) {
-    return (
-      <section className={styles.panel}>
-        <h2 className={styles.title}>Pick a category to see the question.</h2>
-      </section>
-    )
+    return <p className={styles.hint}>Choose a category to open a question.</p>
   }
 
   const meta = CATEGORY_META[entry.category]

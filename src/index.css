@@ -77,14 +77,6 @@ button {
   letter-spacing: 0.03em;
 }
 
-button:hover {
-  transform: translateY(-0.0625rem);
-  box-shadow:
-    0 0.75rem 2rem rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 220, 110, 0.45);
-  filter: brightness(1.06);
-}
-
 button:focus-visible {
   outline: 3px solid rgba(200, 151, 48, 0.65);
   outline-offset: 3px;
@@ -93,6 +85,16 @@ button:focus-visible {
 button:active {
   transform: translateY(0);
   filter: brightness(0.96);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  button:hover {
+    transform: translateY(-0.0625rem);
+    box-shadow:
+      0 0.75rem 2rem rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255, 220, 110, 0.45);
+    filter: brightness(1.06);
+  }
 }
 
 h1,

@@ -1,6 +1,11 @@
 .shell {
   min-height: 100svh;
-  padding: clamp(1rem, 3vw, 2rem);
+  --shell-pad: clamp(1rem, 3vw, 2rem);
+  padding:
+    max(var(--shell-pad), env(safe-area-inset-top))
+    max(var(--shell-pad), env(safe-area-inset-right))
+    max(var(--shell-pad), env(safe-area-inset-bottom))
+    max(var(--shell-pad), env(safe-area-inset-left));
   display: grid;
   align-items: start;
 }
@@ -93,11 +98,6 @@
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
 }
 
-.secondaryButton:hover {
-  background: rgba(15, 36, 80, 0.7);
-  filter: none;
-}
-
 .footerNote {
   margin: 0;
   color: rgba(232, 220, 196, 0.64);
@@ -131,24 +131,11 @@
   box-shadow: none;
 }
 
-.filterButton:hover {
-  background: rgba(15, 36, 80, 0.75);
-  color: rgba(232, 220, 196, 0.95);
-  transform: none;
-  filter: none;
-  box-shadow: none;
-}
-
 .filterButtonActive {
   background: #c89730;
   color: #0f2450;
   border-color: #c89730;
   font-weight: 700;
-}
-
-.filterButtonActive:hover {
-  background: #d4a840;
-  filter: none;
 }
 
 @keyframes shufflePulse {
@@ -158,4 +145,24 @@
 
 .shufflingTitle {
   animation: shufflePulse 600ms ease-in-out infinite;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .secondaryButton:hover {
+    background: rgba(15, 36, 80, 0.7);
+    filter: none;
+  }
+
+  .filterButton:hover {
+    background: rgba(15, 36, 80, 0.75);
+    color: rgba(232, 220, 196, 0.95);
+    transform: none;
+    filter: none;
+    box-shadow: none;
+  }
+
+  .filterButtonActive:hover {
+    background: #d4a840;
+    filter: none;
+  }
 }
