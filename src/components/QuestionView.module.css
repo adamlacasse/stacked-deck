@@ -145,6 +145,19 @@
   justify-self: start;
 }
 
+.secondaryAction {
+  justify-self: start;
+  background: rgba(15, 36, 80, 0.55);
+  color: rgba(232, 220, 196, 0.9);
+  border: 1px solid rgba(200, 151, 48, 0.4);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+}
+
+.secondaryAction:hover {
+  background: rgba(15, 36, 80, 0.7);
+  filter: none;
+}
+
 /* ── Answer modal overlay ─── */
 .overlay {
   position: fixed;
