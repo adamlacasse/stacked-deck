@@ -136,6 +136,32 @@ Category selection now opens the focused question modal immediately.
 - `Escape` dismisses the modal in question state to recover from accidental category taps
 - modal state changes covered by `QuestionView` tests; `useDeck` now exposes `clearSelectedCategory`
 
+### ✅ Keep "Back to categories" in both modal states
+
+`QuestionView` now keeps the secondary back action visible after reveal.
+
+- question state still shows `Reveal answer` + `Back to categories`
+- answer state now shows `Next card` + `Back to categories`
+- returning to categories from answer state clears the modal and lets players select another category on the same card
+- tests updated in `src/test/QuestionView.test.tsx` to cover the revealed-state back action
+
+### ✅ Add component tests for `CardView` and `CategoryList`
+
+Interaction coverage expanded for both components in `src/test/`.
+
+- `CategoryList.test.tsx` covers six-button rendering, selected-state wiring, and category click callbacks
+- `CardView.test.tsx` covers category delegation, modal action callbacks in question/answer states, and swipe gesture guards
+- swipe tests verify advance behavior only triggers after reveal, with horizontal-threshold and pointer-cancel protections
+
+### ✅ Accessibility audit pass (ARIA, keyboard, contrast)
+
+Targeted accessibility hardening applied without changing core MVP flow.
+
+- category and difficulty toggle buttons now expose selection state with `aria-pressed`
+- modal dialog now uses `aria-labelledby` and `aria-describedby` so screen readers announce category/question or answer content in-context
+- keyboard coverage expanded in `QuestionView` tests for focus targets and Escape handling
+- contrast improved for small helper/meta text in hero and error-boundary screens
+
 ## Later
 
 ### Post-modal production hardening (deferred from this branch)
@@ -146,9 +172,6 @@ Category selection now opens the focused question modal immediately.
 - move deploy/runbook instructions into a stable deployment doc (`README.md` or `docs/DEPLOYMENT.md`) so they are not buried in backlog notes
 
 - continue expanding the deck toward a large card library (currently 30; target: hundreds, then thousands)
-- add component tests for CardView and CategoryList (rendering and interactions)
-- modal UX follow-up: keep `Back to categories` visible in the modal during both question and answer states (it currently disappears after reveal)
-- accessibility audit: ARIA labels, keyboard navigation, color contrast check
 - deploy the static Vite build to Cloudflare Pages with GitHub integration (`main` -> production, branch/PR preview deploys enabled), with `stacked-deck.adamlcasse.dev` as the intended production URL
   - **Deploy contract:** build command `npm run build`, output directory `dist`, Node version `22` (matches `engines` field in `package.json`)
   - In the Cloudflare Pages UI: Workers & Pages → Create → Connect to Git → select `adamlacasse/stacked-deck` → Framework preset: `Vite` → Build command: `npm run build` → Build output directory: `dist`

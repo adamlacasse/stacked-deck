@@ -27,6 +27,7 @@ export function CategoryList({
             type="button"
             className={styles.categoryButton}
             data-selected={isSelected}
+            aria-pressed={isSelected}
             style={{ '--category-accent': meta.accent } as CSSProperties}
             onClick={() => onSelectCategory(entry.category)}
           >

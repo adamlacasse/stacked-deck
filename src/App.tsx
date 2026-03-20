@@ -4,6 +4,7 @@ import { starterDeck } from './data/deck'
 import { useDeck } from './hooks/useDeck'
 
 function App() {
+  const difficultyLabelId = 'difficulty-filter-label'
   const {
     phase,
     currentCard,
@@ -74,12 +75,19 @@ function App() {
                     </span>
                   </div>
 
-                  <div className={styles.filterSection}>
-                    <span className={styles.filterLabel}>Difficulty</span>
+                  <div
+                    className={styles.filterSection}
+                    role="group"
+                    aria-labelledby={difficultyLabelId}
+                  >
+                    <span id={difficultyLabelId} className={styles.filterLabel}>
+                      Difficulty
+                    </span>
                     {DIFFICULTY_OPTIONS.map(({ value, label }) => (
                       <button
                         key={value}
                         type="button"
+                        aria-pressed={difficultyFilter === value}
                         className={`${styles.filterButton} ${difficultyFilter === value ? styles.filterButtonActive : ''}`}
                         onClick={() => setDifficultyFilter(value)}
                       >

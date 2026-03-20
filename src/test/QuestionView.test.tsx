@@ -61,7 +61,7 @@ describe('QuestionView', () => {
       />,
     )
 
-    const dialog = screen.getByRole('dialog', { name: 'Question' })
+    const dialog = screen.getByRole('dialog', { name: /question/i })
     expect(dialog).toBeInTheDocument()
     expect(dialog).toHaveAttribute('aria-modal', 'true')
     expect(screen.getByRole('button', { name: 'Reveal answer' })).toBeInTheDocument()
@@ -132,8 +132,38 @@ describe('QuestionView', () => {
     expect(dialog).toHaveAttribute('aria-modal', 'true')
     expect(screen.getByText('The Nile')).toBeInTheDocument()
     expect(screen.queryByRole('button', { name: 'Reveal answer' })).not.toBeInTheDocument()
-    expect(screen.queryByRole('button', { name: 'Back to categories' })).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Back to categories' })).toBeInTheDocument()
     expect(screen.queryByText('What is the longest river in the world?')).not.toBeInTheDocument()
+  })
+
+  it('moves focus to reveal button when question state opens', () => {
+    render(
+      <QuestionView
+        entry={makeEntry()}
+        answerRevealed={false}
+        remainingCount={5}
+        onCloseQuestion={vi.fn()}
+        onRevealAnswer={vi.fn()}
+        onNextCard={vi.fn()}
+      />,
+    )
+
+    expect(screen.getByRole('button', { name: 'Reveal answer' })).toHaveFocus()
+  })
+
+  it('moves focus to next-card button when answer state opens', () => {
+    render(
+      <QuestionView
+        entry={makeEntry()}
+        answerRevealed
+        remainingCount={5}
+        onCloseQuestion={vi.fn()}
+        onRevealAnswer={vi.fn()}
+        onNextCard={vi.fn()}
+      />,
+    )
+
+    expect(screen.getByRole('button', { name: 'Next card' })).toHaveFocus()
   })
 
   it('does not render a modal dialog before category selection', () => {
@@ -158,6 +188,60 @@ describe('QuestionView', () => {
       <QuestionView
         entry={makeEntry()}
         answerRevealed={false}
+        remainingCount={5}
+        onCloseQuestion={onCloseQuestion}
+        onRevealAnswer={vi.fn()}
+        onNextCard={vi.fn()}
+      />,
+    )
+
+    fireEvent.click(screen.getByRole('button', { name: 'Back to categories' }))
+    expect(onCloseQuestion).toHaveBeenCalledTimes(1)
+  })
+
+  it('calls onCloseQuestion when Escape is pressed in question state', () => {
+    const onCloseQuestion = vi.fn()
+
+    render(
+      <QuestionView
+        entry={makeEntry()}
+        answerRevealed={false}
+        remainingCount={5}
+        onCloseQuestion={onCloseQuestion}
+        onRevealAnswer={vi.fn()}
+        onNextCard={vi.fn()}
+      />,
+    )
+
+    fireEvent.keyDown(document, { key: 'Escape' })
+    expect(onCloseQuestion).toHaveBeenCalledTimes(1)
+  })
+
+  it('does not close on Escape once answer is revealed', () => {
+    const onCloseQuestion = vi.fn()
+
+    render(
+      <QuestionView
+        entry={makeEntry()}
+        answerRevealed
+        remainingCount={5}
+        onCloseQuestion={onCloseQuestion}
+        onRevealAnswer={vi.fn()}
+        onNextCard={vi.fn()}
+      />,
+    )
+
+    fireEvent.keyDown(document, { key: 'Escape' })
+    expect(onCloseQuestion).not.toHaveBeenCalled()
+  })
+
+  it('calls onCloseQuestion when back to categories is pressed after reveal', () => {
+    const onCloseQuestion = vi.fn()
+
+    render(
+      <QuestionView
+        entry={makeEntry()}
+        answerRevealed
         remainingCount={5}
         onCloseQuestion={onCloseQuestion}
         onRevealAnswer={vi.fn()}

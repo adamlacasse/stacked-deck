@@ -58,7 +58,7 @@
 .heroText {
   margin: 0;
   max-width: 28rem;
-  color: rgba(232, 220, 196, 0.75);
+  color: rgba(232, 220, 196, 0.86);
   text-align: center;
 }
 
@@ -72,7 +72,7 @@
 .metaPill {
   border: 1px solid rgba(200, 151, 48, 0.35);
   background: rgba(15, 36, 80, 0.55);
-  color: rgba(232, 220, 196, 0.85);
+  color: rgba(232, 220, 196, 0.92);
   border-radius: 999px;
   padding: 0.65rem 0.95rem;
   font-size: 0.9rem;
@@ -100,7 +100,7 @@
 
 .footerNote {
   margin: 0;
-  color: rgba(232, 220, 196, 0.48);
+  color: rgba(232, 220, 196, 0.64);
   font-size: 0.92rem;
 }
 
@@ -114,7 +114,7 @@
 }
 
 .filterLabel {
-  color: rgba(232, 220, 196, 0.6);
+  color: rgba(232, 220, 196, 0.78);
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -122,8 +122,8 @@
 
 .filterButton {
   background: rgba(15, 36, 80, 0.55);
-  color: rgba(232, 220, 196, 0.8);
-  border: 1px solid rgba(200, 151, 48, 0.3);
+  color: rgba(232, 220, 196, 0.9);
+  border: 1px solid rgba(200, 151, 48, 0.42);
   border-radius: 999px;
   padding: 0.35rem 0.85rem;
   font-size: 0.85rem;

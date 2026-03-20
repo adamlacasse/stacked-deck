@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useId, useRef } from 'react'
 import { createPortal } from 'react-dom'
 
 import { CATEGORY_META } from '../data/categories'
@@ -24,6 +24,8 @@ export function QuestionView({
 }: QuestionViewProps) {
   const revealButtonRef = useRef<HTMLButtonElement>(null)
   const nextButtonRef = useRef<HTMLButtonElement>(null)
+  const dialogLabelId = useId()
+  const dialogDescriptionId = useId()
 
   useEffect(() => {
     if (!entry) return
@@ -69,13 +71,18 @@ export function QuestionView({
       className={styles.overlay}
       role="dialog"
       aria-modal="true"
-      aria-label={answerRevealed ? 'Answer' : 'Question'}
+      aria-labelledby={dialogLabelId}
+      aria-describedby={dialogDescriptionId}
     >
       <div className={styles.modalPanel}>
         {!answerRevealed ? (
           <>
-            <p className={styles.eyebrow}>{meta.label}</p>
-            <h2 className={styles.title}>{entry.question}</h2>
+            <p id={dialogLabelId} className={styles.eyebrow}>
+              {meta.label} question
+            </p>
+            <h2 id={dialogDescriptionId} className={styles.title}>
+              {entry.question}
+            </h2>
             <div className={styles.modalActions}>
               <button
                 ref={revealButtonRef}
@@ -96,8 +103,12 @@ export function QuestionView({
           </>
         ) : (
           <div className={styles.answerBlock}>
-            <p className={styles.answerLabel}>Answer</p>
-            <p className={styles.answer}>{entry.answer}</p>
+            <p id={dialogLabelId} className={styles.answerLabel}>
+              Answer
+            </p>
+            <p id={dialogDescriptionId} className={styles.answer}>
+              {entry.answer}
+            </p>
             {hasContext ? (
               <section className={styles.contextBlock} aria-label="Answer context">
                 <p className={styles.contextLabel}>Context</p>
@@ -123,14 +134,23 @@ export function QuestionView({
                 ) : null}
               </section>
             ) : null}
-            <button
-              ref={nextButtonRef}
-              type="button"
-              className={styles.primaryAction}
-              onClick={onNextCard}
-            >
-              {nextLabel}
-            </button>
+            <div className={styles.modalActions}>
+              <button
+                ref={nextButtonRef}
+                type="button"
+                className={styles.primaryAction}
+                onClick={onNextCard}
+              >
+                {nextLabel}
+              </button>
+              <button
+                type="button"
+                className={styles.secondaryAction}
+                onClick={onCloseQuestion}
+              >
+                Back to categories
+              </button>
+            </div>
           </div>
         )}
       </div>
