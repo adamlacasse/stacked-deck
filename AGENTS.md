@@ -35,8 +35,8 @@ Current product shape:
 2. Draw a card
 3. Show six categories for that card
 4. Select a category
-5. Show one question
-6. Reveal one answer
+5. Open a focused modal with the selected category question
+6. Reveal the answer inside that same modal
 7. Move to next card
 
 ## Chosen Stack
@@ -110,9 +110,11 @@ Preserve the six-category card model.
 
 Important:
 - show categories first
+- after a category is selected, show only that question in a focused modal
 - do not show all questions immediately
 - do not reveal all answers at once
 - reveal only the selected category question and answer
+- after reveal, switch the modal to an answer-only state rather than showing question and answer together
 - keep the UI spoiler-resistant
 
 ## Data Rules

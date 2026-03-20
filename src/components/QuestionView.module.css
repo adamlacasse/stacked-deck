@@ -73,6 +73,12 @@
   min-height: 9rem;
 }
 
+.modalActions {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
+}
+
 .answerBlock {
   display: grid;
   gap: 0.85rem;

@@ -16,6 +16,7 @@ function App() {
     deckName,
     startGame,
     selectCategory,
+    clearSelectedCategory,
     revealAnswer,
     drawNextCard,
     resetSession,
@@ -44,6 +45,7 @@ function App() {
               selectedEntry={selectedEntry}
               answerRevealed={answerRevealed}
               onSelectCategory={selectCategory}
+              onCloseQuestion={clearSelectedCategory}
               onRevealAnswer={revealAnswer}
               onNextCard={drawNextCard}
               remainingCount={remainingCount}

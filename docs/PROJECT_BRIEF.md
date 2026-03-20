@@ -138,11 +138,12 @@ Interaction flow:
 1. Draw card
 2. Show six categories
 3. Select a category
-4. Show that question
-5. Reveal the answer
+4. Open a focused modal with that question only
+5. Reveal the answer in the same modal
 6. Move to next card
 
 This preserves the ritual of the physical game while improving usability.
+Using one focused modal for both states keeps the reading surface stable on phones and avoids bouncing between an inline panel and an overlay mid-turn.
 
 ### Category View
 The card initially displays the six categories only.
@@ -161,7 +162,7 @@ Entertainment
 No questions or answers are visible yet.
 
 ### Question View
-After selecting a category:
+After selecting a category, open a focused modal that shows only the chosen question:
 
 ```
 Science
@@ -171,15 +172,21 @@ What element has the symbol Ne?
 [Reveal Answer]
 ```
 
+The modal is the primary reading surface once a category has been chosen. Keep the question state easy to dismiss so an accidental tap does not trap the reader.
+
 ### Answer Reveal
 
+The same modal then switches to an answer-only state:
+
 ```
+Answer
+
 Neon
 
 [Next Card]
 ```
 
-Other questions on the card remain hidden to prevent spoilers.
+If explanation or source metadata exists, it belongs in this answer state, not the initial question state. Other questions on the card remain hidden to prevent spoilers.
 
 ## Deck Interaction Design
 The app should visually reinforce the feeling of drawing from a **deck of cards**, not browsing a list.
@@ -333,4 +340,3 @@ These can be decided next:
 4. Define the card schema.
 5. Add a tiny sample deck.
 6. Build the simplest playable flow.
-

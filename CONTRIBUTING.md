@@ -56,7 +56,7 @@ If a new file does not fit one of those buckets, pause and justify it before add
 
 A change is ready when it:
 
-- preserves the category -> question -> answer -> next-card flow
+- preserves the category -> question-modal -> answer-state -> next-card flow
 - does not reveal multiple questions or answers at once
 - keeps the UI readable on phone-sized screens
 - stays consistent with the current product brief
@@ -82,13 +82,13 @@ npm run build
 npm test
 ```
 
-The test suite lives in `src/test/` and uses Vitest with jsdom. Tests cover `useDeck` hook behavior and `validateDeck` utility logic. Add new tests in `src/test/` when adding new hooks or data utilities. All `act()` calls in hook tests must be `await`ed (React 19 requirement).
+The test suite lives in `src/test/` and uses Vitest with jsdom. Tests cover `useDeck` hook behavior, `QuestionView` rendering, and `validateDeck` utility logic. Add new tests in `src/test/` when adding new hooks or data utilities. All `act()` calls in hook tests must be `await`ed (React 19 requirement).
 
 ## Documentation update rules
 
 Update the relevant docs in the same change when you modify:
 
-- product behavior: `README.md` and possibly `docs/PROJECT_BRIEF.md`
+- product behavior: `README.md`, `AGENTS.md`, and possibly `docs/PROJECT_BRIEF.md`
 - data shape or validation rules: `docs/DATA_MODEL.md`
 - code layout or runtime flow: `docs/ARCHITECTURE.md`
 - content authoring expectations: `docs/CONTENT_GUIDE.md`
@@ -110,8 +110,8 @@ If the answer is not strongly favorable, do not add it.
 
 Known gaps that are fair game for future work:
 
-- no shuffle moment on game start
-- no swipe-to-next gesture
-- deck content lives in TypeScript rather than JSON
+- component interaction coverage is still thin around category selection, swipe handling, and modal transitions
+- keyboard/accessibility behavior should be expanded with more interaction tests
+- the deck should continue expanding beyond the current starter set, especially where richer source metadata would help
 
 Keep work aimed at those gaps before expanding scope.

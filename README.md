@@ -2,7 +2,7 @@
 
 Stacked Deck is a responsive web app that replaces the physical trivia card deck while preserving the social feel of playing with a real board game.
 
-The app is a deck replacement, not a full trivia platform. The board, wedges, and around-the-table flow stay physical. This project only handles drawing cards, selecting a category, revealing a question, revealing an answer, and moving to the next card.
+The app is a deck replacement, not a full trivia platform. The board, wedges, and around-the-table flow stay physical. This project only handles drawing cards, selecting a category, opening the selected question in a focused modal, revealing an answer, and moving to the next card.
 
 ## Current status
 
@@ -15,13 +15,15 @@ This repository now has a solid playable MVP:
 - deck validation runs in development mode and throws loudly for malformed content (`src/data/validateDeck.ts`)
 - session state is handled locally with React state + `localStorage`
 - cards are drawn without repeats within a session
-- the app currently supports category selection, question reveal, answer reveal, next card, and session reset
+- category selection opens a focused modal question state, then reveal swaps that same modal to an answer-only state
+- the app currently supports next card and session reset actions from the active gameplay view
 - card entrance and question panel transitions add a subtle deck feel
 - a brief "Shuffling…" state plays on `startGame` and `restartGame`
 - swipe-to-next (left or right) advances the card once an answer is revealed
 - difficulty filter lets you limit draws to easy, medium, or hard cards before starting
 - optional post-answer context panel shows explanation/source metadata on selected entries
 - automated tests in `src/test/` cover hook behavior, validation logic, and question-view rendering
+
 ## Canonical docs
 
 Read these before making code changes:
@@ -56,8 +58,8 @@ Current target flow:
 2. Draw a card
 3. Show six categories for that card
 4. Select a category
-5. Show one question
-6. Reveal one answer
+5. Open a focused modal with the selected category question only
+6. Reveal the answer in that same modal
 7. Move to next card
 
 Important constraints:
@@ -191,12 +193,15 @@ The main app flow currently lives in:
 
 - `src/App.tsx`
 - `src/hooks/useDeck.ts`
-- `src/data/deck.ts` (15-card starter deck)
+- `src/data/deck.json` (30-card local starter deck)
+- `src/data/deck.ts` (JSON import + validation boundary)
 - `src/data/validateDeck.ts` (deck validation, wired in at load time)
 - `src/components/CardView.tsx`
 - `src/components/CategoryList.tsx`
 - `src/components/QuestionView.tsx`
-- `src/test/useDeck.test.ts` and `src/test/validateDeck.test.ts`
+- `src/test/useDeck.test.ts`
+- `src/test/QuestionView.test.tsx`
+- `src/test/validateDeck.test.ts`
 
 This is enough to play through a full local deck on a single screen while preserving the spoiler-resistant category flow.
 
@@ -204,14 +209,15 @@ This is enough to play through a full local deck on a single screen while preser
 
 Build in this order:
 
-1. Add richer source metadata for individual entries where the answer is disputed or has useful context.
-2. Add component tests for CardView, CategoryList, and QuestionView rendering/interaction behavior.
+1. Add broader component interaction tests for `CardView` and `CategoryList`.
+2. Continue expanding source metadata for entries where the answer is disputed or has useful context.
 
 ### Near-term file shape
 
 These names align with the current project direction:
 
 - `src/types.ts`
+- `src/data/deck.json`
 - `src/data/deck.ts`
 - `src/data/validateDeck.ts`
 - `src/hooks/useDeck.ts`
@@ -237,9 +243,9 @@ An early feature is on track if it:
 
 These are good agent tasks for the current state of the repo:
 
-- "Add a brief shuffle moment when `startGame` is called so the deck-dealing feel is stronger."
-- "Add swipe-to-next as a progressive enhancement using pointer events."
-- "Move the starter deck content from `src/data/deck.ts` to `src/data/deck.json` and import it through validation."
+- "Add component tests for `CardView` and `CategoryList`, including category selection and next-card interactions."
+- "Add keyboard interaction tests for the question modal (`Escape` dismiss in question state, focus move to Next card in answer state)."
+- "Add richer source metadata for individual entries where the answer is disputed or has useful context."
 
 ## Scripts
 
@@ -252,4 +258,4 @@ These are good agent tasks for the current state of the repo:
 
 ## Immediate next step
 
-Expand the deck with more cards and add richer source metadata for entries where the answer may be disputed or has useful historical context.
+Add broader component interaction tests for `CardView` and `CategoryList`, then continue expanding deck metadata for disputed answers.

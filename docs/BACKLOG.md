@@ -127,10 +127,27 @@ Context metadata now appears only after the answer is revealed in `QuestionView`
 - `/` and `/*` get `must-revalidate` so users always receive the latest deploy
 - Security headers on all routes: `X-Content-Type-Options: nosniff`, `X-Frame-Options: DENY`, `X-XSS-Protection`, `Referrer-Policy: strict-origin-when-cross-origin`, `Permissions-Policy` restricting camera/mic/geolocation
 
+### ✅ Shift `QuestionView` to a modal-first flow
+
+Category selection now opens the focused question modal immediately.
+
+- question state: modal shows only the selected question with `Reveal answer` and `Back to categories`
+- answer state: same modal switches to answer-only content plus optional explanation/source context
+- `Escape` dismisses the modal in question state to recover from accidental category taps
+- modal state changes covered by `QuestionView` tests; `useDeck` now exposes `clearSelectedCategory`
+
 ## Later
 
+### Post-modal production hardening (deferred from this branch)
+
+- add CI checks to enforce `npm run lint`, `npm run build`, and `npm test` on pull requests
+- apply low-risk dependency patch updates (`vite` 8.0.1 and `typescript-eslint` 8.57.1) in a separate maintenance pass
+- decide whether to self-host the display font instead of loading from Google Fonts in `src/index.css`
+- move deploy/runbook instructions into a stable deployment doc (`README.md` or `docs/DEPLOYMENT.md`) so they are not buried in backlog notes
+
 - continue expanding the deck toward a large card library (currently 30; target: hundreds, then thousands)
-- add component tests for CardView, CategoryList, and QuestionView (rendering and interactions)
+- add component tests for CardView and CategoryList (rendering and interactions)
+- modal UX follow-up: keep `Back to categories` visible in the modal during both question and answer states (it currently disappears after reveal)
 - accessibility audit: ARIA labels, keyboard navigation, color contrast check
 - deploy the static Vite build to Cloudflare Pages with GitHub integration (`main` -> production, branch/PR preview deploys enabled), with `stacked-deck.adamlcasse.dev` as the intended production URL
   - **Deploy contract:** build command `npm run build`, output directory `dist`, Node version `22` (matches `engines` field in `package.json`)

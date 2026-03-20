@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 
 import { QuestionView } from '../components/QuestionView'
@@ -25,6 +25,7 @@ describe('QuestionView', () => {
         entry={null}
         answerRevealed={false}
         remainingCount={5}
+        onCloseQuestion={vi.fn()}
         onRevealAnswer={vi.fn()}
         onNextCard={vi.fn()}
       />,
@@ -39,6 +40,7 @@ describe('QuestionView', () => {
         entry={makeEntry()}
         answerRevealed={false}
         remainingCount={5}
+        onCloseQuestion={vi.fn()}
         onRevealAnswer={vi.fn()}
         onNextCard={vi.fn()}
       />,
@@ -47,12 +49,32 @@ describe('QuestionView', () => {
     expect(screen.queryByLabelText('Answer context')).not.toBeInTheDocument()
   })
 
+  it('renders question inside a modal dialog immediately after category selection', () => {
+    render(
+      <QuestionView
+        entry={makeEntry()}
+        answerRevealed={false}
+        remainingCount={5}
+        onCloseQuestion={vi.fn()}
+        onRevealAnswer={vi.fn()}
+        onNextCard={vi.fn()}
+      />,
+    )
+
+    const dialog = screen.getByRole('dialog', { name: 'Question' })
+    expect(dialog).toBeInTheDocument()
+    expect(dialog).toHaveAttribute('aria-modal', 'true')
+    expect(screen.getByRole('button', { name: 'Reveal answer' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Back to categories' })).toBeInTheDocument()
+  })
+
   it('shows context and linked source after answer reveal', () => {
     render(
       <QuestionView
         entry={makeEntry()}
         answerRevealed
         remainingCount={5}
+        onCloseQuestion={vi.fn()}
         onRevealAnswer={vi.fn()}
         onNextCard={vi.fn()}
       />,
@@ -83,6 +105,7 @@ describe('QuestionView', () => {
         entry={entryWithoutUrl}
         answerRevealed
         remainingCount={5}
+        onCloseQuestion={vi.fn()}
         onRevealAnswer={vi.fn()}
         onNextCard={vi.fn()}
       />,
@@ -92,12 +115,13 @@ describe('QuestionView', () => {
     expect(screen.queryByRole('link', { name: 'Game-night reference card' })).not.toBeInTheDocument()
   })
 
-  it('renders answer inside a modal dialog when revealed', () => {
+  it('renders an answer-only modal state when revealed', () => {
     render(
       <QuestionView
         entry={makeEntry()}
         answerRevealed
         remainingCount={5}
+        onCloseQuestion={vi.fn()}
         onRevealAnswer={vi.fn()}
         onNextCard={vi.fn()}
       />,
@@ -107,19 +131,41 @@ describe('QuestionView', () => {
     expect(dialog).toBeInTheDocument()
     expect(dialog).toHaveAttribute('aria-modal', 'true')
     expect(screen.getByText('The Nile')).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Reveal answer' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Back to categories' })).not.toBeInTheDocument()
+    expect(screen.queryByText('What is the longest river in the world?')).not.toBeInTheDocument()
   })
 
-  it('does not render a modal dialog before answer reveal', () => {
+  it('does not render a modal dialog before category selection', () => {
     render(
       <QuestionView
-        entry={makeEntry()}
+        entry={null}
         answerRevealed={false}
         remainingCount={5}
+        onCloseQuestion={vi.fn()}
         onRevealAnswer={vi.fn()}
         onNextCard={vi.fn()}
       />,
     )
 
     expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+  })
+
+  it('calls onCloseQuestion when back to categories is pressed', () => {
+    const onCloseQuestion = vi.fn()
+
+    render(
+      <QuestionView
+        entry={makeEntry()}
+        answerRevealed={false}
+        remainingCount={5}
+        onCloseQuestion={onCloseQuestion}
+        onRevealAnswer={vi.fn()}
+        onNextCard={vi.fn()}
+      />,
+    )
+
+    fireEvent.click(screen.getByRole('button', { name: 'Back to categories' }))
+    expect(onCloseQuestion).toHaveBeenCalledTimes(1)
   })
 })

@@ -11,6 +11,7 @@ type CardViewProps = {
   selectedEntry: CardEntry | null
   answerRevealed: boolean
   onSelectCategory: (category: Category) => void
+  onCloseQuestion: () => void
   onRevealAnswer: () => void
   onNextCard: () => void
   remainingCount: number
@@ -22,6 +23,7 @@ export function CardView({
   selectedEntry,
   answerRevealed,
   onSelectCategory,
+  onCloseQuestion,
   onRevealAnswer,
   onNextCard,
   remainingCount,
@@ -78,6 +80,7 @@ export function CardView({
             entry={selectedEntry}
             answerRevealed={answerRevealed}
             remainingCount={remainingCount}
+            onCloseQuestion={onCloseQuestion}
             onRevealAnswer={onRevealAnswer}
             onNextCard={onNextCard}
           />
