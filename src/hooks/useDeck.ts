@@ -164,6 +164,14 @@ export function useDeck(deck: TriviaDeck) {
     }))
   }
 
+  function clearSelectedCategory() {
+    setSession((currentSession) => ({
+      ...currentSession,
+      selectedCategory: null,
+      answerRevealed: false,
+    }))
+  }
+
   function revealAnswer() {
     setSession((currentSession) => ({
       ...currentSession,
@@ -208,6 +216,7 @@ export function useDeck(deck: TriviaDeck) {
     deckName: deck.name,
     startGame,
     selectCategory,
+    clearSelectedCategory,
     revealAnswer,
     drawNextCard,
     resetSession,

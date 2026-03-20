@@ -169,6 +169,20 @@ describe('useDeck – selectCategory', () => {
     await act(async () => result.current.selectCategory('geography'))
     expect(result.current.selectedEntry?.category).toBe('geography')
   })
+
+  it('can clear a selected category before revealing an answer', async () => {
+    const { result } = renderHook(() => useDeck(singleCardDeck))
+    await act(async () => {
+      result.current.startGame()
+      vi.runAllTimers()
+    })
+    await act(async () => result.current.selectCategory('science'))
+    expect(result.current.selectedCategory).toBe('science')
+    await act(async () => result.current.clearSelectedCategory())
+    expect(result.current.selectedCategory).toBeNull()
+    expect(result.current.answerRevealed).toBe(false)
+    expect(result.current.selectedEntry).toBeNull()
+  })
 })
 
 describe('useDeck – revealAnswer', () => {
@@ -325,4 +339,3 @@ describe('useDeck – difficultyFilter', () => {
     expect(result.current.difficultyFilter).toBe('hard')
   })
 })
-

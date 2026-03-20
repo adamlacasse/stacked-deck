@@ -29,7 +29,7 @@ src/
   types.ts                   domain types and canonical category order
   data/
     categories.ts            UI metadata for category labels and colors
-    deck.json                local starter deck (15 cards)
+    deck.json                local starter deck (30 cards)
     deck.ts                  imports deck.json, validates at load time
     validateDeck.ts          deck validation utility and dev-mode assertion
   hooks/
@@ -37,11 +37,12 @@ src/
   components/
     CardView.tsx             active card container with swipe support
     CategoryList.tsx         category chooser
-    QuestionView.tsx         question and answer reveal panel
+    QuestionView.tsx         modal-first question and answer flow
   test/
     setup.ts                 Vitest global setup (@testing-library/jest-dom)
-    useDeck.test.ts          hook behavior tests (22 tests)
-    validateDeck.test.ts     validation utility tests (9 tests)
+    useDeck.test.ts          hook behavior tests
+    QuestionView.test.tsx    question-view rendering tests
+    validateDeck.test.ts     validation utility tests
 ```
 
 `src/assets/*` currently contains leftover Vite scaffold assets and is not part of the active app flow.
@@ -120,7 +121,8 @@ If no cards remain, the hook enters the `finished` phase.
 
 - renders one of two states:
   - placeholder prompt when no category is selected
-  - selected question and answer reveal actions when a category is selected
+  - modal dialog (opened on category selection) with question state or answer state
+- keeps both question and answer interactions in one modal surface
 - never reveals more than one answer
 
 ## Styling boundaries
@@ -182,7 +184,7 @@ Do not add them without an explicit product reason.
 The current implementation has addressed all initial gaps:
 
 - ✅ deck validation implemented in `src/data/validateDeck.ts`
-- ✅ automated tests in `src/test/` (39 tests, run with `npm test`)
+- ✅ automated tests in `src/test/` cover hook behavior, validation, and question-view rendering
 - ✅ starter deck expanded to 30 cards
 - ✅ card and question panel transitions added via CSS animations
 - ✅ shuffle moment on game start (`isShuffling` state in `useDeck`)
@@ -191,4 +193,8 @@ The current implementation has addressed all initial gaps:
 - ✅ difficulty filter (easy / medium / hard / all) available before starting
 - ✅ post-answer context panel for entries with explanation/source metadata
 
-Next areas to improve: more cards and broader component interaction tests.
+Next areas to improve:
+
+- more cards
+- broader component interaction tests (especially `CardView` + `CategoryList`)
+- keyboard/accessibility coverage for modal and swipe interactions
