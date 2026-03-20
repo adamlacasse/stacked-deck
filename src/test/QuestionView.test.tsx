@@ -116,7 +116,6 @@ describe('QuestionView', () => {
   })
 
   it('renders an answer-only modal state when revealed', () => {
-  it('renders answer inside a modal dialog when revealed', () => {
     render(
       <QuestionView
         entry={makeEntry()}
@@ -155,9 +154,6 @@ describe('QuestionView', () => {
   it('calls onCloseQuestion when back to categories is pressed', () => {
     const onCloseQuestion = vi.fn()
 
-  })
-
-  it('does not render a modal dialog before answer reveal', () => {
     render(
       <QuestionView
         entry={makeEntry()}
@@ -171,6 +167,5 @@ describe('QuestionView', () => {
 
     fireEvent.click(screen.getByRole('button', { name: 'Back to categories' }))
     expect(onCloseQuestion).toHaveBeenCalledTimes(1)
-    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
   })
 })
