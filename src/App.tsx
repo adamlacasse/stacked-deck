@@ -110,7 +110,7 @@ function App() {
                 <p className={styles.heroText}>
                   {phase === 'finished'
                     ? 'Every card in this filter has been used once. Shuffle again or clear the session to start fresh.'
-                    : 'One card, one category, one reveal.'}
+                    : 'The modern trivia deck.'}
                 </p>
               ) : null}
             </div>
