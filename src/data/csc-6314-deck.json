@@ -1,0 +1,91 @@
+{
+  "id": "csc-6314-study-guide",
+  "name": "CSC-6314 Study Guide",
+  "description": "A stub study deck for CSC-6314 review sessions.",
+  "cards": [
+    {
+      "id": "csc-6314-card-0001",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "easy",
+      "tags": [
+        "study-guide",
+        "csc-6314",
+        "stub"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Sample CSC-6314 geography prompt placeholder.",
+          "answer": "Replace with your course-specific answer."
+        },
+        {
+          "category": "entertainment",
+          "question": "Sample CSC-6314 entertainment prompt placeholder.",
+          "answer": "Replace with your course-specific answer."
+        },
+        {
+          "category": "history",
+          "question": "Sample CSC-6314 history prompt placeholder.",
+          "answer": "Replace with your course-specific answer."
+        },
+        {
+          "category": "arts",
+          "question": "Sample CSC-6314 arts prompt placeholder.",
+          "answer": "Replace with your course-specific answer."
+        },
+        {
+          "category": "science",
+          "question": "Sample CSC-6314 science prompt placeholder.",
+          "answer": "Replace with your course-specific answer."
+        },
+        {
+          "category": "sports",
+          "question": "Sample CSC-6314 sports prompt placeholder.",
+          "answer": "Replace with your course-specific answer."
+        }
+      ]
+    },
+    {
+      "id": "csc-6314-card-0002",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "study-guide",
+        "csc-6314",
+        "stub"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Second CSC-6314 geography placeholder.",
+          "answer": "Swap in your study-guide answer later."
+        },
+        {
+          "category": "entertainment",
+          "question": "Second CSC-6314 entertainment placeholder.",
+          "answer": "Swap in your study-guide answer later."
+        },
+        {
+          "category": "history",
+          "question": "Second CSC-6314 history placeholder.",
+          "answer": "Swap in your study-guide answer later."
+        },
+        {
+          "category": "arts",
+          "question": "Second CSC-6314 arts placeholder.",
+          "answer": "Swap in your study-guide answer later."
+        },
+        {
+          "category": "science",
+          "question": "Second CSC-6314 science placeholder.",
+          "answer": "Swap in your study-guide answer later."
+        },
+        {
+          "category": "sports",
+          "question": "Second CSC-6314 sports placeholder.",
+          "answer": "Swap in your study-guide answer later."
+        }
+      ]
+    }
+  ]
+}

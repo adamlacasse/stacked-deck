@@ -138,6 +138,11 @@
   font-weight: 700;
 }
 
+.filterButton:disabled {
+  opacity: 0.58;
+  cursor: not-allowed;
+}
+
 @keyframes shufflePulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.6; }
@@ -164,5 +169,10 @@
   .filterButtonActive:hover {
     background: #d4a840;
     filter: none;
+  }
+
+  .filterButton:disabled:hover {
+    background: rgba(15, 36, 80, 0.55);
+    color: rgba(232, 220, 196, 0.9);
   }
 }

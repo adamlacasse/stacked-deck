@@ -1,9 +1,34 @@
+import { useState } from 'react'
+
 import styles from './App.module.css'
 import { CardView } from './components/CardView'
-import { starterDeck } from './data/deck'
+import { availableDecks, defaultDeck } from './data/deck'
 import { useDeck } from './hooks/useDeck'
+import type { TriviaDeck } from './types'
 
 function App() {
+  const [selectedDeckId, setSelectedDeckId] = useState(defaultDeck.id)
+  const selectedDeck =
+    availableDecks.find((deck) => deck.id === selectedDeckId) ?? defaultDeck
+
+  return (
+    <DeckShell
+      key={selectedDeck.id}
+      deck={selectedDeck}
+      selectedDeckId={selectedDeckId}
+      onSelectDeck={setSelectedDeckId}
+    />
+  )
+}
+
+type DeckShellProps = {
+  deck: TriviaDeck
+  selectedDeckId: string
+  onSelectDeck: (deckId: string) => void
+}
+
+function DeckShell({ deck, selectedDeckId, onSelectDeck }: DeckShellProps) {
+  const deckLabelId = 'deck-filter-label'
   const difficultyLabelId = 'difficulty-filter-label'
   const {
     phase,
@@ -15,6 +40,7 @@ function App() {
     remainingCount,
     deckSize,
     deckName,
+    deckDescription,
     startGame,
     selectCategory,
     clearSelectedCategory,
@@ -25,7 +51,7 @@ function App() {
     isShuffling,
     difficultyFilter,
     setDifficultyFilter,
-  } = useDeck(starterDeck)
+  } = useDeck(deck)
 
   const DIFFICULTY_OPTIONS = [
     { value: 'all', label: 'All' },
@@ -33,6 +59,8 @@ function App() {
     { value: 'medium', label: 'Medium' },
     { value: 'hard', label: 'Hard' },
   ] as const
+
+  const canChangeDeck = phase !== 'active' && !isShuffling
 
   return (
     <main className={styles.shell}>
@@ -78,6 +106,28 @@ function App() {
                   <div
                     className={styles.filterSection}
                     role="group"
+                    aria-labelledby={deckLabelId}
+                  >
+                    <span id={deckLabelId} className={styles.filterLabel}>
+                      Deck
+                    </span>
+                    {availableDecks.map((availableDeck) => (
+                      <button
+                        key={availableDeck.id}
+                        type="button"
+                        aria-pressed={selectedDeckId === availableDeck.id}
+                        className={`${styles.filterButton} ${selectedDeckId === availableDeck.id ? styles.filterButtonActive : ''}`}
+                        onClick={() => onSelectDeck(availableDeck.id)}
+                        disabled={!canChangeDeck}
+                      >
+                        {availableDeck.name}
+                      </button>
+                    ))}
+                  </div>
+
+                  <div
+                    className={styles.filterSection}
+                    role="group"
                     aria-labelledby={difficultyLabelId}
                   >
                     <span id={difficultyLabelId} className={styles.filterLabel}>
@@ -90,6 +140,7 @@ function App() {
                         aria-pressed={difficultyFilter === value}
                         className={`${styles.filterButton} ${difficultyFilter === value ? styles.filterButtonActive : ''}`}
                         onClick={() => setDifficultyFilter(value)}
+                        disabled={isShuffling}
                       >
                         {label}
                       </button>
@@ -110,7 +161,7 @@ function App() {
                 <p className={styles.heroText}>
                   {phase === 'finished'
                     ? 'Every card in this filter has been used once. Shuffle again or clear the session to start fresh.'
-                    : 'The modern trivia deck.'}
+                    : deckDescription ?? 'The modern trivia deck.'}
                 </p>
               ) : null}
             </div>

@@ -15,7 +15,7 @@ This mirrors the physical trivia-card model while allowing the UI to reveal only
 ### Deck
 A deck is a collection of cards.
 
-For MVP, there may only be one deck in practice, but the data model should allow for multiple decks later.
+For MVP, the app can ship with multiple local decks, and the data model should keep that easy to extend.
 
 ### Card
 A card is the fundamental gameplay unit.

@@ -1,9 +1,18 @@
 import type { TriviaDeck } from '../types'
 import { assertValidDeck } from './validateDeck'
-import deckJson from './deck.json'
+import csc6314DeckJson from './csc-6314-deck.json'
+import generalKnowledgeDeckJson from './general-knowledge-deck.json'
 
-const deckData = deckJson as unknown as TriviaDeck
+function loadDeck(deckJson: unknown): TriviaDeck {
+  const deckData = deckJson as TriviaDeck
 
-assertValidDeck(deckData)
+  assertValidDeck(deckData)
+  return deckData
+}
 
-export const starterDeck = deckData
+export const availableDecks = [
+  loadDeck(generalKnowledgeDeckJson),
+  loadDeck(csc6314DeckJson),
+]
+
+export const defaultDeck = availableDecks[0]

@@ -1,6 +1,6 @@
 import { Component, type ErrorInfo, type ReactNode } from 'react'
 
-import { STORAGE_KEY } from '../constants'
+import { clearStoredSessions } from '../constants'
 import styles from './ErrorBoundary.module.css'
 
 interface Props {
@@ -28,7 +28,7 @@ export class ErrorBoundary extends Component<Props, State> {
 
   handleClearAndRestart = () => {
     try {
-      window.localStorage.removeItem(STORAGE_KEY)
+      clearStoredSessions(window.localStorage)
     } catch {
       // If localStorage isn't accessible, proceed anyway
     }

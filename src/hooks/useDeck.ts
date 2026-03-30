@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 
-import { SHUFFLE_DELAY_MS, STORAGE_KEY } from '../constants'
+import { SHUFFLE_DELAY_MS, getSessionStorageKey } from '../constants'
 import type { Category, Difficulty, GameSession, TriviaCard, TriviaDeck } from '../types'
 
 function prefersReducedMotion(): boolean {
@@ -20,13 +20,13 @@ function createEmptySession(): GameSession {
   }
 }
 
-function loadSession(): GameSession {
+function loadSession(storageKey: string): GameSession {
   if (typeof window === 'undefined') {
     return createEmptySession()
   }
 
   try {
-    const stored = window.localStorage.getItem(STORAGE_KEY)
+    const stored = window.localStorage.getItem(storageKey)
 
     if (!stored) {
       return createEmptySession()
@@ -89,18 +89,19 @@ function createSessionForNextCard(
 }
 
 export function useDeck(deck: TriviaDeck) {
-  const [session, setSession] = useState<GameSession>(() => loadSession())
+  const storageKey = getSessionStorageKey(deck.id)
+  const [session, setSession] = useState<GameSession>(() => loadSession(storageKey))
   const [isShuffling, setIsShuffling] = useState(false)
   const [difficultyFilter, setDifficultyFilterState] = useState<Difficulty | 'all'>('all')
   const shuffleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     try {
-      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(session))
+      window.localStorage.setItem(storageKey, JSON.stringify(session))
     } catch {
       // localStorage may be full or unavailable; session won't persist but the game continues
     }
-  }, [session])
+  }, [session, storageKey])
 
   useEffect(() => {
     return () => {
@@ -214,6 +215,7 @@ export function useDeck(deck: TriviaDeck) {
     remainingCount,
     deckSize: filteredCards.length,
     deckName: deck.name,
+    deckDescription: deck.description,
     startGame,
     selectCategory,
     clearSelectedCategory,

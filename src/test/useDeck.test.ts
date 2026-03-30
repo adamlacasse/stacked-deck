@@ -1,5 +1,6 @@
 import { renderHook, act } from '@testing-library/react'
 import { afterEach, beforeEach, describe, it, expect, vi } from 'vitest'
+import { getSessionStorageKey } from '../constants'
 import { useDeck } from '../hooks/useDeck'
 import type { TriviaDeck } from '../types'
 
@@ -218,7 +219,7 @@ describe('useDeck – resetSession', () => {
       vi.runAllTimers()
     })
     await act(async () => result.current.resetSession())
-    const stored = window.localStorage.getItem('stacked-deck-session')
+    const stored = window.localStorage.getItem(getSessionStorageKey(singleCardDeck.id))
     const parsed = JSON.parse(stored!)
     expect(parsed.usedCardIds).toEqual([])
     expect(parsed.currentCardId).toBeNull()
@@ -266,13 +267,35 @@ describe('useDeck – localStorage persistence', () => {
       answerRevealed: false,
       usedCardIds: ['c1', 'c2'],
     }
-    window.localStorage.setItem('stacked-deck-session', JSON.stringify(session))
+    window.localStorage.setItem(
+      getSessionStorageKey(multiCardDeck.id),
+      JSON.stringify(session),
+    )
 
     const { result } = renderHook(() => useDeck(multiCardDeck))
     expect(result.current.phase).toBe('active')
     expect(result.current.currentCard?.id).toBe('c2')
     expect(result.current.selectedCategory).toBe('history')
     expect(result.current.usedCount).toBe(2)
+  })
+
+  it('ignores sessions stored for a different deck id', () => {
+    const otherDeckKey = getSessionStorageKey('other-deck')
+
+    window.localStorage.setItem(
+      otherDeckKey,
+      JSON.stringify({
+        currentCardId: 'other-card',
+        selectedCategory: 'science',
+        answerRevealed: true,
+        usedCardIds: ['other-card'],
+      }),
+    )
+
+    const { result } = renderHook(() => useDeck(multiCardDeck))
+    expect(result.current.phase).toBe('idle')
+    expect(result.current.currentCard).toBeNull()
+    expect(result.current.usedCount).toBe(0)
   })
 })
 

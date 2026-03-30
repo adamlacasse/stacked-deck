@@ -61,7 +61,7 @@ Swipe gesture detection added to `CardView.tsx`.
 
 ### ✅ Move deck content to local JSON
 
-Cards moved from `src/data/deck.ts` to `src/data/deck.json`.
+Cards moved from `src/data/deck.ts` to `src/data/general-knowledge-deck.json`.
 
 - `src/data/deck.ts` imports the JSON and re-exports through validation
 - type assertion used for JSON import (`as unknown as TriviaDeck`)
@@ -70,7 +70,7 @@ Cards moved from `src/data/deck.ts` to `src/data/deck.json`.
 
 ### ✅ Expand the deck with more cards across all difficulty levels
 
-Deck expanded from 15 to 30 cards in `src/data/deck.json`.
+Deck expanded from 15 to 30 cards in `src/data/general-knowledge-deck.json`.
 
 - 10 easy, 13 medium, 7 hard cards
 - broad topic variety across all six categories
@@ -164,7 +164,7 @@ Targeted accessibility hardening applied without changing core MVP flow.
 
 ### ✅ Expand the deck with batch 1 content growth
 
-`src/data/deck.json` expanded from 30 cards to 72 cards.
+`src/data/general-knowledge-deck.json` expanded from 30 cards to 72 cards.
 
 - 42 new cards added in one curated batch (`card-0031` through `card-0072`)
 - 252 new questions added while preserving canonical category order on every card
@@ -173,7 +173,7 @@ Targeted accessibility hardening applied without changing core MVP flow.
 
 ### ✅ Expand the deck with batch 2 content growth
 
-`src/data/deck.json` expanded from 72 cards to 114 cards.
+`src/data/general-knowledge-deck.json` expanded from 72 cards to 114 cards.
 
 - 42 more cards added in a second curated batch (`card-0073` through `card-0114`)
 - another 252 questions added while preserving canonical category order on every card
@@ -193,7 +193,7 @@ Targeted `explanation` and `source` metadata was added where game-night disputes
 
 ### ✅ Expand the deck with batch 3 content growth
 
-`src/data/deck.json` expanded from 114 cards to 156 cards.
+`src/data/general-knowledge-deck.json` expanded from 114 cards to 156 cards.
 
 - 42 more cards added in a third curated batch (`card-0115` through `card-0156`)
 - another 252 questions added while preserving canonical category order on every card
@@ -211,7 +211,7 @@ Targeted `explanation` and `source` metadata was added to the most challenge-pro
 
 ### ✅ Expand the deck with batch 4 content growth
 
-`src/data/deck.json` expanded from 156 cards to 198 cards.
+`src/data/general-knowledge-deck.json` expanded from 156 cards to 198 cards.
 
 - 42 more cards added in a fourth curated batch (`card-0157` through `card-0198`)
 - another 252 questions added while preserving canonical category order on every card

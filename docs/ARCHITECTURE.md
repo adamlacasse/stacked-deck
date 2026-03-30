@@ -29,8 +29,9 @@ src/
   types.ts                   domain types and canonical category order
   data/
     categories.ts            UI metadata for category labels and colors
-    deck.json                local starter deck (198 cards)
-    deck.ts                  imports deck.json, validates at load time
+    general-knowledge-deck.json local general knowledge deck
+    csc-6314-deck.json       local CSC-6314 study guide stub deck
+    deck.ts                  imports all local decks, validates at load time
     validateDeck.ts          deck validation utility and dev-mode assertion
   hooks/
     useDeck.ts               game session state, draw logic, difficulty filter
@@ -70,10 +71,10 @@ type GameSession = {
 }
 ```
 
-Session data is persisted in `localStorage` under:
+Session data is persisted in `localStorage` under deck-specific keys using:
 
 ```ts
-'stacked-deck-session'
+'stacked-deck-session:<deckId>'
 ```
 
 ### Important behavior
@@ -101,7 +102,8 @@ If no cards remain, the hook enters the `finished` phase.
 
 ### `App.tsx`
 
-- calls `useDeck(starterDeck)`
+- manages the selected deck on the start screen
+- calls `useDeck(selectedDeck)`
 - renders the shell, stats, and high-level phase UI
 - chooses between the idle/finished hero panel and the active card view
 
@@ -147,7 +149,7 @@ Current visual direction:
 
 ## Data boundaries
 
-The source of truth for card data is the deck object in `src/data/deck.ts`.
+The source of truth for available deck data is the registry in `src/data/deck.ts`.
 
 The source of truth for category ids and ordering is `src/types.ts`.
 
@@ -189,7 +191,7 @@ The current implementation has addressed all initial gaps:
 - ✅ card and question panel transitions added via CSS animations
 - ✅ shuffle moment on game start (`isShuffling` state in `useDeck`)
 - ✅ swipe-to-next via pointer events in `CardView`
-- ✅ deck content moved to `src/data/deck.json`
+- ✅ deck content moved to `src/data/general-knowledge-deck.json`
 - ✅ difficulty filter (easy / medium / hard / all) available before starting
 - ✅ post-answer context panel for entries with explanation/source metadata
 

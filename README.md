@@ -11,9 +11,10 @@ This repository now has a solid playable MVP:
 - Vite + React + TypeScript app scaffold is in place
 - product and data model direction are documented
 - the starter screen has been replaced with a deck-style game shell
-- a local starter deck of 198 cards exists in `src/data/deck.json`
+- two local decks now ship with the app: `General Knowledge` and a stub `CSC-6314 Study Guide`
+- the start screen now lets you switch decks before beginning a run
 - deck validation runs in development mode and throws loudly for malformed content (`src/data/validateDeck.ts`)
-- session state is handled locally with React state + `localStorage`
+- session state is handled locally with React state + deck-specific `localStorage`
 - cards are drawn without repeats within a session
 - category selection opens a focused modal question state, then reveal swaps that same modal to an answer-only state
 - the app currently supports next card and session reset actions from the active gameplay view
@@ -193,8 +194,9 @@ The main app flow currently lives in:
 
 - `src/App.tsx`
 - `src/hooks/useDeck.ts`
-- `src/data/deck.json` (30-card local starter deck)
-- `src/data/deck.ts` (JSON import + validation boundary)
+- `src/data/general-knowledge-deck.json` (general knowledge deck)
+- `src/data/csc-6314-deck.json` (stub CSC-6314 study deck)
+- `src/data/deck.ts` (deck registry + validation boundary)
 - `src/data/validateDeck.ts` (deck validation, wired in at load time)
 - `src/components/CardView.tsx`
 - `src/components/CategoryList.tsx`
@@ -217,7 +219,7 @@ Build in this order:
 These names align with the current project direction:
 
 - `src/types.ts`
-- `src/data/deck.json`
+- `src/data/general-knowledge-deck.json`
 - `src/data/deck.ts`
 - `src/data/validateDeck.ts`
 - `src/hooks/useDeck.ts`
