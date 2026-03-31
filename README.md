@@ -11,7 +11,7 @@ This repository now has a solid playable MVP:
 - Vite + React + TypeScript app scaffold is in place
 - product and data model direction are documented
 - the starter screen has been replaced with a deck-style game shell
-- two local decks now ship with the app: `General Knowledge` and a stub `CSC-6314 Study Guide`
+- two local decks now ship with the app: `General Knowledge` and a generated `CSC-6314 Study Guide`
 - the start screen now lets you switch decks before beginning a run
 - deck validation runs in development mode and throws loudly for malformed content (`src/data/validateDeck.ts`)
 - session state is handled locally with React state + deck-specific `localStorage`
@@ -23,6 +23,8 @@ This repository now has a solid playable MVP:
 - swipe-to-next (left or right) advances the card once an answer is revealed
 - difficulty filter lets you limit draws to easy, medium, or hard cards before starting
 - optional post-answer context panel shows explanation/source metadata on selected entries
+- deck-specific category labels and prompts let study decks use course-native lanes without changing the underlying six-slot data model
+- the CSC-6314 deck can be regenerated on demand from curated module files in the separate course repository
 - automated tests in `src/test/` cover hook behavior, validation logic, and question-view rendering
 
 ## Canonical docs
@@ -142,6 +144,17 @@ type TriviaCard = {
     CardEntry
   ]
 }
+
+type TriviaDeck = {
+  id: string
+  name: string
+  categoryMeta?: Partial<Record<Category, {
+    label: string
+    prompt: string
+    accent?: string
+  }>>
+  cards: TriviaCard[]
+}
 ```
 
 Model around cards, not loose standalone questions.
@@ -170,6 +183,7 @@ npm run dev
 ### Check the project
 
 ```bash
+npm run generate:csc6314 -- --course-repo /Users/adamlacasse/Documents/Merrimack/Merrimack_CSC6314
 npm run lint
 npm run build
 npm test
@@ -187,6 +201,7 @@ This repository is intended to work well with coding agents. The fastest way to 
 4. Prefer static data, local state, and small components.
 5. Validate changes with `npm run lint`, `npm run build`, and `npm test` when relevant.
 6. If a code change shifts product direction, update the docs in the same pass.
+7. Treat `src/data/csc-6314-deck.json` as generated output and edit the course repo source files instead.
 
 ### Current implementation snapshot
 
@@ -195,9 +210,10 @@ The main app flow currently lives in:
 - `src/App.tsx`
 - `src/hooks/useDeck.ts`
 - `src/data/general-knowledge-deck.json` (general knowledge deck)
-- `src/data/csc-6314-deck.json` (stub CSC-6314 study deck)
+- `src/data/csc-6314-deck.json` (generated CSC-6314 study deck)
 - `src/data/deck.ts` (deck registry + validation boundary)
 - `src/data/validateDeck.ts` (deck validation, wired in at load time)
+- `scripts/generate-csc6314-deck.mjs` (syncs curated module study cards from the course repo)
 - `src/components/CardView.tsx`
 - `src/components/CategoryList.tsx`
 - `src/components/QuestionView.tsx`
@@ -254,6 +270,7 @@ These are good agent tasks for the current state of the repo:
 - `npm run dev`: start the Vite dev server
 - `npm run build`: type-check and build for production
 - `npm run lint`: run ESLint
+- `npm run generate:csc6314 -- --course-repo /absolute/path/to/Merrimack_CSC6314`: regenerate the CSC-6314 study deck from curated course materials
 - `npm test`: run all tests with Vitest
 - `npm run test:watch`: run tests in watch mode
 - `npm run preview`: preview the production build locally

@@ -1,24 +1,26 @@
 import type { CSSProperties } from 'react'
 
-import { CATEGORY_META } from '../data/categories'
-import type { CardEntry, Category } from '../types'
+import { getCategoryMeta } from '../data/categories'
+import type { CardEntry, Category, DeckCategoryMeta } from '../types'
 import styles from './CategoryList.module.css'
 
 type CategoryListProps = {
   entries: CardEntry[]
+  categoryMeta?: DeckCategoryMeta
   selectedCategory: Category | null
   onSelectCategory: (category: Category) => void
 }
 
 export function CategoryList({
   entries,
+  categoryMeta,
   selectedCategory,
   onSelectCategory,
 }: CategoryListProps) {
   return (
     <div className={styles.list}>
       {entries.map((entry, index) => {
-        const meta = CATEGORY_META[entry.category]
+        const meta = getCategoryMeta(entry.category, categoryMeta)
         const isSelected = selectedCategory === entry.category
 
         return (

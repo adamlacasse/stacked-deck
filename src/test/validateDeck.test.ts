@@ -46,6 +46,20 @@ describe('validateDeck – valid deck', () => {
     expect(validateDeck(validDeck)).toEqual({ valid: true })
   })
 
+  it('allows optional deck-level category metadata overrides', () => {
+    const deck: TriviaDeck = {
+      ...validDeck,
+      categoryMeta: {
+        geography: {
+          label: 'Foundations',
+          prompt: 'Core ideas and definitions',
+        },
+      },
+    }
+
+    expect(validateDeck(deck)).toEqual({ valid: true })
+  })
+
   it('allows optional explanation and source metadata', () => {
     const card = makeCard('c1')
     mutableEntries(card)[0].explanation = 'Some sources disagree on this ranking.'
@@ -80,6 +94,29 @@ describe('validateDeck – deck-level errors', () => {
     expect(result.valid).toBe(false)
     if (!result.valid)
       expect(result.errors.some((e) => e.includes('at least one card'))).toBe(true)
+  })
+
+  it('reports invalid category metadata overrides', () => {
+    const deck = {
+      ...validDeck,
+      categoryMeta: {
+        geography: {
+          label: '',
+          prompt: 'Core ideas',
+        },
+        unknown: {
+          label: 'Unsupported',
+          prompt: 'Should fail',
+        },
+      },
+    } as unknown as TriviaDeck
+
+    const result = validateDeck(deck)
+    expect(result.valid).toBe(false)
+    if (!result.valid) {
+      expect(result.errors.some((e) => e.includes('non-empty label'))).toBe(true)
+      expect(result.errors.some((e) => e.includes('unsupported category'))).toBe(true)
+    }
   })
 })
 

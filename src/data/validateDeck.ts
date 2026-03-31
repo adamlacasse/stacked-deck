@@ -30,6 +30,51 @@ export function validateDeck(deck: TriviaDeck): ValidationResult {
     errors.push('Deck is missing a name.')
   }
 
+  if (deck.categoryMeta !== undefined) {
+    if (
+      typeof deck.categoryMeta !== 'object' ||
+      deck.categoryMeta === null ||
+      Array.isArray(deck.categoryMeta)
+    ) {
+      errors.push('Deck categoryMeta must be an object.')
+    } else {
+      for (const [category, meta] of Object.entries(deck.categoryMeta)) {
+        if (!CATEGORY_ORDER.includes(category as (typeof CATEGORY_ORDER)[number])) {
+          errors.push(`Deck categoryMeta has an unsupported category "${category}".`)
+          continue
+        }
+
+        if (typeof meta !== 'object' || meta === null || Array.isArray(meta)) {
+          errors.push(`Deck categoryMeta "${category}" must be an object.`)
+          continue
+        }
+
+        const metaRecord = meta as Record<string, unknown>
+
+        if (!hasText(metaRecord.label)) {
+          errors.push(
+            `Deck categoryMeta "${category}" must include a non-empty label.`,
+          )
+        }
+
+        if (!hasText(metaRecord.prompt)) {
+          errors.push(
+            `Deck categoryMeta "${category}" must include a non-empty prompt.`,
+          )
+        }
+
+        if (
+          metaRecord.accent !== undefined &&
+          !hasText(metaRecord.accent)
+        ) {
+          errors.push(
+            `Deck categoryMeta "${category}" accent must be a non-empty string.`,
+          )
+        }
+      }
+    }
+  }
+
   if (!Array.isArray(deck.cards) || deck.cards.length === 0) {
     errors.push('Deck must contain at least one card.')
     return { valid: false, errors }

@@ -9,6 +9,20 @@ export const CATEGORY_ORDER = [
 
 export type Category = (typeof CATEGORY_ORDER)[number]
 
+export type CategoryMeta = {
+  label: string
+  prompt: string
+  accent: string
+}
+
+export type CategoryMetaOverride = {
+  label: string
+  prompt: string
+  accent?: string
+}
+
+export type DeckCategoryMeta = Partial<Record<Category, CategoryMetaOverride>>
+
 export type CardEntry = {
   category: Category
   question: string
@@ -42,6 +56,7 @@ export type TriviaDeck = {
   id: string
   name: string
   description?: string
+  categoryMeta?: DeckCategoryMeta
   cards: TriviaCard[]
 }
 

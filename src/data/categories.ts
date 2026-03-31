@@ -1,8 +1,8 @@
-import type { Category } from '../types'
+import type { Category, CategoryMeta, DeckCategoryMeta } from '../types'
 
 export const CATEGORY_META: Record<
   Category,
-  { label: string; accent: string; prompt: string }
+  CategoryMeta
 > = {
   geography: {
     label: 'Geography',
@@ -34,4 +34,18 @@ export const CATEGORY_META: Record<
     accent: '#d97732',
     prompt: 'Games, athletes, and records',
   },
+}
+
+export function getCategoryMeta(
+  category: Category,
+  deckCategoryMeta?: DeckCategoryMeta,
+): CategoryMeta {
+  const defaults = CATEGORY_META[category]
+  const override = deckCategoryMeta?.[category]
+
+  return {
+    label: override?.label ?? defaults.label,
+    prompt: override?.prompt ?? defaults.prompt,
+    accent: override?.accent ?? defaults.accent,
+  }
 }

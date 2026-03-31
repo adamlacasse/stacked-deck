@@ -43,6 +43,12 @@
   color: var(--color-accent); /* gold */
 }
 
+.categoryPrompt {
+  margin: -0.3rem 0 0;
+  font-size: 0.95rem;
+  color: #5a7090;
+}
+
 /* Question text in elegant serif — deep navy on cream */
 .title {
   margin: 0;

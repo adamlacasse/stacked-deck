@@ -3,10 +3,11 @@ import { CategoryList } from './CategoryList'
 import { QuestionView } from './QuestionView'
 import styles from './CardView.module.css'
 import { SWIPE_THRESHOLD_PX } from '../constants'
-import type { CardEntry, Category, TriviaCard } from '../types'
+import type { CardEntry, Category, DeckCategoryMeta, TriviaCard } from '../types'
 
 type CardViewProps = {
   card: TriviaCard
+  categoryMeta?: DeckCategoryMeta
   selectedCategory: Category | null
   selectedEntry: CardEntry | null
   answerRevealed: boolean
@@ -19,6 +20,7 @@ type CardViewProps = {
 
 export function CardView({
   card,
+  categoryMeta,
   selectedCategory,
   selectedEntry,
   answerRevealed,
@@ -70,6 +72,7 @@ export function CardView({
           <div className={styles.categories}>
             <CategoryList
               entries={card.entries}
+              categoryMeta={categoryMeta}
               selectedCategory={selectedCategory}
               onSelectCategory={onSelectCategory}
             />
@@ -78,6 +81,7 @@ export function CardView({
           <QuestionView
             key={selectedCategory ?? 'none'}
             entry={selectedEntry}
+            categoryMeta={categoryMeta}
             answerRevealed={answerRevealed}
             remainingCount={remainingCount}
             onCloseQuestion={onCloseQuestion}

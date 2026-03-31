@@ -90,6 +90,16 @@ type TriviaDeck = {
   id: string;
   name: string;
   description?: string;
+  categoryMeta?: Partial<
+    Record<
+      Category,
+      {
+        label: string;
+        prompt: string;
+        accent?: string;
+      }
+    >
+  >;
   cards: TriviaCard[];
 };
 ```
@@ -100,6 +110,7 @@ type TriviaDeck = {
 3. Category values should be lowercase canonical identifiers.
 4. UI labels may differ from internal values, but the internal values should remain stable.
 5. Do not store presentation-specific text directly in the card data unless needed.
+6. Decks may override category labels/prompts for presentation, but they must still use the canonical internal category ids.
 
 ## JSON Shape for MVP
 The JSON should be easy to read, diff, validate, and generate.

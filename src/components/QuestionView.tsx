@@ -1,12 +1,13 @@
 import { useEffect, useId, useRef } from 'react'
 import { createPortal } from 'react-dom'
 
-import { CATEGORY_META } from '../data/categories'
-import type { CardEntry } from '../types'
+import { getCategoryMeta } from '../data/categories'
+import type { CardEntry, DeckCategoryMeta } from '../types'
 import styles from './QuestionView.module.css'
 
 type QuestionViewProps = {
   entry: CardEntry | null
+  categoryMeta?: DeckCategoryMeta
   answerRevealed: boolean
   remainingCount: number
   onCloseQuestion: () => void
@@ -16,6 +17,7 @@ type QuestionViewProps = {
 
 export function QuestionView({
   entry,
+  categoryMeta,
   answerRevealed,
   remainingCount,
   onCloseQuestion,
@@ -55,7 +57,7 @@ export function QuestionView({
     return <p className={styles.hint}>Choose a category to open a question.</p>
   }
 
-  const meta = CATEGORY_META[entry.category]
+  const meta = getCategoryMeta(entry.category, categoryMeta)
   const nextLabel = remainingCount > 0 ? 'Next card' : 'Finish deck'
   const explanation = entry.explanation?.trim() || null
   const sourceLabel = entry.source?.label?.trim() || null
@@ -76,6 +78,7 @@ export function QuestionView({
             <p id={dialogLabelId} className={styles.eyebrow}>
               {meta.label} question
             </p>
+            <p className={styles.categoryPrompt}>{meta.prompt}</p>
             <h2 id={dialogDescriptionId} className={styles.title}>
               {entry.question}
             </h2>

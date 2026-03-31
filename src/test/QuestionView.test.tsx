@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 
 import { QuestionView } from '../components/QuestionView'
-import type { CardEntry } from '../types'
+import type { CardEntry, DeckCategoryMeta } from '../types'
 
 function makeEntry(): CardEntry {
   return {
@@ -18,11 +18,19 @@ function makeEntry(): CardEntry {
   }
 }
 
+const customCategoryMeta: DeckCategoryMeta = {
+  geography: {
+    label: 'Foundations',
+    prompt: 'Definitions and core distinctions',
+  },
+}
+
 describe('QuestionView', () => {
   it('shows a category prompt when no entry is selected', () => {
     render(
       <QuestionView
         entry={null}
+        categoryMeta={undefined}
         answerRevealed={false}
         remainingCount={5}
         onCloseQuestion={vi.fn()}
@@ -34,10 +42,28 @@ describe('QuestionView', () => {
     expect(screen.getByText('Choose a category to open a question.')).toBeInTheDocument()
   })
 
+  it('renders deck-specific category labels and prompts in question state', () => {
+    render(
+      <QuestionView
+        entry={makeEntry()}
+        categoryMeta={customCategoryMeta}
+        answerRevealed={false}
+        remainingCount={5}
+        onCloseQuestion={vi.fn()}
+        onRevealAnswer={vi.fn()}
+        onNextCard={vi.fn()}
+      />,
+    )
+
+    expect(screen.getByText('Foundations question')).toBeInTheDocument()
+    expect(screen.getByText('Definitions and core distinctions')).toBeInTheDocument()
+  })
+
   it('keeps context hidden before answer reveal', () => {
     render(
       <QuestionView
         entry={makeEntry()}
+        categoryMeta={undefined}
         answerRevealed={false}
         remainingCount={5}
         onCloseQuestion={vi.fn()}
@@ -53,6 +79,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={makeEntry()}
+        categoryMeta={undefined}
         answerRevealed={false}
         remainingCount={5}
         onCloseQuestion={vi.fn()}
@@ -72,6 +99,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={makeEntry()}
+        categoryMeta={undefined}
         answerRevealed
         remainingCount={5}
         onCloseQuestion={vi.fn()}
@@ -103,6 +131,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={entryWithoutUrl}
+        categoryMeta={undefined}
         answerRevealed
         remainingCount={5}
         onCloseQuestion={vi.fn()}
@@ -119,6 +148,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={makeEntry()}
+        categoryMeta={undefined}
         answerRevealed
         remainingCount={5}
         onCloseQuestion={vi.fn()}
@@ -140,6 +170,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={makeEntry()}
+        categoryMeta={undefined}
         answerRevealed={false}
         remainingCount={5}
         onCloseQuestion={vi.fn()}
@@ -155,6 +186,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={makeEntry()}
+        categoryMeta={undefined}
         answerRevealed
         remainingCount={5}
         onCloseQuestion={vi.fn()}
@@ -170,6 +202,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={null}
+        categoryMeta={undefined}
         answerRevealed={false}
         remainingCount={5}
         onCloseQuestion={vi.fn()}
@@ -187,6 +220,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={makeEntry()}
+        categoryMeta={undefined}
         answerRevealed={false}
         remainingCount={5}
         onCloseQuestion={onCloseQuestion}
@@ -205,6 +239,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={makeEntry()}
+        categoryMeta={undefined}
         answerRevealed={false}
         remainingCount={5}
         onCloseQuestion={onCloseQuestion}
@@ -223,6 +258,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={makeEntry()}
+        categoryMeta={undefined}
         answerRevealed
         remainingCount={5}
         onCloseQuestion={onCloseQuestion}
@@ -241,6 +277,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={makeEntry()}
+        categoryMeta={undefined}
         answerRevealed
         remainingCount={5}
         onCloseQuestion={onCloseQuestion}

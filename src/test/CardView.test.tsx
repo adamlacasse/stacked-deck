@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from 'vitest'
 
 import { SWIPE_THRESHOLD_PX } from '../constants'
 import { CardView } from '../components/CardView'
-import { CATEGORY_ORDER, type TriviaCard } from '../types'
+import { CATEGORY_ORDER, type DeckCategoryMeta, type TriviaCard } from '../types'
 
 function makeCard(): TriviaCard {
   return {
@@ -23,13 +23,41 @@ function getCardShell() {
   return shell as HTMLElement
 }
 
+const customCategoryMeta: DeckCategoryMeta = {
+  geography: {
+    label: 'Foundations',
+    prompt: 'Definitions and core distinctions',
+  },
+}
+
 describe('CardView', () => {
+  it('renders deck-specific category labels and prompts when provided', () => {
+    render(
+      <CardView
+        card={makeCard()}
+        categoryMeta={customCategoryMeta}
+        selectedCategory={null}
+        selectedEntry={null}
+        answerRevealed={false}
+        onSelectCategory={vi.fn()}
+        onCloseQuestion={vi.fn()}
+        onRevealAnswer={vi.fn()}
+        onNextCard={vi.fn()}
+        remainingCount={5}
+      />,
+    )
+
+    expect(screen.getByRole('button', { name: /foundations/i })).toBeInTheDocument()
+    expect(screen.getByText('Definitions and core distinctions')).toBeInTheDocument()
+  })
+
   it('delegates category selection from the category list', () => {
     const onSelectCategory = vi.fn()
 
     render(
       <CardView
         card={makeCard()}
+        categoryMeta={undefined}
         selectedCategory={null}
         selectedEntry={null}
         answerRevealed={false}
@@ -55,6 +83,7 @@ describe('CardView', () => {
     render(
       <CardView
         card={card}
+        categoryMeta={undefined}
         selectedCategory="geography"
         selectedEntry={card.entries[0]}
         answerRevealed={false}
@@ -83,6 +112,7 @@ describe('CardView', () => {
     render(
       <CardView
         card={card}
+        categoryMeta={undefined}
         selectedCategory="geography"
         selectedEntry={card.entries[0]}
         answerRevealed
@@ -109,6 +139,7 @@ describe('CardView', () => {
     render(
       <CardView
         card={makeCard()}
+        categoryMeta={undefined}
         selectedCategory={null}
         selectedEntry={null}
         answerRevealed
@@ -137,6 +168,7 @@ describe('CardView', () => {
     render(
       <CardView
         card={makeCard()}
+        categoryMeta={undefined}
         selectedCategory={null}
         selectedEntry={null}
         answerRevealed={false}
@@ -165,6 +197,7 @@ describe('CardView', () => {
     render(
       <CardView
         card={makeCard()}
+        categoryMeta={undefined}
         selectedCategory={null}
         selectedEntry={null}
         answerRevealed
@@ -193,6 +226,7 @@ describe('CardView', () => {
     render(
       <CardView
         card={makeCard()}
+        categoryMeta={undefined}
         selectedCategory={null}
         selectedEntry={null}
         answerRevealed

@@ -4,6 +4,8 @@ This document covers how to add or edit trivia cards without breaking the MVP da
 
 Use it whenever you touch `src/data/general-knowledge-deck.json`, `src/data/csc-6314-deck.json`, or any future deck content file.
 
+For the CSC-6314 deck specifically, do not edit `src/data/csc-6314-deck.json` by hand. That file is generated from curated `Module X/study-deck-cards.json` files in the separate course repository.
+
 ## Core rule
 
 The primary content unit is a card.
@@ -140,6 +142,7 @@ Before adding a card, confirm:
 ## Preferred workflow for content changes
 
 1. Add or edit cards in the relevant deck file, such as `src/data/general-knowledge-deck.json`.
+   For CSC-6314, edit the course repo source files and regenerate the deck instead of editing the JSON directly.
 2. Keep cards in canonical category order.
 3. Re-read the card as if someone is reading it aloud to a table.
 4. Run `npm run lint` and `npm run build`.
