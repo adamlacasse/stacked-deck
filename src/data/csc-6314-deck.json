@@ -42,7 +42,7 @@
       "entries": [
         {
           "category": "geography",
-          "question": "What key distinction between deep learning and traditional machine learning does Module 1 emphasize?",
+          "question": "What is a key difference between deep learning and traditional machine learning?",
           "answer": "Deep learning learns useful features automatically from raw data instead of depending mainly on human-engineered features.",
           "source": {
             "label": "Module 1/Quiz 1/quiz-01-study-guide.md"
@@ -66,8 +66,8 @@
         },
         {
           "category": "arts",
-          "question": "In the course wording, what is the difference between loss and cost?",
-          "answer": "Loss is the error for one prediction, while cost is the aggregate of many losses across the dataset.",
+          "question": "What is the difference between loss and cost in machine learning?",
+          "answer": "Loss is the error for one prediction, while cost is the average (or sum) of many losses across the dataset.",
           "source": {
             "label": "Module 1/Quiz 1/quiz-01-study-guide.md"
           }
@@ -75,15 +75,15 @@
         {
           "category": "science",
           "question": "Which PyTorch component is most directly responsible for updating model parameters during learning?",
-          "answer": "torch.optim",
+          "answer": "`torch.optim` (specifically, calling `optimizer.step()`)",
           "source": {
             "label": "Module 1/Quiz 1/quiz-01-study-guide.md"
           }
         },
         {
           "category": "sports",
-          "question": "Which Module 1 example used MLPs for video compression decisions?",
-          "answer": "Netflix.",
+          "question": "What kind of platform might use neural networks to help make video compression decisions?",
+          "answer": "A video streaming platform.",
           "source": {
             "label": "Module 1/Quiz 1/quiz-01-study-guide.md"
           }
@@ -112,7 +112,7 @@
         {
           "category": "entertainment",
           "question": "How many hidden layers does a single-layer perceptron have?",
-          "answer": "None.",
+          "answer": "None. It consists only of an input layer and an output layer.",
           "source": {
             "label": "Module 1/Quiz 1/quiz-01-study-guide.md"
           }
@@ -143,8 +143,8 @@
         },
         {
           "category": "sports",
-          "question": "What target transformation turns Project 1's California housing dataset into a binary classification task?",
-          "answer": "Predict whether a house value is above the 70th percentile.",
+          "question": "How can a continuous target be turned into a binary classification label?",
+          "answer": "Choose a threshold and label examples on one side as 1 and the other side as 0.",
           "source": {
             "label": "Module 1/module-01-notes.md"
           }
@@ -164,7 +164,7 @@
       "entries": [
         {
           "category": "geography",
-          "question": "What is the main limitation of a shallow neural network compared with a deep one in the Week 1 slides?",
+          "question": "What is a main limitation of a shallow neural network compared with a deep one?",
           "answer": "It has more limited feature-learning capacity and is less effective at modeling complex patterns.",
           "source": {
             "label": "Module 1/module-01-live-session-slides-summary.md"
@@ -172,15 +172,15 @@
         },
         {
           "category": "entertainment",
-          "question": "What architecture does Project 1 require for the deep model?",
-          "answer": "A multilayer perceptron with at least four hidden layers.",
+          "question": "What makes a multilayer perceptron deep rather than shallow?",
+          "answer": "It has multiple hidden layers instead of just one or none.",
           "source": {
             "label": "Module 1/module-01-live-session-slides-summary.md"
           }
         },
         {
           "category": "history",
-          "question": "Which optimizer is presented as the practical Week 1 default for the binary-classification project?",
+          "question": "Which optimizer is often used as a practical default for many deep learning tasks?",
           "answer": "Adam.",
           "source": {
             "label": "Module 1/module-01-live-session-slides-summary.md"
@@ -188,7 +188,7 @@
         },
         {
           "category": "arts",
-          "question": "In the update rule θ ← θ − α∇J(θ), what does α represent?",
+          "question": "In the update rule $\\theta \\leftarrow \\theta - \\alpha\\nabla J(\\theta)$, what does $\\alpha$ represent?",
           "answer": "The learning rate.",
           "source": {
             "label": "glossary-terms-and-symbols.md"
@@ -204,8 +204,8 @@
         },
         {
           "category": "sports",
-          "question": "Which Module 1 example emphasized multi-horizon forecasting challenges?",
-          "answer": "Amazon forecasting.",
+          "question": "Why is multi-horizon forecasting harder than one-step forecasting?",
+          "answer": "The model must predict several future time steps, so errors can compound over time.",
           "source": {
             "label": "Module 1/Quiz 1/quiz-01-study-guide.md"
           }
@@ -225,7 +225,7 @@
       "entries": [
         {
           "category": "geography",
-          "question": "According to Module 1, what makes deep learning \"deep\"?",
+          "question": "What makes deep learning \"deep\"?",
           "answer": "Many hidden layers that learn hierarchical representations.",
           "source": {
             "label": "Module 1/module-01-live-session-slides-summary.md"
@@ -241,7 +241,7 @@
         },
         {
           "category": "history",
-          "question": "Which activation is the standard hidden-layer choice highlighted in Module 1?",
+          "question": "Which activation function is a common default choice for hidden layers?",
           "answer": "ReLU.",
           "source": {
             "label": "Module 1/module-01-live-session-slides-summary.md"
@@ -249,7 +249,7 @@
         },
         {
           "category": "arts",
-          "question": "What loss function is recommended for the Week 1 binary-classification task?",
+          "question": "What loss function is commonly used for binary classification?",
           "answer": "Binary cross-entropy (BCE).",
           "source": {
             "label": "Module 1/module-01-live-session-slides-summary.md"
@@ -257,7 +257,7 @@
         },
         {
           "category": "science",
-          "question": "What does TensorDataset do in the PyTorch workflow introduced in Week 1?",
+          "question": "What does TensorDataset do in a typical PyTorch workflow?",
           "answer": "It bundles features and labels together as a dataset.",
           "source": {
             "label": "Module 1/module-01-live-session-slides-summary.md"
@@ -265,8 +265,8 @@
         },
         {
           "category": "sports",
-          "question": "Which real-world example from the slides matched deep MLPs with recommendation scoring?",
-          "answer": "Google / YouTube recommendations.",
+          "question": "What is a common application of deep MLPs on user and item features?",
+          "answer": "Recommendation or ranking systems.",
           "source": {
             "label": "Module 1/module-01-live-session-slides-summary.md"
           }
@@ -286,7 +286,7 @@
       "entries": [
         {
           "category": "geography",
-          "question": "What lesson does Project 1 teach by converting a regression problem into a yes/no task?",
+          "question": "What lesson does converting a regression problem into a yes/no task illustrate?",
           "answer": "Defining the prediction target is part of the machine learning problem itself.",
           "source": {
             "label": "Module 1/module-01-notes.md"
@@ -294,23 +294,23 @@
         },
         {
           "category": "entertainment",
-          "question": "What is the baseline model structure in Project 1?",
-          "answer": "A single nn.Linear layer followed by nn.Sigmoid.",
+          "question": "What is a simple neural-network baseline for binary classification?",
+          "answer": "A single `nn.Linear` layer followed by `nn.Sigmoid`, though in PyTorch practice, the sigmoid activation is often combined directly into the loss function (like `BCEWithLogitsLoss`) for numerical stability.",
           "source": {
             "label": "Module 1/module-01-live-session-slides-summary.md"
           }
         },
         {
           "category": "history",
-          "question": "About how many epochs did the Week 1 slides describe as the rough Project 1 training window?",
-          "answer": "About 15 to 30 epochs.",
+          "question": "What does one epoch mean during model training?",
+          "answer": "One complete pass through the training dataset.",
           "source": {
             "label": "Module 1/module-01-live-session-slides-summary.md"
           }
         },
         {
           "category": "arts",
-          "question": "Which two evaluation metrics must Project 1 report besides timing and parameter counts?",
+          "question": "Which two metrics are commonly reported for binary classification when you care about both correctness and ranking quality?",
           "answer": "Test accuracy and AUC-ROC.",
           "source": {
             "label": "Module 1/module-01-live-session-slides-summary.md"
@@ -318,16 +318,16 @@
         },
         {
           "category": "science",
-          "question": "What preprocessing step is required before training the Project 1 models?",
-          "answer": "StandardScaler feature normalization.",
+          "question": "What preprocessing step is commonly applied to continuous features before training many neural networks?",
+          "answer": "Feature standardization, such as using StandardScaler.",
           "source": {
             "label": "Module 1/module-01-live-session-slides-summary.md"
           }
         },
         {
           "category": "sports",
-          "question": "Which real-world example tied MLPs to structured-data default prediction?",
-          "answer": "LendingClub credit risk / default prediction.",
+          "question": "What type of structured-data task often uses MLPs to estimate the probability of a negative outcome?",
+          "answer": "Credit risk or default prediction.",
           "source": {
             "label": "Module 1/module-01-live-session-slides-summary.md"
           }
@@ -347,7 +347,7 @@
       "entries": [
         {
           "category": "geography",
-          "question": "What is the safest summary of how deep learning differs from traditional machine learning according to Module 1?",
+          "question": "What is a safe summary of how deep learning differs from traditional machine learning?",
           "answer": "It relies more on neural networks learning representations automatically, not just on bigger models.",
           "source": {
             "label": "Module 1/module-01-live-session-slides-summary.md"
@@ -355,8 +355,8 @@
         },
         {
           "category": "entertainment",
-          "question": "What is the relationship between an MLP and a feedforward neural network in Module 1?",
-          "answer": "An MLP is the classic feedforward architecture used as the module's core example.",
+          "question": "How is an MLP related to a feedforward neural network?",
+          "answer": "An MLP is a standard type of feedforward neural network.",
           "source": {
             "label": "Module 1/module-01-live-session-slides-summary.md"
           }
@@ -371,7 +371,7 @@
         },
         {
           "category": "arts",
-          "question": "In the Week 1 glossary, what does ∇ mean?",
+          "question": "What does ∇ mean in optimization notation?",
           "answer": "The gradient operator showing partial derivatives with respect to parameters.",
           "source": {
             "label": "glossary-terms-and-symbols.md"
@@ -379,7 +379,7 @@
         },
         {
           "category": "science",
-          "question": "What is torch itself used for in the Week 1 tool overview?",
+          "question": "What is torch used for in PyTorch?",
           "answer": "Tensor operations and GPU-capable computation.",
           "source": {
             "label": "Module 1/module-01-live-session-slides-summary.md"
@@ -387,10 +387,193 @@
         },
         {
           "category": "sports",
-          "question": "Why does the Week 1 summary say Project 1 is more than just an implementation exercise?",
-          "answer": "Because it compares linear and non-linear modeling capacity on the same task.",
+          "question": "Why is it useful to compare a linear model and a nonlinear neural network on the same task?",
+          "answer": "It shows whether nonlinear feature learning improves performance over a simpler baseline.",
           "source": {
             "label": "Module 1/module-01-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m01-card-0007",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "easy",
+      "tags": [
+        "csc-6314",
+        "module-01",
+        "study-guide",
+        "representation-learning"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Why is representation learning useful in deep learning?",
+          "answer": "It allows a model to discover useful intermediate features automatically instead of relying entirely on manual feature design.",
+          "source": {
+            "label": "Module 1/module-01-notes.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What is the role of the input layer in a neural network?",
+          "answer": "It receives the feature values and passes them into the network for further transformation.",
+          "source": {
+            "label": "Module 1/module-01-notes.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "What happens during backpropagation?",
+          "answer": "The model computes gradients of the loss with respect to its parameters so they can be updated.",
+          "source": {
+            "label": "Module 1/module-01-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What does a bias term allow a neuron to do?",
+          "answer": "It lets the neuron shift its activation threshold instead of always being anchored at zero.",
+          "source": {
+            "label": "Module 1/module-01-notes.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "What does model.train() do in PyTorch?",
+          "answer": "It switches the model into training mode so layers like dropout and batch normalization behave correctly during training.",
+          "source": {
+            "label": "Module 1/module-01-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why are neural networks useful for image tasks?",
+          "answer": "They can learn layered visual patterns such as edges, textures, shapes, and higher-level objects.",
+          "source": {
+            "label": "Module 1/module-01-notes.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m01-card-0008",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-01",
+        "study-guide",
+        "prediction-basics"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Why does stacking only linear layers without nonlinear activations not make a network more expressive?",
+          "answer": "Because multiple linear transformations still combine into a single linear transformation.",
+          "source": {
+            "label": "Module 1/module-01-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What is the purpose of the output layer in a neural network?",
+          "answer": "It converts the final hidden representation into the prediction needed for the task.",
+          "source": {
+            "label": "Module 1/module-01-notes.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "What is a mini-batch during training?",
+          "answer": "A small subset of training examples used to compute one gradient update.",
+          "source": {
+            "label": "Module 1/module-01-notes.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "In binary cross-entropy, what happens when the model is confidently wrong?",
+          "answer": "The loss becomes very large, strongly penalizing that prediction.",
+          "source": {
+            "label": "Module 1/module-01-notes.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "What does state_dict() return in PyTorch?",
+          "answer": "A dictionary containing a model's learned parameters and registered buffers.",
+          "source": {
+            "label": "Module 1/module-01-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why might a binary classifier output probabilities instead of only final labels?",
+          "answer": "Probabilities let you measure confidence, change decision thresholds, and rank examples by risk or likelihood.",
+          "source": {
+            "label": "Module 1/module-01-notes.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m01-card-0009",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "hard",
+      "tags": [
+        "csc-6314",
+        "module-01",
+        "study-guide",
+        "optimization-intuition"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Why does model capacity matter in machine learning?",
+          "answer": "It determines how complex a pattern the model can represent and therefore whether it can fit the task well.",
+          "source": {
+            "label": "Module 1/module-01-notes.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "Why do deeper networks often learn hierarchical representations?",
+          "answer": "Earlier layers capture simpler patterns and later layers combine them into more abstract features.",
+          "source": {
+            "label": "Module 1/module-01-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why is training data often shuffled between epochs?",
+          "answer": "Shuffling reduces ordering effects and helps stochastic updates better reflect the whole dataset.",
+          "source": {
+            "label": "Module 1/module-01-notes.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What does gradient descent try to minimize?",
+          "answer": "It tries to reduce the objective or loss function by moving parameters in the direction opposite the gradient.",
+          "source": {
+            "label": "glossary-terms-and-symbols.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "Why must a model and its tensors be on the same device in PyTorch?",
+          "answer": "Operations can only run when the participating tensors and parameters are on the same CPU or GPU device.",
+          "source": {
+            "label": "Module 1/module-01-notes.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "When might a neural network be unnecessary for a prediction task?",
+          "answer": "When the data is simple or limited and a smaller, more interpretable model performs just as well.",
+          "source": {
+            "label": "Module 1/module-01-notes.md"
           }
         }
       ]
@@ -408,16 +591,16 @@
       "entries": [
         {
           "category": "geography",
-          "question": "What practical shift does Module 2 make from Module 1?",
-          "answer": "It moves from what neural networks are to how to train them well in practice.",
+          "question": "After learning what a neural network is, what is the next practical focus?",
+          "answer": "How to train, optimize, and tune it effectively in practice.",
           "source": {
             "label": "Module 2/module-02-notes.md"
           }
         },
         {
           "category": "entertainment",
-          "question": "What fixed hidden-layer widths does Project 2 use?",
-          "answer": "256 -> 128 -> 64 -> 32 -> 16.",
+          "question": "Why are hidden-layer widths often reduced gradually in a deep MLP?",
+          "answer": "To compress representations progressively while reducing parameter count.",
           "source": {
             "label": "Module 2/Project 2/project-description.md"
           }
@@ -425,15 +608,15 @@
         {
           "category": "history",
           "question": "Which gradient descent variant uses one training example per update?",
-          "answer": "Stochastic gradient descent (SGD).",
+          "answer": "Stochastic gradient descent (pure SGD), though in practice, 'mini-batch SGD' is much more common.",
           "source": {
             "label": "Module 2/Quiz 2/quiz-02-study-guide.md"
           }
         },
         {
           "category": "arts",
-          "question": "How is generalization gap defined in the Project 2 results table?",
-          "answer": "Train accuracy minus test accuracy.",
+          "question": "How is the generalization gap commonly defined?",
+          "answer": "The difference between training performance and test performance (e.g., train accuracy minus test accuracy, or test error minus train error).",
           "source": {
             "label": "Module 2/Project 2/project-description.md"
           }
@@ -448,8 +631,8 @@
         },
         {
           "category": "sports",
-          "question": "Why does Project 2 intentionally use only 5% of the data for training?",
-          "answer": "To make the learning problem harder so the strategy differences are easier to observe.",
+          "question": "Why might an experiment intentionally train on a smaller subset of data?",
+          "answer": "To reduce compute and make differences between training strategies easier to observe.",
           "source": {
             "label": "Module 2/Project 2/project-description.md"
           }
@@ -477,7 +660,7 @@
         },
         {
           "category": "entertainment",
-          "question": "In the advanced Project 2 model, where is batch normalization placed?",
+          "question": "Where is batch normalization commonly placed in a dense network block?",
           "answer": "After each Dense layer, before activation and dropout.",
           "source": {
             "label": "Module 2/Quiz 2/quiz-02-study-guide.md"
@@ -485,7 +668,7 @@
         },
         {
           "category": "history",
-          "question": "What is Adam's main advantage over standard SGD in the Week 2 slides?",
+          "question": "What is Adam's main advantage over standard SGD?",
           "answer": "It adapts the effective learning rate per parameter and usually converges faster.",
           "source": {
             "label": "Module 2/module-02-live-session-slides-summary.md"
@@ -510,8 +693,8 @@
         },
         {
           "category": "sports",
-          "question": "What two training strategies is Project 2 designed to compare?",
-          "answer": "A baseline SGD run and an advanced Adam + batch normalization + scheduler run.",
+          "question": "Why compare a baseline training setup with an enhanced one?",
+          "answer": "To isolate which optimization and regularization choices improve performance.",
           "source": {
             "label": "Module 2/Project 2/project-description.md"
           }
@@ -539,8 +722,8 @@
         },
         {
           "category": "entertainment",
-          "question": "What initializer is specified for Project 2's Dense layers?",
-          "answer": "he_normal.",
+          "question": "Which initializer is commonly paired with ReLU-based dense layers?",
+          "answer": "He initialization, such as he_normal.",
           "source": {
             "label": "Module 2/Project 2/project-description.md"
           }
@@ -571,8 +754,8 @@
         },
         {
           "category": "sports",
-          "question": "What dataset does Project 2 reuse for the optimization comparison?",
-          "answer": "sklearn.datasets.fetch_california_housing.",
+          "question": "What type of problem does a housing-value dataset usually represent?",
+          "answer": "A structured-data regression problem using tabular features.",
           "source": {
             "label": "Module 2/Project 2/project-description.md"
           }
@@ -600,8 +783,8 @@
         },
         {
           "category": "entertainment",
-          "question": "What two hidden-layer regularizers are applied throughout the Project 2 models?",
-          "answer": "Dropout at 0.3 and L2 regularization at 0.001.",
+          "question": "What two common regularization methods for dense networks reduce overfitting in different ways?",
+          "answer": "Dropout and L2 regularization.",
           "source": {
             "label": "Module 2/Project 2/project-description.md"
           }
@@ -669,7 +852,7 @@
         },
         {
           "category": "history",
-          "question": "What is the main training benefit of batch normalization in Module 2?",
+          "question": "What is a main training benefit of batch normalization?",
           "answer": "It makes activations more stable, which smooths and often speeds up training.",
           "source": {
             "label": "Module 2/module-02-notes.md"
@@ -693,8 +876,8 @@
         },
         {
           "category": "sports",
-          "question": "Why do the slides recommend Google Colab for Project 2?",
-          "answer": "TensorFlow can be awkward to install locally and the slides say it does not support Python 3.13.",
+          "question": "Why might a cloud notebook environment be useful for deep learning experiments?",
+          "answer": "It avoids local setup issues and can provide easy access to GPUs.",
           "source": {
             "label": "Module 2/module-02-live-session-slides-summary.md"
           }
@@ -714,7 +897,7 @@
       "entries": [
         {
           "category": "geography",
-          "question": "Why can random search outperform grid search according to the Week 2 slides?",
+          "question": "Why can random search outperform grid search when tuning hyperparameters?",
           "answer": "It explores more variety with less compute.",
           "source": {
             "label": "Module 2/module-02-live-session-slides-summary.md"
@@ -722,7 +905,7 @@
         },
         {
           "category": "entertainment",
-          "question": "What activation is used on the single output neuron in Project 2?",
+          "question": "What activation function is commonly used on a single output neuron for binary classification?",
           "answer": "Sigmoid.",
           "source": {
             "label": "Module 2/Project 2/project-description.md"
@@ -730,23 +913,23 @@
         },
         {
           "category": "history",
-          "question": "What does EarlyStopping monitor in the Project 2 fit calls?",
-          "answer": "Validation loss (val_loss), with patience 15.",
+          "question": "What does early stopping usually monitor to decide when to stop training?",
+          "answer": "A validation metric, most commonly validation loss.",
           "source": {
             "label": "Module 2/Project 2/project-description.md"
           }
         },
         {
           "category": "arts",
-          "question": "How does Project 2 define epochs to converge?",
-          "answer": "len(history.history['loss']).",
+          "question": "How is \"epochs to converge\" typically interpreted in training experiments?",
+          "answer": "The number of epochs needed before the model stops making meaningful validation improvements.",
           "source": {
             "label": "Module 2/Project 2/project-description.md"
           }
         },
         {
           "category": "science",
-          "question": "What metrics list must be included when compiling both Project 2 models?",
+          "question": "In Keras, what metrics list is commonly used to report classification accuracy during training?",
           "answer": "metrics=['accuracy']",
           "source": {
             "label": "Module 2/Project 2/project-description.md"
@@ -754,10 +937,193 @@
         },
         {
           "category": "sports",
-          "question": "What final artifact must compare the two training strategies?",
-          "answer": "A formatted Pandas comparison table.",
+          "question": "What kind of summary makes it easier to compare multiple training strategies?",
+          "answer": "A side-by-side comparison table of key metrics.",
           "source": {
             "label": "Module 2/Project 2/project-description.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m02-card-0007",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "easy",
+      "tags": [
+        "csc-6314",
+        "module-02",
+        "study-guide",
+        "training-diagnostics"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is a hyperparameter search space?",
+          "answer": "It is the set or range of hyperparameter values you are willing to test during tuning.",
+          "source": {
+            "label": "Module 2/module-02-notes.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "Why can deeper networks be harder to optimize than shallow ones?",
+          "answer": "They have more parameters and more opportunities for unstable gradients (vanishing or exploding gradients) or poorly scaled activations.",
+          "source": {
+            "label": "Module 2/module-02-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "What is a mini-batch in stochastic optimization?",
+          "answer": "A subset of the training data used to estimate the gradient for one update step.",
+          "source": {
+            "label": "Module 2/module-02-notes.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What does it usually mean if training accuracy rises while validation accuracy falls?",
+          "answer": "The model is likely overfitting to the training data.",
+          "source": {
+            "label": "Module 2/module-02-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "What does model.eval() do in PyTorch?",
+          "answer": "It switches the model into evaluation mode so layers like dropout and batch normalization use inference behavior.",
+          "source": {
+            "label": "Module 2/module-02-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why is it useful to compare training and validation curves during experimentation?",
+          "answer": "They help diagnose overfitting, underfitting, instability, and whether learning is still improving.",
+          "source": {
+            "label": "Module 2/module-02-notes.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m02-card-0008",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-02",
+        "study-guide",
+        "optimization-tools"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Why are initialization schemes often matched to activation functions?",
+          "answer": "They help keep activations and gradients at useful scales as signals move through the network.",
+          "source": {
+            "label": "Module 2/module-02-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What problem does dropout address in dense networks?",
+          "answer": "It reduces co-adaptation between neurons and helps limit overfitting.",
+          "source": {
+            "label": "Module 2/module-02-notes.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why can momentum improve SGD?",
+          "answer": "It smooths noisy updates and accelerates learning in directions that consistently reduce loss.",
+          "source": {
+            "label": "Module 2/module-02-notes.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What is learning rate decay?",
+          "answer": "A strategy that gradually reduces the learning rate over time so training can make finer updates later.",
+          "source": {
+            "label": "Module 2/module-02-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "What is the purpose of a callback in a Keras training loop?",
+          "answer": "It lets you run automatic actions during training, such as early stopping, logging, or changing the learning rate.",
+          "source": {
+            "label": "Module 2/module-02-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why might you train the same model with multiple random seeds?",
+          "answer": "To check whether the results are stable rather than caused by one lucky initialization or data order.",
+          "source": {
+            "label": "Module 2/module-02-notes.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m02-card-0009",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "hard",
+      "tags": [
+        "csc-6314",
+        "module-02",
+        "study-guide",
+        "generalization"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Why should validation data be separate from test data?",
+          "answer": "Validation data is used to tune choices during development, while test data is reserved for the final unbiased evaluation.",
+          "source": {
+            "label": "Module 2/module-02-notes.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "Why can batch normalization make higher learning rates more workable?",
+          "answer": "It stabilizes activations and gradients, which can reduce training instability.",
+          "source": {
+            "label": "Module 2/module-02-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "What tradeoff does batch size create during training?",
+          "answer": "Smaller batches give noisier but often more regularizing updates, while larger batches give smoother and often more efficient updates.",
+          "source": {
+            "label": "Module 2/module-02-notes.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What is underfitting?",
+          "answer": "Underfitting happens when a model is too simple or insufficiently trained to capture the important patterns in the data.",
+          "source": {
+            "label": "Module 2/module-02-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "What is the purpose of saving the best checkpoint during training?",
+          "answer": "It preserves the model state with the strongest validation performance so you can evaluate or deploy that version later.",
+          "source": {
+            "label": "Module 2/module-02-notes.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "If a more advanced training setup reduces training time but not test performance, what does that suggest?",
+          "answer": "The optimization improved efficiency, but it did not meaningfully improve generalization on unseen data.",
+          "source": {
+            "label": "Module 2/module-02-notes.md"
           }
         }
       ]
