@@ -187,6 +187,8 @@ Neon
 ```
 
 If explanation or source metadata exists, it belongs in this answer state, not the initial question state. Other questions on the card remain hidden to prevent spoilers.
+Optional external follow-up actions, such as opening ChatGPT for extra color on the revealed answer, should only appear in this answer state and should not interrupt the core next-card flow.
+If a ChatGPT handoff relies on an unofficial URL prefill behavior, the product fallback should be to copy the generated prompt and then open ChatGPT in a new tab rather than blocking the feature entirely.
 
 ## Deck Interaction Design
 The app should visually reinforce the feeling of drawing from a **deck of cards**, not browsing a list.

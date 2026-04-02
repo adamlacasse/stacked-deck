@@ -35,6 +35,7 @@ describe('CardView', () => {
     render(
       <CardView
         card={makeCard()}
+        deckName="General Knowledge"
         categoryMeta={customCategoryMeta}
         selectedCategory={null}
         selectedEntry={null}
@@ -57,6 +58,7 @@ describe('CardView', () => {
     render(
       <CardView
         card={makeCard()}
+        deckName="General Knowledge"
         categoryMeta={undefined}
         selectedCategory={null}
         selectedEntry={null}
@@ -83,6 +85,7 @@ describe('CardView', () => {
     render(
       <CardView
         card={card}
+        deckName="General Knowledge"
         categoryMeta={undefined}
         selectedCategory="geography"
         selectedEntry={card.entries[0]}
@@ -112,6 +115,7 @@ describe('CardView', () => {
     render(
       <CardView
         card={card}
+        deckName="General Knowledge"
         categoryMeta={undefined}
         selectedCategory="geography"
         selectedEntry={card.entries[0]}
@@ -139,6 +143,7 @@ describe('CardView', () => {
     render(
       <CardView
         card={makeCard()}
+        deckName="General Knowledge"
         categoryMeta={undefined}
         selectedCategory={null}
         selectedEntry={null}
@@ -168,6 +173,7 @@ describe('CardView', () => {
     render(
       <CardView
         card={makeCard()}
+        deckName="General Knowledge"
         categoryMeta={undefined}
         selectedCategory={null}
         selectedEntry={null}
@@ -197,6 +203,7 @@ describe('CardView', () => {
     render(
       <CardView
         card={makeCard()}
+        deckName="General Knowledge"
         categoryMeta={undefined}
         selectedCategory={null}
         selectedEntry={null}
@@ -226,6 +233,7 @@ describe('CardView', () => {
     render(
       <CardView
         card={makeCard()}
+        deckName="General Knowledge"
         categoryMeta={undefined}
         selectedCategory={null}
         selectedEntry={null}

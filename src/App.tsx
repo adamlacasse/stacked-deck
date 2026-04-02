@@ -70,6 +70,7 @@ function DeckShell({ deck, selectedDeckId, onSelectDeck }: DeckShellProps) {
             <CardView
               key={currentCard.id}
               card={currentCard}
+              deckName={deck.name}
               categoryMeta={deck.categoryMeta}
               selectedCategory={selectedCategory}
               selectedEntry={selectedEntry}

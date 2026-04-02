@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import { describe, expect, it, vi } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 
 import { QuestionView } from '../components/QuestionView'
 import type { CardEntry, DeckCategoryMeta } from '../types'
@@ -26,10 +26,15 @@ const customCategoryMeta: DeckCategoryMeta = {
 }
 
 describe('QuestionView', () => {
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
   it('shows a category prompt when no entry is selected', () => {
     render(
       <QuestionView
         entry={null}
+        deckName="General Knowledge"
         categoryMeta={undefined}
         answerRevealed={false}
         remainingCount={5}
@@ -46,6 +51,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={makeEntry()}
+        deckName="General Knowledge"
         categoryMeta={customCategoryMeta}
         answerRevealed={false}
         remainingCount={5}
@@ -63,6 +69,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={makeEntry()}
+        deckName="General Knowledge"
         categoryMeta={undefined}
         answerRevealed={false}
         remainingCount={5}
@@ -79,6 +86,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={makeEntry()}
+        deckName="General Knowledge"
         categoryMeta={undefined}
         answerRevealed={false}
         remainingCount={5}
@@ -99,6 +107,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={makeEntry()}
+        deckName="General Knowledge"
         categoryMeta={undefined}
         answerRevealed
         remainingCount={5}
@@ -131,6 +140,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={entryWithoutUrl}
+        deckName="General Knowledge"
         categoryMeta={undefined}
         answerRevealed
         remainingCount={5}
@@ -148,6 +158,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={makeEntry()}
+        deckName="General Knowledge"
         categoryMeta={undefined}
         answerRevealed
         remainingCount={5}
@@ -162,6 +173,7 @@ describe('QuestionView', () => {
     expect(dialog).toHaveAttribute('aria-modal', 'true')
     expect(screen.getByText('The Nile')).toBeInTheDocument()
     expect(screen.queryByRole('button', { name: 'Reveal answer' })).not.toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Ask ChatGPT for more' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Back to categories' })).toBeInTheDocument()
     expect(screen.queryByText('What is the longest river in the world?')).not.toBeInTheDocument()
   })
@@ -170,6 +182,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={makeEntry()}
+        deckName="General Knowledge"
         categoryMeta={undefined}
         answerRevealed={false}
         remainingCount={5}
@@ -186,6 +199,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={makeEntry()}
+        deckName="General Knowledge"
         categoryMeta={undefined}
         answerRevealed
         remainingCount={5}
@@ -202,6 +216,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={null}
+        deckName="General Knowledge"
         categoryMeta={undefined}
         answerRevealed={false}
         remainingCount={5}
@@ -220,6 +235,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={makeEntry()}
+        deckName="General Knowledge"
         categoryMeta={undefined}
         answerRevealed={false}
         remainingCount={5}
@@ -239,6 +255,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={makeEntry()}
+        deckName="General Knowledge"
         categoryMeta={undefined}
         answerRevealed={false}
         remainingCount={5}
@@ -258,6 +275,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={makeEntry()}
+        deckName="General Knowledge"
         categoryMeta={undefined}
         answerRevealed
         remainingCount={5}
@@ -277,6 +295,7 @@ describe('QuestionView', () => {
     render(
       <QuestionView
         entry={makeEntry()}
+        deckName="General Knowledge"
         categoryMeta={undefined}
         answerRevealed
         remainingCount={5}
@@ -288,5 +307,41 @@ describe('QuestionView', () => {
 
     fireEvent.click(screen.getByRole('button', { name: 'Back to categories' }))
     expect(onCloseQuestion).toHaveBeenCalledTimes(1)
+  })
+
+  it('opens ChatGPT in a new tab with a prefilled prompt after answer reveal', () => {
+    const openSpy = vi.spyOn(window, 'open').mockReturnValue(null)
+
+    render(
+      <QuestionView
+        entry={makeEntry()}
+        deckName="General Knowledge"
+        categoryMeta={undefined}
+        answerRevealed
+        remainingCount={5}
+        onCloseQuestion={vi.fn()}
+        onRevealAnswer={vi.fn()}
+        onNextCard={vi.fn()}
+      />,
+    )
+
+    fireEvent.click(screen.getByRole('button', { name: 'Ask ChatGPT for more' }))
+
+    expect(openSpy).toHaveBeenCalledTimes(1)
+
+    const [url, target, features] = openSpy.mock.calls[0] ?? []
+    expect(target).toBe('_blank')
+    expect(features).toBe('noopener,noreferrer')
+    expect(typeof url).toBe('string')
+
+    const parsedUrl = new URL(url as string)
+    expect(parsedUrl.origin).toBe('https://chatgpt.com')
+
+    const prompt = parsedUrl.searchParams.get('q')
+    expect(prompt).toContain('Deck: General Knowledge')
+    expect(prompt).toContain('Category: Geography')
+    expect(prompt).toContain('Question: What is the longest river in the world?')
+    expect(prompt).toContain('Answer: The Nile')
+    expect(prompt).toContain('Existing source label: Encyclopaedia Britannica')
   })
 })
