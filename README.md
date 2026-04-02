@@ -23,6 +23,8 @@ This repository now has a solid playable MVP:
 - swipe-to-next (left or right) advances the card once an answer is revealed
 - difficulty filter lets you limit draws to easy, medium, or hard cards before starting
 - optional post-answer context panel shows explanation/source metadata on selected entries
+- optional answer-state handoff can open ChatGPT in a new tab with a prefilled follow-up prompt for extra color
+- if the unofficial ChatGPT URL prefill stops working, a future fallback would be to copy the generated prompt to the clipboard and then open `chatgpt.com`
 - deck-specific category labels and prompts let study decks use course-native lanes without changing the underlying six-slot data model
 - the CSC-6314 deck can be regenerated on demand from curated module files in the separate course repository
 - automated tests in `src/test/` cover hook behavior, validation logic, and question-view rendering

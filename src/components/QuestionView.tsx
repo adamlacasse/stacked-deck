@@ -5,8 +5,11 @@ import { getCategoryMeta } from '../data/categories'
 import type { CardEntry, DeckCategoryMeta } from '../types'
 import styles from './QuestionView.module.css'
 
+const CHATGPT_URL = 'https://chatgpt.com/'
+
 type QuestionViewProps = {
   entry: CardEntry | null
+  deckName: string
   categoryMeta?: DeckCategoryMeta
   answerRevealed: boolean
   remainingCount: number
@@ -17,6 +20,7 @@ type QuestionViewProps = {
 
 export function QuestionView({
   entry,
+  deckName,
   categoryMeta,
   answerRevealed,
   remainingCount,
@@ -58,11 +62,24 @@ export function QuestionView({
   }
 
   const meta = getCategoryMeta(entry.category, categoryMeta)
+  const chatGptUrl = buildChatGptUrl({
+    answer: entry.answer,
+    categoryLabel: meta.label,
+    deckName,
+    explanation: entry.explanation,
+    question: entry.question,
+    sourceLabel: entry.source?.label,
+    sourceUrl: entry.source?.url,
+  })
   const nextLabel = remainingCount > 0 ? 'Next card' : 'Finish deck'
   const explanation = entry.explanation?.trim() || null
   const sourceLabel = entry.source?.label?.trim() || null
   const source = sourceLabel ? entry.source : null
   const hasContext = Boolean(explanation || sourceLabel)
+
+  function handleAskChatGpt() {
+    window.open(chatGptUrl, '_blank', 'noopener,noreferrer')
+  }
 
   return createPortal(
     <div
@@ -144,6 +161,13 @@ export function QuestionView({
               </button>
               <button
                 type="button"
+                className={styles.tertiaryAction}
+                onClick={handleAskChatGpt}
+              >
+                Ask ChatGPT for more
+              </button>
+              <button
+                type="button"
                 className={styles.secondaryAction}
                 onClick={onCloseQuestion}
               >
@@ -156,4 +180,90 @@ export function QuestionView({
     </div>,
     document.body,
   )
+}
+
+type ChatGptPromptInput = {
+  answer: string
+  categoryLabel: string
+  deckName: string
+  explanation?: string
+  question: string
+  sourceLabel?: string
+  sourceUrl?: string
+}
+
+function buildChatGptUrl({
+  answer,
+  categoryLabel,
+  deckName,
+  explanation,
+  question,
+  sourceLabel,
+  sourceUrl,
+}: ChatGptPromptInput): string {
+  const searchParams = new URLSearchParams({
+    q: buildChatGptPrompt({
+      answer,
+      categoryLabel,
+      deckName,
+      explanation,
+      question,
+      sourceLabel,
+      sourceUrl,
+    }),
+  })
+
+  return `${CHATGPT_URL}?${searchParams.toString()}`
+}
+
+function buildChatGptPrompt({
+  answer,
+  categoryLabel,
+  deckName,
+  explanation,
+  question,
+  sourceLabel,
+  sourceUrl,
+}: ChatGptPromptInput): string {
+  const promptSections = [
+    'I am using a trivia deck during a board game. Give me a short, lively explanation of the revealed answer so I can read it aloud or paraphrase it for the table.',
+    `Deck: ${limitPromptField(deckName, 80)}`,
+    `Category: ${limitPromptField(categoryLabel, 60)}`,
+    `Question: ${limitPromptField(question, 280)}`,
+    `Answer: ${limitPromptField(answer, 180)}`,
+  ]
+
+  const trimmedExplanation = explanation?.trim()
+  if (trimmedExplanation) {
+    promptSections.push(
+      `Existing context: ${limitPromptField(trimmedExplanation, 320)}`,
+    )
+  }
+
+  const trimmedSourceLabel = sourceLabel?.trim()
+  if (trimmedSourceLabel) {
+    promptSections.push(
+      `Existing source label: ${limitPromptField(trimmedSourceLabel, 120)}`,
+    )
+  }
+
+  const trimmedSourceUrl = sourceUrl?.trim()
+  if (trimmedSourceUrl) {
+    promptSections.push(`Existing source URL: ${limitPromptField(trimmedSourceUrl, 200)}`)
+  }
+
+  promptSections.push(
+    'Keep it under 140 words. Explain why the answer is correct, mention any notable caveat if one matters, and include one memorable extra detail.',
+  )
+
+  return promptSections.join('\n')
+}
+
+function limitPromptField(value: string, maxLength: number): string {
+  const trimmedValue = value.trim()
+  if (trimmedValue.length <= maxLength) {
+    return trimmedValue
+  }
+
+  return `${trimmedValue.slice(0, maxLength - 3).trimEnd()}...`
 }

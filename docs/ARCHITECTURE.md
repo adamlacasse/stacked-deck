@@ -125,6 +125,8 @@ If no cards remain, the hook enters the `finished` phase.
   - placeholder prompt when no category is selected
   - modal dialog (opened on category selection) with question state or answer state
 - keeps both question and answer interactions in one modal surface
+- builds the optional external ChatGPT handoff URL from the revealed entry and opens it in a new tab
+- if that unofficial URL prefill ever breaks, the fallback behavior should be to copy the same generated prompt and then open `chatgpt.com`
 - never reveals more than one answer
 
 ## Styling boundaries

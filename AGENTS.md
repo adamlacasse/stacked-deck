@@ -115,6 +115,8 @@ Important:
 - do not reveal all answers at once
 - reveal only the selected category question and answer
 - after reveal, switch the modal to an answer-only state rather than showing question and answer together
+- optional external handoff actions may be offered only after reveal, and should open in a new tab without changing the core local gameplay flow
+- if an external handoff depends on an unofficial URL contract, document and preserve a simple fallback such as copying the generated prompt before opening the destination
 - keep the UI spoiler-resistant
 
 ## Data Rules

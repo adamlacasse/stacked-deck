@@ -7,6 +7,7 @@ import type { CardEntry, Category, DeckCategoryMeta, TriviaCard } from '../types
 
 type CardViewProps = {
   card: TriviaCard
+  deckName: string
   categoryMeta?: DeckCategoryMeta
   selectedCategory: Category | null
   selectedEntry: CardEntry | null
@@ -20,6 +21,7 @@ type CardViewProps = {
 
 export function CardView({
   card,
+  deckName,
   categoryMeta,
   selectedCategory,
   selectedEntry,
@@ -81,6 +83,7 @@ export function CardView({
           <QuestionView
             key={selectedCategory ?? 'none'}
             entry={selectedEntry}
+            deckName={deckName}
             categoryMeta={categoryMeta}
             answerRevealed={answerRevealed}
             remainingCount={remainingCount}
