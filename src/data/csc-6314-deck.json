@@ -1127,6 +1127,738 @@
           }
         }
       ]
+    },
+    {
+      "id": "m03-card-0001",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "easy",
+      "tags": [
+        "csc-6314",
+        "module-03",
+        "study-guide",
+        "cnn-basics"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Why are CNNs usually better suited than plain fully connected networks for image tasks?",
+          "answer": "They preserve spatial structure and learn local visual patterns instead of treating the image as one flat vector.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What are the three intuitive parts of a basic CNN pipeline described in this module?",
+          "answer": "Convolutional layers as the scanner, pooling layers as the compressor, and fully connected layers as the classifier.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why can aggressive downsampling hurt a CNN when the target depends on fine image detail?",
+          "answer": "It can discard small but important spatial patterns before later layers can use them.",
+          "source": {
+            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "Besides whether a feature exists, what two things does a feature map preserve?",
+          "answer": "Where the feature appears and how strongly it appears.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "Which PyTorch layer type is used to define a learnable 2D convolution in a CNN?",
+          "answer": "`nn.Conv2d`.",
+          "source": {
+            "label": "Module 3/Project 3/project-description.html"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "What kind of data is Module 3 mainly concerned with when introducing CNNs?",
+          "answer": "Image-like visual data with meaningful spatial structure.",
+          "source": {
+            "label": "Module 3/module-03-learning-objectives-and-todo-list.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m03-card-0002",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "easy",
+      "tags": [
+        "csc-6314",
+        "module-03",
+        "study-guide",
+        "filters-strides-padding"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is a convolutional filter, also called a kernel?",
+          "answer": "A small learnable matrix that slides across an image to detect a specific local pattern.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "How does stride `1` differ from a larger stride in a convolutional layer?",
+          "answer": "Stride `1` captures more detail and produces a larger output, while larger strides skip more positions and reduce output size.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "If a CNN is missing thin cracks or narrow character strokes, what general design direction is safer?",
+          "answer": "Preserve detail with modest strides and avoid throwing away too much spatial information early.",
+          "source": {
+            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What usually happens to the spatial size of a feature map when using `valid` padding?",
+          "answer": "It shrinks because no border padding is added.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "In a PyTorch CNN, what does `padding=1` with `kernel_size=3` often help preserve when stride is `1`?",
+          "answer": "The input height and width.",
+          "source": {
+            "label": "Module 3/Project 3/project-description.html"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why is zero padding especially useful in tasks like OCR or stop-sign detection?",
+          "answer": "It lets the network detect useful patterns near the edges instead of underrepresenting border pixels.",
+          "source": {
+            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m03-card-0003",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "easy",
+      "tags": [
+        "csc-6314",
+        "module-03",
+        "study-guide",
+        "pooling"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What does max pooling do in a CNN?",
+          "answer": "It keeps the strongest activation in a local window while reducing spatial size.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "When you apply `2x2` max pooling with stride `2`, which dimensions are reduced?",
+          "answer": "The height and width are reduced, while the channel count stays the same.",
+          "source": {
+            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why should OCR models avoid overly aggressive pooling?",
+          "answer": "Too much compression can remove the small shape differences needed to distinguish characters.",
+          "source": {
+            "label": "Module 3/module-03-discussion.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "If a `32 x 32 x 16` feature volume passes through `2x2` max pooling with stride `2`, what is the output size?",
+          "answer": "`16 x 16 x 16`.",
+          "source": {
+            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "Which PyTorch layer performs max pooling over 2D feature maps?",
+          "answer": "`nn.MaxPool2d`.",
+          "source": {
+            "label": "Module 3/Project 3/project-description.html"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "What practical benefit does pooling provide in large-scale vision systems?",
+          "answer": "It reduces computation and makes the representation less sensitive to small spatial shifts.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m03-card-0004",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-03",
+        "study-guide",
+        "feature-maps"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is a feature map in a CNN?",
+          "answer": "The spatial output of a filter showing where a learned pattern was detected and how strongly.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What do early CNN feature maps usually highlight compared with deeper feature maps?",
+          "answer": "Early maps highlight edges and colors, while deeper maps highlight textures, parts, and objects.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why can inspecting feature maps help when debugging a CNN?",
+          "answer": "They show whether intermediate layers are responding to meaningful patterns or missing important structure.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "If a convolutional layer learns `32` filters, how many feature maps does it usually produce?",
+          "answer": "Thirty-two, one per filter.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "What PyTorch mechanism was highlighted for capturing intermediate feature maps during the forward pass?",
+          "answer": "Forward hooks.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "How do feature maps support systems such as Waymo or Boston Dynamics Spot?",
+          "answer": "They help the network localize and represent visual patterns needed for scene understanding and perception.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m03-card-0005",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-03",
+        "study-guide",
+        "lenet-vgg-resnet"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What task is LeNet-5 most famously associated with?",
+          "answer": "Handwritten digit recognition.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What design style is characteristic of VGG networks?",
+          "answer": "Deep stacks of small convolutions in a simple, repetitive architecture.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why was ResNet a major breakthrough for deep CNN training?",
+          "answer": "Its skip connections made very deep networks easier to optimize by reducing degradation and vanishing-gradient problems.",
+          "source": {
+            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What is the core idea of a residual connection?",
+          "answer": "A shortcut path adds earlier information to the output of a deeper block.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "Name two common pretrained CNN families that are often available in vision libraries.",
+          "answer": "VGG and ResNet.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "When is using a pretrained ResNet or VGG backbone often more practical than training from scratch?",
+          "answer": "When you have limited labeled data but still need strong image features quickly.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m03-card-0006",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-03",
+        "study-guide",
+        "transfer-learning"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is transfer learning in computer vision?",
+          "answer": "Reusing a pretrained model and adapting it to a new but related visual task.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "Which part of a pretrained CNN is usually replaced for a new classification task?",
+          "answer": "The final classifier head.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why are the early layers of a pretrained CNN often frozen at first?",
+          "answer": "They already capture generic visual features like edges and textures that transfer across many tasks.",
+          "source": {
+            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "Why must the final output layer size change when adapting a pretrained CNN to a new dataset?",
+          "answer": "It has to match the number of target classes in the new task.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "What should you call on a PyTorch model before running deterministic inference with dropout or batch norm present?",
+          "answer": "`model.eval()`.",
+          "source": {
+            "label": "Module 3/Project 3/project-description.html"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why is transfer learning attractive for medical imaging problems such as tumor detection?",
+          "answer": "It lets you reuse strong low-level visual features even when medical datasets are relatively small.",
+          "source": {
+            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m03-card-0007",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-03",
+        "study-guide",
+        "cnn-pipeline"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What job do the fully connected layers perform at the end of a CNN?",
+          "answer": "They use the extracted high-level features to produce the final class decision.",
+          "source": {
+            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What operation usually happens between the final convolutional features and the last linear classifier?",
+          "answer": "The spatial feature maps are pooled and then flattened into vectors.",
+          "source": {
+            "label": "Module 3/Project 3/project-description.html"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why is batch normalization commonly paired with convolutional blocks?",
+          "answer": "It stabilizes activations so training behaves more smoothly.",
+          "source": {
+            "label": "Module 3/Project 3/project-description.html"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "Why can't a standard `Linear` layer consume a 2D feature map directly without reshaping?",
+          "answer": "A linear layer expects each example to be a 1D feature vector.",
+          "source": {
+            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "What does `torch.flatten(x, 1)` preserve while reshaping a CNN tensor?",
+          "answer": "It preserves the batch dimension and flattens the remaining dimensions.",
+          "source": {
+            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "In a four-class animal classifier, how many output scores should the final linear layer produce?",
+          "answer": "Four, one for each class.",
+          "source": {
+            "label": "Module 3/Project 3/project-description.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m03-card-0008",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-03",
+        "study-guide",
+        "relu"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Why is ReLU commonly applied after a convolutional layer?",
+          "answer": "It introduces non-linearity so the network can learn patterns beyond simple linear relationships.",
+          "source": {
+            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What would happen conceptually if every layer in a deep network were purely linear?",
+          "answer": "The whole network would collapse into an overall linear transformation.",
+          "source": {
+            "label": "Module 1/module-01-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "What makes ReLU a practical default for hidden layers in many deep networks?",
+          "answer": "It is simple, efficient, and supports learning complex patterns without acting like a saturating output activation.",
+          "source": {
+            "label": "Module 3/Project 3/project-description.html"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What output does ReLU produce for a negative input value?",
+          "answer": "Zero.",
+          "source": {
+            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "Which PyTorch class is used to add ReLU activations inside an `nn.Sequential` block?",
+          "answer": "`nn.ReLU`.",
+          "source": {
+            "label": "Module 3/Project 3/project-description.html"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why is non-linearity necessary for an industrial defect detector?",
+          "answer": "Real defects are defined by complex visual patterns that cannot be modeled well with only linear operations.",
+          "source": {
+            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m03-card-0009",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "hard",
+      "tags": [
+        "csc-6314",
+        "module-03",
+        "study-guide",
+        "ocr"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "How is OCR different from ordinary image classification?",
+          "answer": "OCR extracts the actual text content from an image instead of only assigning a broad image category.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "Why are small filters often preferred when building an OCR system for distorted characters?",
+          "answer": "They capture fine edges, corners, and stroke patterns that distinguish similar characters.",
+          "source": {
+            "label": "Module 3/module-03-discussion.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "What kinds of data augmentation help a CNN handle low-light, distorted serial-number images?",
+          "answer": "Rotation, brightness and contrast variation, noise, blur, and slight perspective distortion.",
+          "source": {
+            "label": "Module 3/module-03-discussion.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What is the main risk of over-compressing feature maps in an OCR pipeline?",
+          "answer": "Characters that differ by small local strokes can become hard or impossible to distinguish.",
+          "source": {
+            "label": "Module 3/module-03-discussion.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "Which Python OCR wrapper was mentioned in the Module 3 slides?",
+          "answer": "`PyTesseract`.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why might an OCR model confuse a `7` with a `1`?",
+          "answer": "The model may fail to preserve or detect the local stroke pattern, such as a cross-bar, that separates the two shapes.",
+          "source": {
+            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m03-card-0010",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "hard",
+      "tags": [
+        "csc-6314",
+        "module-03",
+        "study-guide",
+        "project-03"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which dataset is used for Project 3 before filtering to four target classes?",
+          "answer": "CIFAR-10.",
+          "source": {
+            "label": "Module 3/Project 3/project-description.html"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What minimum convolutional requirement does the `AnimalCNN` architecture have in Project 3?",
+          "answer": "It must include at least three `Conv2d` layers.",
+          "source": {
+            "label": "Module 3/Project 3/project-description.html"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why are the original CIFAR-10 labels remapped to `0` through `3` in the project?",
+          "answer": "Contiguous class indices make training and output handling straightforward for the four-class model.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "If the classifier predicts bird, cat, dog, and horse, how many output logits should the last linear layer produce?",
+          "answer": "Four.",
+          "source": {
+            "label": "Module 3/Project 3/project-description.html"
+          }
+        },
+        {
+          "category": "science",
+          "question": "Which PyTorch layer in the project skeleton compresses each channel to a `1 x 1` spatial output before classification?",
+          "answer": "`nn.AdaptiveAvgPool2d((1, 1))`.",
+          "source": {
+            "label": "Module 3/Project 3/project-description.html"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why does the project ask for a species-information dictionary in addition to a predicted label?",
+          "answer": "It turns the raw prediction into a clearer human-readable report.",
+          "source": {
+            "label": "Module 3/Project 3/project-description.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m03-card-0011",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "hard",
+      "tags": [
+        "csc-6314",
+        "module-03",
+        "study-guide",
+        "vision-applications"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What hierarchical progression do CNNs usually learn from raw pixels?",
+          "answer": "Edges to textures to parts to full objects.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "Why is scanning local regions more useful than flattening an entire image immediately?",
+          "answer": "It preserves local spatial relationships and lets the model build patterns from nearby pixels.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why can a pretrained backbone be a strong starting point for a small industrial vision dataset?",
+          "answer": "It already encodes reusable low-level features, so the model needs less data and training to become useful.",
+          "source": {
+            "label": "Module 3/module-03-discussion.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What spatial information does a feature map retain that a final class probability does not?",
+          "answer": "Where in the image the detected pattern appears.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "Name one managed cloud vision service mentioned in Module 3.",
+          "answer": "Azure AI Vision, Amazon Rekognition, or Google Cloud Vision.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "What two real-world systems were mentioned as examples of computer vision in action?",
+          "answer": "Waymo robotaxis and Boston Dynamics Spot.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m03-card-0012",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "hard",
+      "tags": [
+        "csc-6314",
+        "module-03",
+        "study-guide",
+        "review"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What single idea links crack detection, OCR, and stop-sign recognition in Module 3?",
+          "answer": "CNN design has to preserve and detect meaningful local visual structure.",
+          "source": {
+            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "If a model needs stronger sensitivity to edges and borders, which CNN controls are most worth revisiting first?",
+          "answer": "Filters, strides, and padding.",
+          "source": {
+            "label": "Module 3/module-03-learning-objectives-and-todo-list.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "When fine visual details matter, what downsampling strategy is safer than aggressive compression?",
+          "answer": "Use modest pooling and small strides so important detail survives deeper into the network.",
+          "source": {
+            "label": "Module 3/module-03-discussion.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "Before classification, what two shape-changing steps commonly happen after the last convolutional block?",
+          "answer": "Pooling reduces the spatial map, and flattening converts it into a vector for the classifier.",
+          "source": {
+            "label": "Module 3/Project 3/project-description.html"
+          }
+        },
+        {
+          "category": "science",
+          "question": "What is a common PyTorch ordering for a basic CNN feature block in this module?",
+          "answer": "`Conv2d -> BatchNorm2d -> ReLU -> MaxPool2d`.",
+          "source": {
+            "label": "Module 3/Project 3/project-description.html"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "What major task types from Module 3 all rely on CNN-style feature extraction?",
+          "answer": "Image classification, OCR, defect detection, and broader computer-vision perception tasks.",
+          "source": {
+            "label": "Module 3/module-03-live-session-slides-summary.md"
+          }
+        }
+      ]
     }
   ]
 }
