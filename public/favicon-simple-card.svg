@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect x="1" y="1" width="30" height="30" rx="7" fill="#0f2450" />
+  <rect x="2" y="2" width="28" height="28" rx="6" fill="none" stroke="#c89730" stroke-opacity="0.45" />
+
+  <rect
+    x="5.5"
+    y="3.8"
+    width="21"
+    height="24.2"
+    rx="3.1"
+    fill="#fdfcf7"
+    stroke="#c89730"
+    stroke-width="1.4"
+  />
+
+  <path
+    d="M616 378H407L406 442Q406 571 440 651Q474 731 572 827Q681 935 703 975Q725 1015 725 1068Q725 1155 668.5 1211Q612 1267 526 1267Q341 1267 298 1020L87 1052Q96 1240 216.5 1360.5Q337 1481 519 1481Q704 1481 827 1360Q950 1239 950 1058Q950 966 907 883.5Q864 801 722 658Q649 584 631.5 539Q614 494 616 378ZM407 0V281H638V0Z"
+    transform="translate(8.75 22.25) scale(0.014 -0.014)"
+    fill="#0f2450"
+  />
+</svg>

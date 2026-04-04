@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stacked Deck Favicon Preview</title>
+  <style>
+    :root {
+      --navy: #0f2450;
+      --navy-soft: #1a3870;
+      --gold: #c89730;
+      --cream: #fdfcf7;
+      --ink: #10213f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 2rem;
+      font-family: 'Avenir Next', 'Segoe UI', sans-serif;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at top, rgba(33, 63, 130, 0.9), transparent 50%),
+        linear-gradient(180deg, var(--navy-soft), var(--navy));
+    }
+
+    h1,
+    h2,
+    p {
+      margin: 0;
+    }
+
+    main {
+      width: min(100%, 64rem);
+      margin: 0 auto;
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .intro {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .intro p {
+      max-width: 42rem;
+      color: rgba(253, 252, 247, 0.78);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      display: grid;
+      gap: 1rem;
+      padding: 1rem;
+      border-radius: 0.9rem;
+      background: rgba(12, 30, 70, 0.76);
+      border: 1px solid rgba(200, 151, 48, 0.25);
+      box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.28);
+    }
+
+    .label {
+      display: grid;
+      gap: 0.2rem;
+    }
+
+    .label h2 {
+      font-size: 1rem;
+    }
+
+    .label p {
+      font-size: 0.9rem;
+      color: rgba(253, 252, 247, 0.72);
+    }
+
+    .previewRow {
+      display: flex;
+      align-items: end;
+      gap: 0.9rem;
+      min-height: 5rem;
+    }
+
+    .chip {
+      display: grid;
+      justify-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      color: rgba(253, 252, 247, 0.78);
+    }
+
+    .tabStrip {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(253, 252, 247, 0.08);
+      color: rgba(253, 252, 247, 0.84);
+      font-size: 0.8rem;
+    }
+
+    img {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="intro">
+      <h1>Favicon Preview</h1>
+      <p>
+        Compare how each candidate reads at tab-adjacent sizes. The richest option keeps the current layered look; the three simplified versions trade detail for stronger small-size recognition.
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <div class="label">
+          <h2>Current Rich</h2>
+          <p>Layered deck composition with full app styling.</p>
+        </div>
+        <div class="previewRow">
+          <div class="chip"><img src="../public/favicon-rich.svg" width="16" height="16" alt="" /><span>16</span></div>
+          <div class="chip"><img src="../public/favicon-rich.svg" width="24" height="24" alt="" /><span>24</span></div>
+          <div class="chip"><img src="../public/favicon-rich.svg" width="48" height="48" alt="" /><span>48</span></div>
+        </div>
+        <div class="tabStrip">
+          <span class="tab"><img src="../public/favicon-rich.svg" width="16" height="16" alt="" />Stacked Deck</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="label">
+          <h2>Simple Card</h2>
+          <p>One dominant card with an oversized mark.</p>
+        </div>
+        <div class="previewRow">
+          <div class="chip"><img src="../public/favicon-simple-card.svg" width="16" height="16" alt="" /><span>16</span></div>
+          <div class="chip"><img src="../public/favicon-simple-card.svg" width="24" height="24" alt="" /><span>24</span></div>
+          <div class="chip"><img src="../public/favicon-simple-card.svg" width="48" height="48" alt="" /><span>48</span></div>
+        </div>
+        <div class="tabStrip">
+          <span class="tab"><img src="../public/favicon-simple-card.svg" width="16" height="16" alt="" />Stacked Deck</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="label">
+          <h2>Simple Stack</h2>
+          <p>Two-card silhouette with fewer lines and no frame noise.</p>
+        </div>
+        <div class="previewRow">
+          <div class="chip"><img src="../public/favicon-simple-stack.svg" width="16" height="16" alt="" /><span>16</span></div>
+          <div class="chip"><img src="../public/favicon-simple-stack.svg" width="24" height="24" alt="" /><span>24</span></div>
+          <div class="chip"><img src="../public/favicon-simple-stack.svg" width="48" height="48" alt="" /><span>48</span></div>
+        </div>
+        <div class="tabStrip">
+          <span class="tab"><img src="../public/favicon-simple-stack.svg" width="16" height="16" alt="" />Stacked Deck</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="label">
+          <h2>Simple Mark</h2>
+          <p>Big gold question mark first, deck cue second.</p>
+        </div>
+        <div class="previewRow">
+          <div class="chip"><img src="../public/favicon-simple-mark.svg" width="16" height="16" alt="" /><span>16</span></div>
+          <div class="chip"><img src="../public/favicon-simple-mark.svg" width="24" height="24" alt="" /><span>24</span></div>
+          <div class="chip"><img src="../public/favicon-simple-mark.svg" width="48" height="48" alt="" /><span>48</span></div>
+        </div>
+        <div class="tabStrip">
+          <span class="tab"><img src="../public/favicon-simple-mark.svg" width="16" height="16" alt="" />Stacked Deck</span>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
