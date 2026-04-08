@@ -1859,6 +1859,738 @@
           }
         }
       ]
+    },
+    {
+      "id": "m04-card-0001",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "easy",
+      "tags": [
+        "csc-6314",
+        "module-04",
+        "study-guide",
+        "rnn-basics"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What makes data sequential rather than just a collection of independent inputs?",
+          "answer": "The order matters, so earlier elements affect how later elements should be interpreted.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What part of an RNN acts as its memory while reading a sequence?",
+          "answer": "The hidden state.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why would shuffling the order of words in a sentence usually hurt an RNN-based model?",
+          "answer": "Because the model depends on sequence order to build context over time.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "How should you interpret the hidden state at time step $t$ in an RNN?",
+          "answer": "As a compressed summary of the sequence seen up to step $t$.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "Which TensorFlow / Keras layer was highlighted as the basic recurrent layer for sequence processing?",
+          "answer": "`SimpleRNN`.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Name two common kinds of sequential data discussed in Module 4.",
+          "answer": "Examples include text, speech, time-series sensor data, and DNA sequences.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m04-card-0002",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "easy",
+      "tags": [
+        "csc-6314",
+        "module-04",
+        "study-guide",
+        "cnn-vs-rnn"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the main conceptual difference between CNNs and RNNs?",
+          "answer": "CNNs are designed for spatial patterns, while RNNs are designed for temporal or sequential patterns.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "Why are RNNs described as the 'masters of time' in the slides?",
+          "answer": "Because they process data one step at a time and carry context forward through a hidden state.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why can a standard feedforward network struggle on sequence tasks compared with an RNN?",
+          "answer": "It usually treats inputs as independent instead of preserving ordered context across steps.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "In sequence modeling, what does it mean to say the output at one step depends on previous computations?",
+          "answer": "It means the model's current prediction is influenced by information stored from earlier time steps.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "In the simplified TensorFlow pipeline shown in the slides, what layer acts as the final decision-maker after the recurrent layer?",
+          "answer": "A `Dense` layer.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Which kind of model is usually a better fit for image classification, a CNN or an RNN?",
+          "answer": "A CNN, because image classification depends mainly on spatial patterns.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m04-card-0003",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-04",
+        "study-guide",
+        "unrolling"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What does it mean to 'unroll' an RNN?",
+          "answer": "It means expanding the recurrent loop into a sequence of repeated time steps so you can see how the same computation is applied over time.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "When an RNN is unrolled, are different weights used at each time step?",
+          "answer": "No. The same recurrent parameters are reused at every time step.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why is the unrolled view useful when thinking about how RNNs are trained?",
+          "answer": "It makes it easier to see how information and gradients move across time steps during learning.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "If a sequence has length $T$, how many repeated time-step copies appear in the unrolled view of the RNN?",
+          "answer": "$T$ copies, one for each element in the sequence.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "What high-level TensorFlow / Keras container was mentioned for stacking an input layer, recurrent layer, and output layer in order?",
+          "answer": "`Sequential`.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why is parameter sharing across time steps useful in sequence modeling?",
+          "answer": "It lets one model handle variable-length sequences without learning a separate set of weights for every position.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m04-card-0004",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-04",
+        "study-guide",
+        "vanishing-gradient"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the vanishing-gradient problem in basic RNNs?",
+          "answer": "Gradients shrink as they are propagated backward through many time steps, so the model learns poorly from earlier parts of long sequences.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "Why do standard RNNs often behave like they have short-term memory?",
+          "answer": "Because fading gradients make it hard for them to preserve and learn from distant context.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "What training procedure sends error signals backward through the sequence in an RNN?",
+          "answer": "Backpropagation Through Time (BPTT).",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "Why do gradients tend to vanish when repeatedly multiplied by values smaller than $1$ across many time steps?",
+          "answer": "Because repeated multiplication by small values causes exponential shrinkage toward zero.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "If an RNN cannot learn long-range dependencies well, what type of recurrent layer would usually be a safer replacement in practice?",
+          "answer": "An `LSTM` layer or a `GRU` layer.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why might a basic RNN struggle with a long sentence where the important noun appears far before the adjective or verb that depends on it?",
+          "answer": "Because the model may forget the early noun before reaching the later word that needs that context.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m04-card-0005",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-04",
+        "study-guide",
+        "lstm"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What problem are LSTMs primarily designed to reduce in recurrent networks?",
+          "answer": "The vanishing-gradient problem on longer sequences.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What are the two internal states highlighted for an LSTM?",
+          "answer": "The hidden state $h$ as working memory and the cell state $C$ as long-term memory.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "How do LSTM gates help training on long sequences?",
+          "answer": "They control what to forget, what to store, and what to expose, so important context is preserved more effectively.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "Which LSTM gate decides what new information should be written into memory?",
+          "answer": "The input gate.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "Which PyTorch recurrent module is explicitly required in Project 4?",
+          "answer": "`nn.LSTM`.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why is an LSTM often a better fit than a basic RNN for long customer comments or longer chat turns?",
+          "answer": "Because it is better at preserving useful context across many time steps.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m04-card-0006",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-04",
+        "study-guide",
+        "gru"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is a GRU in deep learning?",
+          "answer": "A Gated Recurrent Unit, which is a simplified gated recurrent architecture for sequence modeling.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "How does a GRU differ structurally from an LSTM?",
+          "answer": "A GRU uses a single hidden state and fewer gates, instead of separate hidden and cell states.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why might a GRU train faster or be preferred in a simpler experiment?",
+          "answer": "It has a less complex gating structure than an LSTM while still handling medium-range dependencies well.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "Which GRU gate controls how much previous memory to keep versus how much new information to add?",
+          "answer": "The update gate.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "If you wanted a simpler gated recurrent layer than an LSTM in a deep learning library, what would you typically choose?",
+          "answer": "A `GRU` layer.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "When would a GRU often be a reasonable compromise between a basic RNN and an LSTM?",
+          "answer": "When you want better sequence memory than a plain RNN but lower complexity than an LSTM.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m04-card-0007",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-04",
+        "study-guide",
+        "language-modeling"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is language modeling?",
+          "answer": "Predicting the next word or character in a sequence from the words or characters that came before it.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "Why are RNN-style models a natural fit for next-word prediction?",
+          "answer": "Because the next token depends on previous context, which recurrent models process in order.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "When training a next-word predictor, what is the general input-output pattern?",
+          "answer": "Feed the model earlier tokens in order and train it to predict the next token.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "If the input tokens are $w_1, w_2, \\ldots, w_t$, what token is the language model asked to predict?",
+          "answer": "$w_{t+1}$.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "In the simplified RNN pipeline from the slides, which layer maps the final sequence summary to the prediction?",
+          "answer": "The `Dense` layer.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "What smartphone feature was used in the slides as a real-world example of recurrent next-word prediction?",
+          "answer": "Apple iPhone QuickType text prediction and autocorrect.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m04-card-0008",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-04",
+        "study-guide",
+        "time-series"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is a time series?",
+          "answer": "An ordered sequence of data points collected over time, where later values may depend on earlier ones.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "Why can an RNN be useful for time-series prediction?",
+          "answer": "It processes one time step at a time and can learn temporal dependencies across the sequence.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why should time-series samples usually remain in chronological order during sequence construction?",
+          "answer": "Because the model is supposed to learn how patterns evolve over time, not from a randomly reordered sequence.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "In the notation $x_1, x_2, x_3, \\ldots, x_t$ for time-series modeling, what does each $x_t$ represent in the Fitbit example?",
+          "answer": "A vector of sensor values at time $t$.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "What kind of recurrent layer family would you normally choose in a library when the time series has meaningful long-range dependencies?",
+          "answer": "Usually an `LSTM` or `GRU` layer rather than a plain `SimpleRNN`.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "What wearable-device example was used in the slides to illustrate time-series prediction?",
+          "answer": "Fitbit activity and sleep prediction from sensor data.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m04-card-0009",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "hard",
+      "tags": [
+        "csc-6314",
+        "module-04",
+        "study-guide",
+        "chat-history"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Why can chat history be treated as sequential data?",
+          "answer": "Because each new message depends on the ordered conversational context created by earlier messages.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What role does the hidden state play in an RNN-based chatbot?",
+          "answer": "It stores a running summary of the conversation so far and helps the model predict the next response.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why might a pure RNN chatbot struggle when important information appears near the beginning of a long message?",
+          "answer": "Because long-distance dependencies are harder to preserve, especially in basic RNNs.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "Conceptually, what does the hidden state after message $t$ encode in a conversation model?",
+          "answer": "A compressed representation of the dialogue context up to message $t$.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "If you wanted a stronger recurrent model for long conversational turns than a plain RNN, what would the module suggest using?",
+          "answer": "An LSTM or GRU.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "In the slides' customer-support example, what kind of response should the model predict after the user says they forgot their password?",
+          "answer": "A helpful password-reset response, such as offering to help reset the password.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m04-card-0010",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "hard",
+      "tags": [
+        "csc-6314",
+        "module-04",
+        "study-guide",
+        "seq2seq"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is a sequence-to-sequence (seq2seq) model?",
+          "answer": "A neural network that takes one sequence as input and produces another sequence as output, possibly with a different length.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What are the two main components of a classic seq2seq model?",
+          "answer": "An encoder and a decoder.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "How does the decoder in a seq2seq model generate an output sentence?",
+          "answer": "It predicts one token at a time using the encoded context until it emits an end-of-sequence token.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What is the context vector in a basic seq2seq architecture?",
+          "answer": "The encoder's final hidden state, which serves as a compressed summary of the input sequence.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "What recurrent building blocks did the slides associate with both the encoder and decoder in the translation example?",
+          "answer": "RNNs or LSTMs.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Name two applications of seq2seq models listed in Module 4.",
+          "answer": "Examples include machine translation, chatbots, text summarization, and caption generation.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m04-card-0011",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "hard",
+      "tags": [
+        "csc-6314",
+        "module-04",
+        "study-guide",
+        "discussion-04"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "In the Module 4 discussion prompt, what should the context vector contain after the encoder processes a video clip?",
+          "answer": "A condensed representation of the clip's essential information, such as visual cues, temporal dynamics, and relevant audio features.",
+          "source": {
+            "label": "Module 4/module-04-discussion.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "Why is the hidden state important when some words in a noisy sequence are obscured?",
+          "answer": "It carries forward previous context, helping the model infer missing information from what it already knows.",
+          "source": {
+            "label": "Module 4/module-04-discussion.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "What is one sequence-level data augmentation idea suggested in the Module 4 discussion response?",
+          "answer": "Randomly masking or dropping text tokens during training.",
+          "source": {
+            "label": "Module 4/module-04-discussion.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "Why can a context vector be described as a compressed summary rather than a raw replay of the full input sequence?",
+          "answer": "Because it stores the most useful learned information in a compact representation instead of preserving every original token or frame directly.",
+          "source": {
+            "label": "Module 4/module-04-discussion.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "Before vectorization, what data format was shown in the discussion response as one way to store structured context information?",
+          "answer": "JSON.",
+          "source": {
+            "label": "Module 4/module-04-discussion.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "What real-world AI task is the focus of the Module 4 discussion prompt?",
+          "answer": "Auto-captioning for live video feeds.",
+          "source": {
+            "label": "Module 4/module-04-discussion.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m04-card-0012",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "hard",
+      "tags": [
+        "csc-6314",
+        "module-04",
+        "study-guide",
+        "project-04"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the main goal of Project 4 in Module 4?",
+          "answer": "To build a sentiment classifier for customer feedback using a recurrent neural network.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What minimum recurrent architecture requirement does Project 4 impose?",
+          "answer": "An `nn.LSTM` with at least two layers.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why must Project 4 pad or truncate every sequence to length `10`?",
+          "answer": "To make the inputs a consistent fixed length that the model can process in a uniform tensor format.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "In Project 4, what representation from the LSTM is used as the sentence context vector for classification?",
+          "answer": "The final hidden state.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "What special vocabulary item must be included at index `0` when building the Project 4 token mapping?",
+          "answer": "A `<PAD>` token.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "What two sentiment labels should the Project 4 live inference system output?",
+          "answer": "`Happy` and `Angry`.",
+          "source": {
+            "label": "Module 4/module-04-live-session-slides-summary.md"
+          }
+        }
+      ]
     }
   ]
 }
