@@ -215,7 +215,7 @@ The main app flow currently lives in:
 - `src/data/csc-6314-deck.json` (generated CSC-6314 study deck)
 - `src/data/deck.ts` (deck registry + validation boundary)
 - `src/data/validateDeck.ts` (deck validation, wired in at load time)
-- `scripts/generate-csc6314-deck.mjs` (syncs curated module study cards from the course repo)
+- `scripts/generate-csc6314-deck.ts` (syncs curated module study cards from the course repo)
 - `src/components/CardView.tsx`
 - `src/components/CategoryList.tsx`
 - `src/components/QuestionView.tsx`
@@ -273,6 +273,7 @@ These are good agent tasks for the current state of the repo:
 - `npm run build`: type-check and build for production
 - `npm run lint`: run ESLint
 - `npm run generate:csc6314 -- --course-repo /absolute/path/to/Merrimack_CSC6314`: regenerate the CSC-6314 study deck from curated course materials
+- `npm run generate:csc6314 -- --course-repo /absolute/path/to/Merrimack_CSC6314 --modules 3,4`: refresh only those modules in the existing generated deck without dropping the rest
 - `npm test`: run all tests with Vitest
 - `npm run test:watch`: run tests in watch mode
 - `npm run preview`: preview the production build locally

@@ -1,11 +1,14 @@
-import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import path from 'node:path'
 import os from 'node:os'
 
 import { afterEach, describe, expect, it } from 'vitest'
 
 import { validateDeck } from '../data/validateDeck'
-import { generateDeckData } from '../../scripts/generate-csc6314-deck.mjs'
+import {
+  generateDeckData,
+  syncDeckFile,
+} from '../../scripts/generate-csc6314-deck.ts'
 
 const REQUIRED_LANES = [
   'Foundations',
@@ -32,6 +35,10 @@ function writeJson(filePath, value) {
 function writeText(filePath, contents = '# Source\n') {
   mkdirSync(path.dirname(filePath), { recursive: true })
   writeFileSync(filePath, contents, 'utf8')
+}
+
+function readJson(filePath) {
+  return JSON.parse(readFileSync(filePath, 'utf8'))
 }
 
 function createCourseRepo(fixtures) {
@@ -93,6 +100,129 @@ describe('generateDeckData', () => {
       'm02-card-0001',
     ])
     expect(validateDeck(deck)).toEqual({ valid: true })
+  })
+
+  it('preserves unselected modules when syncing a subset update', async () => {
+    const courseRepo = createCourseRepo([
+      {
+        moduleNumber: 1,
+        cards: [{ id: 'm01-card-0001', difficulty: 'easy' }],
+      },
+      {
+        moduleNumber: 2,
+        cards: [{ id: 'm02-card-0001', difficulty: 'medium' }],
+      },
+    ])
+    tempDirs.push(courseRepo)
+
+    const outputDir = mkdtempSync(path.join(os.tmpdir(), 'csc6314-output-'))
+    const output = path.join(outputDir, 'csc-6314-deck.json')
+    tempDirs.push(outputDir)
+
+    const fullDeck = await generateDeckData({ courseRepo })
+    writeJson(output, {
+      ...fullDeck,
+      cards: fullDeck.cards.map(({ source, ...card }) => card),
+    })
+
+    writeText(path.join(courseRepo, 'Module 1/revised-source.md'))
+    writeJson(path.join(courseRepo, 'Module 1/study-deck-cards.json'), {
+      cards: [
+        {
+          id: 'm01-card-0002',
+          difficulty: 'hard',
+          tags: ['module-1', 'updated'],
+          entries: makeEntries('Module 1/revised-source.md'),
+        },
+      ],
+    })
+
+    const mergedDeck = await syncDeckFile({
+      courseRepo,
+      modules: [1],
+      output,
+    })
+
+    expect(mergedDeck.cards.map((card) => card.id)).toEqual([
+      'm01-card-0002',
+      'm02-card-0001',
+    ])
+    expect(mergedDeck.cards.find((card) => card.id === 'm01-card-0002')?.source).toBe(
+      'Module 1/study-deck-cards.json',
+    )
+    expect(readJson(output).cards.map((card) => card.id)).toEqual([
+      'm01-card-0002',
+      'm02-card-0001',
+    ])
+  })
+
+  it('uses the card id as a legacy fallback when entry sources are not all module-prefixed', async () => {
+    const glossarySource = 'glossary-terms-and-symbols.md'
+    const entries = makeEntries('Module 1/source.md')
+    entries[3] = {
+      ...entries[3],
+      sourcePath: glossarySource,
+    }
+
+    const courseRepo = createCourseRepo([
+      {
+        moduleNumber: 1,
+        cards: [{ id: 'm01-card-0003', entries }],
+      },
+      {
+        moduleNumber: 2,
+        cards: [{ id: 'm02-card-0001' }],
+      },
+    ])
+    tempDirs.push(courseRepo)
+    writeText(path.join(courseRepo, glossarySource))
+
+    const outputDir = mkdtempSync(path.join(os.tmpdir(), 'csc6314-output-'))
+    const output = path.join(outputDir, 'csc-6314-deck.json')
+    tempDirs.push(outputDir)
+
+    const fullDeck = await generateDeckData({ courseRepo })
+    writeJson(output, {
+      ...fullDeck,
+      cards: fullDeck.cards.map(({ source, ...card }) => card),
+    })
+
+    writeJson(path.join(courseRepo, 'Module 1/study-deck-cards.json'), {
+      cards: [{ id: 'm01-card-0004', entries: makeEntries('Module 1/source.md') }],
+    })
+
+    const mergedDeck = await syncDeckFile({
+      courseRepo,
+      modules: [1],
+      output,
+    })
+
+    expect(mergedDeck.cards.map((card) => card.id)).toEqual([
+      'm01-card-0004',
+      'm02-card-0001',
+    ])
+  })
+
+  it('rejects subset syncs before a full output deck exists', async () => {
+    const courseRepo = createCourseRepo([
+      {
+        moduleNumber: 1,
+        cards: [{ id: 'm01-card-0001', difficulty: 'easy' }],
+      },
+    ])
+    tempDirs.push(courseRepo)
+
+    const outputDir = mkdtempSync(path.join(os.tmpdir(), 'csc6314-output-'))
+    const output = path.join(outputDir, 'csc-6314-deck.json')
+    tempDirs.push(outputDir)
+
+    await expect(
+      syncDeckFile({
+        courseRepo,
+        modules: [1],
+        output,
+      }),
+    ).rejects.toThrow('Run a full generation first')
   })
 
   it('rejects invalid source paths', async () => {

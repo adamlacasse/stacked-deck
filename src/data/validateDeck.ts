@@ -1,5 +1,5 @@
-import { CATEGORY_ORDER } from '../types'
-import type { TriviaDeck } from '../types'
+import { CATEGORY_ORDER } from '../types.ts'
+import type { TriviaDeck } from '../types.ts'
 
 export type ValidationResult =
   | { valid: true }
@@ -169,7 +169,9 @@ export function validateDeck(deck: TriviaDeck): ValidationResult {
 }
 
 export function assertValidDeck(deck: TriviaDeck): void {
-  if (import.meta.env.DEV) {
+  const env = (import.meta as ImportMeta & { env?: { DEV?: boolean } }).env
+
+  if (env?.DEV) {
     const result = validateDeck(deck)
 
     if (!result.valid) {

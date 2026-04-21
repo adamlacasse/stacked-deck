@@ -2591,6 +2591,1494 @@
           }
         }
       ]
+    },
+    {
+      "id": "m05-card-0001",
+      "source": "Module 5/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "easy",
+      "tags": [
+        "csc-6314",
+        "module-05",
+        "study-guide",
+        "attention-basics"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the main idea behind attention in sequence modeling?",
+          "answer": "Attention lets the model decide which parts of the full input are most relevant when forming a representation or prediction.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "How does a transformer process a sentence differently from an RNN?",
+          "answer": "A transformer compares tokens across the whole sequence in parallel, while an RNN processes tokens step by step.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why does parallel token processing make transformers easier to scale during training?",
+          "answer": "Many token interactions can be computed at the same time, which makes training faster and more scalable on modern hardware.",
+          "source": {
+            "label": "Module 5/Quiz 5/quiz-05-answers.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "In attention, what does a larger relevance score between two tokens imply?",
+          "answer": "It implies one token should contribute more weight to the other's updated representation.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "What architecture family replaced recurrence in the 2017 breakthrough paper discussed in Module 5?",
+          "answer": "The Transformer architecture built around self-attention.",
+          "source": {
+            "label": "Module 5/Quiz 5/quiz-05-answers.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why is attention useful when related words are far apart in a sentence?",
+          "answer": "It lets the model connect distant words directly instead of carrying information through many sequential steps.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m05-card-0002",
+      "source": "Module 5/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "easy",
+      "tags": [
+        "csc-6314",
+        "module-05",
+        "study-guide",
+        "qkv"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "In the query-key-value framework, what does the query represent?",
+          "answer": "The query represents what the current token is looking for.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What role do keys play in an attention mechanism?",
+          "answer": "Keys act like labels or indexes that are compared with the query to measure relevance.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why is it useful for a model to learn its own query, key, and value projections?",
+          "answer": "The model can learn which relationships matter most for the task and represent them in a context-sensitive way.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "Which vector carries the actual information retrieved after relevance is determined?",
+          "answer": "The value vector.",
+          "source": {
+            "label": "Module 5/Quiz 5/quiz-05-answers.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "Before attention weights are applied, what three vector types are produced from token representations?",
+          "answer": "Queries, keys, and values.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "In the search-engine analogy for attention, what is the practical difference between a key and a value?",
+          "answer": "The key helps determine what is relevant, while the value is the content that gets retrieved.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m05-card-0003",
+      "source": "Module 5/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-05",
+        "study-guide",
+        "self-attention"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is self-attention?",
+          "answer": "Self-attention lets each token update its representation by attending to other tokens in the same sequence.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "How does self-attention differ from standard attention between two sequences?",
+          "answer": "In self-attention, a sequence attends to itself, while standard attention can connect one sequence to another.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why does self-attention help with pronoun resolution in a sentence?",
+          "answer": "It allows a later word such as a pronoun to directly weight earlier words that are the most likely referents.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "After self-attention is applied, what is each token representation built from?",
+          "answer": "A weighted combination of value vectors from the sequence.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "In an encoder-only spam filter, what mechanism lets each word representation absorb context from the full message?",
+          "answer": "Self-attention inside the transformer encoder.",
+          "source": {
+            "label": "Module 5/Project 5/project-05-description.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why can self-attention also be useful for image models?",
+          "answer": "It lets one pixel or patch relate directly to distant regions instead of only nearby neighborhoods.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m05-card-0004",
+      "source": "Module 5/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-05",
+        "study-guide",
+        "positional-encoding"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Why is positional encoding necessary in a transformer?",
+          "answer": "Attention alone has no built-in sense of order, so positional encoding tells the model where each token appears in the sequence.",
+          "source": {
+            "label": "Module 5/Quiz 5/quiz-05-answers.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What is added to each token embedding to preserve word order in a transformer?",
+          "answer": "A positional signal or positional encoding.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "What failure mode can happen if positional information is omitted?",
+          "answer": "The model can treat the sentence too much like an unordered bag of tokens and confuse different word orders.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "How should a transformer distinguish `The dog bit the man` from `The man bit the dog`?",
+          "answer": "By combining token content with positional information so order affects the representation.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "Where is positional information typically injected in the transformer pipeline?",
+          "answer": "It is added to the token embeddings before the encoder or decoder layers process them.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why is positional encoding critical for language tasks such as translation and next-token generation?",
+          "answer": "Because changing token order can change the meaning and therefore the correct output.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m05-card-0005",
+      "source": "Module 5/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-05",
+        "study-guide",
+        "transformer-architecture"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What are the main stages of the classic encoder-decoder transformer pipeline?",
+          "answer": "Tokens become embeddings with positional information, the encoder builds context-rich representations, and the decoder generates output tokens step by step.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What does cross-attention let the decoder do in a full transformer?",
+          "answer": "It lets the decoder reference encoder outputs while generating the next token.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why can the transformer connect distant words more effectively than a plain recurrent model?",
+          "answer": "It creates direct attention paths between tokens instead of forcing information to travel one step at a time through hidden state.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What token is used to start generation in the example decoder flow from the slides?",
+          "answer": "The `<START>` token.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "In the original Transformer design, which stack handles input understanding and which handles output generation?",
+          "answer": "The encoder handles input understanding, and the decoder handles output generation.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "When does autoregressive generation stop in the standard encoder-decoder workflow?",
+          "answer": "It stops when the decoder produces an `<END>` token.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m05-card-0006",
+      "source": "Module 5/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-05",
+        "study-guide",
+        "bert-vs-gpt"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the key conceptual difference between BERT and GPT?",
+          "answer": "BERT is an encoder-only model built for understanding, while GPT is a decoder-only model built for generation.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "Which transformer family uses bidirectional context from both left and right?",
+          "answer": "BERT.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why is GPT masked during training?",
+          "answer": "Masking prevents the model from looking at future tokens while learning next-token prediction.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What direction does GPT generate text?",
+          "answer": "Left to right, one token at a time.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "Which transformer family is usually better suited for tasks such as sentiment analysis, named entity recognition, or question answering?",
+          "answer": "BERT or another encoder-only transformer.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Which family is designed for chatbot-style text generation?",
+          "answer": "GPT or another decoder-only autoregressive model.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m05-card-0007",
+      "source": "Module 5/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-05",
+        "study-guide",
+        "transformers-to-llms"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the difference between a transformer and an LLM?",
+          "answer": "A transformer is the architecture blueprint, while an LLM is a large model built by scaling that blueprint with more data, layers, and parameters.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What property of transformers made them the foundation of modern LLMs?",
+          "answer": "Their self-attention-based design can model long-range relationships while scaling well.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Which two scaling advantages of transformers were emphasized in Module 5?",
+          "answer": "Parallelism during training and scalability as layers, parameters, and data grow.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "When a transformer is scaled into an LLM, what usually grows?",
+          "answer": "The model's parameter count, number of layers, and amount of training data.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "Which architecture family underlies models such as BERT and GPT?",
+          "answer": "Transformers.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why were older RNN and LSTM systems comparatively limited as a path to very large language models?",
+          "answer": "Their sequential processing made training and scaling much harder than with transformers.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m05-card-0008",
+      "source": "Module 5/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-05",
+        "study-guide",
+        "agents"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What turns an LLM into an agent rather than a one-shot chatbot?",
+          "answer": "Adding planning, memory, and tool use around the LLM so it can act across multiple steps.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What four pillars of an agent were highlighted in Module 5?",
+          "answer": "The brain, planning, memory, and tools.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why does user feedback matter in a learning agent workflow?",
+          "answer": "Feedback can be stored and reused so the agent improves future task execution instead of starting from scratch every time.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "In a Plan -> Act -> Observe loop, what does the `Observe` step contribute?",
+          "answer": "It provides the results of tool calls or actions so the agent can decide what to do next.",
+          "source": {
+            "label": "Module 5/module-05-discussion.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "What kinds of tools might an agent call during a workflow?",
+          "answer": "Examples include browsers, APIs, code execution environments, local files, or repositories.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "How would a travel-planning agent use tool calls in practice?",
+          "answer": "It would gather constraints, search flights and hotels, synthesize results, and revise them based on user feedback.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m05-card-0009",
+      "source": "Module 5/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "hard",
+      "tags": [
+        "csc-6314",
+        "module-05",
+        "study-guide",
+        "memory-and-tools"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Why is persistent memory necessary for a learning agent?",
+          "answer": "It lets preferences and task history survive beyond one chat session so the agent can improve over time.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What storage options were named for agent memory in Module 5?",
+          "answer": "JSON files, SQL databases, and vector stores.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "How does storing prior feedback reduce repeated clarification with returning users?",
+          "answer": "The agent can load known preferences and constraints before generating a new result.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What kind of information belongs in persistent memory more than the immediate prompt context?",
+          "answer": "Stable facts and preferences that should be reused across future sessions.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "If you need structured, queryable memory for agent preferences, what type of store is a straightforward choice?",
+          "answer": "A JSON file or SQL database.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "How would persistent memory improve the experience for a returning travel-planning user?",
+          "answer": "The agent could remember preferences and produce better options with fewer feedback loops.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m05-card-0010",
+      "source": "Module 5/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "hard",
+      "tags": [
+        "csc-6314",
+        "module-05",
+        "study-guide",
+        "foundation-models"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is a foundation model?",
+          "answer": "A single very large pretrained model that can be adapted to many downstream tasks.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "How does the foundation-model paradigm differ from the older one-model-per-task approach?",
+          "answer": "It starts from one large pretrained base model instead of training separate models from scratch for every task.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "What stage creates the broad capabilities of a foundation model?",
+          "answer": "Large-scale pretraining on massive datasets.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "Is every foundation model an LLM?",
+          "answer": "No. All LLMs are foundation models, but not all foundation models are LLMs.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "What kinds of downstream tasks can a foundation model support after adaptation?",
+          "answer": "Tasks such as classification, summarization, question answering, and generation.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why are foundation models valuable in industry settings?",
+          "answer": "The same base model can be adapted across many workflows instead of building a separate model for each task.",
+          "source": {
+            "label": "Module 5/module-05-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m05-card-0011",
+      "source": "Module 5/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "hard",
+      "tags": [
+        "csc-6314",
+        "module-05",
+        "study-guide",
+        "discussion-05"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What distinguishes an agentic framework from a basic chatbot?",
+          "answer": "An agentic framework can take actions or orchestrate workflows instead of only responding once to a prompt.",
+          "source": {
+            "label": "Module 5/module-05-discussion.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What is a multi-agent system?",
+          "answer": "A setup where multiple specialized agents communicate or coordinate to solve a task.",
+          "source": {
+            "label": "Module 5/module-05-discussion.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why can transformer-based LLMs help agent frameworks handle longer or more complex tasks than older RNN-style systems?",
+          "answer": "Self-attention lets them weigh instructions, prior messages, and outputs by relevance across longer contexts.",
+          "source": {
+            "label": "Module 5/module-05-discussion.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What reasoning-loop sequence was highlighted in the Module 5 discussion prompt?",
+          "answer": "Plan -> Act -> Observe.",
+          "source": {
+            "label": "Module 5/module-05-discussion.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "Name one tool category an agentic framework such as AutoGen or Devin may access.",
+          "answer": "Examples include Python execution, APIs, web search, local files, or code repositories.",
+          "source": {
+            "label": "Module 5/module-05-discussion.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why is Microsoft AutoGen a strong example of an agentic framework?",
+          "answer": "It lets multiple role-based agents coordinate on real workflows instead of acting like a single chatbot.",
+          "source": {
+            "label": "Module 5/module-05-discussion.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m05-card-0012",
+      "source": "Module 5/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "hard",
+      "tags": [
+        "csc-6314",
+        "module-05",
+        "study-guide",
+        "project-05"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the goal of a transformer-based spam filter?",
+          "answer": "To classify SMS messages as Spam or Ham using self-attention instead of rule-based logic.",
+          "source": {
+            "label": "Module 5/Project 5/project-05-description.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "Why does Project 5 use an encoder-only transformer path?",
+          "answer": "The task is sentence classification, so the model needs a contextual encoding of the whole message rather than token-by-token generation.",
+          "source": {
+            "label": "Module 5/Project 5/project-05-description.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why does the project ask you to repeat the small sample list during training?",
+          "answer": "It augments the limited dataset so the model gets enough iterations to converge.",
+          "source": {
+            "label": "Module 5/Project 5/project-05-description.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "Which loss function is specified for the spam-filter classifier?",
+          "answer": "`nn.CrossEntropyLoss()`.",
+          "source": {
+            "label": "Module 5/Project 5/project-05-description.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "Which PyTorch components are explicitly required for the encoder block in Project 5?",
+          "answer": "`nn.TransformerEncoderLayer` and `nn.TransformerEncoder`.",
+          "source": {
+            "label": "Module 5/Project 5/project-05-description.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "What labels should the model predict for `win cash now` and `see you later` in the final logic check?",
+          "answer": "`win cash now` should be Spam, and `see you later` should be Ham.",
+          "source": {
+            "label": "Module 5/Project 5/project-05-description.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m06-card-0001",
+      "source": "Module 6/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "easy",
+      "tags": [
+        "csc-6314",
+        "module-06",
+        "study-guide",
+        "generative-ai"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "How does a generative model differ from a discriminative model?",
+          "answer": "A generative model learns the underlying data distribution so it can create new samples, while a discriminative model focuses on separating classes or predicting labels from inputs.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What kinds of media can modern generative architectures produce?",
+          "answer": "They can generate text, images, audio, and other forms of media.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why is next-token prediction a natural training signal for generative language models?",
+          "answer": "It teaches the model to estimate how likely different continuations are in a sequence, which is the core of language generation.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What does it mean to model the underlying probability distribution of data?",
+          "answer": "It means estimating which outputs are likely so the model can generate new samples that resemble the training data.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "Name two architecture families mentioned for modern generative systems.",
+          "answer": "Large Language Models and Diffusion Models.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Name three common text-generation tasks covered in Module 6.",
+          "answer": "Completion, summarization, and question answering.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m06-card-0002",
+      "source": "Module 6/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "easy",
+      "tags": [
+        "csc-6314",
+        "module-06",
+        "study-guide",
+        "gpt-t5-llama"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "Which generative language model family was described as the `Writer`?",
+          "answer": "GPT.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "Which model family uses a full encoder-decoder transformer and treats tasks as `text-to-text`?",
+          "answer": "T5.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why is a decoder-only model well suited for autoregressive generation?",
+          "answer": "It predicts each next token from the tokens that came before it, which matches text-generation behavior directly.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "Which model family was presented as the open-source counterpart designed for efficient local or research deployment?",
+          "answer": "LLaMA.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "If you want one text interface for translation, summarization, classification, and question answering, which family fits best?",
+          "answer": "T5, because it converts all of those tasks into one text-to-text format.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why might researchers or local developers prefer LLaMA in some workflows?",
+          "answer": "Because it is open source and designed to be efficient for research and local deployment.",
+          "source": {
+            "label": "Module 6/module-06-learning-objectives-and-todos.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m06-card-0003",
+      "source": "Module 6/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-06",
+        "study-guide",
+        "adaptation-techniques"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is pretraining in the context of foundation models?",
+          "answer": "It is the large-scale initial training stage where a model learns broad language patterns from massive datasets.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What does fine-tuning do to a pretrained foundation model?",
+          "answer": "It continues training the model on a smaller domain-specific dataset so the model becomes more specialized.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Which adaptation method is the most expensive, and which is the lightest weight?",
+          "answer": "Pretraining is the most expensive, and prompting is the lightest-weight method.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What tradeoff do pretraining, fine-tuning, and prompting represent?",
+          "answer": "They trade off cost against specificity.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "If you need a medical-domain expert version of a general model, which adaptation method would usually make the most sense?",
+          "answer": "Fine-tuning on a medical dataset.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Which adaptation method is best when you want to steer a model for one request without creating a new model version?",
+          "answer": "Prompting.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m06-card-0004",
+      "source": "Module 6/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-06",
+        "study-guide",
+        "in-context-learning"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is in-context learning?",
+          "answer": "It is when a model changes its behavior based on what is included in the prompt, without being retrained.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "Which three prompting styles were highlighted as part of in-context learning?",
+          "answer": "Zero-shot, few-shot, and chain-of-thought prompting.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why can a few examples inside the prompt improve performance on a new pattern?",
+          "answer": "The examples show the task format and desired behavior directly in context.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What does chain-of-thought prompting ask the model to do?",
+          "answer": "It asks the model to reason step by step before producing the final answer.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "Which prompting style would you usually try first for a simple task with clear instructions and no examples?",
+          "answer": "Zero-shot prompting.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why is in-context learning attractive in production settings?",
+          "answer": "It adapts model behavior without the cost and delay of retraining.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m06-card-0005",
+      "source": "Module 6/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-06",
+        "study-guide",
+        "few-shot-prompting"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the difference between few-shot learning and few-shot prompting?",
+          "answer": "Few-shot learning changes the model weights, while few-shot prompting changes only the prompt context.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "Which approach creates a new persistent model version?",
+          "answer": "Few-shot learning, because the model itself is updated and saved.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Which approach has the higher computational cost?",
+          "answer": "Few-shot learning, because it requires retraining or fine-tuning rather than just adding prompt examples.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "Which approach leaves the model weights unchanged?",
+          "answer": "Few-shot prompting.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "If you only want to spend a few extra tokens instead of retraining, which method fits best?",
+          "answer": "Few-shot prompting.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why can few-shot prompting be useful for rapid experimentation?",
+          "answer": "It can produce learning-like behavior immediately without permanently changing the model.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m06-card-0006",
+      "source": "Module 6/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-06",
+        "study-guide",
+        "context-memory"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the difference between short-term memory and long-term persistence in an agent?",
+          "answer": "Short-term memory is the current context window, while long-term persistence stores information that survives across sessions.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "Why do robust agent systems need more than a raw context window?",
+          "answer": "Because stable preferences and facts need to persist even after a single conversation ends.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "How does retrieving stored context reduce user feedback loops?",
+          "answer": "The agent can start from previously learned preferences instead of asking for the same information again.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What is a context window in a language model or agent system?",
+          "answer": "It is the maximum number of tokens the model can see and process at one time.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "What kind of information might long-term memory store for a user?",
+          "answer": "Structured facts such as a user's name, preferred coding language, or stable preferences.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why is memory important in repeated multi-step workflows?",
+          "answer": "It keeps the user from having to restate the same constraints and preferences every time.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m06-card-0007",
+      "source": "Module 6/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-06",
+        "study-guide",
+        "rolling-buffer"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is a rolling buffer in agent memory design?",
+          "answer": "It is a short-term memory technique that keeps only the last N messages.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What happens when new messages arrive after the rolling buffer is full?",
+          "answer": "The oldest messages are dropped as the newest ones are added.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why is a rolling buffer only a minimal memory solution?",
+          "answer": "It preserves recent context but can lose older information that still matters.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What does FIFO mean in the context of a rolling buffer?",
+          "answer": "First in, first out.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "When the rolling buffer fills up, what additional component can preserve important context more compactly?",
+          "answer": "A summarization layer.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why is a rolling buffer useful in a chat-based assistant?",
+          "answer": "It keeps the most recent conversation available without storing the entire history in the active context window.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m06-card-0008",
+      "source": "Module 6/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "medium",
+      "tags": [
+        "csc-6314",
+        "module-06",
+        "study-guide",
+        "summarization-layer"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What does a summarization layer do when conversation history becomes too long?",
+          "answer": "It compresses the conversation into a shorter summary that preserves the most important information.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "How does feedback extraction differ from generic conversation summarization?",
+          "answer": "Feedback extraction pulls out only user preferences and corrected facts instead of summarizing everything.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why can summarization be better than keeping every old message verbatim?",
+          "answer": "It saves token budget while preserving the information most likely to matter later.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What tradeoff does a summarization layer manage?",
+          "answer": "It balances compression against fidelity to the original conversation.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "What kind of extra call might implement the summarization layer?",
+          "answer": "A separate LLM call that distills the conversation into a concise summary.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why is feedback extraction especially useful in preference-heavy assistants?",
+          "answer": "It preserves stable user preferences and corrected facts that should influence future sessions.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m06-card-0009",
+      "source": "Module 6/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "hard",
+      "tags": [
+        "csc-6314",
+        "module-06",
+        "study-guide",
+        "persistent-storage"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is long-term persistent storage in an agent system?",
+          "answer": "It is memory saved outside the active prompt so information can be reused in later sessions.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "When are JSON files or SQL databases better choices than vector databases?",
+          "answer": "They are better for structured hard facts that need exact storage and lookup.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why does the module recommend a hybrid memory approach instead of using just one memory technique?",
+          "answer": "A hybrid approach combines recent context, compressed summaries, and long-term storage so the agent can handle both short-horizon and long-horizon memory needs.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What kind of retrieval task are embeddings especially good for in long-term memory?",
+          "answer": "Finding past conversations or notes that are semantically similar to the current query.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "What storage format is explicitly described as sufficient for Project 6's multi-user persistence requirement?",
+          "answer": "A single JSON file stored in the current working directory.",
+          "source": {
+            "label": "Module 6/Project 6/project-06-description.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why is a hybrid memory design useful for returning users whose preferences evolve over time?",
+          "answer": "It supports exact stored facts, related semantic recall, and updated recent feedback at the same time.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m06-card-0010",
+      "source": "Module 6/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "hard",
+      "tags": [
+        "csc-6314",
+        "module-06",
+        "study-guide",
+        "discussion-06"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "How should an agent prioritize conflicting memory sources?",
+          "answer": "A clear hierarchy such as safety rules first, then global best practices, then user memory, and then the current conversation is a sensible structure.",
+          "source": {
+            "label": "Module 6/module-06-discussion.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "How can a prompt or database reduce confusion between global rules and user-specific preferences?",
+          "answer": "Store and load them with clear labels and precedence levels so the system knows what overrides what.",
+          "source": {
+            "label": "Module 6/module-06-discussion.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "What is a sensible tiebreaker for conflicting user feedback over time?",
+          "answer": "Use recency plus explicit user confirmation instead of silently changing the stored preference.",
+          "source": {
+            "label": "Module 6/module-06-discussion.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What kind of rule should never be overridden by user-specific memory?",
+          "answer": "A safety rule.",
+          "source": {
+            "label": "Module 6/module-06-discussion.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "What metadata field could you store with each memory item to make conflicts easier to resolve?",
+          "answer": "A precedence, priority, or hierarchy label.",
+          "source": {
+            "label": "Module 6/module-06-discussion.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why should rejection of an unsafe user preference be transparent to the user?",
+          "answer": "The system should explain why it is not honoring that preference rather than pretending it forgot or silently ignoring it.",
+          "source": {
+            "label": "Module 6/module-06-discussion.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m06-card-0011",
+      "source": "Module 6/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "hard",
+      "tags": [
+        "csc-6314",
+        "module-06",
+        "study-guide",
+        "ai-coding"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What are CodeLLMs?",
+          "answer": "They are language models trained on large code corpora so they can generate, understand, and help debug software.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What is the difference between Plan Mode and Act Mode in an AI coding tool?",
+          "answer": "Plan Mode explores the codebase and proposes a strategy, while Act Mode executes the approved plan and writes code.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "Why should a human review the plan before switching to Act Mode?",
+          "answer": "The plan should be checked for dependency breaks, bad tradeoffs, and inefficient or unsafe design choices before code is written.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What is the fallback trap in AI-generated code?",
+          "answer": "It is the pattern where the code hides real failures by returning cached, fake, or misleading `success` behavior instead of surfacing the error.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "Name two AI coding tools mentioned in Module 6.",
+          "answer": "Examples include GitHub Copilot, Claude Code, Cursor, and Google Gemini Code Assist.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "What should code do instead of reporting silent success when the underlying AI workflow actually failed?",
+          "answer": "It should fail loudly by logging the error or raising an exception so the failure is visible and debuggable.",
+          "source": {
+            "label": "Module 6/module-06-live-session-slides-summary.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "m06-card-0012",
+      "source": "Module 6/study-deck-cards.json",
+      "deckId": "csc-6314-study-guide",
+      "difficulty": "hard",
+      "tags": [
+        "csc-6314",
+        "module-06",
+        "study-guide",
+        "project-06"
+      ],
+      "entries": [
+        {
+          "category": "geography",
+          "question": "What is the goal of the `Menu Creator` agent project?",
+          "answer": "To generate personalized dining experiences and improve them over time using user feedback.",
+          "source": {
+            "label": "Module 6/Project 6/project-06-description.md"
+          }
+        },
+        {
+          "category": "entertainment",
+          "question": "What menu structure must the agent generate for each proposal?",
+          "answer": "Two appetizers, three main courses, and two desserts.",
+          "source": {
+            "label": "Module 6/Project 6/project-06-description.md"
+          }
+        },
+        {
+          "category": "history",
+          "question": "How should a returning user's session begin in Project 6?",
+          "answer": "The agent should look up the user's stored preferences by name so future feedback loops are reduced.",
+          "source": {
+            "label": "Module 6/Project 6/project-06-description.md"
+          }
+        },
+        {
+          "category": "arts",
+          "question": "What exact closing message must the approved workflow emit?",
+          "answer": "`The waiter will be right over to take your order.`",
+          "source": {
+            "label": "Module 6/Project 6/project-06-description.md"
+          }
+        },
+        {
+          "category": "science",
+          "question": "Which provider must be used for the LLM calls in Project 6?",
+          "answer": "Hugging Face.",
+          "source": {
+            "label": "Module 6/Project 6/project-06-description.md"
+          }
+        },
+        {
+          "category": "sports",
+          "question": "Why should the project save feedback and final menus keyed by user name?",
+          "answer": "So the agent can support multiple users and reuse learned preferences in later sessions.",
+          "source": {
+            "label": "Module 6/Project 6/project-06-description.md"
+          }
+        }
+      ]
     }
   ]
 }
