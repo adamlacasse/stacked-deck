@@ -4,6 +4,7 @@ import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 
 import { validateDeck } from '../src/data/validateDeck.ts'
+import { normalizeDeck } from '../src/data/normalizeDeck.ts'
 import { CATEGORY_ORDER } from '../src/types.ts'
 import type {
   CardEntry,
@@ -547,7 +548,7 @@ async function readExistingDeckFile(outputPath: string): Promise<TriviaDeck | nu
     `${outputPath} must contain a deck object.`,
   )
 
-  const deck = parsed as TriviaDeck
+  const deck = normalizeDeck(parsed)
   assert(
     deck.id === DECK_ID,
     `Existing deck at ${outputPath} must have id "${DECK_ID}".`,

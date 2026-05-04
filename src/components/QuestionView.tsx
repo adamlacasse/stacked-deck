@@ -1,22 +1,22 @@
-import { useEffect, useId, useRef } from 'react'
-import { createPortal } from 'react-dom'
+import { useEffect, useId, useRef } from "react";
+import { createPortal } from "react-dom";
 
-import { getCategoryMeta } from '../data/categories'
-import type { CardEntry, DeckCategoryMeta } from '../types'
-import styles from './QuestionView.module.css'
+import { getCategoryMeta } from "../data/categories";
+import type { CardEntry, DeckCategoryMeta } from "../types";
+import styles from "./QuestionView.module.css";
 
-const CHATGPT_URL = 'https://chatgpt.com/'
+const CHATGPT_URL = "https://chatgpt.com/";
 
 type QuestionViewProps = {
-  entry: CardEntry | null
-  deckName: string
-  categoryMeta?: DeckCategoryMeta
-  answerRevealed: boolean
-  remainingCount: number
-  onCloseQuestion: () => void
-  onRevealAnswer: () => void
-  onNextCard: () => void
-}
+  entry: CardEntry | null;
+  deckName: string;
+  categoryMeta?: DeckCategoryMeta;
+  answerRevealed: boolean;
+  remainingCount: number;
+  onCloseQuestion: () => void;
+  onRevealAnswer: () => void;
+  onNextCard: () => void;
+};
 
 export function QuestionView({
   entry,
@@ -28,40 +28,40 @@ export function QuestionView({
   onRevealAnswer,
   onNextCard,
 }: QuestionViewProps) {
-  const revealButtonRef = useRef<HTMLButtonElement>(null)
-  const nextButtonRef = useRef<HTMLButtonElement>(null)
-  const dialogLabelId = useId()
-  const dialogDescriptionId = useId()
+  const revealButtonRef = useRef<HTMLButtonElement>(null);
+  const nextButtonRef = useRef<HTMLButtonElement>(null);
+  const dialogLabelId = useId();
+  const dialogDescriptionId = useId();
 
   useEffect(() => {
-    if (!entry) return
+    if (!entry) return;
 
-    document.body.style.overflow = 'hidden'
+    document.body.style.overflow = "hidden";
     if (answerRevealed) {
-      nextButtonRef.current?.focus()
+      nextButtonRef.current?.focus();
     } else {
-      revealButtonRef.current?.focus()
+      revealButtonRef.current?.focus();
     }
 
     function handleKeyDown(event: KeyboardEvent) {
-      if (event.key === 'Escape' && !answerRevealed) {
-        onCloseQuestion()
+      if (event.key === "Escape" && !answerRevealed) {
+        onCloseQuestion();
       }
     }
 
-    document.addEventListener('keydown', handleKeyDown)
+    document.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      document.body.style.overflow = ''
-      document.removeEventListener('keydown', handleKeyDown)
-    }
-  }, [answerRevealed, entry, onCloseQuestion])
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [answerRevealed, entry, onCloseQuestion]);
 
   if (!entry) {
-    return <p className={styles.hint}>Choose a category to open a question.</p>
+    return <p className={styles.hint}>Choose a category to open a question.</p>;
   }
 
-  const meta = getCategoryMeta(entry.category, categoryMeta)
+  const meta = getCategoryMeta(entry.category, categoryMeta);
   const chatGptUrl = buildChatGptUrl({
     answer: entry.answer,
     categoryLabel: meta.label,
@@ -70,15 +70,15 @@ export function QuestionView({
     question: entry.question,
     sourceLabel: entry.source?.label,
     sourceUrl: entry.source?.url,
-  })
-  const nextLabel = remainingCount > 0 ? 'Next card' : 'Finish deck'
-  const explanation = entry.explanation?.trim() || null
-  const sourceLabel = entry.source?.label?.trim() || null
-  const source = sourceLabel ? entry.source : null
-  const hasContext = Boolean(explanation || sourceLabel)
+  });
+  const nextLabel = remainingCount > 0 ? "Next card" : "Finish deck";
+  const explanation = entry.explanation?.trim() || null;
+  const sourceLabel = entry.source?.label?.trim() || null;
+  const source = sourceLabel ? entry.source : null;
+  const hasContext = Boolean(explanation || sourceLabel);
 
   function handleAskChatGpt() {
-    window.open(chatGptUrl, '_blank', 'noopener,noreferrer')
+    window.open(chatGptUrl, "_blank", "noopener,noreferrer");
   }
 
   return createPortal(
@@ -113,7 +113,7 @@ export function QuestionView({
                 className={styles.secondaryAction}
                 onClick={onCloseQuestion}
               >
-                Back to categories
+                Back to card
               </button>
             </div>
           </>
@@ -126,14 +126,17 @@ export function QuestionView({
               {entry.answer}
             </p>
             {hasContext ? (
-              <section className={styles.contextBlock} aria-label="Answer context">
+              <section
+                className={styles.contextBlock}
+                aria-label="Answer context"
+              >
                 <p className={styles.contextLabel}>Context</p>
                 {explanation ? (
                   <p className={styles.contextText}>{explanation}</p>
                 ) : null}
                 {source && sourceLabel ? (
                   <p className={styles.contextSource}>
-                    Source:{' '}
+                    Source:{" "}
                     {source.url ? (
                       <a
                         className={styles.contextLink}
@@ -171,7 +174,7 @@ export function QuestionView({
                 className={styles.secondaryAction}
                 onClick={onCloseQuestion}
               >
-                Back to categories
+                Back to card
               </button>
             </div>
           </div>
@@ -179,18 +182,18 @@ export function QuestionView({
       </div>
     </div>,
     document.body,
-  )
+  );
 }
 
 type ChatGptPromptInput = {
-  answer: string
-  categoryLabel: string
-  deckName: string
-  explanation?: string
-  question: string
-  sourceLabel?: string
-  sourceUrl?: string
-}
+  answer: string;
+  categoryLabel: string;
+  deckName: string;
+  explanation?: string;
+  question: string;
+  sourceLabel?: string;
+  sourceUrl?: string;
+};
 
 function buildChatGptUrl({
   answer,
@@ -211,9 +214,9 @@ function buildChatGptUrl({
       sourceLabel,
       sourceUrl,
     }),
-  })
+  });
 
-  return `${CHATGPT_URL}?${searchParams.toString()}`
+  return `${CHATGPT_URL}?${searchParams.toString()}`;
 }
 
 function buildChatGptPrompt({
@@ -226,44 +229,46 @@ function buildChatGptPrompt({
   sourceUrl,
 }: ChatGptPromptInput): string {
   const promptSections = [
-    'I am using a trivia deck during a board game. Give me a short, lively explanation of the revealed answer so I can read it aloud or paraphrase it for the table.',
+    "I am using a trivia deck during a board game. Give me a short, lively explanation of the revealed answer so I can read it aloud or paraphrase it for the table.",
     `Deck: ${limitPromptField(deckName, 80)}`,
     `Category: ${limitPromptField(categoryLabel, 60)}`,
     `Question: ${limitPromptField(question, 280)}`,
     `Answer: ${limitPromptField(answer, 180)}`,
-  ]
+  ];
 
-  const trimmedExplanation = explanation?.trim()
+  const trimmedExplanation = explanation?.trim();
   if (trimmedExplanation) {
     promptSections.push(
       `Existing context: ${limitPromptField(trimmedExplanation, 320)}`,
-    )
+    );
   }
 
-  const trimmedSourceLabel = sourceLabel?.trim()
+  const trimmedSourceLabel = sourceLabel?.trim();
   if (trimmedSourceLabel) {
     promptSections.push(
       `Existing source label: ${limitPromptField(trimmedSourceLabel, 120)}`,
-    )
+    );
   }
 
-  const trimmedSourceUrl = sourceUrl?.trim()
+  const trimmedSourceUrl = sourceUrl?.trim();
   if (trimmedSourceUrl) {
-    promptSections.push(`Existing source URL: ${limitPromptField(trimmedSourceUrl, 200)}`)
+    promptSections.push(
+      `Existing source URL: ${limitPromptField(trimmedSourceUrl, 200)}`,
+    );
   }
 
   promptSections.push(
-    'Keep it under 140 words. Explain why the answer is correct, mention any notable caveat if one matters, and include one memorable extra detail.',
-  )
+    "Keep it under 140 words. Explain why the answer is correct, mention any notable caveat if one matters, and include one memorable extra detail.",
+  );
 
-  return promptSections.join('\n')
+  return promptSections.join("\n");
 }
 
 function limitPromptField(value: string, maxLength: number): string {
-  const trimmedValue = value.trim()
+  const trimmedValue = value.trim();
   if (trimmedValue.length <= maxLength) {
-    return trimmedValue
+    return trimmedValue;
   }
 
-  return `${trimmedValue.slice(0, maxLength - 3).trimEnd()}...`
+  return `${trimmedValue.slice(0, maxLength - 3).trimEnd()}...`;
 }

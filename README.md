@@ -26,6 +26,7 @@ This repository now has a solid playable MVP:
 - optional answer-state handoff can open ChatGPT in a new tab with a prefilled follow-up prompt for extra color
 - if the unofficial ChatGPT URL prefill stops working, a future fallback would be to copy the generated prompt to the clipboard and then open `chatgpt.com`
 - deck-specific category labels and prompts let study decks use course-native lanes without changing the underlying six-slot data model
+- imported deck JSON is normalized at load time, so generated study decks can omit optional `source` metadata and can use deck-specific `lane` labels when they map to `categoryMeta`
 - the CSC-6314 deck can be regenerated on demand from curated module files in the separate course repository
 - automated tests in `src/test/` cover hook behavior, validation logic, and question-view rendering
 

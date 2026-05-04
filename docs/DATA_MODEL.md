@@ -163,6 +163,15 @@ Recommended MVP shape:
 }
 ```
 
+The app normalizes imported deck JSON before validation. The canonical `category`
+field is still preferred, but local/generated decks may omit it when each card
+has exactly six entries in category order. Deck-specific study decks may also use
+an entry `lane` that matches a deck `categoryMeta` label, such as
+`"Foundations"` mapping to the internal `geography` slot.
+
+`source` metadata is optional at both the card and entry level. The UI should
+work the same way when a deck contains only `question` and `answer` fields.
+
 ## Why `entries` Instead of Hardcoding Six Fields
 Preferred:
 

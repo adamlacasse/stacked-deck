@@ -131,17 +131,17 @@ Context metadata now appears only after the answer is revealed in `QuestionView`
 
 Category selection now opens the focused question modal immediately.
 
-- question state: modal shows only the selected question with `Reveal answer` and `Back to categories`
+- question state: modal shows only the selected question with `Reveal answer` and `Back to card`
 - answer state: same modal switches to answer-only content plus optional explanation/source context
 - `Escape` dismisses the modal in question state to recover from accidental category taps
 - modal state changes covered by `QuestionView` tests; `useDeck` now exposes `clearSelectedCategory`
 
-### ✅ Keep "Back to categories" in both modal states
+### ✅ Keep "Back to card" in both modal states
 
 `QuestionView` now keeps the secondary back action visible after reveal.
 
-- question state still shows `Reveal answer` + `Back to categories`
-- answer state now shows `Next card` + `Back to categories`
+- question state still shows `Reveal answer` + `Back to card`
+- answer state now shows `Next card` + `Back to card`
 - returning to categories from answer state clears the modal and lets players select another category on the same card
 - tests updated in `src/test/QuestionView.test.tsx` to cover the revealed-state back action
 

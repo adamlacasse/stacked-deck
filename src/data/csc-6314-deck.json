@@ -28,4055 +28,633 @@
       "prompt": "Real-world use cases and assignment contexts"
     }
   },
-  "cards": [
+    "cards": [
     {
-      "id": "m01-card-0001",
-      "deckId": "csc-6314-study-guide",
+      "id": "dl-card-0001",
       "difficulty": "easy",
-      "tags": [
-        "csc-6314",
-        "module-01",
-        "study-guide",
-        "quiz-01"
-      ],
+      "tags": ["deep-learning", "comprehensive", "foundations"],
       "entries": [
         {
-          "category": "geography",
-          "question": "What is a key difference between deep learning and traditional machine learning?",
-          "answer": "Deep learning learns useful features automatically from raw data instead of depending mainly on human-engineered features.",
-          "source": {
-            "label": "Module 1/Quiz 1/quiz-01-study-guide.md"
-          }
+          "lane": "Foundations",
+          "question": "What distinguishes deep learning from traditional machine learning?",
+          "answer": "Deep learning uses many-layered neural networks that learn useful features automatically from raw data, rather than relying mainly on hand-engineered features."
         },
         {
-          "category": "entertainment",
-          "question": "Which architecture sends information in one direction only, with no loops or cycles?",
-          "answer": "A feedforward neural network (FNN), often implemented as an MLP.",
-          "source": {
-            "label": "Module 1/Quiz 1/quiz-01-study-guide.md"
-          }
+          "lane": "Architectures",
+          "question": "What is the smallest functional unit of a neural network?",
+          "answer": "An artificial neuron (or unit) that computes a weighted sum of its inputs plus a bias and passes the result through an activation function."
         },
         {
-          "category": "history",
-          "question": "If the learning rate is too high during gradient descent, what usually happens?",
-          "answer": "Training overshoots the minimum, becomes unstable, and may fail to converge.",
-          "source": {
-            "label": "Module 1/Quiz 1/quiz-01-study-guide.md"
-          }
+          "lane": "Training",
+          "question": "What does one epoch of training mean?",
+          "answer": "One complete pass over the entire training dataset."
         },
         {
-          "category": "arts",
-          "question": "What is the difference between loss and cost in machine learning?",
-          "answer": "Loss is the error for one prediction, while cost is the average (or sum) of many losses across the dataset.",
-          "source": {
-            "label": "Module 1/Quiz 1/quiz-01-study-guide.md"
-          }
+          "lane": "Math & Loss",
+          "question": "What is a loss function?",
+          "answer": "A function that measures how wrong a model's prediction is for a single example, providing the signal that drives parameter updates."
         },
         {
-          "category": "science",
-          "question": "Which PyTorch component is most directly responsible for updating model parameters during learning?",
-          "answer": "`torch.optim` (specifically, calling `optimizer.step()`)",
-          "source": {
-            "label": "Module 1/Quiz 1/quiz-01-study-guide.md"
-          }
+          "lane": "Frameworks",
+          "question": "What is a tensor in deep learning?",
+          "answer": "A multi-dimensional array of numbers that generalizes scalars, vectors, and matrices, and is the basic data structure flowing through a model."
         },
         {
-          "category": "sports",
-          "question": "What kind of platform might use neural networks to help make video compression decisions?",
-          "answer": "A video streaming platform.",
-          "source": {
-            "label": "Module 1/Quiz 1/quiz-01-study-guide.md"
-          }
+          "lane": "Applications",
+          "question": "When is a simpler model often preferable to a deep network?",
+          "answer": "When the dataset is small or low-dimensional and a smaller, more interpretable model performs comparably with less compute and risk of overfitting."
         }
       ]
     },
     {
-      "id": "m01-card-0002",
-      "deckId": "csc-6314-study-guide",
+      "id": "dl-card-0002",
       "difficulty": "easy",
-      "tags": [
-        "csc-6314",
-        "module-01",
-        "study-guide",
-        "foundations"
-      ],
+      "tags": ["deep-learning", "comprehensive", "mlp", "architecture"],
       "entries": [
         {
-          "category": "geography",
-          "question": "What does feature engineering mean in traditional machine learning?",
-          "answer": "A human manually chooses or defines the input attributes the model should use.",
-          "source": {
-            "label": "Module 1/Quiz 1/quiz-01-study-guide.md"
-          }
+          "lane": "Foundations",
+          "question": "What makes a neural network \"deep\" rather than shallow?",
+          "answer": "Stacking multiple hidden layers between input and output, which lets the network build hierarchical representations."
         },
         {
-          "category": "entertainment",
-          "question": "How many hidden layers does a single-layer perceptron have?",
-          "answer": "None. It consists only of an input layer and an output layer.",
-          "source": {
-            "label": "Module 1/Quiz 1/quiz-01-study-guide.md"
-          }
+          "lane": "Architectures",
+          "question": "What three components define the transformation a hidden-layer neuron performs?",
+          "answer": "Weights, a bias term, and a non-linear activation function applied to the weighted sum."
         },
         {
-          "category": "history",
-          "question": "Why are non-linear activation functions necessary in deep networks?",
-          "answer": "Without them, stacking layers still behaves like a linear model.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
+          "lane": "Training",
+          "question": "What is feature engineering, and how does deep learning change its role?",
+          "answer": "Feature engineering means a human manually defines or selects input attributes; deep learning largely replaces this step with learned feature extraction inside hidden layers."
         },
         {
-          "category": "arts",
-          "question": "Which activation function maps outputs into the 0 to 1 range for binary classification?",
-          "answer": "Sigmoid.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
+          "lane": "Math & Loss",
+          "question": "What does a bias term let a neuron do?",
+          "answer": "It lets the neuron shift its activation threshold so the decision boundary is not anchored at zero."
         },
         {
-          "category": "science",
-          "question": "Which PyTorch utility creates batches and iterates over data during training?",
-          "answer": "DataLoader.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
+          "lane": "Frameworks",
+          "question": "Why must input tensors and model parameters live on the same device?",
+          "answer": "Numerical operations only execute when all participating tensors share a device (CPU or GPU); a mismatch causes a runtime error."
         },
         {
-          "category": "sports",
-          "question": "How can a continuous target be turned into a binary classification label?",
-          "answer": "Choose a threshold and label examples on one side as 1 and the other side as 0.",
-          "source": {
-            "label": "Module 1/module-01-notes.md"
-          }
+          "lane": "Applications",
+          "question": "For what kind of data are MLPs (fully connected networks) typically a good fit?",
+          "answer": "Structured or tabular data where features have no inherent spatial or sequential relationships."
         }
       ]
     },
     {
-      "id": "m01-card-0003",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-01",
-        "study-guide",
-        "architectures"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What is a main limitation of a shallow neural network compared with a deep one?",
-          "answer": "It has more limited feature-learning capacity and is less effective at modeling complex patterns.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What makes a multilayer perceptron deep rather than shallow?",
-          "answer": "It has multiple hidden layers instead of just one or none.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Which optimizer is often used as a practical default for many deep learning tasks?",
-          "answer": "Adam.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "In the update rule $\\theta \\leftarrow \\theta - \\alpha\\nabla J(\\theta)$, what does $\\alpha$ represent?",
-          "answer": "The learning rate.",
-          "source": {
-            "label": "glossary-terms-and-symbols.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "Which PyTorch namespace defines layers and activation functions?",
-          "answer": "torch.nn",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why is multi-horizon forecasting harder than one-step forecasting?",
-          "answer": "The model must predict several future time steps, so errors can compound over time.",
-          "source": {
-            "label": "Module 1/Quiz 1/quiz-01-study-guide.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m01-card-0004",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-01",
-        "study-guide",
-        "activations"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What makes deep learning \"deep\"?",
-          "answer": "Many hidden layers that learn hierarchical representations.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What do hidden-layer neurons apply to transform inputs into intermediate representations?",
-          "answer": "Weights, biases, and activation functions.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Which activation function is a common default choice for hidden layers?",
-          "answer": "ReLU.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What loss function is commonly used for binary classification?",
-          "answer": "Binary cross-entropy (BCE).",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "What does TensorDataset do in a typical PyTorch workflow?",
-          "answer": "It bundles features and labels together as a dataset.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "What is a common application of deep MLPs on user and item features?",
-          "answer": "Recommendation or ranking systems.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m01-card-0005",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-01",
-        "study-guide",
-        "project-01"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What lesson does converting a regression problem into a yes/no task illustrate?",
-          "answer": "Defining the prediction target is part of the machine learning problem itself.",
-          "source": {
-            "label": "Module 1/module-01-notes.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What is a simple neural-network baseline for binary classification?",
-          "answer": "A single `nn.Linear` layer followed by `nn.Sigmoid`, though in PyTorch practice, the sigmoid activation is often combined directly into the loss function (like `BCEWithLogitsLoss`) for numerical stability.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "What does one epoch mean during model training?",
-          "answer": "One complete pass through the training dataset.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "Which two metrics are commonly reported for binary classification when you care about both correctness and ranking quality?",
-          "answer": "Test accuracy and AUC-ROC.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "What preprocessing step is commonly applied to continuous features before training many neural networks?",
-          "answer": "Feature standardization, such as using StandardScaler.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "What type of structured-data task often uses MLPs to estimate the probability of a negative outcome?",
-          "answer": "Credit risk or default prediction.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m01-card-0006",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "hard",
-      "tags": [
-        "csc-6314",
-        "module-01",
-        "study-guide",
-        "review"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What is a safe summary of how deep learning differs from traditional machine learning?",
-          "answer": "It relies more on neural networks learning representations automatically, not just on bigger models.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "How is an MLP related to a feedforward neural network?",
-          "answer": "An MLP is a standard type of feedforward neural network.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "What happens if the learning rate is too low?",
-          "answer": "Training becomes very slow and may get stuck making tiny updates.",
-          "source": {
-            "label": "Module 1/Quiz 1/quiz-01-study-guide.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What does ∇ mean in optimization notation?",
-          "answer": "The gradient operator showing partial derivatives with respect to parameters.",
-          "source": {
-            "label": "glossary-terms-and-symbols.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "What is torch used for in PyTorch?",
-          "answer": "Tensor operations and GPU-capable computation.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why is it useful to compare a linear model and a nonlinear neural network on the same task?",
-          "answer": "It shows whether nonlinear feature learning improves performance over a simpler baseline.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m01-card-0007",
-      "deckId": "csc-6314-study-guide",
+      "id": "dl-card-0003",
       "difficulty": "easy",
-      "tags": [
-        "csc-6314",
-        "module-01",
-        "study-guide",
-        "representation-learning"
-      ],
+      "tags": ["deep-learning", "comprehensive", "activations"],
       "entries": [
         {
-          "category": "geography",
-          "question": "Why is representation learning useful in deep learning?",
-          "answer": "It allows a model to discover useful intermediate features automatically instead of relying entirely on manual feature design.",
-          "source": {
-            "label": "Module 1/module-01-notes.md"
-          }
+          "lane": "Foundations",
+          "question": "Why are non-linear activation functions essential in deep networks?",
+          "answer": "Without non-linearity, stacking layers collapses into a single linear transformation regardless of depth, so the network gains no expressive power from extra layers."
         },
         {
-          "category": "entertainment",
-          "question": "What is the role of the input layer in a neural network?",
-          "answer": "It receives the feature values and passes them into the network for further transformation.",
-          "source": {
-            "label": "Module 1/module-01-notes.md"
-          }
+          "lane": "Architectures",
+          "question": "What does the ReLU activation compute for an input $x$?",
+          "answer": "$\\max(0, x)$ — positive values pass through unchanged and negative values are replaced with zero."
         },
         {
-          "category": "history",
-          "question": "What happens during backpropagation?",
-          "answer": "The model computes gradients of the loss with respect to its parameters so they can be updated.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
+          "lane": "Training",
+          "question": "Why is ReLU a popular default activation for hidden layers?",
+          "answer": "It is computationally cheap, doesn't saturate on the positive side, and lets gradients flow well, which generally speeds up training."
         },
         {
-          "category": "arts",
-          "question": "What does a bias term allow a neuron to do?",
-          "answer": "It lets the neuron shift its activation threshold instead of always being anchored at zero.",
-          "source": {
-            "label": "Module 1/module-01-notes.md"
-          }
+          "lane": "Math & Loss",
+          "question": "What output range does the sigmoid function produce?",
+          "answer": "An open interval between 0 and 1, which makes it useful for representing a single probability in binary classification."
         },
         {
-          "category": "science",
-          "question": "What does model.train() do in PyTorch?",
-          "answer": "It switches the model into training mode so layers like dropout and batch normalization behave correctly during training.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
+          "lane": "Frameworks",
+          "question": "Which activation turns a vector of logits into a probability distribution over multiple classes?",
+          "answer": "Softmax."
         },
         {
-          "category": "sports",
-          "question": "Why are neural networks useful for image tasks?",
-          "answer": "They can learn layered visual patterns such as edges, textures, shapes, and higher-level objects.",
-          "source": {
-            "label": "Module 1/module-01-notes.md"
-          }
+          "lane": "Applications",
+          "question": "Why is tanh sometimes preferred over sigmoid as a hidden activation?",
+          "answer": "Tanh outputs are zero-centered and span (-1, 1), which can make optimization easier than the strictly-positive sigmoid output."
         }
       ]
     },
     {
-      "id": "m01-card-0008",
-      "deckId": "csc-6314-study-guide",
+      "id": "dl-card-0004",
       "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-01",
-        "study-guide",
-        "prediction-basics"
-      ],
+      "tags": ["deep-learning", "comprehensive", "backpropagation", "gradient-descent"],
       "entries": [
         {
-          "category": "geography",
-          "question": "Why does stacking only linear layers without nonlinear activations not make a network more expressive?",
-          "answer": "Because multiple linear transformations still combine into a single linear transformation.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
+          "lane": "Foundations",
+          "question": "What is gradient descent at its most basic level?",
+          "answer": "An iterative optimization procedure that adjusts parameters in the direction opposite the loss gradient in order to reduce the loss."
         },
         {
-          "category": "entertainment",
-          "question": "What is the purpose of the output layer in a neural network?",
-          "answer": "It converts the final hidden representation into the prediction needed for the task.",
-          "source": {
-            "label": "Module 1/module-01-notes.md"
-          }
+          "lane": "Architectures",
+          "question": "What does backpropagation compute?",
+          "answer": "The gradient of the loss with respect to every parameter, by applying the chain rule from the output back through each layer."
         },
         {
-          "category": "history",
-          "question": "What is a mini-batch during training?",
-          "answer": "A small subset of training examples used to compute one gradient update.",
-          "source": {
-            "label": "Module 1/module-01-notes.md"
-          }
+          "lane": "Training",
+          "question": "What rule of calculus underlies backpropagation?",
+          "answer": "The chain rule, which decomposes the gradient through composed functions one layer at a time."
         },
         {
-          "category": "arts",
-          "question": "In binary cross-entropy, what happens when the model is confidently wrong?",
-          "answer": "The loss becomes very large, strongly penalizing that prediction.",
-          "source": {
-            "label": "Module 1/module-01-notes.md"
-          }
+          "lane": "Math & Loss",
+          "question": "What does the update rule $\\theta \\leftarrow \\theta - \\alpha \\nabla J(\\theta)$ describe?",
+          "answer": "A gradient descent step: the parameters $\\theta$ move opposite the loss gradient $\\nabla J(\\theta)$, scaled by the learning rate $\\alpha$."
         },
         {
-          "category": "science",
-          "question": "What does state_dict() return in PyTorch?",
-          "answer": "A dictionary containing a model's learned parameters and registered buffers.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
+          "lane": "Frameworks",
+          "question": "What does calling `.backward()` on a loss tensor do in a modern autodiff framework?",
+          "answer": "It triggers automatic differentiation, populating gradients for every parameter that contributed to that loss."
         },
         {
-          "category": "sports",
-          "question": "Why might a binary classifier output probabilities instead of only final labels?",
-          "answer": "Probabilities let you measure confidence, change decision thresholds, and rank examples by risk or likelihood.",
-          "source": {
-            "label": "Module 1/module-01-notes.md"
-          }
+          "lane": "Applications",
+          "question": "What typically happens if the learning rate is too high?",
+          "answer": "Updates overshoot good regions of parameter space, training oscillates or diverges, and the loss may grow instead of decreasing."
         }
       ]
     },
     {
-      "id": "m01-card-0009",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "hard",
-      "tags": [
-        "csc-6314",
-        "module-01",
-        "study-guide",
-        "optimization-intuition"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "Why does model capacity matter in machine learning?",
-          "answer": "It determines how complex a pattern the model can represent and therefore whether it can fit the task well.",
-          "source": {
-            "label": "Module 1/module-01-notes.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "Why do deeper networks often learn hierarchical representations?",
-          "answer": "Earlier layers capture simpler patterns and later layers combine them into more abstract features.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why is training data often shuffled between epochs?",
-          "answer": "Shuffling reduces ordering effects and helps stochastic updates better reflect the whole dataset.",
-          "source": {
-            "label": "Module 1/module-01-notes.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What does gradient descent try to minimize?",
-          "answer": "It tries to reduce the objective or loss function by moving parameters in the direction opposite the gradient.",
-          "source": {
-            "label": "glossary-terms-and-symbols.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "Why must a model and its tensors be on the same device in PyTorch?",
-          "answer": "Operations can only run when the participating tensors and parameters are on the same CPU or GPU device.",
-          "source": {
-            "label": "Module 1/module-01-notes.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "When might a neural network be unnecessary for a prediction task?",
-          "answer": "When the data is simple or limited and a smaller, more interpretable model performs just as well.",
-          "source": {
-            "label": "Module 1/module-01-notes.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m02-card-0001",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "easy",
-      "tags": [
-        "csc-6314",
-        "module-02",
-        "study-guide",
-        "optimization"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "After learning what a neural network is, what is the next practical focus?",
-          "answer": "How to train, optimize, and tune it effectively in practice.",
-          "source": {
-            "label": "Module 2/module-02-notes.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "Why are hidden-layer widths often reduced gradually in a deep MLP?",
-          "answer": "To compress representations progressively while reducing parameter count.",
-          "source": {
-            "label": "Module 2/Project 2/project-description.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Which gradient descent variant uses one training example per update?",
-          "answer": "Stochastic gradient descent (pure SGD), though in practice, 'mini-batch SGD' is much more common.",
-          "source": {
-            "label": "Module 2/Quiz 2/quiz-02-study-guide.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "How is the generalization gap commonly defined?",
-          "answer": "The difference between training performance and test performance (e.g., train accuracy minus test accuracy, or test error minus train error).",
-          "source": {
-            "label": "Module 2/Project 2/project-description.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "Where do Keras optimizers live?",
-          "answer": "tf.keras.optimizers",
-          "source": {
-            "label": "Module 2/Quiz 2/quiz-02-study-guide.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why might an experiment intentionally train on a smaller subset of data?",
-          "answer": "To reduce compute and make differences between training strategies easier to observe.",
-          "source": {
-            "label": "Module 2/Project 2/project-description.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m02-card-0002",
-      "deckId": "csc-6314-study-guide",
+      "id": "dl-card-0005",
       "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-02",
-        "study-guide",
-        "adam"
-      ],
+      "tags": ["deep-learning", "comprehensive", "optimizers"],
       "entries": [
         {
-          "category": "geography",
-          "question": "What does Adam stand for?",
-          "answer": "Adaptive Moment Estimation.",
-          "source": {
-            "label": "Module 2/module-02-notes.md"
-          }
+          "lane": "Foundations",
+          "question": "What is the difference between full-batch gradient descent, stochastic gradient descent, and mini-batch SGD?",
+          "answer": "Full-batch uses the entire dataset for each update; pure SGD uses one example per update; mini-batch SGD (the practical default) uses a small subset per update."
         },
         {
-          "category": "entertainment",
-          "question": "Where is batch normalization commonly placed in a dense network block?",
-          "answer": "After each Dense layer, before activation and dropout.",
-          "source": {
-            "label": "Module 2/Quiz 2/quiz-02-study-guide.md"
-          }
+          "lane": "Architectures",
+          "question": "What does momentum add to plain SGD?",
+          "answer": "A running velocity term that smooths noisy updates and accelerates progress in directions where the gradient consistently points."
         },
         {
-          "category": "history",
-          "question": "What is Adam's main advantage over standard SGD?",
-          "answer": "It adapts the effective learning rate per parameter and usually converges faster.",
-          "source": {
-            "label": "Module 2/module-02-live-session-slides-summary.md"
-          }
+          "lane": "Training",
+          "question": "What two ideas does the Adam optimizer combine?",
+          "answer": "Momentum (an estimate of the gradient's first moment) and per-parameter adaptive learning rates (using the gradient's second moment)."
         },
         {
-          "category": "arts",
-          "question": "What learning rate is presented as the common default starting point for Adam?",
-          "answer": "0.001.",
-          "explanation": "One example slide mentions 0.01, but the summary calls 0.001 the recommended starting point.",
-          "source": {
-            "label": "Module 2/module-02-live-session-slides-summary.md"
-          }
+          "lane": "Math & Loss",
+          "question": "What is a learning rate schedule?",
+          "answer": "A policy that changes the learning rate over time, often decreasing it so the optimizer can take finer steps as it approaches a minimum."
         },
         {
-          "category": "science",
-          "question": "Which Keras callback reduces the learning rate when validation loss stops improving?",
-          "answer": "ReduceLROnPlateau.",
-          "source": {
-            "label": "Module 2/Project 2/project-description.md"
-          }
+          "lane": "Frameworks",
+          "question": "What is a typical default starting learning rate for Adam?",
+          "answer": "$1\\mathrm{e}{-3}$ (0.001)."
         },
         {
-          "category": "sports",
-          "question": "Why compare a baseline training setup with an enhanced one?",
-          "answer": "To isolate which optimization and regularization choices improve performance.",
-          "source": {
-            "label": "Module 2/Project 2/project-description.md"
-          }
+          "lane": "Applications",
+          "question": "Why is Adam often a strong default optimizer?",
+          "answer": "It usually converges faster than vanilla SGD and is more forgiving of imperfect learning-rate choices, making it a robust starting point on many tasks."
         }
       ]
     },
     {
-      "id": "m02-card-0003",
-      "deckId": "csc-6314-study-guide",
+      "id": "dl-card-0006",
       "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-02",
-        "study-guide",
-        "initialization"
-      ],
+      "tags": ["deep-learning", "comprehensive", "loss", "metrics"],
       "entries": [
         {
-          "category": "geography",
-          "question": "What is the symmetry problem?",
-          "answer": "If all weights start the same, neurons learn the same thing and become redundant.",
-          "source": {
-            "label": "Module 2/module-02-live-session-slides-summary.md"
-          }
+          "lane": "Foundations",
+          "question": "What is the difference between \"loss\" and \"cost\"?",
+          "answer": "Loss is the error on a single example; cost is the average (or sum) of losses across a batch or the whole dataset."
         },
         {
-          "category": "entertainment",
-          "question": "Which initializer is commonly paired with ReLU-based dense layers?",
-          "answer": "He initialization, such as he_normal.",
-          "source": {
-            "label": "Module 2/Project 2/project-description.md"
-          }
+          "lane": "Architectures",
+          "question": "Which loss function is the standard choice for regression on a continuous target?",
+          "answer": "Mean squared error (MSE)."
         },
         {
-          "category": "history",
-          "question": "Why is initializing all weights to zero a bad idea?",
-          "answer": "It keeps neurons identical, so they learn the same features.",
-          "source": {
-            "label": "Module 2/module-02-live-session-slides-summary.md"
-          }
+          "lane": "Training",
+          "question": "Which loss function is standard for binary classification?",
+          "answer": "Binary cross-entropy, often computed as binary-cross-entropy-with-logits for numerical stability."
         },
         {
-          "category": "arts",
-          "question": "What is the usual effect of a learning rate that is too low?",
-          "answer": "Training makes very slow progress and can stall in poor solutions.",
-          "source": {
-            "label": "Module 2/module-02-live-session-slides-summary.md"
-          }
+          "lane": "Math & Loss",
+          "question": "Which loss function is standard for multi-class classification with softmax outputs?",
+          "answer": "Categorical cross-entropy (commonly applied directly to logits with a numerically stable softmax-cross-entropy implementation)."
         },
         {
-          "category": "science",
-          "question": "Which PyTorch scheduler reduces the learning rate at fixed intervals?",
-          "answer": "StepLR.",
-          "source": {
-            "label": "Module 2/module-02-live-session-slides-summary.md"
-          }
+          "lane": "Frameworks",
+          "question": "What does AUC-ROC measure that plain accuracy does not?",
+          "answer": "How well a classifier ranks positive examples above negative ones across all decision thresholds, independent of any single cutoff."
         },
         {
-          "category": "sports",
-          "question": "What type of problem does a housing-value dataset usually represent?",
-          "answer": "A structured-data regression problem using tabular features.",
-          "source": {
-            "label": "Module 2/Project 2/project-description.md"
-          }
+          "lane": "Applications",
+          "question": "When can accuracy be a misleading metric?",
+          "answer": "On heavily imbalanced datasets, where always predicting the majority class can yield high accuracy with no real predictive skill."
         }
       ]
     },
     {
-      "id": "m02-card-0004",
-      "deckId": "csc-6314-study-guide",
+      "id": "dl-card-0007",
       "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-02",
-        "study-guide",
-        "regularization"
-      ],
+      "tags": ["deep-learning", "comprehensive", "regularization", "overfitting"],
       "entries": [
         {
-          "category": "geography",
-          "question": "What validation pattern usually signals overfitting?",
-          "answer": "Training loss is low while validation loss is much higher.",
-          "source": {
-            "label": "Module 2/Quiz 2/quiz-02-study-guide.md"
-          }
+          "lane": "Foundations",
+          "question": "What is overfitting?",
+          "answer": "When a model fits training-specific patterns so closely that it generalizes poorly to new data, showing low training loss but much higher validation/test loss."
         },
         {
-          "category": "entertainment",
-          "question": "What two common regularization methods for dense networks reduce overfitting in different ways?",
-          "answer": "Dropout and L2 regularization.",
-          "source": {
-            "label": "Module 2/Project 2/project-description.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "What does dropout do during training?",
-          "answer": "It randomly turns off some neurons so the network cannot rely too heavily on a few of them.",
-          "source": {
-            "label": "Module 2/Quiz 2/quiz-02-study-guide.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What does L2 regularization penalize?",
-          "answer": "Large weight magnitudes.",
-          "source": {
-            "label": "Module 2/Quiz 2/quiz-02-study-guide.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "In Keras, what function adds L2 regularization to a layer?",
-          "answer": "regularizers.l2(...)",
-          "source": {
-            "label": "Module 2/module-02-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "What is regularization trying to improve?",
-          "answer": "Generalization to unseen data, not just training performance.",
-          "source": {
-            "label": "Module 2/module-02-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m02-card-0005",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "hard",
-      "tags": [
-        "csc-6314",
-        "module-02",
-        "study-guide",
-        "batch-norm"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "How do hyperparameters differ from weights?",
-          "answer": "Hyperparameters are chosen before training, while weights are learned during training.",
-          "source": {
-            "label": "Module 2/module-02-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What layer is used to stabilize activations between Dense layers in the advanced model?",
-          "answer": "Batch normalization.",
-          "source": {
-            "label": "Module 2/module-02-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "What is a main training benefit of batch normalization?",
-          "answer": "It makes activations more stable, which smooths and often speeds up training.",
-          "source": {
-            "label": "Module 2/module-02-notes.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "Is batch size a learned parameter or a hyperparameter?",
-          "answer": "A hyperparameter.",
-          "source": {
-            "label": "Module 2/Quiz 2/quiz-02-study-guide.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "Which Keras layer adds batch normalization?",
-          "answer": "layers.BatchNormalization().",
-          "source": {
-            "label": "Module 2/module-02-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why might a cloud notebook environment be useful for deep learning experiments?",
-          "answer": "It avoids local setup issues and can provide easy access to GPUs.",
-          "source": {
-            "label": "Module 2/module-02-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m02-card-0006",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "hard",
-      "tags": [
-        "csc-6314",
-        "module-02",
-        "study-guide",
-        "comparison"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "Why can random search outperform grid search when tuning hyperparameters?",
-          "answer": "It explores more variety with less compute.",
-          "source": {
-            "label": "Module 2/module-02-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What activation function is commonly used on a single output neuron for binary classification?",
-          "answer": "Sigmoid.",
-          "source": {
-            "label": "Module 2/Project 2/project-description.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "What does early stopping usually monitor to decide when to stop training?",
-          "answer": "A validation metric, most commonly validation loss.",
-          "source": {
-            "label": "Module 2/Project 2/project-description.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "How is \"epochs to converge\" typically interpreted in training experiments?",
-          "answer": "The number of epochs needed before the model stops making meaningful validation improvements.",
-          "source": {
-            "label": "Module 2/Project 2/project-description.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "In Keras, what metrics list is commonly used to report classification accuracy during training?",
-          "answer": "metrics=['accuracy']",
-          "source": {
-            "label": "Module 2/Project 2/project-description.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "What kind of summary makes it easier to compare multiple training strategies?",
-          "answer": "A side-by-side comparison table of key metrics.",
-          "source": {
-            "label": "Module 2/Project 2/project-description.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m02-card-0007",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "easy",
-      "tags": [
-        "csc-6314",
-        "module-02",
-        "study-guide",
-        "training-diagnostics"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What is a hyperparameter search space?",
-          "answer": "It is the set or range of hyperparameter values you are willing to test during tuning.",
-          "source": {
-            "label": "Module 2/module-02-notes.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "Why can deeper networks be harder to optimize than shallow ones?",
-          "answer": "They have more parameters and more opportunities for unstable gradients (vanishing or exploding gradients) or poorly scaled activations.",
-          "source": {
-            "label": "Module 2/module-02-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "What is a mini-batch in stochastic optimization?",
-          "answer": "A subset of the training data used to estimate the gradient for one update step.",
-          "source": {
-            "label": "Module 2/module-02-notes.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What does it usually mean if training accuracy rises while validation accuracy falls?",
-          "answer": "The model is likely overfitting to the training data.",
-          "source": {
-            "label": "Module 2/module-02-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "What does model.eval() do in PyTorch?",
-          "answer": "It switches the model into evaluation mode so layers like dropout and batch normalization use inference behavior.",
-          "source": {
-            "label": "Module 2/module-02-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why is it useful to compare training and validation curves during experimentation?",
-          "answer": "They help diagnose overfitting, underfitting, instability, and whether learning is still improving.",
-          "source": {
-            "label": "Module 2/module-02-notes.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m02-card-0008",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-02",
-        "study-guide",
-        "optimization-tools"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "Why are initialization schemes often matched to activation functions?",
-          "answer": "They help keep activations and gradients at useful scales as signals move through the network.",
-          "source": {
-            "label": "Module 2/module-02-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What problem does dropout address in dense networks?",
-          "answer": "It reduces co-adaptation between neurons and helps limit overfitting.",
-          "source": {
-            "label": "Module 2/module-02-notes.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why can momentum improve SGD?",
-          "answer": "It smooths noisy updates and accelerates learning in directions that consistently reduce loss.",
-          "source": {
-            "label": "Module 2/module-02-notes.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What is learning rate decay?",
-          "answer": "A strategy that gradually reduces the learning rate over time so training can make finer updates later.",
-          "source": {
-            "label": "Module 2/module-02-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "What is the purpose of a callback in a Keras training loop?",
-          "answer": "It lets you run automatic actions during training, such as early stopping, logging, or changing the learning rate.",
-          "source": {
-            "label": "Module 2/module-02-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why might you train the same model with multiple random seeds?",
-          "answer": "To check whether the results are stable rather than caused by one lucky initialization or data order.",
-          "source": {
-            "label": "Module 2/module-02-notes.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m02-card-0009",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "hard",
-      "tags": [
-        "csc-6314",
-        "module-02",
-        "study-guide",
-        "generalization"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "Why should validation data be separate from test data?",
-          "answer": "Validation data is used to tune choices during development, while test data is reserved for the final unbiased evaluation.",
-          "source": {
-            "label": "Module 2/module-02-notes.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "Why can batch normalization make higher learning rates more workable?",
-          "answer": "It stabilizes activations and gradients, which can reduce training instability.",
-          "source": {
-            "label": "Module 2/module-02-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "What tradeoff does batch size create during training?",
-          "answer": "Smaller batches give noisier but often more regularizing updates, while larger batches give smoother and often more efficient updates.",
-          "source": {
-            "label": "Module 2/module-02-notes.md"
-          }
-        },
-        {
-          "category": "arts",
+          "lane": "Architectures",
           "question": "What is underfitting?",
-          "answer": "Underfitting happens when a model is too simple or insufficiently trained to capture the important patterns in the data.",
-          "source": {
-            "label": "Module 2/module-02-live-session-slides-summary.md"
-          }
+          "answer": "When a model is too simple or too lightly trained to capture the meaningful patterns in the data, performing poorly on both training and validation sets."
         },
         {
-          "category": "science",
-          "question": "What is the purpose of saving the best checkpoint during training?",
-          "answer": "It preserves the model state with the strongest validation performance so you can evaluate or deploy that version later.",
-          "source": {
-            "label": "Module 2/module-02-notes.md"
-          }
+          "lane": "Training",
+          "question": "How does dropout reduce overfitting?",
+          "answer": "By randomly zeroing out a fraction of activations during training, which prevents neurons from co-adapting and forces the network to build more robust, distributed representations."
         },
         {
-          "category": "sports",
-          "question": "If a more advanced training setup reduces training time but not test performance, what does that suggest?",
-          "answer": "The optimization improved efficiency, but it did not meaningfully improve generalization on unseen data.",
-          "source": {
-            "label": "Module 2/module-02-notes.md"
-          }
+          "lane": "Math & Loss",
+          "question": "What does L2 regularization add to the loss, and what does it discourage?",
+          "answer": "It adds a term proportional to the sum of squared weights, discouraging large weight magnitudes and pushing toward smoother, more generalizable solutions."
+        },
+        {
+          "lane": "Frameworks",
+          "question": "What does early stopping do during training?",
+          "answer": "It monitors a validation metric and halts training when that metric stops improving, often retaining the best-seen weights to avoid overfitting."
+        },
+        {
+          "lane": "Applications",
+          "question": "How does data augmentation improve generalization?",
+          "answer": "It synthetically expands the training distribution with label-preserving transformations (flips, crops, noise, paraphrases), helping the model become invariant to nuisance variation."
         }
       ]
     },
     {
-      "id": "m03-card-0001",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "easy",
-      "tags": [
-        "csc-6314",
-        "module-03",
-        "study-guide",
-        "cnn-basics"
-      ],
+      "id": "dl-card-0008",
+      "difficulty": "hard",
+      "tags": ["deep-learning", "comprehensive", "initialization", "batch-norm"],
       "entries": [
         {
-          "category": "geography",
-          "question": "Why are CNNs usually better suited than plain fully connected networks for image tasks?",
-          "answer": "They preserve spatial structure and learn local visual patterns instead of treating the image as one flat vector.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
+          "lane": "Foundations",
+          "question": "What is the symmetry-breaking problem in weight initialization?",
+          "answer": "If all weights start at the same value (such as zero), neurons in a layer compute identical outputs and gradients and never differentiate, so the network fails to learn distinct features."
         },
         {
-          "category": "entertainment",
-          "question": "What are the three intuitive parts of a basic CNN pipeline described in this module?",
-          "answer": "Convolutional layers as the scanner, pooling layers as the compressor, and fully connected layers as the classifier.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
+          "lane": "Architectures",
+          "question": "Why pair He initialization with ReLU and Xavier (Glorot) initialization with sigmoid or tanh?",
+          "answer": "Each scheme is variance-tuned for its activation so forward activations and backward gradients neither shrink toward zero nor explode as signals move through layers."
         },
         {
-          "category": "history",
-          "question": "Why can aggressive downsampling hurt a CNN when the target depends on fine image detail?",
-          "answer": "It can discard small but important spatial patterns before later layers can use them.",
-          "source": {
-            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
-          }
+          "lane": "Training",
+          "question": "What does batch normalization do during training?",
+          "answer": "It normalizes a layer's activations across the mini-batch and applies a learned scale and shift, which stabilizes training and often allows higher learning rates."
         },
         {
-          "category": "arts",
-          "question": "Besides whether a feature exists, what two things does a feature map preserve?",
-          "answer": "Where the feature appears and how strongly it appears.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
+          "lane": "Math & Loss",
+          "question": "What is the difference between a parameter and a hyperparameter?",
+          "answer": "Parameters (weights and biases) are learned during training; hyperparameters (learning rate, batch size, dropout rate, etc.) are chosen before training and govern how learning happens."
         },
         {
-          "category": "science",
-          "question": "Which PyTorch layer type is used to define a learnable 2D convolution in a CNN?",
-          "answer": "`nn.Conv2d`.",
-          "source": {
-            "label": "Module 3/Project 3/project-description.html"
-          }
+          "lane": "Frameworks",
+          "question": "What does switching a model into evaluation mode change?",
+          "answer": "Layers like dropout become a no-op, and batch normalization uses its accumulated running statistics instead of batch statistics, so inference is deterministic."
         },
         {
-          "category": "sports",
-          "question": "What kind of data is Module 3 mainly concerned with when introducing CNNs?",
-          "answer": "Image-like visual data with meaningful spatial structure.",
-          "source": {
-            "label": "Module 3/module-03-learning-objectives-and-todo-list.md"
-          }
+          "lane": "Applications",
+          "question": "What is the typical trade-off between small and large batch sizes?",
+          "answer": "Small batches give noisier, often more regularizing updates and can generalize better; large batches give smoother, more compute-efficient updates but can over-smooth and sometimes generalize worse."
         }
       ]
     },
     {
-      "id": "m03-card-0002",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "easy",
-      "tags": [
-        "csc-6314",
-        "module-03",
-        "study-guide",
-        "filters-strides-padding"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What is a convolutional filter, also called a kernel?",
-          "answer": "A small learnable matrix that slides across an image to detect a specific local pattern.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "How does stride `1` differ from a larger stride in a convolutional layer?",
-          "answer": "Stride `1` captures more detail and produces a larger output, while larger strides skip more positions and reduce output size.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "If a CNN is missing thin cracks or narrow character strokes, what general design direction is safer?",
-          "answer": "Preserve detail with modest strides and avoid throwing away too much spatial information early.",
-          "source": {
-            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What usually happens to the spatial size of a feature map when using `valid` padding?",
-          "answer": "It shrinks because no border padding is added.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "In a PyTorch CNN, what does `padding=1` with `kernel_size=3` often help preserve when stride is `1`?",
-          "answer": "The input height and width.",
-          "source": {
-            "label": "Module 3/Project 3/project-description.html"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why is zero padding especially useful in tasks like OCR or stop-sign detection?",
-          "answer": "It lets the network detect useful patterns near the edges instead of underrepresenting border pixels.",
-          "source": {
-            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m03-card-0003",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "easy",
-      "tags": [
-        "csc-6314",
-        "module-03",
-        "study-guide",
-        "pooling"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What does max pooling do in a CNN?",
-          "answer": "It keeps the strongest activation in a local window while reducing spatial size.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "When you apply `2x2` max pooling with stride `2`, which dimensions are reduced?",
-          "answer": "The height and width are reduced, while the channel count stays the same.",
-          "source": {
-            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why should OCR models avoid overly aggressive pooling?",
-          "answer": "Too much compression can remove the small shape differences needed to distinguish characters.",
-          "source": {
-            "label": "Module 3/module-03-discussion.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "If a `32 x 32 x 16` feature volume passes through `2x2` max pooling with stride `2`, what is the output size?",
-          "answer": "`16 x 16 x 16`.",
-          "source": {
-            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "Which PyTorch layer performs max pooling over 2D feature maps?",
-          "answer": "`nn.MaxPool2d`.",
-          "source": {
-            "label": "Module 3/Project 3/project-description.html"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "What practical benefit does pooling provide in large-scale vision systems?",
-          "answer": "It reduces computation and makes the representation less sensitive to small spatial shifts.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m03-card-0004",
-      "deckId": "csc-6314-study-guide",
+      "id": "dl-card-0009",
       "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-03",
-        "study-guide",
-        "feature-maps"
-      ],
+      "tags": ["deep-learning", "comprehensive", "cnn", "convolution"],
       "entries": [
         {
-          "category": "geography",
+          "lane": "Foundations",
+          "question": "Why are convolutional networks better suited than MLPs for image data?",
+          "answer": "They preserve spatial structure, share small filters across the image, and exploit locality, capturing visual patterns with far fewer parameters than a fully connected network."
+        },
+        {
+          "lane": "Architectures",
+          "question": "What is a convolutional kernel (filter)?",
+          "answer": "A small learnable weight matrix that slides across the input and produces high responses where its target local pattern is present."
+        },
+        {
+          "lane": "Training",
+          "question": "What does parameter sharing across spatial positions accomplish in a CNN?",
+          "answer": "It dramatically reduces parameter count and gives the model translation equivariance — the same feature can be detected anywhere in the image."
+        },
+        {
+          "lane": "Math & Loss",
+          "question": "How does increasing the stride affect the output of a convolution?",
+          "answer": "Larger strides skip more positions, producing smaller output feature maps (downsampling)."
+        },
+        {
+          "lane": "Frameworks",
+          "question": "What does \"same\" or zero padding accomplish in a convolutional layer?",
+          "answer": "It adds zeros around the input so the output retains the original height and width, ensuring edge pixels are not underrepresented."
+        },
+        {
+          "lane": "Applications",
+          "question": "When does aggressive early downsampling hurt CNN accuracy?",
+          "answer": "On tasks where fine local detail matters — small text, thin cracks, narrow strokes — because the discriminating pattern can be erased before deeper layers ever see it."
+        }
+      ]
+    },
+    {
+      "id": "dl-card-0010",
+      "difficulty": "medium",
+      "tags": ["deep-learning", "comprehensive", "cnn", "pooling", "feature-maps"],
+      "entries": [
+        {
+          "lane": "Foundations",
           "question": "What is a feature map in a CNN?",
-          "answer": "The spatial output of a filter showing where a learned pattern was detected and how strongly.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
+          "answer": "The 2D output of a single filter applied across the input, indicating where and how strongly that filter's pattern was detected."
         },
         {
-          "category": "entertainment",
-          "question": "What do early CNN feature maps usually highlight compared with deeper feature maps?",
-          "answer": "Early maps highlight edges and colors, while deeper maps highlight textures, parts, and objects.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
+          "lane": "Architectures",
+          "question": "What does max pooling compute?",
+          "answer": "The maximum activation within each local window, reducing spatial size while preserving the strongest local response."
         },
         {
-          "category": "history",
-          "question": "Why can inspecting feature maps help when debugging a CNN?",
-          "answer": "They show whether intermediate layers are responding to meaningful patterns or missing important structure.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
+          "lane": "Training",
+          "question": "What kinds of patterns do early CNN layers learn versus deeper layers?",
+          "answer": "Early layers tend to capture low-level features such as edges and colors; deeper layers compose those into textures, parts, and ultimately full objects."
         },
         {
-          "category": "arts",
-          "question": "If a convolutional layer learns `32` filters, how many feature maps does it usually produce?",
-          "answer": "Thirty-two, one per filter.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
+          "lane": "Math & Loss",
+          "question": "If a $32 \\times 32 \\times 16$ feature volume passes through $2 \\times 2$ max pooling with stride $2$, what is the output shape?",
+          "answer": "$16 \\times 16 \\times 16$. Height and width are halved while channel count is unchanged."
         },
         {
-          "category": "science",
-          "question": "What PyTorch mechanism was highlighted for capturing intermediate feature maps during the forward pass?",
-          "answer": "Forward hooks.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
+          "lane": "Frameworks",
+          "question": "What is a common ordering inside a CNN feature block?",
+          "answer": "Conv $\\to$ BatchNorm $\\to$ ReLU $\\to$ Pool, stacked repeatedly to extract progressively higher-level features."
         },
         {
-          "category": "sports",
-          "question": "How do feature maps support systems such as Waymo or Boston Dynamics Spot?",
-          "answer": "They help the network localize and represent visual patterns needed for scene understanding and perception.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
+          "lane": "Applications",
+          "question": "Why does pooling provide some translation invariance?",
+          "answer": "Small spatial shifts in the input usually leave the maximum (or average) value within a pooling window unchanged, so the downstream representation is more stable to minor shifts."
         }
       ]
     },
     {
-      "id": "m03-card-0005",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-03",
-        "study-guide",
-        "lenet-vgg-resnet"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What task is LeNet-5 most famously associated with?",
-          "answer": "Handwritten digit recognition.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What design style is characteristic of VGG networks?",
-          "answer": "Deep stacks of small convolutions in a simple, repetitive architecture.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why was ResNet a major breakthrough for deep CNN training?",
-          "answer": "Its skip connections made very deep networks easier to optimize by reducing degradation and vanishing-gradient problems.",
-          "source": {
-            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What is the core idea of a residual connection?",
-          "answer": "A shortcut path adds earlier information to the output of a deeper block.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "Name two common pretrained CNN families that are often available in vision libraries.",
-          "answer": "VGG and ResNet.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "When is using a pretrained ResNet or VGG backbone often more practical than training from scratch?",
-          "answer": "When you have limited labeled data but still need strong image features quickly.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m03-card-0006",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-03",
-        "study-guide",
-        "transfer-learning"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What is transfer learning in computer vision?",
-          "answer": "Reusing a pretrained model and adapting it to a new but related visual task.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "Which part of a pretrained CNN is usually replaced for a new classification task?",
-          "answer": "The final classifier head.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why are the early layers of a pretrained CNN often frozen at first?",
-          "answer": "They already capture generic visual features like edges and textures that transfer across many tasks.",
-          "source": {
-            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "Why must the final output layer size change when adapting a pretrained CNN to a new dataset?",
-          "answer": "It has to match the number of target classes in the new task.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "What should you call on a PyTorch model before running deterministic inference with dropout or batch norm present?",
-          "answer": "`model.eval()`.",
-          "source": {
-            "label": "Module 3/Project 3/project-description.html"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why is transfer learning attractive for medical imaging problems such as tumor detection?",
-          "answer": "It lets you reuse strong low-level visual features even when medical datasets are relatively small.",
-          "source": {
-            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m03-card-0007",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-03",
-        "study-guide",
-        "cnn-pipeline"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What job do the fully connected layers perform at the end of a CNN?",
-          "answer": "They use the extracted high-level features to produce the final class decision.",
-          "source": {
-            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What operation usually happens between the final convolutional features and the last linear classifier?",
-          "answer": "The spatial feature maps are pooled and then flattened into vectors.",
-          "source": {
-            "label": "Module 3/Project 3/project-description.html"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why is batch normalization commonly paired with convolutional blocks?",
-          "answer": "It stabilizes activations so training behaves more smoothly.",
-          "source": {
-            "label": "Module 3/Project 3/project-description.html"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "Why can't a standard `Linear` layer consume a 2D feature map directly without reshaping?",
-          "answer": "A linear layer expects each example to be a 1D feature vector.",
-          "source": {
-            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "What does `torch.flatten(x, 1)` preserve while reshaping a CNN tensor?",
-          "answer": "It preserves the batch dimension and flattens the remaining dimensions.",
-          "source": {
-            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "In a four-class animal classifier, how many output scores should the final linear layer produce?",
-          "answer": "Four, one for each class.",
-          "source": {
-            "label": "Module 3/Project 3/project-description.html"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m03-card-0008",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-03",
-        "study-guide",
-        "relu"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "Why is ReLU commonly applied after a convolutional layer?",
-          "answer": "It introduces non-linearity so the network can learn patterns beyond simple linear relationships.",
-          "source": {
-            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What would happen conceptually if every layer in a deep network were purely linear?",
-          "answer": "The whole network would collapse into an overall linear transformation.",
-          "source": {
-            "label": "Module 1/module-01-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "What makes ReLU a practical default for hidden layers in many deep networks?",
-          "answer": "It is simple, efficient, and supports learning complex patterns without acting like a saturating output activation.",
-          "source": {
-            "label": "Module 3/Project 3/project-description.html"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What output does ReLU produce for a negative input value?",
-          "answer": "Zero.",
-          "source": {
-            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "Which PyTorch class is used to add ReLU activations inside an `nn.Sequential` block?",
-          "answer": "`nn.ReLU`.",
-          "source": {
-            "label": "Module 3/Project 3/project-description.html"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why is non-linearity necessary for an industrial defect detector?",
-          "answer": "Real defects are defined by complex visual patterns that cannot be modeled well with only linear operations.",
-          "source": {
-            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m03-card-0009",
-      "deckId": "csc-6314-study-guide",
+      "id": "dl-card-0011",
       "difficulty": "hard",
-      "tags": [
-        "csc-6314",
-        "module-03",
-        "study-guide",
-        "ocr"
-      ],
+      "tags": ["deep-learning", "comprehensive", "cnn", "transfer-learning", "resnet"],
       "entries": [
         {
-          "category": "geography",
-          "question": "How is OCR different from ordinary image classification?",
-          "answer": "OCR extracts the actual text content from an image instead of only assigning a broad image category.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
+          "lane": "Foundations",
+          "question": "What is transfer learning?",
+          "answer": "Reusing a model that was pretrained on one task as a starting point for a new but related task, instead of training from scratch."
         },
         {
-          "category": "entertainment",
-          "question": "Why are small filters often preferred when building an OCR system for distorted characters?",
-          "answer": "They capture fine edges, corners, and stroke patterns that distinguish similar characters.",
-          "source": {
-            "label": "Module 3/module-03-discussion.md"
-          }
+          "lane": "Architectures",
+          "question": "What is a residual (skip) connection, and what problem does it solve?",
+          "answer": "A shortcut that adds an earlier activation to the output of a later block, easing optimization of very deep networks and reducing degradation and vanishing-gradient issues."
         },
         {
-          "category": "history",
-          "question": "What kinds of data augmentation help a CNN handle low-light, distorted serial-number images?",
-          "answer": "Rotation, brightness and contrast variation, noise, blur, and slight perspective distortion.",
-          "source": {
-            "label": "Module 3/module-03-discussion.md"
-          }
+          "lane": "Training",
+          "question": "Why are early layers of a pretrained CNN often frozen during fine-tuning?",
+          "answer": "They already encode generic visual features (edges, textures) that transfer well, so freezing them saves compute and reduces overfitting on small target datasets."
         },
         {
-          "category": "arts",
-          "question": "What is the main risk of over-compressing feature maps in an OCR pipeline?",
-          "answer": "Characters that differ by small local strokes can become hard or impossible to distinguish.",
-          "source": {
-            "label": "Module 3/module-03-discussion.md"
-          }
+          "lane": "Math & Loss",
+          "question": "Why must the final classification layer be replaced when adapting a pretrained CNN to a new task?",
+          "answer": "It has to output the correct number of class scores for the new label set; the original head was sized for the source dataset."
         },
         {
-          "category": "science",
-          "question": "Which Python OCR wrapper was mentioned in the Module 3 slides?",
-          "answer": "`PyTesseract`.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
+          "lane": "Frameworks",
+          "question": "Name three influential CNN architectures.",
+          "answer": "LeNet, VGG, and ResNet are canonical examples; AlexNet, Inception, and EfficientNet are also widely used."
         },
         {
-          "category": "sports",
-          "question": "Why might an OCR model confuse a `7` with a `1`?",
-          "answer": "The model may fail to preserve or detect the local stroke pattern, such as a cross-bar, that separates the two shapes.",
-          "source": {
-            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
-          }
+          "lane": "Applications",
+          "question": "When is transfer learning especially valuable?",
+          "answer": "When the target dataset is small but a large source dataset (e.g., ImageNet) provided enough generic visual knowledge to bootstrap a strong starting point."
         }
       ]
     },
     {
-      "id": "m03-card-0010",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "hard",
-      "tags": [
-        "csc-6314",
-        "module-03",
-        "study-guide",
-        "project-03"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "Which dataset is used for Project 3 before filtering to four target classes?",
-          "answer": "CIFAR-10.",
-          "source": {
-            "label": "Module 3/Project 3/project-description.html"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What minimum convolutional requirement does the `AnimalCNN` architecture have in Project 3?",
-          "answer": "It must include at least three `Conv2d` layers.",
-          "source": {
-            "label": "Module 3/Project 3/project-description.html"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why are the original CIFAR-10 labels remapped to `0` through `3` in the project?",
-          "answer": "Contiguous class indices make training and output handling straightforward for the four-class model.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "If the classifier predicts bird, cat, dog, and horse, how many output logits should the last linear layer produce?",
-          "answer": "Four.",
-          "source": {
-            "label": "Module 3/Project 3/project-description.html"
-          }
-        },
-        {
-          "category": "science",
-          "question": "Which PyTorch layer in the project skeleton compresses each channel to a `1 x 1` spatial output before classification?",
-          "answer": "`nn.AdaptiveAvgPool2d((1, 1))`.",
-          "source": {
-            "label": "Module 3/Project 3/project-description.html"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why does the project ask for a species-information dictionary in addition to a predicted label?",
-          "answer": "It turns the raw prediction into a clearer human-readable report.",
-          "source": {
-            "label": "Module 3/Project 3/project-description.html"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m03-card-0011",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "hard",
-      "tags": [
-        "csc-6314",
-        "module-03",
-        "study-guide",
-        "vision-applications"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What hierarchical progression do CNNs usually learn from raw pixels?",
-          "answer": "Edges to textures to parts to full objects.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "Why is scanning local regions more useful than flattening an entire image immediately?",
-          "answer": "It preserves local spatial relationships and lets the model build patterns from nearby pixels.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why can a pretrained backbone be a strong starting point for a small industrial vision dataset?",
-          "answer": "It already encodes reusable low-level features, so the model needs less data and training to become useful.",
-          "source": {
-            "label": "Module 3/module-03-discussion.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What spatial information does a feature map retain that a final class probability does not?",
-          "answer": "Where in the image the detected pattern appears.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "Name one managed cloud vision service mentioned in Module 3.",
-          "answer": "Azure AI Vision, Amazon Rekognition, or Google Cloud Vision.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "What two real-world systems were mentioned as examples of computer vision in action?",
-          "answer": "Waymo robotaxis and Boston Dynamics Spot.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m03-card-0012",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "hard",
-      "tags": [
-        "csc-6314",
-        "module-03",
-        "study-guide",
-        "review"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What single idea links crack detection, OCR, and stop-sign recognition in Module 3?",
-          "answer": "CNN design has to preserve and detect meaningful local visual structure.",
-          "source": {
-            "label": "Module 3/Quiz 3/quiz-03-study-support.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "If a model needs stronger sensitivity to edges and borders, which CNN controls are most worth revisiting first?",
-          "answer": "Filters, strides, and padding.",
-          "source": {
-            "label": "Module 3/module-03-learning-objectives-and-todo-list.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "When fine visual details matter, what downsampling strategy is safer than aggressive compression?",
-          "answer": "Use modest pooling and small strides so important detail survives deeper into the network.",
-          "source": {
-            "label": "Module 3/module-03-discussion.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "Before classification, what two shape-changing steps commonly happen after the last convolutional block?",
-          "answer": "Pooling reduces the spatial map, and flattening converts it into a vector for the classifier.",
-          "source": {
-            "label": "Module 3/Project 3/project-description.html"
-          }
-        },
-        {
-          "category": "science",
-          "question": "What is a common PyTorch ordering for a basic CNN feature block in this module?",
-          "answer": "`Conv2d -> BatchNorm2d -> ReLU -> MaxPool2d`.",
-          "source": {
-            "label": "Module 3/Project 3/project-description.html"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "What major task types from Module 3 all rely on CNN-style feature extraction?",
-          "answer": "Image classification, OCR, defect detection, and broader computer-vision perception tasks.",
-          "source": {
-            "label": "Module 3/module-03-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m04-card-0001",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "easy",
-      "tags": [
-        "csc-6314",
-        "module-04",
-        "study-guide",
-        "rnn-basics"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What makes data sequential rather than just a collection of independent inputs?",
-          "answer": "The order matters, so earlier elements affect how later elements should be interpreted.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What part of an RNN acts as its memory while reading a sequence?",
-          "answer": "The hidden state.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why would shuffling the order of words in a sentence usually hurt an RNN-based model?",
-          "answer": "Because the model depends on sequence order to build context over time.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "How should you interpret the hidden state at time step $t$ in an RNN?",
-          "answer": "As a compressed summary of the sequence seen up to step $t$.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "Which TensorFlow / Keras layer was highlighted as the basic recurrent layer for sequence processing?",
-          "answer": "`SimpleRNN`.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Name two common kinds of sequential data discussed in Module 4.",
-          "answer": "Examples include text, speech, time-series sensor data, and DNA sequences.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m04-card-0002",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "easy",
-      "tags": [
-        "csc-6314",
-        "module-04",
-        "study-guide",
-        "cnn-vs-rnn"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What is the main conceptual difference between CNNs and RNNs?",
-          "answer": "CNNs are designed for spatial patterns, while RNNs are designed for temporal or sequential patterns.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "Why are RNNs described as the 'masters of time' in the slides?",
-          "answer": "Because they process data one step at a time and carry context forward through a hidden state.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why can a standard feedforward network struggle on sequence tasks compared with an RNN?",
-          "answer": "It usually treats inputs as independent instead of preserving ordered context across steps.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "In sequence modeling, what does it mean to say the output at one step depends on previous computations?",
-          "answer": "It means the model's current prediction is influenced by information stored from earlier time steps.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "In the simplified TensorFlow pipeline shown in the slides, what layer acts as the final decision-maker after the recurrent layer?",
-          "answer": "A `Dense` layer.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Which kind of model is usually a better fit for image classification, a CNN or an RNN?",
-          "answer": "A CNN, because image classification depends mainly on spatial patterns.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m04-card-0003",
-      "deckId": "csc-6314-study-guide",
+      "id": "dl-card-0012",
       "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-04",
-        "study-guide",
-        "unrolling"
-      ],
+      "tags": ["deep-learning", "comprehensive", "rnn", "sequential-data"],
       "entries": [
         {
-          "category": "geography",
-          "question": "What does it mean to 'unroll' an RNN?",
-          "answer": "It means expanding the recurrent loop into a sequence of repeated time steps so you can see how the same computation is applied over time.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
+          "lane": "Foundations",
+          "question": "What makes data sequential rather than independent?",
+          "answer": "The order matters — each element's meaning depends on the elements that came before it."
         },
         {
-          "category": "entertainment",
-          "question": "When an RNN is unrolled, are different weights used at each time step?",
-          "answer": "No. The same recurrent parameters are reused at every time step.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
+          "lane": "Architectures",
+          "question": "What role does the hidden state play in a recurrent neural network?",
+          "answer": "It carries a compressed summary of everything the network has read so far, passed from one time step to the next as the model's running memory."
         },
         {
-          "category": "history",
-          "question": "Why is the unrolled view useful when thinking about how RNNs are trained?",
-          "answer": "It makes it easier to see how information and gradients move across time steps during learning.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
+          "lane": "Training",
+          "question": "What is Backpropagation Through Time (BPTT)?",
+          "answer": "The training algorithm that propagates loss gradients backward through the unrolled time steps of a recurrent network."
         },
         {
-          "category": "arts",
-          "question": "If a sequence has length $T$, how many repeated time-step copies appear in the unrolled view of the RNN?",
-          "answer": "$T$ copies, one for each element in the sequence.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
+          "lane": "Math & Loss",
+          "question": "What is the vanishing gradient problem in RNNs?",
+          "answer": "Repeated multiplication by values smaller than 1 across many time steps shrinks gradients toward zero, so the network struggles to learn long-range dependencies."
         },
         {
-          "category": "science",
-          "question": "What high-level TensorFlow / Keras container was mentioned for stacking an input layer, recurrent layer, and output layer in order?",
-          "answer": "`Sequential`.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
+          "lane": "Frameworks",
+          "question": "Why is parameter sharing across time steps important in an RNN?",
+          "answer": "It lets a single set of weights handle sequences of any length and exposes the same learned pattern at every position."
         },
         {
-          "category": "sports",
-          "question": "Why is parameter sharing across time steps useful in sequence modeling?",
-          "answer": "It lets one model handle variable-length sequences without learning a separate set of weights for every position.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
+          "lane": "Applications",
+          "question": "What kinds of data are RNNs naturally suited to?",
+          "answer": "Text, speech, time series, and any data where order conveys meaning."
         }
       ]
     },
     {
-      "id": "m04-card-0004",
-      "deckId": "csc-6314-study-guide",
+      "id": "dl-card-0013",
       "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-04",
-        "study-guide",
-        "vanishing-gradient"
-      ],
+      "tags": ["deep-learning", "comprehensive", "lstm", "gru"],
       "entries": [
         {
-          "category": "geography",
-          "question": "What is the vanishing-gradient problem in basic RNNs?",
-          "answer": "Gradients shrink as they are propagated backward through many time steps, so the model learns poorly from earlier parts of long sequences.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
+          "lane": "Foundations",
+          "question": "What core problem do LSTMs and GRUs address?",
+          "answer": "The vanishing-gradient and short-memory weaknesses of basic RNNs on long sequences, which prevent plain RNNs from learning distant dependencies."
         },
         {
-          "category": "entertainment",
-          "question": "Why do standard RNNs often behave like they have short-term memory?",
-          "answer": "Because fading gradients make it hard for them to preserve and learn from distant context.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
+          "lane": "Architectures",
+          "question": "What two states does an LSTM maintain?",
+          "answer": "A hidden state $h_t$ used as working output and a cell state $C_t$ used as long-term memory."
         },
         {
-          "category": "history",
-          "question": "What training procedure sends error signals backward through the sequence in an RNN?",
-          "answer": "Backpropagation Through Time (BPTT).",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
+          "lane": "Training",
+          "question": "What do the LSTM gates do conceptually?",
+          "answer": "They decide what to forget from the cell state, what new information to write into it, and what to expose as the next output."
         },
         {
-          "category": "arts",
-          "question": "Why do gradients tend to vanish when repeatedly multiplied by values smaller than $1$ across many time steps?",
-          "answer": "Because repeated multiplication by small values causes exponential shrinkage toward zero.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
+          "lane": "Math & Loss",
+          "question": "What does the LSTM forget gate control?",
+          "answer": "How much of the previous cell state $C_{t-1}$ should be retained at the current step."
         },
         {
-          "category": "science",
-          "question": "If an RNN cannot learn long-range dependencies well, what type of recurrent layer would usually be a safer replacement in practice?",
-          "answer": "An `LSTM` layer or a `GRU` layer.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why might a basic RNN struggle with a long sentence where the important noun appears far before the adjective or verb that depends on it?",
-          "answer": "Because the model may forget the early noun before reaching the later word that needs that context.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m04-card-0005",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-04",
-        "study-guide",
-        "lstm"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What problem are LSTMs primarily designed to reduce in recurrent networks?",
-          "answer": "The vanishing-gradient problem on longer sequences.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What are the two internal states highlighted for an LSTM?",
-          "answer": "The hidden state $h$ as working memory and the cell state $C$ as long-term memory.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "How do LSTM gates help training on long sequences?",
-          "answer": "They control what to forget, what to store, and what to expose, so important context is preserved more effectively.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "Which LSTM gate decides what new information should be written into memory?",
-          "answer": "The input gate.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "Which PyTorch recurrent module is explicitly required in Project 4?",
-          "answer": "`nn.LSTM`.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why is an LSTM often a better fit than a basic RNN for long customer comments or longer chat turns?",
-          "answer": "Because it is better at preserving useful context across many time steps.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m04-card-0006",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-04",
-        "study-guide",
-        "gru"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What is a GRU in deep learning?",
-          "answer": "A Gated Recurrent Unit, which is a simplified gated recurrent architecture for sequence modeling.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
+          "lane": "Frameworks",
           "question": "How does a GRU differ structurally from an LSTM?",
-          "answer": "A GRU uses a single hidden state and fewer gates, instead of separate hidden and cell states.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
+          "answer": "A GRU merges the cell and hidden states and uses fewer gates (typically a reset gate and an update gate), making it lighter and faster while still gating memory."
         },
         {
-          "category": "history",
-          "question": "Why might a GRU train faster or be preferred in a simpler experiment?",
-          "answer": "It has a less complex gating structure than an LSTM while still handling medium-range dependencies well.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "Which GRU gate controls how much previous memory to keep versus how much new information to add?",
-          "answer": "The update gate.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "If you wanted a simpler gated recurrent layer than an LSTM in a deep learning library, what would you typically choose?",
-          "answer": "A `GRU` layer.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "When would a GRU often be a reasonable compromise between a basic RNN and an LSTM?",
-          "answer": "When you want better sequence memory than a plain RNN but lower complexity than an LSTM.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
+          "lane": "Applications",
+          "question": "When might a GRU be preferred over an LSTM?",
+          "answer": "When you want gated memory but with fewer parameters and faster training, often on smaller datasets or shorter sequences where the extra LSTM machinery isn't necessary."
         }
       ]
     },
     {
-      "id": "m04-card-0007",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-04",
-        "study-guide",
-        "language-modeling"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What is language modeling?",
-          "answer": "Predicting the next word or character in a sequence from the words or characters that came before it.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "Why are RNN-style models a natural fit for next-word prediction?",
-          "answer": "Because the next token depends on previous context, which recurrent models process in order.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "When training a next-word predictor, what is the general input-output pattern?",
-          "answer": "Feed the model earlier tokens in order and train it to predict the next token.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "If the input tokens are $w_1, w_2, \\ldots, w_t$, what token is the language model asked to predict?",
-          "answer": "$w_{t+1}$.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "In the simplified RNN pipeline from the slides, which layer maps the final sequence summary to the prediction?",
-          "answer": "The `Dense` layer.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "What smartphone feature was used in the slides as a real-world example of recurrent next-word prediction?",
-          "answer": "Apple iPhone QuickType text prediction and autocorrect.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m04-card-0008",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-04",
-        "study-guide",
-        "time-series"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What is a time series?",
-          "answer": "An ordered sequence of data points collected over time, where later values may depend on earlier ones.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "Why can an RNN be useful for time-series prediction?",
-          "answer": "It processes one time step at a time and can learn temporal dependencies across the sequence.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why should time-series samples usually remain in chronological order during sequence construction?",
-          "answer": "Because the model is supposed to learn how patterns evolve over time, not from a randomly reordered sequence.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "In the notation $x_1, x_2, x_3, \\ldots, x_t$ for time-series modeling, what does each $x_t$ represent in the Fitbit example?",
-          "answer": "A vector of sensor values at time $t$.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "What kind of recurrent layer family would you normally choose in a library when the time series has meaningful long-range dependencies?",
-          "answer": "Usually an `LSTM` or `GRU` layer rather than a plain `SimpleRNN`.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "What wearable-device example was used in the slides to illustrate time-series prediction?",
-          "answer": "Fitbit activity and sleep prediction from sensor data.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m04-card-0009",
-      "deckId": "csc-6314-study-guide",
+      "id": "dl-card-0014",
       "difficulty": "hard",
-      "tags": [
-        "csc-6314",
-        "module-04",
-        "study-guide",
-        "chat-history"
-      ],
+      "tags": ["deep-learning", "comprehensive", "seq2seq", "attention"],
       "entries": [
         {
-          "category": "geography",
-          "question": "Why can chat history be treated as sequential data?",
-          "answer": "Because each new message depends on the ordered conversational context created by earlier messages.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What role does the hidden state play in an RNN-based chatbot?",
-          "answer": "It stores a running summary of the conversation so far and helps the model predict the next response.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why might a pure RNN chatbot struggle when important information appears near the beginning of a long message?",
-          "answer": "Because long-distance dependencies are harder to preserve, especially in basic RNNs.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "Conceptually, what does the hidden state after message $t$ encode in a conversation model?",
-          "answer": "A compressed representation of the dialogue context up to message $t$.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "If you wanted a stronger recurrent model for long conversational turns than a plain RNN, what would the module suggest using?",
-          "answer": "An LSTM or GRU.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "In the slides' customer-support example, what kind of response should the model predict after the user says they forgot their password?",
-          "answer": "A helpful password-reset response, such as offering to help reset the password.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m04-card-0010",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "hard",
-      "tags": [
-        "csc-6314",
-        "module-04",
-        "study-guide",
-        "seq2seq"
-      ],
-      "entries": [
-        {
-          "category": "geography",
+          "lane": "Foundations",
           "question": "What is a sequence-to-sequence (seq2seq) model?",
-          "answer": "A neural network that takes one sequence as input and produces another sequence as output, possibly with a different length.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
+          "answer": "A model that takes one sequence as input and produces another, possibly different-length, sequence as output."
         },
         {
-          "category": "entertainment",
-          "question": "What are the two main components of a classic seq2seq model?",
-          "answer": "An encoder and a decoder.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
+          "lane": "Architectures",
+          "question": "What two components define a basic seq2seq architecture?",
+          "answer": "An encoder that summarizes the input sequence into a context representation and a decoder that generates the output sequence one token at a time."
         },
         {
-          "category": "history",
-          "question": "How does the decoder in a seq2seq model generate an output sentence?",
-          "answer": "It predicts one token at a time using the encoded context until it emits an end-of-sequence token.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
+          "lane": "Training",
+          "question": "What problem in basic seq2seq models did the attention mechanism originally solve?",
+          "answer": "Squeezing an entire input sequence into a single fixed-size context vector caused information loss on long inputs; attention lets the decoder look back at all encoder positions selectively."
         },
         {
-          "category": "arts",
-          "question": "What is the context vector in a basic seq2seq architecture?",
-          "answer": "The encoder's final hidden state, which serves as a compressed summary of the input sequence.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
+          "lane": "Math & Loss",
+          "question": "How are scaled dot-product attention weights computed?",
+          "answer": "$\\mathrm{softmax}(QK^{\\top}/\\sqrt{d_k})$, then multiplied by $V$ — the softmax normalizes similarity scores between queries and keys, and the values are aggregated by those weights."
         },
         {
-          "category": "science",
-          "question": "What recurrent building blocks did the slides associate with both the encoder and decoder in the translation example?",
-          "answer": "RNNs or LSTMs.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
+          "lane": "Frameworks",
+          "question": "What roles do the query, key, and value vectors play in attention?",
+          "answer": "Queries describe what the current position is looking for, keys describe what each position offers, and values carry the information that gets aggregated according to the query–key similarity."
         },
         {
-          "category": "sports",
-          "question": "Name two applications of seq2seq models listed in Module 4.",
-          "answer": "Examples include machine translation, chatbots, text summarization, and caption generation.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
+          "lane": "Applications",
+          "question": "Why does attention often handle long-range dependencies better than vanilla RNNs?",
+          "answer": "It creates direct paths between any two positions in the sequence, instead of forcing information to travel through many sequential hidden-state hops."
         }
       ]
     },
     {
-      "id": "m04-card-0011",
-      "deckId": "csc-6314-study-guide",
+      "id": "dl-card-0015",
       "difficulty": "hard",
-      "tags": [
-        "csc-6314",
-        "module-04",
-        "study-guide",
-        "discussion-04"
-      ],
+      "tags": ["deep-learning", "comprehensive", "transformer", "self-attention"],
       "entries": [
         {
-          "category": "geography",
-          "question": "In the Module 4 discussion prompt, what should the context vector contain after the encoder processes a video clip?",
-          "answer": "A condensed representation of the clip's essential information, such as visual cues, temporal dynamics, and relevant audio features.",
-          "source": {
-            "label": "Module 4/module-04-discussion.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "Why is the hidden state important when some words in a noisy sequence are obscured?",
-          "answer": "It carries forward previous context, helping the model infer missing information from what it already knows.",
-          "source": {
-            "label": "Module 4/module-04-discussion.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "What is one sequence-level data augmentation idea suggested in the Module 4 discussion response?",
-          "answer": "Randomly masking or dropping text tokens during training.",
-          "source": {
-            "label": "Module 4/module-04-discussion.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "Why can a context vector be described as a compressed summary rather than a raw replay of the full input sequence?",
-          "answer": "Because it stores the most useful learned information in a compact representation instead of preserving every original token or frame directly.",
-          "source": {
-            "label": "Module 4/module-04-discussion.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "Before vectorization, what data format was shown in the discussion response as one way to store structured context information?",
-          "answer": "JSON.",
-          "source": {
-            "label": "Module 4/module-04-discussion.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "What real-world AI task is the focus of the Module 4 discussion prompt?",
-          "answer": "Auto-captioning for live video feeds.",
-          "source": {
-            "label": "Module 4/module-04-discussion.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m04-card-0012",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "hard",
-      "tags": [
-        "csc-6314",
-        "module-04",
-        "study-guide",
-        "project-04"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What is the main goal of Project 4 in Module 4?",
-          "answer": "To build a sentiment classifier for customer feedback using a recurrent neural network.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What minimum recurrent architecture requirement does Project 4 impose?",
-          "answer": "An `nn.LSTM` with at least two layers.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why must Project 4 pad or truncate every sequence to length `10`?",
-          "answer": "To make the inputs a consistent fixed length that the model can process in a uniform tensor format.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "In Project 4, what representation from the LSTM is used as the sentence context vector for classification?",
-          "answer": "The final hidden state.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "What special vocabulary item must be included at index `0` when building the Project 4 token mapping?",
-          "answer": "A `<PAD>` token.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "What two sentiment labels should the Project 4 live inference system output?",
-          "answer": "`Happy` and `Angry`.",
-          "source": {
-            "label": "Module 4/module-04-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m05-card-0001",
-      "source": "Module 5/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "easy",
-      "tags": [
-        "csc-6314",
-        "module-05",
-        "study-guide",
-        "attention-basics"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What is the main idea behind attention in sequence modeling?",
-          "answer": "Attention lets the model decide which parts of the full input are most relevant when forming a representation or prediction.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "How does a transformer process a sentence differently from an RNN?",
-          "answer": "A transformer compares tokens across the whole sequence in parallel, while an RNN processes tokens step by step.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why does parallel token processing make transformers easier to scale during training?",
-          "answer": "Many token interactions can be computed at the same time, which makes training faster and more scalable on modern hardware.",
-          "source": {
-            "label": "Module 5/Quiz 5/quiz-05-answers.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "In attention, what does a larger relevance score between two tokens imply?",
-          "answer": "It implies one token should contribute more weight to the other's updated representation.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "What architecture family replaced recurrence in the 2017 breakthrough paper discussed in Module 5?",
-          "answer": "The Transformer architecture built around self-attention.",
-          "source": {
-            "label": "Module 5/Quiz 5/quiz-05-answers.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why is attention useful when related words are far apart in a sentence?",
-          "answer": "It lets the model connect distant words directly instead of carrying information through many sequential steps.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m05-card-0002",
-      "source": "Module 5/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "easy",
-      "tags": [
-        "csc-6314",
-        "module-05",
-        "study-guide",
-        "qkv"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "In the query-key-value framework, what does the query represent?",
-          "answer": "The query represents what the current token is looking for.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What role do keys play in an attention mechanism?",
-          "answer": "Keys act like labels or indexes that are compared with the query to measure relevance.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why is it useful for a model to learn its own query, key, and value projections?",
-          "answer": "The model can learn which relationships matter most for the task and represent them in a context-sensitive way.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "Which vector carries the actual information retrieved after relevance is determined?",
-          "answer": "The value vector.",
-          "source": {
-            "label": "Module 5/Quiz 5/quiz-05-answers.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "Before attention weights are applied, what three vector types are produced from token representations?",
-          "answer": "Queries, keys, and values.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "In the search-engine analogy for attention, what is the practical difference between a key and a value?",
-          "answer": "The key helps determine what is relevant, while the value is the content that gets retrieved.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m05-card-0003",
-      "source": "Module 5/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-05",
-        "study-guide",
-        "self-attention"
-      ],
-      "entries": [
-        {
-          "category": "geography",
+          "lane": "Foundations",
           "question": "What is self-attention?",
-          "answer": "Self-attention lets each token update its representation by attending to other tokens in the same sequence.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
+          "answer": "Attention applied within a single sequence so each token updates its representation by attending to other tokens of the same sequence."
         },
         {
-          "category": "entertainment",
-          "question": "How does self-attention differ from standard attention between two sequences?",
-          "answer": "In self-attention, a sequence attends to itself, while standard attention can connect one sequence to another.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
+          "lane": "Architectures",
+          "question": "Why is positional encoding needed in a transformer?",
+          "answer": "Self-attention is inherently order-agnostic, so positional signals must be added to token embeddings to inject information about sequence order."
         },
         {
-          "category": "history",
-          "question": "Why does self-attention help with pronoun resolution in a sentence?",
-          "answer": "It allows a later word such as a pronoun to directly weight earlier words that are the most likely referents.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
+          "lane": "Training",
+          "question": "What does multi-head attention provide?",
+          "answer": "Several parallel attention \"views,\" each focusing on different relationships, whose outputs are concatenated and projected to enrich the representation."
         },
         {
-          "category": "arts",
-          "question": "After self-attention is applied, what is each token representation built from?",
-          "answer": "A weighted combination of value vectors from the sequence.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
+          "lane": "Math & Loss",
+          "question": "Why divide by $\\sqrt{d_k}$ inside scaled dot-product attention?",
+          "answer": "Dot products grow with key dimensionality; scaling keeps the softmax inputs in a numerically well-behaved range so gradients don't vanish on large vectors."
         },
         {
-          "category": "science",
-          "question": "In an encoder-only spam filter, what mechanism lets each word representation absorb context from the full message?",
-          "answer": "Self-attention inside the transformer encoder.",
-          "source": {
-            "label": "Module 5/Project 5/project-05-description.md"
-          }
+          "lane": "Frameworks",
+          "question": "What two stacks make up the original Transformer architecture, and how are they connected?",
+          "answer": "An encoder stack (input understanding) and a decoder stack (output generation), connected by cross-attention layers in the decoder that attend to encoder outputs."
         },
         {
-          "category": "sports",
-          "question": "Why can self-attention also be useful for image models?",
-          "answer": "It lets one pixel or patch relate directly to distant regions instead of only nearby neighborhoods.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
+          "lane": "Applications",
+          "question": "Why did transformers largely replace RNNs for language modeling?",
+          "answer": "They handle long-range dependencies better, train massively in parallel across sequence positions, and scale gracefully to enormous datasets and parameter counts."
         }
       ]
     },
     {
-      "id": "m05-card-0004",
-      "source": "Module 5/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-05",
-        "study-guide",
-        "positional-encoding"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "Why is positional encoding necessary in a transformer?",
-          "answer": "Attention alone has no built-in sense of order, so positional encoding tells the model where each token appears in the sequence.",
-          "source": {
-            "label": "Module 5/Quiz 5/quiz-05-answers.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What is added to each token embedding to preserve word order in a transformer?",
-          "answer": "A positional signal or positional encoding.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "What failure mode can happen if positional information is omitted?",
-          "answer": "The model can treat the sentence too much like an unordered bag of tokens and confuse different word orders.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "How should a transformer distinguish `The dog bit the man` from `The man bit the dog`?",
-          "answer": "By combining token content with positional information so order affects the representation.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "Where is positional information typically injected in the transformer pipeline?",
-          "answer": "It is added to the token embeddings before the encoder or decoder layers process them.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why is positional encoding critical for language tasks such as translation and next-token generation?",
-          "answer": "Because changing token order can change the meaning and therefore the correct output.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m05-card-0005",
-      "source": "Module 5/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-05",
-        "study-guide",
-        "transformer-architecture"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What are the main stages of the classic encoder-decoder transformer pipeline?",
-          "answer": "Tokens become embeddings with positional information, the encoder builds context-rich representations, and the decoder generates output tokens step by step.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What does cross-attention let the decoder do in a full transformer?",
-          "answer": "It lets the decoder reference encoder outputs while generating the next token.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why can the transformer connect distant words more effectively than a plain recurrent model?",
-          "answer": "It creates direct attention paths between tokens instead of forcing information to travel one step at a time through hidden state.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What token is used to start generation in the example decoder flow from the slides?",
-          "answer": "The `<START>` token.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "In the original Transformer design, which stack handles input understanding and which handles output generation?",
-          "answer": "The encoder handles input understanding, and the decoder handles output generation.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "When does autoregressive generation stop in the standard encoder-decoder workflow?",
-          "answer": "It stops when the decoder produces an `<END>` token.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m05-card-0006",
-      "source": "Module 5/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-05",
-        "study-guide",
-        "bert-vs-gpt"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What is the key conceptual difference between BERT and GPT?",
-          "answer": "BERT is an encoder-only model built for understanding, while GPT is a decoder-only model built for generation.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "Which transformer family uses bidirectional context from both left and right?",
-          "answer": "BERT.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why is GPT masked during training?",
-          "answer": "Masking prevents the model from looking at future tokens while learning next-token prediction.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What direction does GPT generate text?",
-          "answer": "Left to right, one token at a time.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "Which transformer family is usually better suited for tasks such as sentiment analysis, named entity recognition, or question answering?",
-          "answer": "BERT or another encoder-only transformer.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Which family is designed for chatbot-style text generation?",
-          "answer": "GPT or another decoder-only autoregressive model.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m05-card-0007",
-      "source": "Module 5/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-05",
-        "study-guide",
-        "transformers-to-llms"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What is the difference between a transformer and an LLM?",
-          "answer": "A transformer is the architecture blueprint, while an LLM is a large model built by scaling that blueprint with more data, layers, and parameters.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What property of transformers made them the foundation of modern LLMs?",
-          "answer": "Their self-attention-based design can model long-range relationships while scaling well.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Which two scaling advantages of transformers were emphasized in Module 5?",
-          "answer": "Parallelism during training and scalability as layers, parameters, and data grow.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "When a transformer is scaled into an LLM, what usually grows?",
-          "answer": "The model's parameter count, number of layers, and amount of training data.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "Which architecture family underlies models such as BERT and GPT?",
-          "answer": "Transformers.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why were older RNN and LSTM systems comparatively limited as a path to very large language models?",
-          "answer": "Their sequential processing made training and scaling much harder than with transformers.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m05-card-0008",
-      "source": "Module 5/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-05",
-        "study-guide",
-        "agents"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What turns an LLM into an agent rather than a one-shot chatbot?",
-          "answer": "Adding planning, memory, and tool use around the LLM so it can act across multiple steps.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What four pillars of an agent were highlighted in Module 5?",
-          "answer": "The brain, planning, memory, and tools.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why does user feedback matter in a learning agent workflow?",
-          "answer": "Feedback can be stored and reused so the agent improves future task execution instead of starting from scratch every time.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "In a Plan -> Act -> Observe loop, what does the `Observe` step contribute?",
-          "answer": "It provides the results of tool calls or actions so the agent can decide what to do next.",
-          "source": {
-            "label": "Module 5/module-05-discussion.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "What kinds of tools might an agent call during a workflow?",
-          "answer": "Examples include browsers, APIs, code execution environments, local files, or repositories.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "How would a travel-planning agent use tool calls in practice?",
-          "answer": "It would gather constraints, search flights and hotels, synthesize results, and revise them based on user feedback.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m05-card-0009",
-      "source": "Module 5/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
+      "id": "dl-card-0016",
       "difficulty": "hard",
-      "tags": [
-        "csc-6314",
-        "module-05",
-        "study-guide",
-        "memory-and-tools"
-      ],
+      "tags": ["deep-learning", "comprehensive", "llm", "foundation-models", "prompting", "agents"],
       "entries": [
         {
-          "category": "geography",
-          "question": "Why is persistent memory necessary for a learning agent?",
-          "answer": "It lets preferences and task history survive beyond one chat session so the agent can improve over time.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
+          "lane": "Foundations",
+          "question": "What is the conceptual difference between BERT and GPT?",
+          "answer": "BERT is an encoder-only, bidirectional transformer optimized for understanding tasks; GPT is a decoder-only, autoregressive transformer optimized for generation."
         },
         {
-          "category": "entertainment",
-          "question": "What storage options were named for agent memory in Module 5?",
-          "answer": "JSON files, SQL databases, and vector stores.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "How does storing prior feedback reduce repeated clarification with returning users?",
-          "answer": "The agent can load known preferences and constraints before generating a new result.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What kind of information belongs in persistent memory more than the immediate prompt context?",
-          "answer": "Stable facts and preferences that should be reused across future sessions.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "If you need structured, queryable memory for agent preferences, what type of store is a straightforward choice?",
-          "answer": "A JSON file or SQL database.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "How would persistent memory improve the experience for a returning travel-planning user?",
-          "answer": "The agent could remember preferences and produce better options with fewer feedback loops.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m05-card-0010",
-      "source": "Module 5/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "hard",
-      "tags": [
-        "csc-6314",
-        "module-05",
-        "study-guide",
-        "foundation-models"
-      ],
-      "entries": [
-        {
-          "category": "geography",
+          "lane": "Architectures",
           "question": "What is a foundation model?",
-          "answer": "A single very large pretrained model that can be adapted to many downstream tasks.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
+          "answer": "A large model pretrained on broad data that can be adapted to many downstream tasks via fine-tuning, prompting, or retrieval."
         },
         {
-          "category": "entertainment",
-          "question": "How does the foundation-model paradigm differ from the older one-model-per-task approach?",
-          "answer": "It starts from one large pretrained base model instead of training separate models from scratch for every task.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
+          "lane": "Training",
+          "question": "How do pretraining, fine-tuning, and prompting compare on cost and specificity?",
+          "answer": "Pretraining is the heaviest and most general; fine-tuning is moderate and produces a domain-specialized model; prompting is the cheapest and changes only the input, not the weights."
         },
         {
-          "category": "history",
-          "question": "What stage creates the broad capabilities of a foundation model?",
-          "answer": "Large-scale pretraining on massive datasets.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
+          "lane": "Math & Loss",
+          "question": "What is in-context learning, and what three prompting styles fall under it?",
+          "answer": "Behavior change driven by the prompt content alone, without weight updates; common styles are zero-shot (instructions only), few-shot (a handful of examples), and chain-of-thought (step-by-step reasoning before the answer)."
         },
         {
-          "category": "arts",
-          "question": "Is every foundation model an LLM?",
-          "answer": "No. All LLMs are foundation models, but not all foundation models are LLMs.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
+          "lane": "Frameworks",
+          "question": "How does GPT-style training prevent the model from cheating by looking at future tokens?",
+          "answer": "Causal (masked) self-attention hides positions to the right of each token so each prediction depends only on earlier tokens."
         },
         {
-          "category": "science",
-          "question": "What kinds of downstream tasks can a foundation model support after adaptation?",
-          "answer": "Tasks such as classification, summarization, question answering, and generation.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why are foundation models valuable in industry settings?",
-          "answer": "The same base model can be adapted across many workflows instead of building a separate model for each task.",
-          "source": {
-            "label": "Module 5/module-05-live-session-slides-summary.md"
-          }
+          "lane": "Applications",
+          "question": "What turns an LLM into an agent rather than a one-shot chatbot?",
+          "answer": "Wrapping the model with planning, tool use, and persistent memory so it can act over multiple steps in pursuit of a goal, often through a Plan $\\to$ Act $\\to$ Observe loop."
         }
       ]
     },
     {
-      "id": "m05-card-0011",
-      "source": "Module 5/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
+      "id": "dl-card-0017",
       "difficulty": "hard",
-      "tags": [
-        "csc-6314",
-        "module-05",
-        "study-guide",
-        "discussion-05"
-      ],
+      "tags": ["deep-learning", "comprehensive", "generative-ai", "diffusion", "multimodal", "clip", "vit"],
       "entries": [
         {
-          "category": "geography",
-          "question": "What distinguishes an agentic framework from a basic chatbot?",
-          "answer": "An agentic framework can take actions or orchestrate workflows instead of only responding once to a prompt.",
-          "source": {
-            "label": "Module 5/module-05-discussion.md"
-          }
+          "lane": "Foundations",
+          "question": "How does a generative model differ from a discriminative one?",
+          "answer": "A generative model learns the underlying data distribution so it can produce new samples; a discriminative model learns to separate or label inputs without modeling how the data is generated."
         },
         {
-          "category": "entertainment",
-          "question": "What is a multi-agent system?",
-          "answer": "A setup where multiple specialized agents communicate or coordinate to solve a task.",
-          "source": {
-            "label": "Module 5/module-05-discussion.md"
-          }
+          "lane": "Architectures",
+          "question": "What two networks make up a GAN, and what do they do?",
+          "answer": "A generator that creates synthetic samples and a discriminator that judges whether samples are real or generated, trained against each other in a minimax game."
         },
         {
-          "category": "history",
-          "question": "Why can transformer-based LLMs help agent frameworks handle longer or more complex tasks than older RNN-style systems?",
-          "answer": "Self-attention lets them weigh instructions, prior messages, and outputs by relevance across longer contexts.",
-          "source": {
-            "label": "Module 5/module-05-discussion.md"
-          }
+          "lane": "Training",
+          "question": "How does a diffusion model learn to generate images?",
+          "answer": "It is trained to reverse a noise-adding process — predicting (and removing) the Gaussian noise added at each step so it can iteratively denoise random noise into a coherent image, typically guided by text embeddings via cross-attention."
         },
         {
-          "category": "arts",
-          "question": "What reasoning-loop sequence was highlighted in the Module 5 discussion prompt?",
-          "answer": "Plan -> Act -> Observe.",
-          "source": {
-            "label": "Module 5/module-05-discussion.md"
-          }
+          "lane": "Math & Loss",
+          "question": "What does latent diffusion (e.g., Stable Diffusion) do differently from pixel-space diffusion?",
+          "answer": "It compresses images into a smaller latent space with a VAE, runs the denoising process there, and decodes back to pixels at the end, drastically reducing compute compared to denoising full-resolution images."
         },
         {
-          "category": "science",
-          "question": "Name one tool category an agentic framework such as AutoGen or Devin may access.",
-          "answer": "Examples include Python execution, APIs, web search, local files, or code repositories.",
-          "source": {
-            "label": "Module 5/module-05-discussion.md"
-          }
+          "lane": "Frameworks",
+          "question": "What is CLIP, and what is a Vision Transformer?",
+          "answer": "CLIP is a dual-encoder model that learns a shared image-text embedding space using contrastive learning, enabling zero-shot classification by comparing image embeddings to label-text embeddings. A Vision Transformer (ViT) is a transformer applied to images by splitting them into fixed-size patches, embedding each as a token, and adding positional information."
         },
         {
-          "category": "sports",
-          "question": "Why is Microsoft AutoGen a strong example of an agentic framework?",
-          "answer": "It lets multiple role-based agents coordinate on real workflows instead of acting like a single chatbot.",
-          "source": {
-            "label": "Module 5/module-05-discussion.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m05-card-0012",
-      "source": "Module 5/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "hard",
-      "tags": [
-        "csc-6314",
-        "module-05",
-        "study-guide",
-        "project-05"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What is the goal of a transformer-based spam filter?",
-          "answer": "To classify SMS messages as Spam or Ham using self-attention instead of rule-based logic.",
-          "source": {
-            "label": "Module 5/Project 5/project-05-description.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "Why does Project 5 use an encoder-only transformer path?",
-          "answer": "The task is sentence classification, so the model needs a contextual encoding of the whole message rather than token-by-token generation.",
-          "source": {
-            "label": "Module 5/Project 5/project-05-description.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why does the project ask you to repeat the small sample list during training?",
-          "answer": "It augments the limited dataset so the model gets enough iterations to converge.",
-          "source": {
-            "label": "Module 5/Project 5/project-05-description.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "Which loss function is specified for the spam-filter classifier?",
-          "answer": "`nn.CrossEntropyLoss()`.",
-          "source": {
-            "label": "Module 5/Project 5/project-05-description.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "Which PyTorch components are explicitly required for the encoder block in Project 5?",
-          "answer": "`nn.TransformerEncoderLayer` and `nn.TransformerEncoder`.",
-          "source": {
-            "label": "Module 5/Project 5/project-05-description.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "What labels should the model predict for `win cash now` and `see you later` in the final logic check?",
-          "answer": "`win cash now` should be Spam, and `see you later` should be Ham.",
-          "source": {
-            "label": "Module 5/Project 5/project-05-description.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m06-card-0001",
-      "source": "Module 6/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "easy",
-      "tags": [
-        "csc-6314",
-        "module-06",
-        "study-guide",
-        "generative-ai"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "How does a generative model differ from a discriminative model?",
-          "answer": "A generative model learns the underlying data distribution so it can create new samples, while a discriminative model focuses on separating classes or predicting labels from inputs.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What kinds of media can modern generative architectures produce?",
-          "answer": "They can generate text, images, audio, and other forms of media.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why is next-token prediction a natural training signal for generative language models?",
-          "answer": "It teaches the model to estimate how likely different continuations are in a sequence, which is the core of language generation.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What does it mean to model the underlying probability distribution of data?",
-          "answer": "It means estimating which outputs are likely so the model can generate new samples that resemble the training data.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "Name two architecture families mentioned for modern generative systems.",
-          "answer": "Large Language Models and Diffusion Models.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Name three common text-generation tasks covered in Module 6.",
-          "answer": "Completion, summarization, and question answering.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m06-card-0002",
-      "source": "Module 6/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "easy",
-      "tags": [
-        "csc-6314",
-        "module-06",
-        "study-guide",
-        "gpt-t5-llama"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "Which generative language model family was described as the `Writer`?",
-          "answer": "GPT.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "Which model family uses a full encoder-decoder transformer and treats tasks as `text-to-text`?",
-          "answer": "T5.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why is a decoder-only model well suited for autoregressive generation?",
-          "answer": "It predicts each next token from the tokens that came before it, which matches text-generation behavior directly.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "Which model family was presented as the open-source counterpart designed for efficient local or research deployment?",
-          "answer": "LLaMA.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "If you want one text interface for translation, summarization, classification, and question answering, which family fits best?",
-          "answer": "T5, because it converts all of those tasks into one text-to-text format.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why might researchers or local developers prefer LLaMA in some workflows?",
-          "answer": "Because it is open source and designed to be efficient for research and local deployment.",
-          "source": {
-            "label": "Module 6/module-06-learning-objectives-and-todos.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m06-card-0003",
-      "source": "Module 6/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-06",
-        "study-guide",
-        "adaptation-techniques"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What is pretraining in the context of foundation models?",
-          "answer": "It is the large-scale initial training stage where a model learns broad language patterns from massive datasets.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What does fine-tuning do to a pretrained foundation model?",
-          "answer": "It continues training the model on a smaller domain-specific dataset so the model becomes more specialized.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Which adaptation method is the most expensive, and which is the lightest weight?",
-          "answer": "Pretraining is the most expensive, and prompting is the lightest-weight method.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What tradeoff do pretraining, fine-tuning, and prompting represent?",
-          "answer": "They trade off cost against specificity.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "If you need a medical-domain expert version of a general model, which adaptation method would usually make the most sense?",
-          "answer": "Fine-tuning on a medical dataset.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Which adaptation method is best when you want to steer a model for one request without creating a new model version?",
-          "answer": "Prompting.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m06-card-0004",
-      "source": "Module 6/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-06",
-        "study-guide",
-        "in-context-learning"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What is in-context learning?",
-          "answer": "It is when a model changes its behavior based on what is included in the prompt, without being retrained.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "Which three prompting styles were highlighted as part of in-context learning?",
-          "answer": "Zero-shot, few-shot, and chain-of-thought prompting.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why can a few examples inside the prompt improve performance on a new pattern?",
-          "answer": "The examples show the task format and desired behavior directly in context.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What does chain-of-thought prompting ask the model to do?",
-          "answer": "It asks the model to reason step by step before producing the final answer.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "Which prompting style would you usually try first for a simple task with clear instructions and no examples?",
-          "answer": "Zero-shot prompting.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why is in-context learning attractive in production settings?",
-          "answer": "It adapts model behavior without the cost and delay of retraining.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m06-card-0005",
-      "source": "Module 6/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-06",
-        "study-guide",
-        "few-shot-prompting"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What is the difference between few-shot learning and few-shot prompting?",
-          "answer": "Few-shot learning changes the model weights, while few-shot prompting changes only the prompt context.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "Which approach creates a new persistent model version?",
-          "answer": "Few-shot learning, because the model itself is updated and saved.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Which approach has the higher computational cost?",
-          "answer": "Few-shot learning, because it requires retraining or fine-tuning rather than just adding prompt examples.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "Which approach leaves the model weights unchanged?",
-          "answer": "Few-shot prompting.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "If you only want to spend a few extra tokens instead of retraining, which method fits best?",
-          "answer": "Few-shot prompting.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why can few-shot prompting be useful for rapid experimentation?",
-          "answer": "It can produce learning-like behavior immediately without permanently changing the model.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m06-card-0006",
-      "source": "Module 6/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-06",
-        "study-guide",
-        "context-memory"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What is the difference between short-term memory and long-term persistence in an agent?",
-          "answer": "Short-term memory is the current context window, while long-term persistence stores information that survives across sessions.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "Why do robust agent systems need more than a raw context window?",
-          "answer": "Because stable preferences and facts need to persist even after a single conversation ends.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "How does retrieving stored context reduce user feedback loops?",
-          "answer": "The agent can start from previously learned preferences instead of asking for the same information again.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What is a context window in a language model or agent system?",
-          "answer": "It is the maximum number of tokens the model can see and process at one time.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "What kind of information might long-term memory store for a user?",
-          "answer": "Structured facts such as a user's name, preferred coding language, or stable preferences.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why is memory important in repeated multi-step workflows?",
-          "answer": "It keeps the user from having to restate the same constraints and preferences every time.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m06-card-0007",
-      "source": "Module 6/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-06",
-        "study-guide",
-        "rolling-buffer"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What is a rolling buffer in agent memory design?",
-          "answer": "It is a short-term memory technique that keeps only the last N messages.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What happens when new messages arrive after the rolling buffer is full?",
-          "answer": "The oldest messages are dropped as the newest ones are added.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why is a rolling buffer only a minimal memory solution?",
-          "answer": "It preserves recent context but can lose older information that still matters.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What does FIFO mean in the context of a rolling buffer?",
-          "answer": "First in, first out.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "When the rolling buffer fills up, what additional component can preserve important context more compactly?",
-          "answer": "A summarization layer.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why is a rolling buffer useful in a chat-based assistant?",
-          "answer": "It keeps the most recent conversation available without storing the entire history in the active context window.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m06-card-0008",
-      "source": "Module 6/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "medium",
-      "tags": [
-        "csc-6314",
-        "module-06",
-        "study-guide",
-        "summarization-layer"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What does a summarization layer do when conversation history becomes too long?",
-          "answer": "It compresses the conversation into a shorter summary that preserves the most important information.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "How does feedback extraction differ from generic conversation summarization?",
-          "answer": "Feedback extraction pulls out only user preferences and corrected facts instead of summarizing everything.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why can summarization be better than keeping every old message verbatim?",
-          "answer": "It saves token budget while preserving the information most likely to matter later.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What tradeoff does a summarization layer manage?",
-          "answer": "It balances compression against fidelity to the original conversation.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "What kind of extra call might implement the summarization layer?",
-          "answer": "A separate LLM call that distills the conversation into a concise summary.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why is feedback extraction especially useful in preference-heavy assistants?",
-          "answer": "It preserves stable user preferences and corrected facts that should influence future sessions.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m06-card-0009",
-      "source": "Module 6/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "hard",
-      "tags": [
-        "csc-6314",
-        "module-06",
-        "study-guide",
-        "persistent-storage"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What is long-term persistent storage in an agent system?",
-          "answer": "It is memory saved outside the active prompt so information can be reused in later sessions.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "When are JSON files or SQL databases better choices than vector databases?",
-          "answer": "They are better for structured hard facts that need exact storage and lookup.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why does the module recommend a hybrid memory approach instead of using just one memory technique?",
-          "answer": "A hybrid approach combines recent context, compressed summaries, and long-term storage so the agent can handle both short-horizon and long-horizon memory needs.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What kind of retrieval task are embeddings especially good for in long-term memory?",
-          "answer": "Finding past conversations or notes that are semantically similar to the current query.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "What storage format is explicitly described as sufficient for Project 6's multi-user persistence requirement?",
-          "answer": "A single JSON file stored in the current working directory.",
-          "source": {
-            "label": "Module 6/Project 6/project-06-description.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why is a hybrid memory design useful for returning users whose preferences evolve over time?",
-          "answer": "It supports exact stored facts, related semantic recall, and updated recent feedback at the same time.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m06-card-0010",
-      "source": "Module 6/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "hard",
-      "tags": [
-        "csc-6314",
-        "module-06",
-        "study-guide",
-        "discussion-06"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "How should an agent prioritize conflicting memory sources?",
-          "answer": "A clear hierarchy such as safety rules first, then global best practices, then user memory, and then the current conversation is a sensible structure.",
-          "source": {
-            "label": "Module 6/module-06-discussion.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "How can a prompt or database reduce confusion between global rules and user-specific preferences?",
-          "answer": "Store and load them with clear labels and precedence levels so the system knows what overrides what.",
-          "source": {
-            "label": "Module 6/module-06-discussion.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "What is a sensible tiebreaker for conflicting user feedback over time?",
-          "answer": "Use recency plus explicit user confirmation instead of silently changing the stored preference.",
-          "source": {
-            "label": "Module 6/module-06-discussion.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What kind of rule should never be overridden by user-specific memory?",
-          "answer": "A safety rule.",
-          "source": {
-            "label": "Module 6/module-06-discussion.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "What metadata field could you store with each memory item to make conflicts easier to resolve?",
-          "answer": "A precedence, priority, or hierarchy label.",
-          "source": {
-            "label": "Module 6/module-06-discussion.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why should rejection of an unsafe user preference be transparent to the user?",
-          "answer": "The system should explain why it is not honoring that preference rather than pretending it forgot or silently ignoring it.",
-          "source": {
-            "label": "Module 6/module-06-discussion.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m06-card-0011",
-      "source": "Module 6/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "hard",
-      "tags": [
-        "csc-6314",
-        "module-06",
-        "study-guide",
-        "ai-coding"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What are CodeLLMs?",
-          "answer": "They are language models trained on large code corpora so they can generate, understand, and help debug software.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What is the difference between Plan Mode and Act Mode in an AI coding tool?",
-          "answer": "Plan Mode explores the codebase and proposes a strategy, while Act Mode executes the approved plan and writes code.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "Why should a human review the plan before switching to Act Mode?",
-          "answer": "The plan should be checked for dependency breaks, bad tradeoffs, and inefficient or unsafe design choices before code is written.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What is the fallback trap in AI-generated code?",
-          "answer": "It is the pattern where the code hides real failures by returning cached, fake, or misleading `success` behavior instead of surfacing the error.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "Name two AI coding tools mentioned in Module 6.",
-          "answer": "Examples include GitHub Copilot, Claude Code, Cursor, and Google Gemini Code Assist.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "What should code do instead of reporting silent success when the underlying AI workflow actually failed?",
-          "answer": "It should fail loudly by logging the error or raising an exception so the failure is visible and debuggable.",
-          "source": {
-            "label": "Module 6/module-06-live-session-slides-summary.md"
-          }
-        }
-      ]
-    },
-    {
-      "id": "m06-card-0012",
-      "source": "Module 6/study-deck-cards.json",
-      "deckId": "csc-6314-study-guide",
-      "difficulty": "hard",
-      "tags": [
-        "csc-6314",
-        "module-06",
-        "study-guide",
-        "project-06"
-      ],
-      "entries": [
-        {
-          "category": "geography",
-          "question": "What is the goal of the `Menu Creator` agent project?",
-          "answer": "To generate personalized dining experiences and improve them over time using user feedback.",
-          "source": {
-            "label": "Module 6/Project 6/project-06-description.md"
-          }
-        },
-        {
-          "category": "entertainment",
-          "question": "What menu structure must the agent generate for each proposal?",
-          "answer": "Two appetizers, three main courses, and two desserts.",
-          "source": {
-            "label": "Module 6/Project 6/project-06-description.md"
-          }
-        },
-        {
-          "category": "history",
-          "question": "How should a returning user's session begin in Project 6?",
-          "answer": "The agent should look up the user's stored preferences by name so future feedback loops are reduced.",
-          "source": {
-            "label": "Module 6/Project 6/project-06-description.md"
-          }
-        },
-        {
-          "category": "arts",
-          "question": "What exact closing message must the approved workflow emit?",
-          "answer": "`The waiter will be right over to take your order.`",
-          "source": {
-            "label": "Module 6/Project 6/project-06-description.md"
-          }
-        },
-        {
-          "category": "science",
-          "question": "Which provider must be used for the LLM calls in Project 6?",
-          "answer": "Hugging Face.",
-          "source": {
-            "label": "Module 6/Project 6/project-06-description.md"
-          }
-        },
-        {
-          "category": "sports",
-          "question": "Why should the project save feedback and final menus keyed by user name?",
-          "answer": "So the agent can support multiple users and reuse learned preferences in later sessions.",
-          "source": {
-            "label": "Module 6/Project 6/project-06-description.md"
-          }
+          "lane": "Applications",
+          "question": "What is the Plausibility Trap in vision-language models?",
+          "answer": "A failure mode where the model confidently describes the most likely scene based on priors rather than what is actually in the image, producing fluent but factually wrong outputs — a reminder that multimodal outputs need verification for high-stakes use."
         }
       ]
     }
