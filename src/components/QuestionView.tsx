@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 
 import { getCategoryMeta } from "../data/categories";
 import type { CardEntry, DeckCategoryMeta } from "../types";
+import { MathText } from "./MathText";
 import styles from "./QuestionView.module.css";
 
 const CHATGPT_URL = "https://chatgpt.com/";
@@ -97,7 +98,7 @@ export function QuestionView({
             </p>
             <p className={styles.categoryPrompt}>{meta.prompt}</p>
             <h2 id={dialogDescriptionId} className={styles.title}>
-              {entry.question}
+              <MathText text={entry.question} />
             </h2>
             <div className={styles.modalActions}>
               <button
@@ -123,7 +124,7 @@ export function QuestionView({
               Answer
             </p>
             <p id={dialogDescriptionId} className={styles.answer}>
-              {entry.answer}
+              <MathText text={entry.answer} />
             </p>
             {hasContext ? (
               <section
@@ -132,7 +133,7 @@ export function QuestionView({
               >
                 <p className={styles.contextLabel}>Context</p>
                 {explanation ? (
-                  <p className={styles.contextText}>{explanation}</p>
+                  <p className={styles.contextText}><MathText text={explanation} /></p>
                 ) : null}
                 {source && sourceLabel ? (
                   <p className={styles.contextSource}>

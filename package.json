@@ -14,6 +14,8 @@
     "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
+    "@types/katex": "^0.16.8",
+    "katex": "^0.16.45",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
