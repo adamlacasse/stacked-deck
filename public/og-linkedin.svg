@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-label="Stacked Deck — the modern trivia deck">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#264a8e"/>
+      <stop offset="55%" stop-color="#1a3870"/>
+      <stop offset="100%" stop-color="#0b1c40"/>
+    </radialGradient>
+    <linearGradient id="navy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#26487f"/>
+      <stop offset="100%" stop-color="#0f2450"/>
+    </linearGradient>
+    <linearGradient id="cream" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fdfcf7"/>
+      <stop offset="100%" stop-color="#efe5cb"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8c25a"/>
+      <stop offset="55%" stop-color="#c89730"/>
+      <stop offset="100%" stop-color="#8a6418"/>
+    </linearGradient>
+    <linearGradient id="goldFlat" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a07520"/>
+      <stop offset="50%" stop-color="#e8c25a"/>
+      <stop offset="100%" stop-color="#a07520"/>
+    </linearGradient>
+    <pattern id="hatch" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(20)">
+      <rect width="22" height="22" fill="transparent"/>
+      <line x1="0" y1="0" x2="0" y2="22" stroke="#c89730" stroke-width="0.7" opacity="0.08"/>
+    </pattern>
+    <clipPath id="canvasClip">
+      <rect width="1200" height="1200"/>
+    </clipPath>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="14"/>
+      <feOffset dx="0" dy="14"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <g clip-path="url(#canvasClip)">
+    <!-- Background -->
+    <rect width="1200" height="1200" fill="url(#bg)"/>
+    <!-- Subtle hatch texture, clipped to canvas -->
+    <rect width="1200" height="1200" fill="url(#hatch)"/>
+
+    <!-- Outer gold frame (echoes the in-app gold border) -->
+    <rect x="40" y="40" width="1120" height="1120" rx="28" fill="none" stroke="url(#goldFlat)" stroke-width="3"/>
+    <rect x="56" y="56" width="1088" height="1088" rx="22" fill="none" stroke="url(#goldFlat)" stroke-width="1" opacity="0.55"/>
+
+    <!-- Stacked-card icon. Each card 280x360. Three offset by 30 each. Stack bbox: 340w x 420h. -->
+    <g filter="url(#cardShadow)">
+      <!-- Back card -->
+      <g transform="translate(490 280)">
+        <rect width="280" height="360" rx="22" fill="url(#navy)" stroke="url(#gold)" stroke-width="4"/>
+        <rect x="14" y="14" width="252" height="332" rx="16" fill="none" stroke="url(#gold)" stroke-width="1" opacity="0.45"/>
+      </g>
+      <!-- Middle card -->
+      <g transform="translate(460 250)">
+        <rect width="280" height="360" rx="22" fill="url(#navy)" stroke="url(#gold)" stroke-width="4"/>
+        <rect x="14" y="14" width="252" height="332" rx="16" fill="none" stroke="url(#gold)" stroke-width="1" opacity="0.45"/>
+      </g>
+      <!-- Front card (cream, with the pinwheel ornament) -->
+      <g transform="translate(430 220)">
+        <rect width="280" height="360" rx="22" fill="url(#cream)" stroke="url(#gold)" stroke-width="5"/>
+        <rect x="16" y="16" width="248" height="328" rx="16" fill="none" stroke="url(#gold)" stroke-width="1.4" opacity="0.7"/>
+        <!-- Six-pointed pinwheel ornament -->
+        <g transform="translate(140 180)" fill="url(#gold)">
+          <path d="M0 -90 L20 -20 L90 0 L20 20 L0 90 L-20 20 L-90 0 L-20 -20 Z"/>
+          <g transform="rotate(30)" opacity="0.6">
+            <path d="M0 -76 L16 -16 L76 0 L16 16 L0 76 L-16 16 L-76 0 L-16 -16 Z"/>
+          </g>
+          <circle r="14" fill="#fdfcf7"/>
+          <circle r="6" fill="url(#gold)"/>
+        </g>
+      </g>
+    </g>
+
+    <!-- Wordmark: "Stacked Deck" in Playfair Display Bold -->
+    <g text-anchor="middle">
+      <text x="600" y="850"
+            font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+            font-weight="700"
+            font-size="128"
+            fill="url(#cream)">Stacked Deck</text>
+
+      <!-- Decorative gold rule with center diamond -->
+      <g stroke="url(#goldFlat)" stroke-width="2" fill="url(#gold)">
+        <line x1="395" y1="905" x2="555" y2="905"/>
+        <line x1="645" y1="905" x2="805" y2="905"/>
+        <circle cx="600" cy="905" r="5"/>
+        <circle cx="565" cy="905" r="2"/>
+        <circle cx="635" cy="905" r="2"/>
+      </g>
+
+      <!-- Tagline -->
+      <text x="600" y="975"
+            font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+            font-style="italic"
+            font-weight="400"
+            font-size="38"
+            fill="#e8dcc4"
+            letter-spacing="3">the modern trivia deck</text>
+    </g>
+  </g>
+</svg>
