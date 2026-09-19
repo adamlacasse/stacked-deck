@@ -105,27 +105,29 @@ function DeckShell({ deck, selectedDeckId, onSelectDeck }: DeckShellProps) {
                     </span>
                   </div>
 
-                  <div
-                    className={styles.filterSection}
-                    role="group"
-                    aria-labelledby={deckLabelId}
-                  >
-                    <span id={deckLabelId} className={styles.filterLabel}>
-                      Deck
-                    </span>
-                    {availableDecks.map((availableDeck) => (
-                      <button
-                        key={availableDeck.id}
-                        type="button"
-                        aria-pressed={selectedDeckId === availableDeck.id}
-                        className={`${styles.filterButton} ${selectedDeckId === availableDeck.id ? styles.filterButtonActive : ''}`}
-                        onClick={() => onSelectDeck(availableDeck.id)}
-                        disabled={!canChangeDeck}
-                      >
-                        {availableDeck.name}
-                      </button>
-                    ))}
-                  </div>
+                  {availableDecks.length > 1 ? (
+                    <div
+                      className={styles.filterSection}
+                      role="group"
+                      aria-labelledby={deckLabelId}
+                    >
+                      <span id={deckLabelId} className={styles.filterLabel}>
+                        Deck
+                      </span>
+                      {availableDecks.map((availableDeck) => (
+                        <button
+                          key={availableDeck.id}
+                          type="button"
+                          aria-pressed={selectedDeckId === availableDeck.id}
+                          className={`${styles.filterButton} ${selectedDeckId === availableDeck.id ? styles.filterButtonActive : ''}`}
+                          onClick={() => onSelectDeck(availableDeck.id)}
+                          disabled={!canChangeDeck}
+                        >
+                          {availableDeck.name}
+                        </button>
+                      ))}
+                    </div>
+                  ) : null}
 
                   <div
                     className={styles.filterSection}

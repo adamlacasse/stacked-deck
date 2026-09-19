@@ -30,8 +30,8 @@ src/
   data/
     categories.ts            UI metadata for category labels and colors
     general-knowledge-deck.json local general knowledge deck
-    csc-6314-deck.json       local CSC-6314 study guide stub deck
     deck.ts                  imports all local decks, validates at load time
+    normalizeDeck.ts         normalizes raw deck JSON (lane labels, optional fields) before validation
     validateDeck.ts          deck validation utility and dev-mode assertion
   hooks/
     useDeck.ts               game session state, draw logic, difficulty filter
@@ -102,7 +102,7 @@ If no cards remain, the hook enters the `finished` phase.
 
 ### `App.tsx`
 
-- manages the selected deck on the start screen
+- manages the selected deck and renders the deck picker only when more than one deck is registered in `src/data/deck.ts`
 - calls `useDeck(selectedDeck)`
 - renders the shell, stats, and high-level phase UI
 - chooses between the idle/finished hero panel and the active card view

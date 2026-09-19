@@ -7,15 +7,12 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "generate:csc6314": "node --experimental-strip-types scripts/generate-csc6314-deck.ts",
     "preview": "npm run build && wrangler dev",
     "test": "vitest run",
     "test:watch": "vitest",
     "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
-    "@types/katex": "^0.16.8",
-    "katex": "^0.16.45",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },

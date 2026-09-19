@@ -5,59 +5,54 @@ import { validateDeck } from '../data/validateDeck'
 import { CATEGORY_ORDER } from '../types'
 import type { TriviaDeck } from '../types'
 
-const courseCategoryMeta = {
+const sampleCategoryMeta = {
   geography: {
-    label: 'Foundations',
-    prompt: 'Core ideas, definitions, and distinctions',
+    label: 'Rivers',
+    prompt: 'Waterways and the places they pass through',
   },
   entertainment: {
-    label: 'Architectures',
-    prompt: 'Model families, layer roles, and structure',
+    label: 'Films',
+    prompt: 'Movies, directors, and casts',
   },
   history: {
-    label: 'Training',
-    prompt: 'Optimization, convergence, and regularization',
+    label: 'Wars',
+    prompt: 'Conflicts, treaties, and turning points',
   },
   arts: {
-    label: 'Math & Loss',
-    prompt: 'Formulas, metrics, objectives, and notation',
+    label: 'Painters',
+    prompt: 'Artists, movements, and famous works',
   },
   science: {
-    label: 'Frameworks',
-    prompt: 'PyTorch, TensorFlow, Keras, and tooling',
+    label: 'Physics',
+    prompt: 'Forces, particles, and laws of nature',
   },
   sports: {
-    label: 'Applications',
-    prompt: 'Real-world use cases and assignment contexts',
+    label: 'Football',
+    prompt: 'Clubs, players, and tournaments',
   },
 } satisfies TriviaDeck['categoryMeta']
 
 function makeLaneEntries() {
-  return [
-    'Foundations',
-    'Architectures',
-    'Training',
-    'Math & Loss',
-    'Frameworks',
-    'Applications',
-  ].map((lane) => ({
-    lane,
-    question: `${lane} question?`,
-    answer: `${lane} answer`,
-  }))
+  return ['Rivers', 'Films', 'Wars', 'Painters', 'Physics', 'Football'].map(
+    (lane) => ({
+      lane,
+      question: `${lane} question?`,
+      answer: `${lane} answer`,
+    }),
+  )
 }
 
 describe('normalizeDeck', () => {
   it('accepts lane-based entries without source metadata', () => {
     const deck = normalizeDeck({
-      id: 'csc-6314-study-guide',
-      name: 'CSC-6314 Study Guide',
-      categoryMeta: courseCategoryMeta,
+      id: 'sample-themed-deck',
+      name: 'Sample Themed Deck',
+      categoryMeta: sampleCategoryMeta,
       cards: [
         {
-          id: 'dl-card-0001',
+          id: 'themed-card-0001',
           difficulty: 'easy',
-          tags: ['deep-learning'],
+          tags: ['themed'],
           entries: makeLaneEntries(),
         },
       ],
